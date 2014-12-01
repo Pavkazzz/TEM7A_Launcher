@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +22,29 @@ namespace Launcher
     /// </summary>
     public partial class MainWindow : Window
     {
+        private SQLiteConnection SQLiteConnectionDatabase;
+        private readonly string _resourcePath = System.IO.Path.GetFullPath(@"../../Resources");
+        private SQLiteDataAdapter _sqLiteDataAdapter;
+
         public MainWindow()
         {
             InitializeComponent();
+            LoadDB();
+        }
+
+        private void LoadDB()
+        {
+            try
+            {
+
+                SQLiteConnectionDatabase = new SQLiteConnection(string.Format(@"Data Source={0}\db.db", _resourcePath));
+                SQLiteConnectionDatabase.Open();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
         }
     }
 }
