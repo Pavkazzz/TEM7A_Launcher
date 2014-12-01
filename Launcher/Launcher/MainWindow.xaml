@@ -32,7 +32,7 @@
                     <PasswordBox Name="Passwb2" Grid.Column="1" Grid.Row="4"/>
                     <Label Name="email_lbl" Grid.Column="0" Content="Электронная почта" Grid.Row="5"/>
                     <TextBox Name="email_tbx" Grid.Column="1" Grid.Row="5"/>
-                    <Button Name="Accept_btn" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Content="Зарегистрироваться" />
+                    <Button Name="Accept_btn" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Content="Зарегистрироваться" Click="Accept_btn_Click" />
                     <!--<Label-->
                 </Grid>
             </TabItem>
