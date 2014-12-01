@@ -86,5 +86,6 @@ namespace Launcher
                 MessageBox.Show(exception.ToString());
             }
         }
+        public void Reg()
     }
 }
