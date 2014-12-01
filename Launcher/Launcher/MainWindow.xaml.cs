@@ -33,8 +33,7 @@ namespace Launcher
         {
             InitializeComponent();
             LoadDB();
-            User user = new User("pavka", "pavka", "Павел", "Мосеин", "pavkazzz@mail.ru");
-            Registration(user);
+            
         }
 
         private void LoadDB()
@@ -86,11 +85,26 @@ namespace Launcher
                 MessageBox.Show(exception.ToString());
             }
         }
-        public void Reg();
 
         private void Accept_btn_Click(object sender, RoutedEventArgs e)
         {
+            if (Passwb1.Password == Passwb2.Password)
+            {
+                User user = new User(Login_tbx.Text, Passwb1.Password, Name_tbx.Text, Family_tbx.Text, email_tbx.Text);
+                Registration(user);   
+            }
+        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (Login(EntryLogin.Text, EntryPassword.Password))
+            {
+                MessageBox.Show("Успешно");
+            }
+            else
+            {
+                MessageBox.Show("Запись не найдена");
+            }
         }
     }
 }

@@ -27,7 +27,7 @@
                     <Label Name="Login_lbl" Grid.Row="2" Grid.Column="0" Content="Введите Логин"/>
                     <TextBox Name="Login_tbx" Grid.Column="2" Grid.Row="2"/>
                     <Label Name="Password_lbl1" Grid.Row="3" Grid.Column="0" Content="Введите пароль" />
-                    <PasswordBox Name="Passwbx1" Grid.Row="3" Grid.Column="1"/>
+                    <PasswordBox Name="Passwb1" Grid.Row="3" Grid.Column="1"/>
                     <Label Name="Password_lbl2" Grid.Row="4" Grid.Column="0" Content="Повторите пароль"/>
                     <PasswordBox Name="Passwb2" Grid.Column="1" Grid.Row="4"/>
                     <Label Name="email_lbl" Grid.Column="0" Content="Электронная почта" Grid.Row="5"/>
@@ -48,10 +48,10 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Label Content="Логин" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBox Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"/>
+                    <TextBox Name="EntryLogin"  Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"/>
                     <Label Content="Пароль" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <PasswordBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
-                    <Button Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Content="Вход в программу"/>
+                    <PasswordBox Name="EntryPassword"  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
+                    <Button Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Content="Вход в программу" Click="Button_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>
