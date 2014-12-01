@@ -86,7 +86,7 @@ namespace Launcher
                 MessageBox.Show(exception.ToString());
             }
         }
-        public void Reg();
+      
 
         private void Accept_btn_Click(object sender, RoutedEventArgs e)
         {
