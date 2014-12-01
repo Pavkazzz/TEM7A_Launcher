@@ -32,7 +32,8 @@ namespace Launcher
         {
             InitializeComponent();
             LoadDB();
-            MessageBox.Show(Login("admin", "admin").ToString());
+            User user = new User("pavka", "pavka", "Павел", "Мосеин", "pavkazzz@mail.ru");
+            Registration(user);
         }
 
         private void LoadDB()
@@ -74,7 +75,7 @@ namespace Launcher
         {
             try
             {
-                var sqlSelect = new SQLiteCommand(string.Format("Insert Into Accounts Values ({0}, {1}, {2}, {3}, {4})", user.Login,
+                var sqlSelect = new SQLiteCommand(string.Format("Insert Into Accounts Values ('{0}', '{1}', '{2}', '{3}', '{4}')", user.Login,
                     user.Password, user.Name, user.Lastname, user.Email), SQLiteConnectionDatabase);
                 SQLiteDataReader sqlReader = sqlSelect.ExecuteReader();
                 sqlReader.Close();
