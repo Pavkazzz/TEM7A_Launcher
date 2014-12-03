@@ -28,6 +28,8 @@ namespace Launcher
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timer_Tick;
             timer.Start();
+            ApplicationUpdater apupd = new ApplicationUpdater();
+            apupd.Show();
         }
         void timer_Tick (object Sender,EventArgs e)
         {
