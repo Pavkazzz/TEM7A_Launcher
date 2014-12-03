@@ -16,7 +16,7 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Row="0" Grid.Column="0" Background="#B00000" Grid.RowSpan="3" Margin="0,0,0,0.333">
+        <StackPanel Grid.Row="0" Grid.Column="0" Background="#B00000" Grid.RowSpan="3" Margin="0,0,0,-32">
             <TextBlock Name="TextBlockTitle" Grid.Row="0" Grid.Column="0" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#B00000"  Foreground="White" TextWrapping="Wrap" >
             Нормативные документы
             </TextBlock>
