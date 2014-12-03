@@ -107,5 +107,10 @@ namespace Launcher
                 MessageBox.Show("Запись не найдена");
             }
         }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://pkbzht.ru");
+        }
     }
 }
