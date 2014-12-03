@@ -42,7 +42,7 @@
             <Label HorizontalAlignment="Right" Content="Здравствуйте, Валерий Петрович" BorderBrush="Black" BorderThickness="0.5" Background="WhiteSmoke" Grid.Column="5" Grid.Row="0" Grid.ColumnSpan="2"/>
             <Label Content="Помощник Машиниста" FontSize="28" Grid.ColumnSpan="5" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <ListBox x:Name="listBox" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" Grid.IsSharedSizeScope="True">
+        <ListBox x:Name="ListBoxModules" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" Grid.IsSharedSizeScope="True">
             <local:MenuItemControl HorizontalAlignment="Left" Width="{Binding Width, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindowLauncher}}}" />
         </ListBox>
 
