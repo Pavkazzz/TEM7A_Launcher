@@ -18,7 +18,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="1" Grid.Column="0" Background="#B00000" Grid.RowSpan="3">
-            <TextBlock x:Name="TextBlockTitle" TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="#B00000"  Foreground="White" TextWrapping="Wrap" Height="83" ></TextBlock>
+            <TextBlock x:Name="TextBlockTitle" Margin="5" TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="#B00000" FontSize="16" Foreground="White" TextWrapping="Wrap" Height="83" ></TextBlock>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="4" Background="White">
             <TextBlock Name="TextBlockDescription" TextWrapping="Wrap" Margin="10,0,5,0" FontWeight="ExtraBold">
