@@ -57,7 +57,7 @@ namespace Launcher
                     while (sqlReader.Read())
                     {
                         var menuItemControl = new MenuItemControl();
-                        menuItemControl.TextBlockTitle.Text = sqlReader["Title"].ToString();
+                        menuItemControl.TextBlockTitle.Text = sqlReader["Title"].ToString().ToUpper();
                         menuItemControl.TextBlockDescription.Text = sqlReader["Description"].ToString();
                         result.Add(menuItemControl);
                     }
