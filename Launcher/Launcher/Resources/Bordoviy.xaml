@@ -8,7 +8,7 @@
 
     <Color x:Key="AccentColor">#B00000</Color>
     <!--60%-->
-    <Color x:Key="AccentColor2">#EE9A00</Color>
+    <Color x:Key="AccentColor2">#B00000</Color>
     <!--40%-->
     <Color x:Key="AccentColor3">#CD6600</Color>
     <!--20%-->

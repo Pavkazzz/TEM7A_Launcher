@@ -4,7 +4,7 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:Launcher" x:Class="Launcher.MainWindowLauncher"
         Title="MainWindowLauncher" WindowState="Maximized" Loaded="MetroWindow_Loaded" >
-    <Grid>
+    <Grid ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -42,7 +42,7 @@
             <Label HorizontalAlignment="Right" Content="Здравствуйте, Валерий Петрович" BorderBrush="Black" BorderThickness="0.5" Background="WhiteSmoke" Grid.Column="5" Grid.Row="0" Grid.ColumnSpan="2"/>
             <Label Content="Помощник Машиниста" FontSize="28" Grid.ColumnSpan="5" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <ListBox x:Name="ListBoxModules" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" Grid.IsSharedSizeScope="True">
+        <ListBox x:Name="ListBoxModules" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" Grid.IsSharedSizeScope="True" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
            </ListBox>
 
 
