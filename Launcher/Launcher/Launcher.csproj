@@ -79,6 +79,9 @@
     <Compile Include="MainWindowLauncher.xaml.cs">
       <DependentUpon>MainWindowLauncher.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MenuItemControl.xaml.cs">
+      <DependentUpon>MenuItemControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="User.cs" />
     <Page Include="MainWindow.xaml">
@@ -94,6 +97,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MainWindowLauncher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuItemControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
