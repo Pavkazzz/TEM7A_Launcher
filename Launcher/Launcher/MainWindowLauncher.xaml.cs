@@ -29,9 +29,18 @@ namespace Launcher
             timer.Tick += timer_Tick;
             timer.Start();
         }
-        void timer_Tick (object Sender,EventArgs e)
+        void timer_Tick (object sender, EventArgs e)
         {
             DateTimeLabel.Content = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
+        }
+
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            var _dataBase = new DataBase();
+            foreach (var item in _dataBase.Select(App.ResourcePath))
+            {
+                ListBoxModules.Items.Add(item);
+            }
         }
     }
 }

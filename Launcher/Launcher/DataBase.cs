@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Windows;
 
@@ -13,7 +14,6 @@ namespace Launcher
 
         private void OpenConnectionSqlite(string path)
         {
-
             _sqLiteConnectionDatabase = new SQLiteConnection(string.Format(@"Data Source={0}\db.db", path));
             _sqLiteConnectionDatabase.Open();
         }
@@ -22,6 +22,7 @@ namespace Launcher
         {
             _sqLiteConnectionDatabase.Close();
         }
+
         public bool Login(String login, String pass)
         {
             bool result = false;
@@ -40,6 +41,35 @@ namespace Launcher
                 MessageBox.Show(exception.ToString());
             }
             
+            return result;
+        }
+
+        public List<MenuItemControl> Select(string path)
+        {
+            var result = new List<MenuItemControl>();
+            try
+            {
+                OpenConnectionSqlite(App.ResourcePath);
+                var sqlSelect = new SQLiteCommand("Select Title, Description from Modules", _sqLiteConnectionDatabase);
+                SQLiteDataReader sqlReader = sqlSelect.ExecuteReader();
+                if (sqlReader.HasRows)
+                {
+                    while (sqlReader.Read())
+                    {
+                        var menuItemControl = new MenuItemControl();
+                        menuItemControl.TextBlockTitle.Text = sqlReader["Title"].ToString();
+                        menuItemControl.TextBlockDescription.Text = sqlReader["Description"].ToString();
+                        result.Add(menuItemControl);
+                    }
+                }
+
+                sqlReader.Close();
+                CloseConnectionSqlite();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
             return result;
         }
 

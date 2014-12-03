@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:Launcher" x:Class="Launcher.MainWindowLauncher"
-        Title="MainWindowLauncher" WindowState="Maximized">
+        Title="MainWindowLauncher" WindowState="Maximized" Loaded="MetroWindow_Loaded" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
