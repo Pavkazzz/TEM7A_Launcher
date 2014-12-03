@@ -14,9 +14,6 @@ namespace Launcher
     /// </summary>
     public partial class App : Application
     {
-        public SQLiteConnection SQLiteConnectionDatabase;
-        public SQLiteDataAdapter _sqLiteDataAdapter;
-
-
+        public static readonly string ResourcePath = System.IO.Path.GetFullPath(@"../../Resources");
     }
 }
