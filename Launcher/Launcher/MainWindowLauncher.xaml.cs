@@ -39,6 +39,7 @@ namespace Launcher
             var _dataBase = new DataBase();
             foreach (var item in _dataBase.Select(App.ResourcePath))
             {
+                item.Width = Width;
                 ListBoxModules.Items.Add(item);
             }
         }
