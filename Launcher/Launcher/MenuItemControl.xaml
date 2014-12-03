@@ -22,7 +22,7 @@
             </TextBlock>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="3" Background="White">
-            <TextBlock Name="TextBoxOpis" TextWrapping="Wrap" Margin="5,0">
+            <TextBlock Name="TextBoxOpis" TextWrapping="Wrap" Margin="10,0,5,0">
                  Модуль "Нормативные документы" предназначен для предоставления в интерактивном виде межгосударственных, национальных и отраслевых стандартов,нормативно технической документации, определяющих требования к техническим системам и его компонентам
             </TextBlock>
         </StackPanel>
