@@ -4,15 +4,15 @@
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     mc:Ignorable="options">
 
-    <Color x:Key="HighlightColor">#EE9A00</Color>
+    <Color x:Key="HighlightColor">#970000</Color>
 
     <Color x:Key="AccentColor">#B00000</Color>
     <!--60%-->
-    <Color x:Key="AccentColor2">#EE9A00</Color>
+    <Color x:Key="AccentColor2">#CA0000</Color>
     <!--40%-->
-    <Color x:Key="AccentColor3">#CD6600</Color>
+    <Color x:Key="AccentColor3">#E30000</Color>
     <!--20%-->
-    <Color x:Key="AccentColor4">#FFEE9999</Color>
+    <Color x:Key="AccentColor4">#FD0000</Color>
 
     <!-- re-set brushes too -->
     <SolidColorBrush x:Key="HighlightBrush" Color="{StaticResource HighlightColor}" options:Freeze="True" />

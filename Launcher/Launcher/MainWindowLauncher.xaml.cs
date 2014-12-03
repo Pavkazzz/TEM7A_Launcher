@@ -37,7 +37,7 @@ namespace Launcher
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
             var _dataBase = new DataBase();
-            foreach (var item in _dataBase.Select(App.ResourcePath))
+            foreach (var item in _dataBase.SelectModulesList(App.ResourcePath))
             {
                 item.Width = Width;
                 ListBoxModules.Items.Add(item);

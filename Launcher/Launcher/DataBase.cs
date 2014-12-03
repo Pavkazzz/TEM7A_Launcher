@@ -44,7 +44,7 @@ namespace Launcher
             return result;
         }
 
-        public List<MenuItemControl> Select(string path)
+        public List<MenuItemControl> SelectModulesList(string path)
         {
             var result = new List<MenuItemControl>();
             try

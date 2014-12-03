@@ -16,7 +16,7 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Button Content="Валера" Grid.Row="3" Grid.Column="3"/>
+        <Button Content="Поехали" Grid.Row="3" Grid.Column="3"/>
         <ProgressBar Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Height="Auto"/>
         <WebBrowser  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="3"></WebBrowser>
     </Grid>

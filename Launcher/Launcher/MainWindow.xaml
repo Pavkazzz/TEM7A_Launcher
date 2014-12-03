@@ -4,7 +4,7 @@
     xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
     Title="Окно входа в программу" Height="294.577" Width="453.206" >
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="264" VerticalAlignment="Top" Width="445">
+        <TabControl HorizontalAlignment="Left" Height="264" VerticalAlignment="Top" Width="445" SelectedIndex="1">
             <TabControl.Resources>
                 <Style TargetType="{x:Type TabPanel}">
                     <Setter Property="HorizontalAlignment" Value="Center" />
