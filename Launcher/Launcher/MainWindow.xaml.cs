@@ -25,7 +25,7 @@ namespace Launcher
     public partial class MainWindow : MetroWindow
     {
         private readonly string _resourcePath = System.IO.Path.GetFullPath(@"../../Resources");
-
+        MainWindowLauncher WindowLauncher = new MainWindowLauncher();
         private SQLiteConnection SQLiteConnectionDatabase;
         private SQLiteDataAdapter _sqLiteDataAdapter;
 
@@ -99,7 +99,8 @@ namespace Launcher
         {
             if (Login(EntryLogin.Text, EntryPassword.Password))
             {
-                MessageBox.Show("Успешно");
+               // MessageBox.Show("Успешно");
+                WindowLauncher.ShowDialog();
             }
             else
             {
