@@ -26,10 +26,11 @@ namespace Launcher
         public bool Login(String login, String pass)
         {
             bool result = false;
+            string hashPass = Security.GetSHA512(pass);
             try
             {
                 OpenConnectionSqlite(App.ResourcePath);
-                var sqlSelect = new SQLiteCommand(string.Format("Select Name, Lastname from Accounts where Login = '{0}' and Password = '{1}'", login, pass),
+                var sqlSelect = new SQLiteCommand(string.Format("Select Name, Lastname from Accounts where Login = '{0}' and Password = '{1}'", login, hashPass),
                     _sqLiteConnectionDatabase);
                 SQLiteDataReader sqlReader = sqlSelect.ExecuteReader();
                 result = sqlReader.HasRows;
@@ -76,11 +77,12 @@ namespace Launcher
 
         public void Registration(User user)
         {
+            string hashPass = Security.GetSHA512(user.Password);
             try
             {
                 OpenConnectionSqlite(App.ResourcePath);
                 var sqlSelect = new SQLiteCommand(string.Format("Insert Into Accounts Values ('{0}', '{1}', '{2}', '{3}', '{4}')", user.Login,
-                    user.Password, user.Name, user.Lastname, user.Email), _sqLiteConnectionDatabase);
+                    hashPass, user.Name, user.Lastname, user.Email), _sqLiteConnectionDatabase);
                 SQLiteDataReader sqlReader = sqlSelect.ExecuteReader();
                 sqlReader.Close();
             }

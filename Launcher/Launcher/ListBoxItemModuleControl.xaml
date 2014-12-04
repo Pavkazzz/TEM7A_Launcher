@@ -5,27 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" Height="85" Background="LightGray" BorderBrush="#B00000" BorderThickness="0.5" Margin="0,0,4,0">
     <Grid Background="#b00000">
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Row="1" Grid.Column="0" Background="#B00000" Grid.RowSpan="3">
-            <TextBlock x:Name="TextBlockTitle" Margin="5" TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="#B00000" FontSize="16" Foreground="White" TextWrapping="Wrap" ></TextBlock>
+        <StackPanel Grid.Column="0">
+            <TextBlock x:Name="TextBlockTitle" Margin="5,20,5,5" TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="#B00000" FontSize="16" Foreground="White" TextWrapping="Wrap" />
         </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="6" Background="White">
-            <TextBlock Name="TextBlockDescription" TextWrapping="Wrap" FontSize="14" Margin="10,0,5,0">
-                 
-            </TextBlock>
+        <StackPanel Grid.Column="1" Background="White">
+            <TextBlock Name="TextBlockDescription" TextWrapping="Wrap" FontSize="14" Margin="10,20,5,0"/>
         </StackPanel>
     </Grid>
 </UserControl>
