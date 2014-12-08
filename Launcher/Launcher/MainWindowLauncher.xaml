@@ -4,7 +4,7 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:Launcher" x:Class="Launcher.MainWindowLauncher"
         Title="Помощник машиниста мобильное приложение" WindowState="Maximized" Loaded="MetroWindow_Loaded" >
-    <Grid ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+    <Grid x:Name="MainGrid" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -46,7 +46,7 @@
                     <EventTrigger RoutedEvent="Button.Click">
                         <BeginStoryboard>
                             <Storyboard>
-                                <DoubleAnimation Storyboard.TargetName="ContentGrid" Storyboard.TargetProperty="Width" From="0" To="{Binding ElementName=ListBoxModules, Path=ActualWidth }" Duration="0:0:0.2"/>
+                                <DoubleAnimation Storyboard.TargetName="ContentGrid" Storyboard.TargetProperty="Width" From="0" To="{Binding ElementName=ListBoxModules, Path=Tag}" Duration="0:0:1"/>
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
@@ -57,7 +57,7 @@
         <ListBox x:Name="ListBoxModules" Margin="-6" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" >
         </ListBox>
 
-        <Grid x:Name="ContentGrid" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7" Background="Aqua" HorizontalAlignment="Right">
+        <Grid x:Name="ContentGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7" Background="Aqua" HorizontalAlignment="Right">
            
         </Grid>
 

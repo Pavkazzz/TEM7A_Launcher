@@ -51,6 +51,8 @@ namespace Launcher
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            //КАСТЫЛЁК УАХАХАХАХ
+            ListBoxModules.Tag = Width - 150;
             var _dataBase = new DataBase();
             foreach (var item in _dataBase.SelectModulesList(App.ResourcePath))
             {
