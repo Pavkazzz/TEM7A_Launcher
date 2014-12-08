@@ -17,7 +17,7 @@ using System.Windows.Threading;
 namespace Launcher
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindowLauncher.xaml
+    /// Логика взаимодействия для MainWindowLauncher.xaml 
     /// </summary>
     public partial class MainWindowLauncher : MetroWindow
     {
