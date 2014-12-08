@@ -46,7 +46,7 @@
                     <EventTrigger RoutedEvent="Button.Click">
                         <BeginStoryboard>
                             <Storyboard>
-                                <DoubleAnimation Storyboard.TargetName="ContentGrid" Storyboard.TargetProperty="Width" From="0" To="{Binding ElementName=ListBoxModules, Path=Tag}" Duration="0:0:1"/>
+                                <DoubleAnimation Storyboard.TargetName="ContentGrid" Storyboard.TargetProperty="Width" From="0" To="{Binding ElementName=ListBoxModules, Path=Tag}" Duration="0:0:1" Completed="DoubleAnimation_Completed"/>
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>

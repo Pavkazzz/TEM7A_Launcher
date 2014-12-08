@@ -29,9 +29,7 @@ namespace Launcher
         {
             InitializeComponent();
             StartTimer();
-            var asm = Assembly.LoadFile(App.ModulesPath + @"\WpfControlLibrary1.dll");
-            var tlist = asm.GetTypes();
-            var myControl = (from t in tlist where t.Name == "UserControl1" select Activator.CreateInstance(t) as UserControl).FirstOrDefault();
+            
            // ListBoxModules.Items.Add(myControl);
            // var sql = Assembly.LoadFile(App.ResourcePath + @"\LoginWindow.xaml");
            
@@ -73,6 +71,14 @@ namespace Launcher
             //Window CurApp = Application.Current.MainWindow;
             //CurApp.Content = window;
             //((ContentControl))CurApp.FindName("transitionins")).Content = window;
+        }
+
+        private void DoubleAnimation_Completed(object sender, EventArgs e)
+        {
+            var asm = Assembly.LoadFile(App.ModulesPath + @"\WpfControlLibrary1.dll");
+            var tlist = asm.GetTypes();
+            var myControl = (from t in tlist where t.Name == "UserControl1" select Activator.CreateInstance(t) as UserControl).FirstOrDefault();
+            if (myControl != null) ContentGrid.Children.Add(myControl);
         }
     }
 }
