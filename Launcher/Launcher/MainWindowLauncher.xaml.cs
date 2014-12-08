@@ -40,6 +40,7 @@ namespace Launcher
             foreach (var item in _dataBase.SelectModulesList(App.ResourcePath))
             {
                 item.Width = Width;
+                
                 ListBoxModules.Items.Add(item);
             }
         }
