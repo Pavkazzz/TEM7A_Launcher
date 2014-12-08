@@ -26,7 +26,7 @@ namespace Launcher
         {
             InitializeComponent();
             StartTimer();
-            var asm = Assembly.LoadFile(App.ResourcePath+@"\WpfControlLibrary1.dll");
+            var asm = Assembly.LoadFile(App.ModulesPath + @"\WpfControlLibrary1.dll");
             var tlist = asm.GetTypes();
             var myControl = (from t in tlist where t.Name == "UserControl1" select Activator.CreateInstance(t) as UserControl).FirstOrDefault();
             ListBoxModules.Items.Add(myControl);
