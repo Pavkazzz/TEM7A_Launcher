@@ -40,21 +40,19 @@
             </Grid.RowDefinitions>
             <Label x:Name="DateTimeLabel"  HorizontalAlignment="Right" Grid.Column="6" Grid.Row="1" HorizontalContentAlignment="Right"/>
             <Label HorizontalAlignment="Right" Content="Виктор Викторович"  Grid.Column="6" Grid.Row="0" HorizontalContentAlignment="Right" Background="{StaticResource AccentColorBrush}" />
-            <TextBox Controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="2" VerticalAlignment="Center"/>
-            <Button x:Name="sssw1" Content="Button" Grid.Column="5" HorizontalAlignment="Left" Margin="23,20,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="75" >
-                <Button.Triggers>
-                    <EventTrigger RoutedEvent="Button.Click">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation Storyboard.TargetName="ContentGrid" Storyboard.TargetProperty="Width" From="0" To="{Binding ElementName=ListBoxModules, Path=Tag}" Duration="0:0:1" Completed="DoubleAnimation_Completed"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </Button.Triggers>
-            </Button>
+            <TextBox  Controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="2" VerticalAlignment="Center"/>
 
         </Grid>
-        <ListBox x:Name="ListBoxModules" Margin="-6" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" >
+        <ListBox x:Name="ListBoxModules" Margin="-6" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <ListBox.Triggers>
+                <EventTrigger RoutedEvent="ListBox.SelectionChanged">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="ContentGrid" Storyboard.TargetProperty="Width" From="0" To="{Binding ElementName=ListBoxModules, Path=Tag}" Duration="0:0:1" Completed="DoubleAnimation_Completed"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </ListBox.Triggers>
         </ListBox>
 
         <Grid x:Name="ContentGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7" Background="Aqua" HorizontalAlignment="Right">
