@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,11 +25,20 @@ namespace Launcher
         public MainWindowLauncher()
         {
             InitializeComponent();
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
+            StartTimer();
+            var asm = Assembly.LoadFile(App.ResourcePath+@"\WpfControlLibrary1.dll");
+            var tlist = asm.GetTypes();
+            var myControl = (from t in tlist where t.Name == "UserControl1" select Activator.CreateInstance(t) as UserControl).FirstOrDefault();
+            ListBoxModules.Items.Add(myControl);
+        }
+
+        private void StartTimer()
+        {
+            var timer = new DispatcherTimer {Interval = TimeSpan.FromSeconds(1)};
             timer.Tick += timer_Tick;
             timer.Start();
         }
+
         void timer_Tick (object sender, EventArgs e)
         {
             DateTimeLabel.Content = DateTime.Now.ToLongDateString() + '\n' + DateTime.Now.ToLongTimeString();
@@ -40,7 +50,6 @@ namespace Launcher
             foreach (var item in _dataBase.SelectModulesList(App.ResourcePath))
             {
                 item.Width = Width;
-                
                 ListBoxModules.Items.Add(item);
             }
         }

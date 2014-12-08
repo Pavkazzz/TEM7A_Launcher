@@ -45,9 +45,9 @@ namespace Launcher
             return result;
         }
 
-        public List<MenuItemControl> SelectModulesList(string path)
+        public List<ListBoxItemModuleControl> SelectModulesList(string path)
         {
-            var result = new List<MenuItemControl>();
+            var result = new List<ListBoxItemModuleControl>();
             try
             {
                 OpenConnectionSqlite(App.ResourcePath);
@@ -57,7 +57,7 @@ namespace Launcher
                 {
                     while (sqlReader.Read())
                     {
-                        var menuItemControl = new MenuItemControl();
+                        var menuItemControl = new ListBoxItemModuleControl();
                         menuItemControl.TextBlockTitle.Text = sqlReader["Title"].ToString().ToUpper();
                         menuItemControl.TextBlockDescription.Text = sqlReader["Description"].ToString();
                         result.Add(menuItemControl);
