@@ -47,7 +47,7 @@
             </TextBox>
 
         </Grid>
-        <ListBox x:Name="ListBoxModules" Margin="-6" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+        <ListBox x:Name="ListBoxModules" Margin="-6" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="ListBoxModules_SelectionChanged">
             <ListBox.Triggers>
                 <EventTrigger RoutedEvent="ListBox.SelectionChanged">
                     <BeginStoryboard>
