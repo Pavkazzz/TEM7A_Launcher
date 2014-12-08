@@ -18,9 +18,9 @@ namespace Launcher
     /// <summary>
     /// Логика взаимодействия для MenuItemControl.xaml
     /// </summary>
-    public partial class MenuItemControl : UserControl
+    public partial class ListBoxItemModuleControl : UserControl
     {
-        public MenuItemControl()
+        public ListBoxItemModuleControl()
         {
             InitializeComponent();
         }
