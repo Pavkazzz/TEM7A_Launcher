@@ -57,7 +57,7 @@
         <ListBox x:Name="ListBoxModules" Margin="-6" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" >
         </ListBox>
 
-        <Grid x:Name="ContentGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7" Background="Aqua" HorizontalAlignment="Right">
+        <Grid x:Name="ContentGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7" Background="#F2F1EF" HorizontalAlignment="Right">
            
         </Grid>
 
