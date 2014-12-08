@@ -40,7 +40,11 @@
             </Grid.RowDefinitions>
             <Label x:Name="DateTimeLabel"  HorizontalAlignment="Right" Grid.Column="6" Grid.Row="1" HorizontalContentAlignment="Right"/>
             <Label HorizontalAlignment="Right" Content="Виктор Викторович"  Grid.Column="6" Grid.Row="0" HorizontalContentAlignment="Right" Background="{StaticResource AccentColorBrush}" />
-            <TextBox  Controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="2" VerticalAlignment="Center"/>
+            <TextBox Controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="2" VerticalAlignment="Center">
+                <TextBox.Style>
+                    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource SearchMetroTextBox}"/>
+                </TextBox.Style>    
+            </TextBox>
 
         </Grid>
         <ListBox x:Name="ListBoxModules" Margin="-6" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
