@@ -34,12 +34,12 @@ namespace Launcher
 
         private void StartTimer()
         {
-            var timer = new DispatcherTimer {Interval = TimeSpan.FromSeconds(1)};
-            timer.Tick += timer_Tick;
-            timer.Start();
+            var dateTimer = new DispatcherTimer {Interval = TimeSpan.FromSeconds(1)};
+            dateTimer.Tick += DateTimer_Tick;
+            dateTimer.Start();
         }
 
-        void timer_Tick (object sender, EventArgs e)
+        void DateTimer_Tick (object sender, EventArgs e)
         {
             DateTimeLabel.Content = DateTime.Now.ToLongDateString() + '\n' + DateTime.Now.ToLongTimeString();
         }
