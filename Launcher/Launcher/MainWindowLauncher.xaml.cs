@@ -31,7 +31,7 @@ namespace Launcher
         }
         void timer_Tick (object sender, EventArgs e)
         {
-            DateTimeLabel.Content = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
+            DateTimeLabel.Content = DateTime.Now.ToLongDateString() + '\n' + DateTime.Now.ToLongTimeString();
         }
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
