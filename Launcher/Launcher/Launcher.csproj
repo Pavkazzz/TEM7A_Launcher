@@ -104,6 +104,9 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Security.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="WindowTipo.xaml.cs">
+      <DependentUpon>WindowTipo.xaml</DependentUpon>
+    </Compile>
     <Page Include="ApplicationUpdater.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,6 +138,10 @@
     <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WindowTipo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

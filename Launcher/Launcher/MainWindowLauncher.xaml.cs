@@ -14,6 +14,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using System.Windows.Threading;
+using System.Xml;
+using System.IO;
+using System.Windows.Markup;
 
 namespace Launcher
 {
@@ -29,7 +32,9 @@ namespace Launcher
             var asm = Assembly.LoadFile(App.ResourcePath+@"\WpfControlLibrary1.dll");
             var tlist = asm.GetTypes();
             var myControl = (from t in tlist where t.Name == "UserControl1" select Activator.CreateInstance(t) as UserControl).FirstOrDefault();
-            ListBoxModules.Items.Add(myControl);
+           // ListBoxModules.Items.Add(myControl);
+           // var sql = Assembly.LoadFile(App.ResourcePath + @"\LoginWindow.xaml");
+           
         }
 
         private void StartTimer()
@@ -56,7 +61,10 @@ namespace Launcher
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+           // XmlReader xr = XmlReader.Create(input: new StringReader("C:/Users/Cemko/Source/Repos/Launcher/Launcher/Launcher/LoginWindow.xaml"));
+           // var control = XamlReader.Load(xr) as Grid;
+          // CCAdd.TryFindResource()
+            ContentGrid.Children.Add(new WindowTipo());
         }
         public static void CurrentWindow(UserControl window,string color)
         {
