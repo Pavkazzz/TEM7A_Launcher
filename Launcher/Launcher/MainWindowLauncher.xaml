@@ -59,7 +59,7 @@
             </ListBox.Triggers>
         </ListBox>
 
-        <Grid x:Name="ContentGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7" Background="Aqua" HorizontalAlignment="Right">
+        <Grid x:Name="ContentGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7" Background="#F2F1EF" HorizontalAlignment="Right">
            
         </Grid>
 
