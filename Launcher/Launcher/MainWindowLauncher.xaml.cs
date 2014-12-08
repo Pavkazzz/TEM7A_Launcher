@@ -44,5 +44,16 @@ namespace Launcher
                 ListBoxModules.Items.Add(item);
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        public static void CurrentWindow(UserControl window,string color)
+        {
+            //Window CurApp = Application.Current.MainWindow;
+            //CurApp.Content = window;
+            //((ContentControl))CurApp.FindName("transitionins")).Content = window;
+        }
     }
 }
