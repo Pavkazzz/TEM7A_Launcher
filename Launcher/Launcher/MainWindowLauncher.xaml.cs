@@ -29,7 +29,7 @@ namespace Launcher
         {
             InitializeComponent();
             StartTimer();
-            var asm = Assembly.LoadFile(App.ResourcePath+@"\WpfControlLibrary1.dll");
+            var asm = Assembly.LoadFile(App.ModulesPath + @"\WpfControlLibrary1.dll");
             var tlist = asm.GetTypes();
             var myControl = (from t in tlist where t.Name == "UserControl1" select Activator.CreateInstance(t) as UserControl).FirstOrDefault();
            // ListBoxModules.Items.Add(myControl);
@@ -39,12 +39,12 @@ namespace Launcher
 
         private void StartTimer()
         {
-            var timer = new DispatcherTimer {Interval = TimeSpan.FromSeconds(1)};
-            timer.Tick += timer_Tick;
-            timer.Start();
+            var dateTimer = new DispatcherTimer {Interval = TimeSpan.FromSeconds(1)};
+            dateTimer.Tick += DateTimer_Tick;
+            dateTimer.Start();
         }
 
-        void timer_Tick (object sender, EventArgs e)
+        void DateTimer_Tick (object sender, EventArgs e)
         {
             DateTimeLabel.Content = DateTime.Now.ToLongDateString() + '\n' + DateTime.Now.ToLongTimeString();
         }
