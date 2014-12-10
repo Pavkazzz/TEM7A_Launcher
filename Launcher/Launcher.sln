@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documents", "WpfApplication
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectronicCatalog", "ElectronicCatalog\ElectronicCatalog.csproj", "{C6E45101-F1D0-4108-8A59-434A14BEDA76}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentModule", "DocumentModule\DocumentModule.csproj", "{D88B8C64-8D94-4F17-84B8-863BBE36B14A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{C6E45101-F1D0-4108-8A59-434A14BEDA76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6E45101-F1D0-4108-8A59-434A14BEDA76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6E45101-F1D0-4108-8A59-434A14BEDA76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D88B8C64-8D94-4F17-84B8-863BBE36B14A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D88B8C64-8D94-4F17-84B8-863BBE36B14A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D88B8C64-8D94-4F17-84B8-863BBE36B14A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D88B8C64-8D94-4F17-84B8-863BBE36B14A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
