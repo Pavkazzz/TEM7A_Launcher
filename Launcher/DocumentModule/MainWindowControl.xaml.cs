@@ -28,7 +28,7 @@ namespace DocumentModule
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             //kostyl из базы забирать категории
-            foreach (string item in new List<string>(new[] {"ГОСТ", "ОСТ", "ТР", "Приказы", "Распоряжения"}))
+            foreach (string item in new List<string>(new [] {"ГОСТ", "ОСТ", "ТР", "Приказы", "Распоряжения"}))
             {
                 var listBoxCategoryItem = new CategoryControl {TextBlockCategory = {Text = item}};
                 ListBoxDocument.Items.Add(listBoxCategoryItem);
@@ -37,7 +37,12 @@ namespace DocumentModule
 
         private void ListBoxDocument_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            SelectedItemGetText((CategoryControl)sender);
+        }
+
+        public string SelectedItemGetText(CategoryControl categoryControl)
+        {
+            return categoryControl.TextBlockCategory.Text;
         }
     }
 }

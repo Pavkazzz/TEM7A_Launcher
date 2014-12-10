@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -81,10 +82,7 @@ namespace Launcher
             var tlist = asm.GetTypes();
             var myControl = (from t in tlist where t.Name == "MainWindowControl" select Activator.CreateInstance(t) as UserControl).FirstOrDefault();
             if (myControl != null) ContentGrid.Children.Add(myControl);
-
-            
         }
-
 
         private void ListBoxModules_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
