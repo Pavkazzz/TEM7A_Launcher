@@ -38,8 +38,8 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Image Source=""/>
-            <Label x:Name="DateTimeLabel"  HorizontalAlignment="Right" Grid.Column="6" Grid.Row="1" HorizontalContentAlignment="Right" Foreground="White" FontSize="17"/>
+            
+            <Label x:Name="DateTimeLabel"  HorizontalAlignment="Right" Grid.Column="6" Grid.Row="0" Grid.RowSpan="2" HorizontalContentAlignment="Right" Foreground="White" FontSize="17" VerticalAlignment="Bottom"/>
             <Label HorizontalAlignment="Right" Content="Виктор Викторович"  Grid.Column="6" Grid.Row="0" Foreground="White" HorizontalContentAlignment="Right" FontSize="15" Background="{StaticResource AccentColorBrush}" />
             <TextBox Controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="2" VerticalAlignment="Center">
                 <TextBox.Style>
