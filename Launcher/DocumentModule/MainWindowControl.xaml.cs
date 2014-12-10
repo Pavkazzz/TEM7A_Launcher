@@ -28,13 +28,16 @@ namespace DocumentModule
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             //kostyl из базы забирать категории
-            foreach (string item in new List<string>(new[] { "ГОСТ", "ОСТ", "ТР", "Приказы", "Распоряжения" }))
+            foreach (string item in new List<string>(new[] {"ГОСТ", "ОСТ", "ТР", "Приказы", "Распоряжения"}))
             {
-                var listBoxCategoryItem = new CategoryControl();
-                listBoxCategoryItem.TextBlockCategory.Text = item;
+                var listBoxCategoryItem = new CategoryControl {TextBlockCategory = {Text = item}};
                 ListBoxDocument.Items.Add(listBoxCategoryItem);
             }
         }
 
+        private void ListBoxDocument_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 }

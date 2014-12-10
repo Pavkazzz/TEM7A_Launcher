@@ -17,8 +17,8 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListBox x:Name="ListBoxDocument" Grid.Column="0" Grid.RowSpan="4" Margin="-6,0,0,0">
-
+        <ListBox x:Name="ListBoxDocument" Grid.Column="0" Grid.RowSpan="4" Margin="-6,0,0,0" SelectionChanged="ListBoxDocument_OnSelectionChanged">
+            
         </ListBox>
     </Grid>
 
