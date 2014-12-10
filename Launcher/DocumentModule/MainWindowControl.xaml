@@ -16,8 +16,15 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListBox x:Name="ListBoxDocument" Grid.Column="0" Grid.RowSpan="4" Margin="-6,0,0,0" SelectionChanged="ListBoxDocument_OnSelectionChanged">
-            
+        <ListBox x:Name="ListBoxDocument" Grid.Column="0" Grid.RowSpan="4" Background="#008000" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Background" Value="#008000"/>
+                    <!--<Setter Property="Margin" Value="0,5"/>-->
+                    <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+                    <Setter Property="ScrollViewer.VerticalScrollBarVisibility"   Value="Hidden"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
         </ListBox>
     </Grid>
 
