@@ -48,12 +48,12 @@
             </TextBox>
 
         </Grid>
-        <ListBox x:Name="ListBoxModules" Margin="-6" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="ListBoxModules_SelectionChanged">
+        <ListBox x:Name="ListBoxModules" Margin="-6,0,0,0" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="ListBoxModules_SelectionChanged">
             <ListBox.Triggers>
                 <EventTrigger RoutedEvent="ListBox.SelectionChanged">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="ContentGrid" Storyboard.TargetProperty="Width" From="0" To="{Binding ElementName=ListBoxModules, Path=Tag}" Duration="0:0:1" Completed="DoubleAnimation_Completed"/>
+                            <DoubleAnimation Storyboard.TargetName="ContentGrid"  Storyboard.TargetProperty="Width" From="0" To="{Binding ElementName=ListBoxModules, Path=Tag}" Duration="0:0:1" Completed="DoubleAnimation_Completed"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>

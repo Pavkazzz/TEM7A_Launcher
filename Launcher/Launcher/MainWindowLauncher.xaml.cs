@@ -75,33 +75,41 @@ namespace Launcher
 
         private void DoubleAnimation_Completed(object sender, EventArgs e)
         {
-            //var asm = Assembly.LoadFile(App.ModulesPath + @"\WpfControlLibrary1.dll");
-            //var tlist = asm.GetTypes();
-            //var myControl = (from t in tlist where t.Name == "UserControl1" select Activator.CreateInstance(t) as UserControl).FirstOrDefault();
-            //if (myControl != null)
-            var listBox = new ListBox();
-            var myControl = new ListBoxItemModuleControl();
-            myControl.TextBlockTitle.Text = @"ГОСТ";
-            listBox.Items.Add(myControl);
-            var myControl2 = new ListBoxItemModuleControl();
-            myControl2.TextBlockTitle.Text = @"ОСТ";
-            listBox.Items.Add(myControl2);
-            var myControl3 = new ListBoxItemModuleControl();
-            myControl3.TextBlockTitle.Text = @"ТР";
-            listBox.Items.Add(myControl3);
-            var myControl4 = new ListBoxItemModuleControl();
-            myControl4.TextBlockTitle.Text = @"Приказы";
-            listBox.Items.Add(myControl4);
-            var myControl5 = new ListBoxItemModuleControl();
-            myControl5.TextBlockTitle.Text = @"Распоряжения";
-            listBox.Items.Add(myControl5);
-            ContentGrid.Children.Add(listBox);
+            var asm = Assembly.LoadFile(App.ModulesPath + @"\DocumentModule.dll");
+            var tlist = asm.GetTypes();
+            var myControl = (from t in tlist where t.Name == "MainWindowControl" select Activator.CreateInstance(t) as UserControl).FirstOrDefault();
+            if (myControl != null) ContentGrid.Children.Add(myControl);
+
+            //ContentGrid.Children.Clear();
+
+            //var listBox = new ListBox();
+            //var myControl = new ListBoxItemModuleControl();
+            //myControl.TextBlockTitle.Text = @"ГОСТ";
+            //listBox.Items.Add(myControl);
+            //var myControl2 = new ListBoxItemModuleControl();
+            //myControl2.TextBlockTitle.Text = @"ОСТ";
+            //listBox.Items.Add(myControl2);
+            //var myControl3 = new ListBoxItemModuleControl();
+            //myControl3.TextBlockTitle.Text = @"ТР";
+            //listBox.Items.Add(myControl3);
+            //var myControl4 = new ListBoxItemModuleControl();
+            //myControl4.TextBlockTitle.Text = @"Приказы";
+            //listBox.Items.Add(myControl4);
+            //var myControl5 = new ListBoxItemModuleControl();
+            //myControl5.TextBlockTitle.Text = @"Распоряжения";
+            //listBox.Items.Add(myControl5);
+            //ContentGrid.Children.Add(listBox);
         }
 
 
         private void ListBoxModules_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            var lb = (ListBox)sender;
+            foreach (ListBoxItemModuleControl item in lb.Items)
+            {
+                item.ListBoxModuleControlMainGrid.Background = new SolidColorBrush(Colors.Gray);
+            }
+            (lb.Items[lb.SelectedIndex] as ListBoxItemModuleControl).ListBoxModuleControlMainGrid.Background = new SolidColorBrush(Colors.White);
         }
     }
 }
