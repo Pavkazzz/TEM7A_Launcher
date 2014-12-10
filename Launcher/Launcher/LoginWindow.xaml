@@ -2,9 +2,9 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-    Title="Окно входа в программу" Height="294.577" Width="453.206" >
+    Title="Окно входа в программу" Height="430.477" Width="611.206" >
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="264" VerticalAlignment="Top" Width="445" SelectedIndex="1">
+        <TabControl HorizontalAlignment="Left" Height="399" VerticalAlignment="Top" Width="607" SelectedIndex="1">
             <TabControl.Resources>
                 <Style TargetType="{x:Type TabPanel}">
                     <Setter Property="HorizontalAlignment" Value="Center" />
@@ -24,17 +24,17 @@
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="WrapWithOverflow" Foreground="White" HorizontalAlignment="Center" FontStyle="Italic" TextAlignment="Center">
-                        Здравствуйте,для работы с программой, необходимо зарегистрироваться. ООО "ПКБ ЖТ" <Hyperlink NavigateUri="http://pkbzht.ru/" Click="Hyperlink_Click" Foreground="White"> http://pkbzht.ru/</Hyperlink>  
+                        Здравствуйте,для работы с программой, необходимо зарегистрироваться. ООО "ПКБ ЖТ" <Hyperlink NavigateUri="http://pkbzht.ru/" Click="Hyperlink_Click" Foreground="White"> http://pkbzht.ru/</Hyperlink>
                     </TextBlock>
                     <Label Name="Name_lbl"      Grid.Row="1" Grid.Column="0" Background="{StaticResource AccentColorBrush}" Foreground="White" Content="Введите Имя" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderBrush="White"  BorderThickness="0.9" />
                     <TextBox Name="Name_tbx"    Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0.4"/>
                     <Label Name="Family_lbl"    Grid.Row="2" Grid.Column="0" Background="{StaticResource AccentColorBrush}" Foreground="White" Content="Введите Фамилию" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderBrush="White"  BorderThickness="0.9"/>
                     <TextBox Name="Family_tbx"  Grid.Row="2" Grid.Column="1"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0.4"/>
-                    <Label Name="Login_lbl"     Grid.Row="3" Grid.Column="0" Background="{StaticResource AccentColorBrush}" Foreground="White" Content="Введите Логин" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderBrush="White"  BorderThickness="0.9"/>
+                    <Label Name="Login_lbl"     Grid.Row="3" Grid.Column="0" Background="{StaticResource AccentColorBrush}" Foreground="White" Content="Введите Табельный номер" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderBrush="White"  BorderThickness="0.9"/>
                     <TextBox Name="Login_tbx"   Grid.Row="3" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0.4"/>
                     <Label Name="Password_lbl1" Grid.Row="4" Grid.Column="0" Background="{StaticResource AccentColorBrush}" Foreground="White" Content="Введите Пароль" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderBrush="White"  BorderThickness="0.9"/>
                     <PasswordBox Name="Passwb1" Grid.Row="4" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0.4"/>
@@ -52,17 +52,25 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Label Content="Логин" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="0"  BorderBrush="Black" Background="White" BorderThickness="0.4" Margin="0,24,0,23" />
-
-                    <TextBox Name="EntryLogin"  Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"  VerticalAlignment="Center"/>
-                    <Label Content="Пароль" Grid.Column="0" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0.4" Margin="0,23,0,24"/>
-                    <PasswordBox Name="EntryPassword"  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"  VerticalAlignment="Center"/>
-                    <Button Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Content="Вход в программу" Click="Button_Click"/>
+                    <Label              Grid.Column="0" Grid.Row="0" Content="Табельный номер" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"   BorderBrush="Black" Background="White" BorderThickness="0.4" Margin="5,5,2.5,2.5" HorizontalAlignment="Stretch" />
+                    <TextBox            Grid.Column="1" Grid.Row="0" Name="EntryLogin"    VerticalAlignment="Bottom" Margin="2.5,2.5,5,2.5" Height="50"/>
+                    <Label              Grid.Column="0" Grid.Row="1" Content="Пароль"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0.4" Margin="5,2.5,2.5,2.5" HorizontalAlignment="Stretch"  />
+                    <PasswordBox        Grid.Column="1" Grid.Row="1" Name="EntryPassword"   VerticalAlignment="Center" Margin="2,3,5,2" Height="54"/>
+                    <Button             Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Content="Вход в программу" Click="Button_Click" FontSize="19" Foreground="{StaticResource AccentColorBrush}"/>
+                    <Label              Grid.Column="0" Grid.Row="2" Content="Номер локомотива" Background="White" Margin="5,2.5,2.5,2.5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black"  BorderThickness="0.4"  HorizontalAlignment="Stretch" />
+                    <TextBox            Grid.Column="1" Grid.Row="2" x:Name="Number_Locomotion"  Margin="2.5,2.5,5,2.5"/>
+                    <Label              Grid.Column="0" Grid.Row="3" Content="Номер поезда" Background="White" Margin="5,2.5,2.5,2.5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black"  BorderThickness="0.4" />
+                    <TextBox            Grid.Column="1" Grid.Row="3" Margin="2.5,2.5,5,2.5"/>
+                    <Label              Grid.Column="0" Grid.Row="4" Content="Вес поезда (тонн)" Background="White" Margin="5,2.5,2.5,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black"  BorderThickness="0.4"  HorizontalAlignment="Stretch" />
+                    <TextBox            Grid.Column="1" Grid.Row="4" Margin="2.5,2.5,5,5"/>
                 </Grid>
             </TabItem>
         </TabControl>

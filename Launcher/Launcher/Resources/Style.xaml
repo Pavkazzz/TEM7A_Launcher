@@ -6,7 +6,7 @@
 
     <Color x:Key="HighlightColor">#970000</Color>
 
-    <Color x:Key="AccentColor">#26A65B</Color>
+    <Color x:Key="AccentColor">#008000</Color>
     <!--60% Выделение-->
     <Color x:Key="AccentColor2">#26A65B</Color>
     <!--40% -->
