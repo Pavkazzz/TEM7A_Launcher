@@ -16,7 +16,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListBox x:Name="ListBoxDocument" Grid.Column="0" Grid.RowSpan="4" Background="#008000" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+        <ListBox x:Name="ListBoxDocument" Grid.Column="0" Grid.RowSpan="4" Background="#008000" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="ListBoxDocument_OnSelectionChanged">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="Background" Value="#008000"/>
@@ -27,5 +27,4 @@
             </ListBox.ItemContainerStyle>
         </ListBox>
     </Grid>
-
 </UserControl>
