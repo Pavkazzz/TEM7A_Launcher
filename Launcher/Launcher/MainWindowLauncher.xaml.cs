@@ -94,5 +94,6 @@ namespace Launcher
             }
             ((ListBoxItemModuleControl) lb.Items[lb.SelectedIndex]).ListBoxModuleControlMainGrid.Background = new SolidColorBrush(Colors.White);
         }
+
     }
 }

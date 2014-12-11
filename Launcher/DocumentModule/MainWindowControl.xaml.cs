@@ -37,7 +37,10 @@ namespace DocumentModule
 
         private void ListBoxDocument_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            SelectedItemGetText((CategoryControl)sender);
+            //SelectedItemGetText((CategoryControl)sender);
+            var lb = ((ListBox)sender);
+            var item = (CategoryControl) lb.SelectedValue;
+            MessageBox.Show(string.Format("Я {0}", item.TextBlockCategory.Text));
         }
 
         public string SelectedItemGetText(CategoryControl categoryControl)
