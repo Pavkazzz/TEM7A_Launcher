@@ -30,6 +30,7 @@ namespace Launcher
         {
             InitializeComponent();
             StartTimer();
+            TextBlockAny.Text = "Номер локомотива,\n номер поезда \n табельный номер";
             
            // ListBoxModules.Items.Add(myControl);
            // var sql = Assembly.LoadFile(App.ResourcePath + @"\LoginWindow.xaml");
