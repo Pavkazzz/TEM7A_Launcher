@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:Launcher" x:Class="Launcher.MainWindowLauncher"
-        Title="Помощник машиниста мобильное приложение" WindowState="Maximized" Loaded="MetroWindow_Loaded"
-        >
+        Title="Помощник машиниста мобильное приложение" WindowState="Maximized" Loaded="MetroWindow_Loaded">
     <Grid x:Name="MainGrid" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
         <Grid.RowDefinitions>
             <RowDefinition/>

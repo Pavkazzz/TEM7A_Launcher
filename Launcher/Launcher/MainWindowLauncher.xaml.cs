@@ -31,9 +31,6 @@ namespace Launcher
             InitializeComponent();
             StartTimer();
             TextBlockAny.Text = "Номер локомотива,\n номер поезда \n табельный номер";
-            
-           // ListBoxModules.Items.Add(myControl);
-           // var sql = Assembly.LoadFile(App.ResourcePath + @"\LoginWindow.xaml");
            
         }
 
@@ -59,20 +56,6 @@ namespace Launcher
                 item.Width = Width;
                 ListBoxModules.Items.Add(item);
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-           // XmlReader xr = XmlReader.Create(input: new StringReader("C:/Users/Cemko/Source/Repos/Launcher/Launcher/Launcher/LoginWindow.xaml"));
-           // var control = XamlReader.Load(xr) as Grid;
-          // CCAdd.TryFindResource()
-            ContentGrid.Children.Add(new WindowTipo());
-        }
-        public static void CurrentWindow(UserControl window,string color)
-        {
-            //Window CurApp = Application.Current.MainWindow;
-            //CurApp.Content = window;
-            //((ContentControl))CurApp.FindName("transitionins")).Content = window;
         }
 
         private void DoubleAnimation_Completed(object sender, EventArgs e)

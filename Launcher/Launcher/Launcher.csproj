@@ -59,6 +59,14 @@
     <Reference Include="MahApps.Metro">
       <HintPath>..\packages\MahApps.Metro.0.14.0.0\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
+    <Reference Include="MoonPdfLib, Version=0.3.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\moonpdf-master(1)\moonpdf-master\src\MoonPdfLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MouseKeyboardActivityMonitor, Version=3.0.1.29653, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\MouseKeyboardActivityMonitor.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -162,38 +170,38 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Document%27s\GOST\ГОСТ 10150-88 Дизели судовые тепловозные и промышленные. Общие ТУ.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 10393 Компрессоры воздушные поршневые для тягового подвижного состава.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 10411-74 Оси для тепловозов железных дорог узкой колеи. Технические условия.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 10527-84 Тележки двухосные пассажирских вагонов магистральных железных дорог колеи 1520 мм. Технические условия.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 10935-97 Вагоны грузовые крытые магистральных железных дорог колеи 1520 мм. Общие технические условия.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 11018-2000 Тяговый подвижной состав железных дорог колеи 1520 мм. Колесные пары. Общие технические условия.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 12.2.056-81 Электровозы и тепловозы колеи 1520 мм. Требования безопасности.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 19.102-77 Стадии разработки.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 19.104-78 Основные надписи.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 19.106-78 Требования к программным документам.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 19.201-78 Техническое задание. Требования к содержанию и оформлению.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 19781_90 Обеспечение систем обработки информации программное. Термины и определения.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 2.611-2011 Электронный каталог изделия.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 20073-81 Компрессоры воздушные поршневые. Правила приемки и методы испытаний.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 22235-76 Вагоны грузовые. Общ. требования по обеспечению сохранности при погрузке.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 22253-76 Аппараты поглощающие пружинно-фрикционные для подвижного состава железных дорог колеи 1520 мм. Технические условия.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 22339-88 Тепловозы маневровые и промышленные. Типы и основные параметры.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 22947-78 Тепловозы магистральные колеи 1520 мм. ТТ в части окраски.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 24790-81 Тепловозы промышленные. Общие ТУ.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 25463-01ТЕПЛОВОЗЫ МАГИСТРАЛЬНЫХ ЖЕЛЕЗНЫХ дорог колеи 1520 мм Общие ТТ.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 31187-2003 Тепловозы магистральные. Общие технические требования..pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 31428-2011 Тепловозы маневровые с электрической передачей. Общие технические требования..pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 31845-2012 Локомотивы на газовом топливе.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 31846-2012 Специальный подвижной состав. Требования к прочности несущих конструкций и динамическим качествам..pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 4.346-85 Система показателей качества продукции. Электровозы магистральные.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 6962-75 Транспорт электрифицированный с питанием от контактной сети.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 8.417-2002_0 Единицы величин.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 9238 Габариты подвижного состава и приближения строений.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ 9544 ОТМЕНЕН Арматура трубопроводная запорная. Классы и нормы герметичности затворов.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ Р 54334-2011 Токоприемники железнодорожного подвижного состава.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ Р 54808-2011 Арматура трубопроводная запорная. Классы и нормы герметичности затворов.pdf" />
-    <None Include="Document%27s\GOST\ГОСТ Р 55182-2012 Вагоны пассажирские локомотивной тяги. Общие ТТ.pdf" />
+    <None Include="Documents\GOST\ГОСТ 10150-88 Дизели судовые тепловозные и промышленные. Общие ТУ.pdf" />
+    <None Include="Documents\GOST\ГОСТ 10393 Компрессоры воздушные поршневые для тягового подвижного состава.pdf" />
+    <None Include="Documents\GOST\ГОСТ 10411-74 Оси для тепловозов железных дорог узкой колеи. Технические условия.pdf" />
+    <None Include="Documents\GOST\ГОСТ 10527-84 Тележки двухосные пассажирских вагонов магистральных железных дорог колеи 1520 мм. Технические условия.pdf" />
+    <None Include="Documents\GOST\ГОСТ 10935-97 Вагоны грузовые крытые магистральных железных дорог колеи 1520 мм. Общие технические условия.pdf" />
+    <None Include="Documents\GOST\ГОСТ 11018-2000 Тяговый подвижной состав железных дорог колеи 1520 мм. Колесные пары. Общие технические условия.pdf" />
+    <None Include="Documents\GOST\ГОСТ 12.2.056-81 Электровозы и тепловозы колеи 1520 мм. Требования безопасности.pdf" />
+    <None Include="Documents\GOST\ГОСТ 19.102-77 Стадии разработки.pdf" />
+    <None Include="Documents\GOST\ГОСТ 19.104-78 Основные надписи.pdf" />
+    <None Include="Documents\GOST\ГОСТ 19.106-78 Требования к программным документам.pdf" />
+    <None Include="Documents\GOST\ГОСТ 19.201-78 Техническое задание. Требования к содержанию и оформлению.pdf" />
+    <None Include="Documents\GOST\ГОСТ 19781_90 Обеспечение систем обработки информации программное. Термины и определения.pdf" />
+    <None Include="Documents\GOST\ГОСТ 2.611-2011 Электронный каталог изделия.pdf" />
+    <None Include="Documents\GOST\ГОСТ 20073-81 Компрессоры воздушные поршневые. Правила приемки и методы испытаний.pdf" />
+    <None Include="Documents\GOST\ГОСТ 22235-76 Вагоны грузовые. Общ. требования по обеспечению сохранности при погрузке.pdf" />
+    <None Include="Documents\GOST\ГОСТ 22253-76 Аппараты поглощающие пружинно-фрикционные для подвижного состава железных дорог колеи 1520 мм. Технические условия.pdf" />
+    <None Include="Documents\GOST\ГОСТ 22339-88 Тепловозы маневровые и промышленные. Типы и основные параметры.pdf" />
+    <None Include="Documents\GOST\ГОСТ 22947-78 Тепловозы магистральные колеи 1520 мм. ТТ в части окраски.pdf" />
+    <None Include="Documents\GOST\ГОСТ 24790-81 Тепловозы промышленные. Общие ТУ.pdf" />
+    <None Include="Documents\GOST\ГОСТ 25463-01ТЕПЛОВОЗЫ МАГИСТРАЛЬНЫХ ЖЕЛЕЗНЫХ дорог колеи 1520 мм Общие ТТ.pdf" />
+    <None Include="Documents\GOST\ГОСТ 31187-2003 Тепловозы магистральные. Общие технические требования..pdf" />
+    <None Include="Documents\GOST\ГОСТ 31428-2011 Тепловозы маневровые с электрической передачей. Общие технические требования..pdf" />
+    <None Include="Documents\GOST\ГОСТ 31845-2012 Локомотивы на газовом топливе.pdf" />
+    <None Include="Documents\GOST\ГОСТ 31846-2012 Специальный подвижной состав. Требования к прочности несущих конструкций и динамическим качествам..pdf" />
+    <None Include="Documents\GOST\ГОСТ 4.346-85 Система показателей качества продукции. Электровозы магистральные.pdf" />
+    <None Include="Documents\GOST\ГОСТ 6962-75 Транспорт электрифицированный с питанием от контактной сети.pdf" />
+    <None Include="Documents\GOST\ГОСТ 8.417-2002_0 Единицы величин.pdf" />
+    <None Include="Documents\GOST\ГОСТ 9238 Габариты подвижного состава и приближения строений.pdf" />
+    <None Include="Documents\GOST\ГОСТ 9544 ОТМЕНЕН Арматура трубопроводная запорная. Классы и нормы герметичности затворов.pdf" />
+    <None Include="Documents\GOST\ГОСТ Р 54334-2011 Токоприемники железнодорожного подвижного состава.pdf" />
+    <None Include="Documents\GOST\ГОСТ Р 54808-2011 Арматура трубопроводная запорная. Классы и нормы герметичности затворов.pdf" />
+    <None Include="Documents\GOST\ГОСТ Р 55182-2012 Вагоны пассажирские локомотивной тяги. Общие ТТ.pdf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

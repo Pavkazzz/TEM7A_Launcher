@@ -24,6 +24,7 @@ namespace DocumentModule
         public static readonly string ResourcePath = System.IO.Path.GetFullPath(@"../../Resources");
         public static readonly string ModulesPath = System.IO.Path.GetFullPath(@"../../Modules");
         private SQLiteConnection _sqLiteConnectionDatabase;
+
         public MainWindowControl()
         {
             InitializeComponent();
