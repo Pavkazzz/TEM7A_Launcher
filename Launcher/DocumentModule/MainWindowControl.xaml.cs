@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SQLite;
+using MoonPdfLib;
 
 namespace DocumentModule
 {
@@ -73,7 +74,6 @@ namespace DocumentModule
                     a.FontSize = 18;
                     a.Height = 40;
                     a.Tag = sqlReader["Source_To_Document"].ToString();
-                    a.MouseLeftButtonDown += new MouseButtonEventHandler(a_MouseLeftButtonDown);
                     Docum.Items.Add(a);
                     
                 }
@@ -81,17 +81,22 @@ namespace DocumentModule
                 }
         }
 
-       private void a_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
 
-            }
 
        private void Docum_SelectionChanged(object sender, SelectionChangedEventArgs e)
        {
            
            var lb = ((ListBox)sender);
            var item = (ListBoxItem)lb.SelectedValue;
+
            DocumentPresenter Dp = new DocumentPresenter();
+           
+           var pdf = new MoonPdfPanel();
+           //MessageBox.Show((lb.SelectedItem as ListBoxItem).Tag.ToString());
+           pdf.OpenFile((lb.SelectedItem as ListBoxItem).Tag.ToString());
+           pdf.ViewType = ViewType.SinglePage;
+           pdf.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
+           Dp.GridDocument.Children.Add(pdf);
            Dp.ShowDialog();
         }
     }
