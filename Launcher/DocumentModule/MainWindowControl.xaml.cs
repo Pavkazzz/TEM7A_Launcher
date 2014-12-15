@@ -62,18 +62,17 @@ namespace DocumentModule
 
         public void Collection_Create()
         {
-            List<ListBoxItem> Coll = new List<ListBoxItem>();
             SQLiteCommand SqlCommand = new SQLiteCommand("Select NAME_GOST,Source_To_Document from GOST_TABLE", _sqLiteConnectionDatabase);
             SQLiteDataReader sqlReader = SqlCommand.ExecuteReader();
             if (sqlReader.HasRows)
             {
                 while (sqlReader.Read())
                 {
-                    ListBoxItem a = new ListBoxItem();
-                    a.Content = sqlReader["NAME_GOST"].ToString();
-                    a.FontSize = 18;
-                    a.Tag = sqlReader["Source_To_Document"].ToString();
-                    Docum.Items.Add(a);
+                    ListBoxItem listboxitem = new ListBoxItem();
+                    listboxitem.Content = sqlReader["NAME_GOST"].ToString();
+                    listboxitem.FontSize = 18;
+                    listboxitem.Tag = sqlReader["Source_To_Document"].ToString();
+                    Docum.Items.Add(listboxitem);
                 }
 
             }
