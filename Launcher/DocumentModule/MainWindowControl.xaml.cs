@@ -74,11 +74,9 @@ namespace DocumentModule
                     a.FontSize = 18;
                     a.Height = 40;
                     a.Tag = sqlReader["Source_To_Document"].ToString();
-                    Docum.Items.Add(a);
-                    
+                    Docum.Items.Add(a);   
                 }
-
-                }
+            }
         }
 
 
