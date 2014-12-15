@@ -71,11 +71,28 @@ namespace DocumentModule
                     ListBoxItem a = new ListBoxItem();
                     a.Content = sqlReader["NAME_GOST"].ToString();
                     a.FontSize = 18;
+                    a.Height = 40;
                     a.Tag = sqlReader["Source_To_Document"].ToString();
+                    a.MouseLeftButtonDown += new MouseButtonEventHandler(a_MouseLeftButtonDown);
                     Docum.Items.Add(a);
+                    
                 }
 
             }
         }
+
+       private void a_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            
+        }
+
+       private void Docum_SelectionChanged(object sender, SelectionChangedEventArgs e)
+       {
+           
+           var lb = ((ListBox)sender);
+           var item = (ListBoxItem)lb.SelectedValue;
+           DocumentPresenter Dp = new DocumentPresenter();
+           Dp.ShowDialog();
+       }
     }
 }

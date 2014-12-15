@@ -16,7 +16,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListBox x:Name="Docum" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <ListBox x:Name="Docum" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="Docum_SelectionChanged"/>
         <ListBox x:Name="ListBoxDocument" Grid.Column="0" Grid.RowSpan="3" Background="#008000" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="ListBoxDocument_OnSelectionChanged">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
