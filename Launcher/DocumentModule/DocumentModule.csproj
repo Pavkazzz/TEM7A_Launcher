@@ -59,10 +59,17 @@
     <Compile Include="CategoryControl.xaml.cs">
       <DependentUpon>CategoryControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DocumentPresenter.xaml.cs">
+      <DependentUpon>DocumentPresenter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HistoryControl.xaml.cs">
       <DependentUpon>HistoryControl.xaml</DependentUpon>
     </Compile>
     <Page Include="CategoryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DocumentPresenter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
