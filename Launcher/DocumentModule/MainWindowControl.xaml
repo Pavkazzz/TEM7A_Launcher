@@ -6,7 +6,7 @@
              mc:Ignorable="d" d:DesignHeight="600" d:DesignWidth="600" Loaded="UserControl_Loaded"  >
     <Grid Background="White">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="130"></ColumnDefinition>
+            <ColumnDefinition Width="140"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -16,11 +16,11 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListBox x:Name="ListBoxDocument" Grid.Column="0" Grid.RowSpan="4" Background="#008000" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="ListBoxDocument_OnSelectionChanged">
+        <ListBox x:Name="ListBoxDocument" Grid.Column="0" Grid.RowSpan="3" Background="#008000" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="ListBoxDocument_OnSelectionChanged">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="Background" Value="#008000"/>
-                    <!--<Setter Property="Margin" Value="0,5"/>-->
+                    <Setter Property="Margin" Value="0"/>
                     <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
                     <Setter Property="ScrollViewer.VerticalScrollBarVisibility"   Value="Hidden"/>
                 </Style>
