@@ -24,6 +24,7 @@ namespace DocumentModule
         public static readonly string ResourcePath = System.IO.Path.GetFullPath(@"../../Resources");
         public static readonly string ModulesPath = System.IO.Path.GetFullPath(@"../../Modules");
         private SQLiteConnection _sqLiteConnectionDatabase;
+
         public MainWindowControl()
         {
             InitializeComponent();
@@ -61,7 +62,6 @@ namespace DocumentModule
 
         public void Collection_Create()
         {
-            List<ListBoxItem> Coll = new List<ListBoxItem>();
             SQLiteCommand SqlCommand = new SQLiteCommand("Select NAME_GOST,Source_To_Document from GOST_TABLE", _sqLiteConnectionDatabase);
             SQLiteDataReader sqlReader = SqlCommand.ExecuteReader();
             if (sqlReader.HasRows)
@@ -78,13 +78,13 @@ namespace DocumentModule
                     
                 }
 
-            }
+                }
         }
 
        private void a_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            
-        }
+
+            }
 
        private void Docum_SelectionChanged(object sender, SelectionChangedEventArgs e)
        {
@@ -93,6 +93,6 @@ namespace DocumentModule
            var item = (ListBoxItem)lb.SelectedValue;
            DocumentPresenter Dp = new DocumentPresenter();
            Dp.ShowDialog();
-       }
+        }
     }
 }
