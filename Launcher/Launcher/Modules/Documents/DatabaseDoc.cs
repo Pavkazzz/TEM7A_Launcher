@@ -42,7 +42,7 @@ namespace Launcher.Modules.Documents
             return result;
         }
 
-        public static void SelectGost(string name)
+        public static void AddToHistory(string name)
         {
             ConnectToDB(App.ResourcePath);
             SQLiteCommand sqLiteCommand = new SQLiteCommand(string.Format("Insert into History values('{0}')", name), _sqLiteConnectionDatabase);
