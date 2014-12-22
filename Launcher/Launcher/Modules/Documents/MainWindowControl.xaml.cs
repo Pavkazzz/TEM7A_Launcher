@@ -36,7 +36,7 @@ namespace DocumentModule
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             //kostyl из базы забирать категории
-            foreach (string item in new List<string>(new[] { "ГОСТ", "ОСТ", "ТР", "Приказы", "Распоряжения" }))
+            foreach (string item in new List<string>(new[] { "ГОСТ Р ЕСКД","ГОСТ ЕСКД ", "ОСТ", "Технические Регламент таможенного союза", "Приказы", "Распоряжения" }))
             {
                 var listBoxCategoryItem = new CategoryControl { TextBlockCategory = { Text = item } };
                 ListBoxDocument.Items.Add(listBoxCategoryItem);
@@ -67,7 +67,7 @@ namespace DocumentModule
                 a.Height = 40;
                 a.Tag = Path.Combine(App.DocPath, item + ".pdf");
                 doc.Items.Add(a);
-            }
+        }
             GridDocument.Children.Add(doc);
         }
 
