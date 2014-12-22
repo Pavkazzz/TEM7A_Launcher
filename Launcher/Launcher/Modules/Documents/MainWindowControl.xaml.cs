@@ -36,7 +36,7 @@ namespace DocumentModule
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             //kostyl из базы забирать категории
-            foreach (string item in new List<string>(new[] { "ГОСТ Р ЕСКД", "ГОСТ ЕСКД", "ОСТ", "Технические Регламент таможенного союза", "Приказы", "Распоряжения" }))
+            foreach (string item in new List<string>(new[] { "ГОСТ Р ЕСКД", "ГОСТ ЕСКД","ГОСТ ЕСТД","ГОСТ ЕСПД", "ОСТ", "Технические Регламент таможенного союза", "Приказы", "Распоряжения" }))
             {
                 var listBoxCategoryItem = new CategoryControl { TextBlockCategory = { Text = item } };
                 ListBoxDocument.Items.Add(listBoxCategoryItem);
