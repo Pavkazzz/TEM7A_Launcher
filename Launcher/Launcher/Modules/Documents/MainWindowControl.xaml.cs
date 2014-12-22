@@ -57,6 +57,9 @@ namespace DocumentModule
         {
             GridDocument.Children.Clear();
             var doc = new ListBox();
+           // Style style = this.FindResource("ListBoxItem") as Style;
+           // doc.Style = style;
+            doc.AlternationCount = 2;
             var bd = new DatabaseDoc();
             foreach (var item in bd.ReturnGost())
             {
@@ -66,7 +69,7 @@ namespace DocumentModule
                 a.Height = 40;
                 a.Tag = Path.Combine(App.DocPath, item + ".pdf");
                 doc.Items.Add(a);
-            }
+        }
             GridDocument.Children.Add(doc);
         }
 
