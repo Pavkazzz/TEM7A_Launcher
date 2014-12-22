@@ -31,7 +31,7 @@
         <Grid x:Name="GridDocument" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3">
            
         </Grid>
-        <ListBox x:Name="ListBoxDocument" Grid.Column="0" Grid.RowSpan="3" Background="#008000" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="ListBoxDocument_OnSelectionChanged" Margin="-10,0,0,0" >
+        <ListBox x:Name="ListBoxDocument" Grid.Column="0" Grid.RowSpan="3" Background="#008000" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="ListBoxDocument_OnSelectionChanged" Margin="-5,0,0,0" >
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="Background" Value="Green"/>
