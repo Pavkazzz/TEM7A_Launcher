@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Launcher.Modules.Documents
@@ -74,23 +75,32 @@ namespace Launcher.Modules.Documents
             return sqlReader.HasRows;
         }
 
-        public static List<string> GetHistory()
+        public static List<Book> GetHistory()
         {
             ConnectToDB(App.ResourcePath);
-            var result = new List<string>();
-            SQLiteCommand sqlCommand = new SQLiteCommand("select Name from History order by Numb limit 9", _sqLiteConnectionDatabase);
+            var result = new List<Book>();
+            SQLiteCommand sqlCommand = new SQLiteCommand("select Name, Page from History order by Numb limit 9", _sqLiteConnectionDatabase);
             SQLiteDataReader sqlReader = sqlCommand.ExecuteReader();
             if (sqlReader.HasRows)
             {
                 while (sqlReader.Read())
                 {
-                    result.Add(sqlReader["Name"].ToString());  
+                    result.Add(new Book(sqlReader["Name"].ToString(), (int)sqlReader["Page"]));  
                 }
             }
             sqlReader.Close();
             CloseConnectionSqlite();
             return result;
             
-        } 
+        }
+
+        public static void UpdatePage(string name, int page)
+        {
+            ConnectToDB(App.ResourcePath);
+            var sqLiteCommand = new SQLiteCommand(string.Format("Update History set page = {0} where Name = '{1}'", page, name), _sqLiteConnectionDatabase);
+            var sqlReader = sqLiteCommand.ExecuteReader();
+            sqlReader.Close();
+            CloseConnectionSqlite();
+        }
     }
 }

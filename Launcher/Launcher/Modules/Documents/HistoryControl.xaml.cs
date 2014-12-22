@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using Launcher.Modules.Documents;
 using MahApps.Metro.Controls;
 using System.Drawing;
+using MahApps.Metro;
 
 namespace DocumentModule
 {
@@ -38,19 +39,18 @@ namespace DocumentModule
             foreach (var item in DatabaseDoc.GetHistory())
             {
                 var sp = new Tile();
-                sp.Title = item;
+                
                 sp.HorizontalContentAlignment = HorizontalAlignment.Center;
                 sp.VerticalContentAlignment = VerticalAlignment.Center;
                // sp.Content = item;
                 sp.Click += sp_Click;
                 sp.TiltFactor = 1;
-                var uri = new Uri(string.Format("{0}.jpg", item));
-                if (File.Exists(uri.ToString()))
+                if (File.Exists(string.Format("{0}.jpg", item.Name)))
                 {
-                    var bitmap = new BitmapImage(uri);
-                    sp.Content = new ImageBrush(bitmap);
+                    //sp.Background = new ImageBrush(new BitmapImage(new Uri(string.Format("{0}.jpg", item))));
                 }
-                
+                sp.Tag = item.Page;
+                sp.Title = item.Name;
                 sp.Width = GridHistory.ActualWidth/3;
                 sp.Height = GridHistory.ActualHeight/3;
                 Grid.SetRow(sp, count / 3);
@@ -63,7 +63,7 @@ namespace DocumentModule
 
         void sp_Click(object sender, RoutedEventArgs e)
         {
-            Pdf.ShowPdf(((Tile) sender).Title);
+            Pdf.ShowPdf(((Tile) sender).Title, (int)((Tile)sender).Tag);
         }
     }
 }

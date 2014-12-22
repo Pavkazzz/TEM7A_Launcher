@@ -74,7 +74,7 @@ namespace DocumentModule
        private void Docum_SelectionChanged(object sender, SelectionChangedEventArgs e)
        {
            var lb = ((ListBox)sender);
-           Pdf.ShowPdf(((ListBoxItem)lb.SelectedItem).Tag.ToString());
+           Pdf.ShowPdf(((ListBoxItem)lb.SelectedItem).Tag.ToString(), 0);
         }
 
 
