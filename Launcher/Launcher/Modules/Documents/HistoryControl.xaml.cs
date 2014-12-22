@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Launcher
+namespace DocumentModule
 {
     /// <summary>
-    /// Логика взаимодействия для WindowTipo.xaml
+    /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class WindowTipo : UserControl
+    public partial class HistoryControl : UserControl
     {
-        public WindowTipo()
+        public HistoryControl()
         {
             InitializeComponent();
         }

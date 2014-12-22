@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DocumentModule;
 using MahApps.Metro.Controls;
 using System.Windows.Threading;
 using System.Xml;
@@ -50,8 +51,8 @@ namespace Launcher
         {
             //КАСТЫЛЁК УАХАХАХАХ
             ListBoxModules.Tag = Width - 150;
-            var _dataBase = new DataBase();
-            foreach (var item in _dataBase.SelectModulesList(App.ResourcePath))
+            var dataBase = new DataBase();
+            foreach (var item in dataBase.SelectModulesList(App.ResourcePath))
             {
                 item.Width = Width;
                 ListBoxModules.Items.Add(item);
@@ -61,11 +62,7 @@ namespace Launcher
         private void DoubleAnimation_Completed(object sender, EventArgs e)
         {
             ContentGrid.Children.Clear();
-
-            var asm = Assembly.LoadFile(App.ModulesPath + @"\DocumentModule.dll");
-            var tlist = asm.GetTypes();
-            var myControl = (from t in tlist where t.Name == "MainWindowControl" select Activator.CreateInstance(t) as UserControl).FirstOrDefault();
-            if (myControl != null) ContentGrid.Children.Add(myControl);
+            ContentGrid.Children.Add(new MainWindowControl());
         }
 
         private void ListBoxModules_SelectionChanged(object sender, SelectionChangedEventArgs e)
