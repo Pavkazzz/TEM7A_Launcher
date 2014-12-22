@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace DocumentModule
 {
@@ -23,6 +24,26 @@ namespace DocumentModule
         public HistoryControl()
         {
             InitializeComponent();
+
+
+
+        }
+
+        private void GridHistory_Loaded(object sender, RoutedEventArgs e)
+        {
+            var count = 0;
+            foreach (var item in new List<string>(new[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" }))
+            {
+                var sp = new Tile();
+                sp.Title = item;
+                sp.TiltFactor = 1;
+                sp.Width = GridHistory.ActualWidth/3;
+                sp.Height = GridHistory.ActualHeight/3;
+                Grid.SetRow(sp, count / 3);
+                Grid.SetColumn(sp, count % 3);
+                GridHistory.Children.Add(sp);
+                count += 1;
+            }
         }
     }
 }

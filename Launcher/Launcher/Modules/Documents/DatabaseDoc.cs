@@ -40,5 +40,14 @@ namespace Launcher.Modules.Documents
             CloseConnectionSqlite();
             return result;
         }
+
+        internal void SelectGost()
+        {
+            ConnectToDB(App.ResourcePath);
+
+            SQLiteCommand sqLiteCommand = new SQLiteCommand("Insert into ");
+
+            CloseConnectionSqlite();
+        }
     }
 }

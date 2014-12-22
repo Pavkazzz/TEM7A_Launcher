@@ -30,6 +30,7 @@ namespace DocumentModule
         public MainWindowControl()
         {
             InitializeComponent();
+            GridDocument.Children.Add(new HistoryControl());
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -47,6 +48,7 @@ namespace DocumentModule
             //SelectedItemGetText((CategoryControl)sender);
             var lb = ((ListBox)sender);
             var item = (CategoryControl)lb.SelectedValue;
+
             //MessageBox.Show(string.Format("Я {0}", item.TextBlockCategory.Text));
             Collection_Create();
 
@@ -54,6 +56,8 @@ namespace DocumentModule
 
         private void Collection_Create()
         {
+            GridDocument.Children.Clear();
+            var doc = new ListBox();
             var bd = new DatabaseDoc();
             foreach (var item in bd.ReturnGost())
             {
@@ -62,13 +66,9 @@ namespace DocumentModule
                 a.FontSize = 18;
                 a.Height = 40;
                 a.Tag = Path.Combine(App.DocPath, item + ".pdf");
-                Docum.Items.Add(a);
+                doc.Items.Add(a);
             }
-        }
-
-        public string SelectedItemGetText(CategoryControl categoryControl)
-        {
-            return categoryControl.TextBlockCategory.Text;
+            GridDocument.Children.Add(doc);
         }
 
        private void Docum_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -77,13 +77,15 @@ namespace DocumentModule
            var lb = ((ListBox)sender);
            var item = (ListBoxItem)lb.SelectedValue;
 
-           DocumentPresenter Dp = new DocumentPresenter();
+           DocumentPresenter dp = new DocumentPresenter();
            var pdf = new MoonPdfPanel();
            pdf.OpenFile(((ListBoxItem) lb.SelectedItem).Tag.ToString());
+           new DatabaseDoc().SelectGost();
+
            pdf.ViewType = ViewType.SinglePage;
            pdf.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
-           Dp.GridDocument.Children.Add(pdf);
-           Dp.ShowDialog();
+           dp.GridDocument.Children.Add(pdf);
+           dp.ShowDialog();
         }
     }
 }
