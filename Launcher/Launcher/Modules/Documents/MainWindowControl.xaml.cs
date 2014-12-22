@@ -36,7 +36,7 @@ namespace DocumentModule
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             //kostyl из базы забирать категории
-            foreach (string item in new List<string>(new[] { "ГОСТ Р ЕСКД", "ГОСТ ЕСКД", "ОСТ", "Технические Регламент таможенного союза", "Приказы", "Распоряжения" }))
+            foreach (string item in new List<string>(new[] { "ГОСТ Р ЕСКД", "ГОСТ ЕСКД","ГОСТ ЕСТД","ГОСТ ЕСПД", "ОСТ", "Технические Регламент таможенного союза", "Приказы", "Распоряжения" }))
             {
                 var listBoxCategoryItem = new CategoryControl { TextBlockCategory = { Text = item } };
                 ListBoxDocument.Items.Add(listBoxCategoryItem);
@@ -80,13 +80,13 @@ namespace DocumentModule
         static public void ShowPdf(string path)
         {   
             var dp = new DocumentPresenter();
-            var pdf = new MoonPdfPanel();
+           var pdf = new MoonPdfPanel();
             pdf.OpenFile(path);
             DatabaseDoc.SelectGost(path);
-            pdf.ViewType = ViewType.SinglePage;
-            pdf.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
-            dp.GridDocument.Children.Add(pdf);
-            dp.ShowDialog();
+           pdf.ViewType = ViewType.SinglePage;
+           pdf.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
+           dp.GridDocument.Children.Add(pdf);
+           dp.ShowDialog();
         }
     }
 }
