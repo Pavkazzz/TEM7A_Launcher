@@ -74,20 +74,9 @@ namespace DocumentModule
        private void Docum_SelectionChanged(object sender, SelectionChangedEventArgs e)
        {
            var lb = ((ListBox)sender);
-           ShowPdf(((ListBoxItem)lb.SelectedItem).Tag.ToString());
+           Pdf.ShowPdf(((ListBoxItem)lb.SelectedItem).Tag.ToString());
         }
 
-        static public void ShowPdf(string path)
-        {   
-            var dp = new DocumentPresenter();
-            var pdf = new MoonPdfPanel();
-            pdf.OpenFile(path);
-            DatabaseDoc.AddToHistory(path);
-            pdf.ViewType = ViewType.SinglePage;
-            pdf.Zoom(2.0);
-            pdf.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
-            dp.GridDocument.Children.Add(pdf);
-            dp.ShowDialog();
-        }
+
     }
 }

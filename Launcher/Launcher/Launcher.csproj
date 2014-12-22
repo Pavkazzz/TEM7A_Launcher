@@ -57,6 +57,9 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="GhostscriptSharp">
+      <HintPath>Resources\GhostscriptSharp.dll</HintPath>
+    </Reference>
     <Reference Include="MahApps.Metro">
       <HintPath>..\packages\MahApps.Metro.0.14.0.0\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
@@ -126,6 +129,7 @@
     <Compile Include="Modules\Documents\MainWindowControl.xaml.cs">
       <DependentUpon>MainWindowControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Documents\Pdf.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Security.cs" />
     <Compile Include="User.cs" />

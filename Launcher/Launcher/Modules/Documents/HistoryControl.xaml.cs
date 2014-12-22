@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Launcher.Modules.Documents;
 using MahApps.Metro.Controls;
+using System.Drawing;
 
 namespace DocumentModule
 {
@@ -42,6 +44,13 @@ namespace DocumentModule
                // sp.Content = item;
                 sp.Click += sp_Click;
                 sp.TiltFactor = 1;
+                var uri = new Uri(string.Format("{0}.jpg", item));
+                if (File.Exists(uri.ToString()))
+                {
+                    var bitmap = new BitmapImage(uri);
+                    sp.Content = new ImageBrush(bitmap);
+                }
+                
                 sp.Width = GridHistory.ActualWidth/3;
                 sp.Height = GridHistory.ActualHeight/3;
                 Grid.SetRow(sp, count / 3);
@@ -54,7 +63,7 @@ namespace DocumentModule
 
         void sp_Click(object sender, RoutedEventArgs e)
         {
-            MainWindowControl.ShowPdf(((Tile) sender).Title);
+            Pdf.ShowPdf(((Tile) sender).Title);
         }
     }
 }

@@ -45,17 +45,40 @@ namespace Launcher.Modules.Documents
         public static void AddToHistory(string name)
         {
             ConnectToDB(App.ResourcePath);
-            SQLiteCommand sqLiteCommand = new SQLiteCommand(string.Format("Insert into History values('{0}')", name), _sqLiteConnectionDatabase);
+            //Все numb +1
+            SQLiteCommand sqLiteCommand = new SQLiteCommand("UPDATE History SET numb = numb + 1", _sqLiteConnectionDatabase);
             SQLiteDataReader sqlReader = sqLiteCommand.ExecuteReader();
             sqlReader.Close();
+
+            if (CheckHistory(name))
+            {
+                sqLiteCommand = new SQLiteCommand(string.Format("Update History set numb = 1 where Name = '{0}'", name), _sqLiteConnectionDatabase);
+                sqlReader = sqLiteCommand.ExecuteReader();
+                sqlReader.Close();
+            }
+            else
+            {
+
+                sqLiteCommand = new SQLiteCommand(string.Format("Insert into History values('{0}', 1)", name), _sqLiteConnectionDatabase);
+                sqlReader = sqLiteCommand.ExecuteReader();
+                sqlReader.Close();
+            }
+
             CloseConnectionSqlite();
+        }
+
+        private static bool CheckHistory(string name)
+        {
+            SQLiteCommand sqlCommand = new SQLiteCommand(string.Format("Select Name from History where Name = '{0}'", name), _sqLiteConnectionDatabase);
+            SQLiteDataReader sqlReader = sqlCommand.ExecuteReader();
+            return sqlReader.HasRows;
         }
 
         public static List<string> GetHistory()
         {
             ConnectToDB(App.ResourcePath);
             var result = new List<string>();
-            SQLiteCommand sqlCommand = new SQLiteCommand("select Name from History order by rowid desc limit 9", _sqLiteConnectionDatabase);
+            SQLiteCommand sqlCommand = new SQLiteCommand("select Name from History order by Numb limit 9", _sqLiteConnectionDatabase);
             SQLiteDataReader sqlReader = sqlCommand.ExecuteReader();
             if (sqlReader.HasRows)
             {
