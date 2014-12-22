@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SQLite;
 using Launcher;
+using Launcher.Modules.Documents;
 using MoonPdfLib;
 using Path = System.IO.Path;
 
@@ -24,14 +25,11 @@ namespace DocumentModule
     /// </summary>
     public partial class MainWindowControl : UserControl
     {
-        //public static readonly string ResourcePath = System.IO.Path.GetFullPath(@"../../Resources");
-        //public static readonly string ModulesPath = System.IO.Path.GetFullPath(@"../../Modules");
-        private SQLiteConnection _sqLiteConnectionDatabase;
+
 
         public MainWindowControl()
         {
             InitializeComponent();
-            ConnectToDB(App.ResourcePath);
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -51,37 +49,27 @@ namespace DocumentModule
             var item = (CategoryControl)lb.SelectedValue;
             //MessageBox.Show(string.Format("Я {0}", item.TextBlockCategory.Text));
             Collection_Create();
+
+        }
+
+        private void Collection_Create()
+        {
+            var bd = new DatabaseDoc();
+            foreach (var item in bd.ReturnGost())
+            {
+                ListBoxItem a = new ListBoxItem();
+                a.Content = item;
+                a.FontSize = 18;
+                a.Height = 40;
+                a.Tag = Path.Combine(App.DocPath, item + ".pdf");
+                Docum.Items.Add(a);
+            }
         }
 
         public string SelectedItemGetText(CategoryControl categoryControl)
         {
             return categoryControl.TextBlockCategory.Text;
         }
-
-        private void ConnectToDB(string path)
-        {   
-            _sqLiteConnectionDatabase = new SQLiteConnection(string.Format(@"Data Source={0}\Normative documents.db",path));
-            _sqLiteConnectionDatabase.Open();
-        }
-
-        public void Collection_Create()
-        {
-            SQLiteCommand SqlCommand = new SQLiteCommand("Select NAME_GOST,Source_To_Document from GOST_TABLE", _sqLiteConnectionDatabase);
-            SQLiteDataReader sqlReader = SqlCommand.ExecuteReader();
-            if (sqlReader.HasRows)
-            {
-                while (sqlReader.Read())
-                {
-                    ListBoxItem a = new ListBoxItem();
-                    a.Content = sqlReader["NAME_GOST"].ToString();
-                    a.FontSize = 18;
-                    a.Height = 40;
-                    a.Tag = Path.Combine(App.DocPath, sqlReader["NAME_GOST"] + ".pdf");
-                    Docum.Items.Add(a);   
-                }
-            }
-        }
-
 
        private void Docum_SelectionChanged(object sender, SelectionChangedEventArgs e)
        {
@@ -90,10 +78,8 @@ namespace DocumentModule
            var item = (ListBoxItem)lb.SelectedValue;
 
            DocumentPresenter Dp = new DocumentPresenter();
-           
            var pdf = new MoonPdfPanel();
-           //MessageBox.Show((lb.SelectedItem as ListBoxItem).Tag.ToString());
-           pdf.OpenFile((lb.SelectedItem as ListBoxItem).Tag.ToString());
+           pdf.OpenFile(((ListBoxItem) lb.SelectedItem).Tag.ToString());
            pdf.ViewType = ViewType.SinglePage;
            pdf.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
            Dp.GridDocument.Children.Add(pdf);
