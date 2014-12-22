@@ -58,6 +58,7 @@ namespace DocumentModule
         {
             GridDocument.Children.Clear();
             var doc = new ListBox();
+            doc.SelectionChanged += new SelectionChangedEventHandler(Docum_SelectionChanged);
             doc.AlternationCount = 2;
             var bd = new DatabaseDoc();
             foreach (var item in bd.ReturnGost())
