@@ -31,7 +31,7 @@ namespace Launcher
         {
             InitializeComponent();
             StartTimer();
-            TextBlockAny.Text = "Номер локомотива,\n номер поезда \n табельный номер";
+            TextBlockAny.Text = "ЭП10-001\n 062/061 \n табельный номер";
            
         }
 
