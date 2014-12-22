@@ -50,7 +50,7 @@
             </TextBox>
 
         </Grid>
-        <ListBox x:Name="ListBoxModules" Margin="-6,0,0,0" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="ListBoxModules_SelectionChanged">
+        <ListBox x:Name="ListBoxModules" Margin="0,0,0,0" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="ListBoxModules_SelectionChanged" Background="Green">
             <ListBox.Triggers>
                 <EventTrigger RoutedEvent="ListBox.SelectionChanged">
                     <BeginStoryboard>
@@ -65,22 +65,5 @@
         <Grid x:Name="ContentGrid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7" Background="#F2F1EF" HorizontalAlignment="Right">
            
         </Grid>
-
-        <!--<Controls:TransitioningContentControl x:Name="transitionins" Grid.Row="1" Grid.Column="2" Grid.RowSpan="8" Grid.ColumnSpan="5" Transition="LeftReplace" >
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-                <Calendar HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="421" Grid.RowSpan="2" Width="523"/>
-
-
-            </Grid>
-            
-        </Controls:TransitioningContentControl>-->
     </Grid>
 </Controls:MetroWindow>

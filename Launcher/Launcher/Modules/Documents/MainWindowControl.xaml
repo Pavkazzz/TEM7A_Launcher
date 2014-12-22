@@ -18,7 +18,7 @@
     </UserControl.Resources>
     <Grid Background="White">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="130"></ColumnDefinition>
+            <ColumnDefinition Width="129"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -31,10 +31,10 @@
         <Grid x:Name="GridDocument" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3">
            
         </Grid>
-        <ListBox x:Name="ListBoxDocument" Grid.Column="0" Grid.RowSpan="3" Background="#008000" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="ListBoxDocument_OnSelectionChanged" >
+        <ListBox x:Name="ListBoxDocument" Grid.Column="0" Grid.RowSpan="3" Background="#008000" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="ListBoxDocument_OnSelectionChanged" Margin="-10,0,0,0" >
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
-                    <Setter Property="Background" Value="white"/>
+                    <Setter Property="Background" Value="Green"/>
                     <Setter Property="Margin" Value="0"/>
                     <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
                     <Setter Property="ScrollViewer.VerticalScrollBarVisibility"   Value="Hidden"/>

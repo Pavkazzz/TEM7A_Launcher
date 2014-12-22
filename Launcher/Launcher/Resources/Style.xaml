@@ -10,9 +10,9 @@
     <!--60% Выделение-->
     <Color x:Key="AccentColor2">#26A65B</Color>
     <!--40% -->
-    <Color x:Key="AccentColor3">#E30000</Color> 
-    <!--20% Наведение--> 
-    <Color x:Key="AccentColor4">#FD0000</Color>
+    <Color x:Key="AccentColor3">#26A65B</Color> 
+    <!--20% Наведение-->
+    <Color x:Key="AccentColor4">#26A65B</Color>
 
     <!-- re-set brushes too -->
     <SolidColorBrush x:Key="HighlightBrush" Color="{StaticResource HighlightColor}" options:Freeze="True" />
