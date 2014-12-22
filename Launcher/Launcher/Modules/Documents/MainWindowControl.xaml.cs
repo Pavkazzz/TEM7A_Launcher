@@ -80,7 +80,7 @@ namespace DocumentModule
            DocumentPresenter dp = new DocumentPresenter();
            var pdf = new MoonPdfPanel();
            pdf.OpenFile(((ListBoxItem) lb.SelectedItem).Tag.ToString());
-           new DatabaseDoc().SelectGost();
+           //new DatabaseDoc().SelectGost();
 
            pdf.ViewType = ViewType.SinglePage;
            pdf.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
