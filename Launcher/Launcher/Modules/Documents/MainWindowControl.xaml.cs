@@ -58,8 +58,7 @@ namespace DocumentModule
             GridDocument.Children.Clear();
             var doc = new ListBox();
             doc.AlternationCount = 2;
-            var bd = new DatabaseDoc();
-            foreach (var item in bd.ReturnGost())
+            foreach (var item in DatabaseDoc.ReturnGost())
             {
                 ListBoxItem a = new ListBoxItem();
                 a.Content = item;
@@ -67,7 +66,7 @@ namespace DocumentModule
                 a.Height = 40;
                 a.Tag = Path.Combine(App.DocPath, item + ".pdf");
                 doc.Items.Add(a);
-        }
+            }
             GridDocument.Children.Add(doc);
         }
 
