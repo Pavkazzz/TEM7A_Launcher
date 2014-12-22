@@ -126,9 +126,6 @@
     <Compile Include="Modules\Documents\MainWindowControl.xaml.cs">
       <DependentUpon>MainWindowControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Documents\UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Security.cs" />
     <Compile Include="User.cs" />
@@ -173,10 +170,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Modules\Documents\MainWindowControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Modules\Documents\UserControl1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

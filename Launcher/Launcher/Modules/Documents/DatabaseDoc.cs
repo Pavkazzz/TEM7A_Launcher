@@ -50,5 +50,24 @@ namespace Launcher.Modules.Documents
             sqlReader.Close();
             CloseConnectionSqlite();
         }
+
+        public static List<string> GetHistory()
+        {
+            ConnectToDB(App.ResourcePath);
+            var result = new List<string>();
+            SQLiteCommand sqlCommand = new SQLiteCommand("select Name from History order by rowid desc limit 9", _sqLiteConnectionDatabase);
+            SQLiteDataReader sqlReader = sqlCommand.ExecuteReader();
+            if (sqlReader.HasRows)
+            {
+                while (sqlReader.Read())
+                {
+                    result.Add(sqlReader["Name"].ToString());  
+                }
+            }
+            sqlReader.Close();
+            CloseConnectionSqlite();
+            return result;
+            
+        } 
     }
 }

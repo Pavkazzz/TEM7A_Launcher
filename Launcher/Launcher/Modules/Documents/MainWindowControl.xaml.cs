@@ -57,7 +57,7 @@ namespace DocumentModule
         {
             GridDocument.Children.Clear();
             var doc = new ListBox();
-            doc.SelectionChanged += new SelectionChangedEventHandler(Docum_SelectionChanged);
+            doc.SelectionChanged += Docum_SelectionChanged;
             doc.AlternationCount = 2;
             foreach (var item in DatabaseDoc.ReturnGost())
             {
@@ -73,17 +73,21 @@ namespace DocumentModule
 
        private void Docum_SelectionChanged(object sender, SelectionChangedEventArgs e)
        {
-           
            var lb = ((ListBox)sender);
+           ShowPdf(((ListBoxItem)lb.SelectedItem).Tag.ToString());
+        }
 
-           DocumentPresenter dp = new DocumentPresenter();
-           var pdf = new MoonPdfPanel();
-           pdf.OpenFile(((ListBoxItem) lb.SelectedItem).Tag.ToString());
-           DatabaseDoc.SelectGost(((ListBoxItem)lb.SelectedItem).Tag.ToString());
-           pdf.ViewType = ViewType.SinglePage;
-           pdf.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
-           dp.GridDocument.Children.Add(pdf);
-           dp.ShowDialog();
+        static public void ShowPdf(string path)
+        {   
+            var dp = new DocumentPresenter();
+            var pdf = new MoonPdfPanel();
+            pdf.OpenFile(path);
+            DatabaseDoc.SelectGost(path);
+            pdf.ViewType = ViewType.SinglePage;
+            pdf.Zoom(2.0);
+            pdf.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
+            dp.GridDocument.Children.Add(pdf);
+            dp.ShowDialog();
         }
     }
 }
