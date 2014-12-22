@@ -75,6 +75,7 @@ namespace Launcher
                 item.ListBoxModuleControlMainGrid.Background = new SolidColorBrush(Colors.Gray);
                 item.TextBlockTitle.Foreground = new SolidColorBrush(Colors.White);
             }
+
             ((ListBoxItemModuleControl) lb.Items[lb.SelectedIndex]).ListBoxModuleControlMainGrid.Background =
                 new SolidColorBrush(Colors.White);
             ((ListBoxItemModuleControl) lb.Items[lb.SelectedIndex]).TextBlockTitle.Foreground =
