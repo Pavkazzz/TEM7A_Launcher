@@ -16,7 +16,20 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListBox x:Name="Docum" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="Docum_SelectionChanged"/>
+        <ListBox x:Name="Docum" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="Docum_SelectionChanged" AlternationCount="2">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Style.Triggers>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                            <Setter Property="Background" Value="#19f39611"/>
+                        </Trigger>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                            <Setter Property="Background" Value="#19000000"/>
+                        </Trigger>
+                    </Style.Triggers>
+                    </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
         <ListBox x:Name="ListBoxDocument" Grid.Column="0" Grid.RowSpan="3" Background="#008000" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="ListBoxDocument_OnSelectionChanged">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
