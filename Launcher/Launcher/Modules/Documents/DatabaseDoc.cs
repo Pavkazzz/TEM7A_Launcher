@@ -9,44 +9,43 @@ using System.Windows.Controls;
 
 namespace Launcher.Modules.Documents
 {
-    class DatabaseDoc
+    static class DatabaseDoc
     {
-        private SQLiteConnection _sqLiteConnectionDatabase;
+        static private SQLiteConnection _sqLiteConnectionDatabase;
         
-        private void ConnectToDB(string path)
+        static private void ConnectToDB(string path)
         {   
             _sqLiteConnectionDatabase = new SQLiteConnection(string.Format(@"Data Source={0}\Normative documents.db",path));
             _sqLiteConnectionDatabase.Open();
         }
 
-        private void CloseConnectionSqlite()
+        static private void CloseConnectionSqlite()
         {
             _sqLiteConnectionDatabase.Close();
         }
 
-        public List<string> ReturnGost()
+        static public List<string> ReturnGost()
         {
             ConnectToDB(App.ResourcePath);
             var result = new List<string>();
-            SQLiteCommand sqlCommand = new SQLiteCommand("Select NAME_GOST,Source_To_Document from GOST_TABLE", _sqLiteConnectionDatabase);
+            SQLiteCommand sqlCommand = new SQLiteCommand("Select Name, Path from Gost", _sqLiteConnectionDatabase);
             SQLiteDataReader sqlReader = sqlCommand.ExecuteReader();
             if (sqlReader.HasRows)
             {
                 while (sqlReader.Read())
                 {
-                    result.Add(sqlReader["NAME_GOST"].ToString());  
+                    result.Add(sqlReader["Name"].ToString());  
                 }
             }
             CloseConnectionSqlite();
             return result;
         }
 
-        internal void SelectGost()
+        public static void SelectGost(string name)
         {
             ConnectToDB(App.ResourcePath);
-
-            SQLiteCommand sqLiteCommand = new SQLiteCommand("Insert into ");
-
+            SQLiteCommand sqLiteCommand = new SQLiteCommand(string.Format("Insert into Gost values('{0}')", name));
+            SQLiteDataReader sqlReader = sqLiteCommand.ExecuteReader();
             CloseConnectionSqlite();
         }
     }
