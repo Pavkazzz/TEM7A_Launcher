@@ -50,6 +50,7 @@ namespace Launcher
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
             //КАСТЫЛЁК УАХАХАХАХ
+            //Модули
             ListBoxModules.Tag = Width - 150;
             var dataBase = new DataBase();
             foreach (var item in dataBase.SelectModulesList(App.ResourcePath))
@@ -67,13 +68,17 @@ namespace Launcher
 
         private void ListBoxModules_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var lb = (ListBox)sender;
+            var lb = (ListBox) sender;
             foreach (ListBoxItemModuleControl item in lb.Items)
             {
-                item.ListBoxModuleControlMainGrid.Background = new SolidColorBrush(Colors.Gray);
-            }
-            ((ListBoxItemModuleControl) lb.Items[lb.SelectedIndex]).ListBoxModuleControlMainGrid.Background = new SolidColorBrush(Colors.White);
-        }
 
+                item.ListBoxModuleControlMainGrid.Background = new SolidColorBrush(Colors.Gray);
+                item.TextBlockTitle.Foreground = new SolidColorBrush(Colors.White);
+            }
+            ((ListBoxItemModuleControl) lb.Items[lb.SelectedIndex]).ListBoxModuleControlMainGrid.Background =
+                new SolidColorBrush(Colors.White);
+            ((ListBoxItemModuleControl) lb.Items[lb.SelectedIndex]).TextBlockTitle.Foreground =
+                new SolidColorBrush(Colors.Black);
+        }
     }
 }

@@ -13,7 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SQLite;
+using Launcher;
 using MoonPdfLib;
+using Path = System.IO.Path;
 
 namespace DocumentModule
 {
@@ -22,14 +24,14 @@ namespace DocumentModule
     /// </summary>
     public partial class MainWindowControl : UserControl
     {
-        public static readonly string ResourcePath = System.IO.Path.GetFullPath(@"../../Resources");
-        public static readonly string ModulesPath = System.IO.Path.GetFullPath(@"../../Modules");
+        //public static readonly string ResourcePath = System.IO.Path.GetFullPath(@"../../Resources");
+        //public static readonly string ModulesPath = System.IO.Path.GetFullPath(@"../../Modules");
         private SQLiteConnection _sqLiteConnectionDatabase;
 
         public MainWindowControl()
         {
             InitializeComponent();
-            ConnectToDB(ResourcePath);
+            ConnectToDB(App.ResourcePath);
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -55,6 +57,7 @@ namespace DocumentModule
         {
             return categoryControl.TextBlockCategory.Text;
         }
+
         private void ConnectToDB(string path)
         {   
             _sqLiteConnectionDatabase = new SQLiteConnection(string.Format(@"Data Source={0}\Normative documents.db",path));
@@ -73,7 +76,7 @@ namespace DocumentModule
                     a.Content = sqlReader["NAME_GOST"].ToString();
                     a.FontSize = 18;
                     a.Height = 40;
-                    a.Tag = sqlReader["Source_To_Document"].ToString();
+                    a.Tag = Path.Combine(App.DocPath, sqlReader["NAME_GOST"] + ".pdf");
                     Docum.Items.Add(a);   
                 }
             }
