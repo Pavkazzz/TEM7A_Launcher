@@ -61,15 +61,15 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Label              Grid.Column="0" Grid.Row="0" Content="Табельный номер" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"   BorderBrush="Black" Background="White" BorderThickness="0.4" Margin="5,5,2.5,2.5" HorizontalAlignment="Stretch" />
-                    <TextBox            Grid.Column="1" Grid.Row="0" Name="EntryLogin"    VerticalAlignment="Bottom" Margin="2.5,2.5,5,2.5" Height="50"/>
+                    <TextBox            Grid.Column="1" Grid.Row="0" x:Name="EntryLogin"    VerticalAlignment="Bottom" Margin="2.5,2.5,5,2.5" Height="50"/>
                     <Label              Grid.Column="0" Grid.Row="1" Content="Пароль"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0.4" Margin="5,2.5,2.5,2.5" HorizontalAlignment="Stretch"  />
                     <PasswordBox        Grid.Column="1" Grid.Row="1" Name="EntryPassword"   VerticalAlignment="Center" Margin="2,3,5,2" Height="54"/>
                     <Label              Grid.Column="0" Grid.Row="2" Content="Номер локомотива" Background="White" Margin="5,2.5,2.5,2.5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black"  BorderThickness="0.4"  HorizontalAlignment="Stretch" />
                     <TextBox            Grid.Column="1" Grid.Row="2" x:Name="Number_Locomotion"  Margin="2.5,2.5,5,2.5"/>
                     <Label              Grid.Column="0" Grid.Row="3" Content="Номер поезда" Background="White" Margin="5,2.5,2.5,2.5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black"  BorderThickness="0.4" />
-                    <TextBox            Grid.Column="1" Grid.Row="3" Margin="2.5,2.5,5,2.5"/>
+                    <TextBox            Grid.Column="1" Grid.Row="3" x:Name="Number_Train" Margin="2.5,2.5,5,2.5"/>
                     <Label              Grid.Column="0" Grid.Row="4" Content="Вес поезда (тонн)" Background="White" Margin="5,2.5,2.5,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black"  BorderThickness="0.4"  HorizontalAlignment="Stretch" />
-                    <TextBox            Grid.Column="1" Grid.Row="4" Margin="2.5,2.5,5,5"/>
+                    <TextBox            Grid.Column="1" Grid.Row="4" x:Name="Weight_train" Margin="2.5,2.5,5,5"/>
                     <Button             Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Content="Вход в программу" Click="Button_Click" FontSize="19" Foreground="{StaticResource AccentColorBrush}"/>
                 </Grid>
             </TabItem>

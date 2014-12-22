@@ -34,21 +34,29 @@ namespace DocumentModule
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            Docum.Items.Clear();
+            Docum.Items.Refresh();
+            
             //kostyl из базы забирать категории
             foreach (string item in new List<string>(new[] { "ГОСТ", "ОСТ", "ТР", "Приказы", "Распоряжения" }))
             {
                 var listBoxCategoryItem = new CategoryControl { TextBlockCategory = { Text = item } };
                 ListBoxDocument.Items.Add(listBoxCategoryItem);
             }
+            
         }
 
         private void ListBoxDocument_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Docum.Items.Clear();
+            Docum.Items.Refresh();
             //SelectedItemGetText((CategoryControl)sender);
             var lb = ((ListBox)sender);
             var item = (CategoryControl)lb.SelectedValue;
             //MessageBox.Show(string.Format("Я {0}", item.TextBlockCategory.Text));
+            
             Collection_Create();
+           
         }
 
         public string SelectedItemGetText(CategoryControl categoryControl)
@@ -63,6 +71,10 @@ namespace DocumentModule
 
         public void Collection_Create()
         {
+            Docum.Items.Clear();
+            Docum.Items.Refresh();
+
+            
             SQLiteCommand SqlCommand = new SQLiteCommand("Select NAME_GOST,Source_To_Document from GOST_TABLE", _sqLiteConnectionDatabase);
             SQLiteDataReader sqlReader = SqlCommand.ExecuteReader();
             if (sqlReader.HasRows)
@@ -97,5 +109,11 @@ namespace DocumentModule
            Dp.GridDocument.Children.Add(pdf);
            Dp.ShowDialog();
         }
+
+       private void Docum_Loaded(object sender, RoutedEventArgs e)
+       {
+           Docum.Items.Clear();
+           Docum.Items.Refresh();
+       }
     }
 }

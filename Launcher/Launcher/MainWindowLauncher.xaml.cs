@@ -25,12 +25,12 @@ namespace Launcher
     /// Логика взаимодействия для MainWindowLauncher.xaml 
     /// </summary>
     public partial class MainWindowLauncher : MetroWindow
-    {
+    { //{string EntryLogin, string Number_Locomotion, string Number_Train, string Weight_train
         public MainWindowLauncher()
         {
             InitializeComponent();
             StartTimer();
-            TextBlockAny.Text = "Номер локомотива,\n номер поезда \n табельный номер";
+           // TextBlockAny.Text = EntryLogin.ToString()+",\n "+Number_Locomotion.ToString()+" \n "+Number_Train.ToString()+" "+Weight_train.ToString();
            
         }
 

@@ -27,6 +27,7 @@ namespace Launcher
         {
             if (_dataBase.Login(EntryLogin.Text, EntryPassword.Password))
             {
+                //new MainWindowLauncher(EntryLogin, Number_Locomotion,Number_Train, Weight_train).ShowDialog();
                 new MainWindowLauncher().ShowDialog();
             }
             else
