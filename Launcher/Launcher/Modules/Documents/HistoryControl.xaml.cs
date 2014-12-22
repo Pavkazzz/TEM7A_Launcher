@@ -45,7 +45,5 @@ namespace DocumentModule
                 count += 1;
             }
         }
-
-
     }
 }
