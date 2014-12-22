@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Launcher.Modules.Documents;
+using MoonPdfLib;
 
 namespace DocumentModule
 {
@@ -33,6 +35,12 @@ namespace DocumentModule
         private void Expander_OnExpanded(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            var pdf = ((DocumentPresenter) sender).GridDocument.Children[0];
+            DatabaseDoc.UpdatePage(((MoonPdfPanel)pdf).Tag.ToString(), ((MoonPdfPanel)pdf).GetCurrentPageNumber());
         }
     }
 }

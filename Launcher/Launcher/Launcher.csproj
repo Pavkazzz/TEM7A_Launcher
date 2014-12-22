@@ -116,6 +116,7 @@
     <Compile Include="ListBoxItemModuleControl.xaml.cs">
       <DependentUpon>ListBoxItemModuleControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Documents\Book.cs" />
     <Compile Include="Modules\Documents\CategoryControl.xaml.cs">
       <DependentUpon>CategoryControl.xaml</DependentUpon>
     </Compile>
