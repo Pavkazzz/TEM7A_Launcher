@@ -57,7 +57,7 @@ namespace DocumentModule
         {
             GridDocument.Children.Clear();
             var doc = new ListBox();
-            doc.SelectionChanged += new SelectionChangedEventHandler(Docum_SelectionChanged);
+            doc.SelectionChanged += Docum_SelectionChanged;
             doc.AlternationCount = 2;
             foreach (var item in DatabaseDoc.ReturnGost())
             {
@@ -80,13 +80,14 @@ namespace DocumentModule
         static public void ShowPdf(string path)
         {   
             var dp = new DocumentPresenter();
-           var pdf = new MoonPdfPanel();
+            var pdf = new MoonPdfPanel();
             pdf.OpenFile(path);
             DatabaseDoc.SelectGost(path);
-           pdf.ViewType = ViewType.SinglePage;
-           pdf.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
-           dp.GridDocument.Children.Add(pdf);
-           dp.ShowDialog();
+            pdf.ViewType = ViewType.SinglePage;
+            pdf.Zoom(2.0);
+            pdf.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
+            dp.GridDocument.Children.Add(pdf);
+            dp.ShowDialog();
         }
     }
 }
