@@ -39,6 +39,9 @@ namespace DocumentModule
             {
                 var sp = new Tile();
                 sp.Title = item;
+                sp.HorizontalContentAlignment = HorizontalAlignment.Center;
+                sp.VerticalContentAlignment = VerticalAlignment.Center;
+               // sp.Content = item;
                 sp.Click += sp_Click;
                 sp.TiltFactor = 1;
                 var uri = new Uri(string.Format("{0}.jpg", item));

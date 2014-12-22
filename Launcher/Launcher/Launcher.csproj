@@ -278,6 +278,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\libmupdf.dll" />
+    <Resource Include="Resources\Logo_C_Sharp.png" />
     <Content Include="Resources\MoonPdfLib.dll" />
     <Content Include="Resources\MouseKeyboardActivityMonitor.dll" />
   </ItemGroup>
