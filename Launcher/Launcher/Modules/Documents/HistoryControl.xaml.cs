@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Launcher.Modules.Documents;
 using MahApps.Metro.Controls;
 
 namespace DocumentModule
@@ -32,10 +33,11 @@ namespace DocumentModule
         private void GridHistory_Loaded(object sender, RoutedEventArgs e)
         {
             var count = 0;
-            foreach (var item in new List<string>(new[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" }))
+            foreach (var item in DatabaseDoc.GetHistory())
             {
                 var sp = new Tile();
                 sp.Title = item;
+                sp.Click += sp_Click;
                 sp.TiltFactor = 1;
                 sp.Width = GridHistory.ActualWidth/3;
                 sp.Height = GridHistory.ActualHeight/3;
@@ -43,7 +45,13 @@ namespace DocumentModule
                 Grid.SetColumn(sp, count % 3);
                 GridHistory.Children.Add(sp);
                 count += 1;
+                
             }
+        }
+
+        void sp_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindowControl.ShowPdf(((Tile) sender).Title);
         }
     }
 }
