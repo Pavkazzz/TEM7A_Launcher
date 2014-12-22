@@ -82,7 +82,7 @@ namespace DocumentModule
             var dp = new DocumentPresenter();
             var pdf = new MoonPdfPanel();
             pdf.OpenFile(path);
-            DatabaseDoc.SelectGost(path);
+            DatabaseDoc.AddToHistory(path);
             pdf.ViewType = ViewType.SinglePage;
             pdf.Zoom(2.0);
             pdf.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
