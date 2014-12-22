@@ -37,6 +37,7 @@ namespace Launcher.Modules.Documents
                     result.Add(sqlReader["Name"].ToString());  
                 }
             }
+            sqlReader.Close();
             CloseConnectionSqlite();
             return result;
         }
@@ -44,8 +45,9 @@ namespace Launcher.Modules.Documents
         public static void SelectGost(string name)
         {
             ConnectToDB(App.ResourcePath);
-            SQLiteCommand sqLiteCommand = new SQLiteCommand(string.Format("Insert into Gost values('{0}')", name));
+            SQLiteCommand sqLiteCommand = new SQLiteCommand(string.Format("Insert into History values('{0}')", name), _sqLiteConnectionDatabase);
             SQLiteDataReader sqlReader = sqLiteCommand.ExecuteReader();
+            sqlReader.Close();
             CloseConnectionSqlite();
         }
     }
