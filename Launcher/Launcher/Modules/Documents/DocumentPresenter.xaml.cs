@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,6 +23,16 @@ namespace DocumentModule
         public DocumentPresenter()
         {
             InitializeComponent();
+        }
+
+        private void UIElement_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Expander_OnExpanded(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
