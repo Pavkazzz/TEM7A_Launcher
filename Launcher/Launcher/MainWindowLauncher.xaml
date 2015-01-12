@@ -55,7 +55,7 @@
             <Label HorizontalAlignment="Right" Content="Виктор Викторович"  Grid.Column="6" Grid.Row="0" Foreground="White" HorizontalContentAlignment="Right" FontSize="15" />
             <TextBlock x:Name="TextBlockAny" Grid.Column="7" Grid.RowSpan="2"  TextWrapping="WrapWithOverflow" Foreground="White" FontSize="15" HorizontalAlignment="Right"/>
             <TextBox x:Name="TextBoxSearch" Controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="2" VerticalAlignment="Center"
-                     PreviewKeyDown="TextBoxSearch_PreviewKeyDown" GotFocus="TextBoxSearch_GotFocus" TextChanged="TextBoxSearch_OnTextChanged">
+                     PreviewKeyDown="TextBoxSearch_PreviewKeyDown" GotFocus="TextBoxSearch_GotFocus" TextChanged="TextBoxSearch_OnTextChanged" FontSize="20">
                 <TextBox.Style>
                     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource SearchMetroTextBox}"/>
                 </TextBox.Style>
