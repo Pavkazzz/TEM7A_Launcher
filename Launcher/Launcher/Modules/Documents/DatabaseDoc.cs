@@ -60,6 +60,7 @@ namespace Launcher.Modules.Documents
             else
             {
 
+
                 sqLiteCommand = new SQLiteCommand(string.Format("Insert into History values('{0}', 1, 0)", name), _sqLiteConnectionDatabase);
                 sqlReader = sqLiteCommand.ExecuteReader();
                 sqlReader.Close();
