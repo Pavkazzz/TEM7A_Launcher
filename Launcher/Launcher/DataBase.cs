@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SQLite;
 using System.Windows;
 
@@ -53,17 +54,13 @@ namespace Launcher
                 OpenConnectionSqlite(App.ResourcePath);
                 var sqlSelect = new SQLiteCommand("Select Title, Description from Modules", _sqLiteConnectionDatabase);
                 SQLiteDataReader sqlReader = sqlSelect.ExecuteReader();
-                if (sqlReader.HasRows)
+                foreach (DbDataRecord record in sqlReader)
                 {
-                    while (sqlReader.Read())
-                    {
-                        var menuItemControl = new ListBoxItemModuleControl();
-                        menuItemControl.TextBlockTitle.Text = sqlReader["Title"].ToString().ToUpper();
-                        menuItemControl.TextBlockDescription.Text = sqlReader["Description"].ToString();
-                        result.Add(menuItemControl);
-                    }
+                    var menuItemControl = new ListBoxItemModuleControl();
+                    menuItemControl.TextBlockTitle.Text = record["Title"].ToString().ToUpper();
+                    menuItemControl.TextBlockDescription.Text = record["Description"].ToString();
+                    result.Add(menuItemControl);  
                 }
-
                 sqlReader.Close();
                 CloseConnectionSqlite();
             }
