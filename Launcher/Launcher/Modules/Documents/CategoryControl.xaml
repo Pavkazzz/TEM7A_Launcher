@@ -7,7 +7,7 @@
              d:DesignHeight="300" d:DesignWidth="300" Height="131" Width="130" BorderThickness="1,0,0,0" Margin="-1,0,0,0">
     <Grid Background="Green">
         <Grid Background="White">
-        <TextBlock x:Name="TextBlockCategory" TextAlignment="Center" FontSize="16" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="TextBlockCategory" TextAlignment="Center" FontSize="16" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </Grid>
     </Grid>
 
