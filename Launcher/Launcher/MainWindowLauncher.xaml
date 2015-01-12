@@ -46,11 +46,28 @@
             <Label x:Name="DateTimeLabel"  HorizontalAlignment="Right" Grid.Column="6" Grid.Row="0" Grid.RowSpan="2" HorizontalContentAlignment="Right" Foreground="White" FontSize="17" VerticalAlignment="Bottom"/>
             <Label HorizontalAlignment="Right" Content="Виктор Викторович"  Grid.Column="6" Grid.Row="0" Foreground="White" HorizontalContentAlignment="Right" FontSize="15" Background="{StaticResource AccentColorBrush}" />
             <TextBlock x:Name="TextBlockAny" Grid.Column="7" Grid.RowSpan="2"  TextWrapping="WrapWithOverflow" Foreground="White" FontSize="15" HorizontalAlignment="Right"/>
-            <TextBox Controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="2" VerticalAlignment="Center">
+            <TextBox x:Name="TextBoxSearch" Controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="2" VerticalAlignment="Center"
+                     PreviewKeyDown="TextBoxSearch_PreviewKeyDown" GotFocus="TextBoxSearch_GotFocus" TextChanged="TextBoxSearch_OnTextChanged">
                 <TextBox.Style>
                     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource SearchMetroTextBox}"/>
                 </TextBox.Style>    
             </TextBox>
+            <Popup Width="{Binding RelativeSource={RelativeSource Self}, Path=PlacementTarget.ActualWidth}"
+                    Placement="Bottom" PlacementTarget="{Binding ElementName=TextBoxSearch}">
+                <Popup.Style>
+                    <Style TargetType="{x:Type Popup}">
+                        <Setter Property="IsOpen" Value="False" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsFocused, ElementName=TextBoxSearch}" Value="True">
+                                <Setter Property="IsOpen" Value="True" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Popup.Style>
+
+                <ListBox x:Name="ListBoxSearch" >
+                </ListBox>
+            </Popup>
 
         </Grid>
         <ListBox x:Name="ListBoxModules" Margin="0,0,0,0" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="ListBoxModules_SelectionChanged" Background="Green">

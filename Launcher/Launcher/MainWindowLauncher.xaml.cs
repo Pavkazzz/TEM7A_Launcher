@@ -83,5 +83,22 @@ namespace Launcher
 
             ContentGrid.Children.Clear();
         }
+
+        private void TextBoxSearch_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void TextBoxSearch_GotFocus(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void TextBoxSearch_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            ListBoxSearch.Items.Clear();
+
+
+        }
     }
 }
