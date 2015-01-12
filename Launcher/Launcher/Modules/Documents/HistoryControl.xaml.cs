@@ -28,9 +28,6 @@ namespace DocumentModule
         public HistoryControl()
         {
             InitializeComponent();
-
-             
-
         }
 
         private void GridHistory_Loaded(object sender, RoutedEventArgs e)
