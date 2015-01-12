@@ -80,6 +80,8 @@ namespace Launcher
                 new SolidColorBrush(Colors.White);
             ((ListBoxItemModuleControl) lb.Items[lb.SelectedIndex]).TextBlockTitle.Foreground =
                 new SolidColorBrush(Colors.Black);
+
+            ContentGrid.Children.Clear();
         }
     }
 }
