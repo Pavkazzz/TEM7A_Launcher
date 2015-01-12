@@ -124,6 +124,7 @@
     <Compile Include="Modules\Documents\DocumentPresenter.xaml.cs">
       <DependentUpon>DocumentPresenter.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Documents\Helper.cs" />
     <Compile Include="Modules\Documents\HistoryControl.xaml.cs">
       <DependentUpon>HistoryControl.xaml</DependentUpon>
     </Compile>

@@ -38,18 +38,17 @@ namespace DocumentModule
             //kostyl из базы забирать категории
             foreach (var item in DatabaseDoc.CategoryList())
             {
-                var listBoxCategoryItem = new CategoryControl { TextBlockCategory = { Text = item["Name"], Name = item["Table"] } };
+                var listBoxCategoryItem = new CategoryControl { TextBlockCategory = { Text = item.Name}, Name = item.TableName };
                 ListBoxDocument.Items.Add(listBoxCategoryItem);
             }
         }
 
         private void ListBoxDocument_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //SelectedItemGetText((CategoryControl)sender);
+            
             var lb = ((ListBox)sender);
             var item = (CategoryControl)lb.SelectedValue;
 
-            //MessageBox.Show(string.Format("Я {0}", item.TextBlockCategory.Text));
             Collection_Create(item.Name);
         }
 

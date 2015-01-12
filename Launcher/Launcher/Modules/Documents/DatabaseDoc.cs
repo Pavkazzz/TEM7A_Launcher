@@ -21,17 +21,15 @@ namespace Launcher.Modules.Documents
             _sqLiteConnectionDatabase.Close();
         }
 
-        public static List<Dictionary<string, string>> CategoryList()
+        public static List<Helper.Category> CategoryList()
         {
             ConnectToDB(App.ResourcePath);
-            var dict = new Dictionary<string, string>();
-            var result = new List<Dictionary<string, string>>();
+            var result = new List<Helper.Category>();
             var sqlCommand = new SQLiteCommand(string.Format("Select Name, TableName from CategoryDocuments"), _sqLiteConnectionDatabase);
             SQLiteDataReader sqlReader = sqlCommand.ExecuteReader();
             foreach (DbDataRecord record in sqlReader)
             {
-                dict.Add(record["Name"].ToString(), record["Table"].ToString());
-                result.Add(dict);
+                result.Add( new Helper.Category(record["Name"].ToString(), record["TableName"].ToString()));
             }
             sqlReader.Close();
             CloseConnectionSqlite();
