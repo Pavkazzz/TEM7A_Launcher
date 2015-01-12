@@ -36,9 +36,9 @@ namespace DocumentModule
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             //kostyl из базы забирать категории
-            foreach (string item in new List<string>(new[] { "ГОСТ Ж.Д. Подвижной состав","ГОСТ Р ЕСКД", "ГОСТ ЕСКД","ГОСТ ЕСТД","ГОСТ ЕСПД","ОСТ", "Технические Регламент таможенного союза","Инструкции", "Распоряжения", "Приказы" }))
+            foreach (var item in DatabaseDoc.CategoryList())
             {
-                var listBoxCategoryItem = new CategoryControl { TextBlockCategory = { Text = item } };
+                var listBoxCategoryItem = new CategoryControl { TextBlockCategory = { Text = item["Name"], Name = item["Table"] } };
                 ListBoxDocument.Items.Add(listBoxCategoryItem);
             }
         }
@@ -50,22 +50,22 @@ namespace DocumentModule
             var item = (CategoryControl)lb.SelectedValue;
 
             //MessageBox.Show(string.Format("Я {0}", item.TextBlockCategory.Text));
-            Collection_Create();
+            Collection_Create(item.Name);
         }
 
-        private void Collection_Create()
+        private void Collection_Create(string name)
         {
             GridDocument.Children.Clear();
             var doc = new ListBox();
             doc.SelectionChanged += Docum_SelectionChanged;
             doc.AlternationCount = 2;
-            foreach (var item in DatabaseDoc.ReturnGost())
+            foreach (var item in DatabaseDoc.GetCategory(name))
             {
                 ListBoxItem a = new ListBoxItem();
                 a.Content = item;
                 a.FontSize = 18;
                 a.Height = 40;
-                a.Tag = Path.Combine(App.DocPath, item + ".pdf");//
+                a.Tag = Path.Combine(App.DocPath, item.Replace("\r\n", ""), ".pdf");
                 doc.Items.Add(a);
         }
             GridDocument.Children.Add(doc);
