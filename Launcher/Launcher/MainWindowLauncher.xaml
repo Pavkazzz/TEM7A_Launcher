@@ -27,7 +27,15 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Grid x:Name="grid" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="7" Background="{StaticResource AccentColorBrush}">
+        <Grid x:Name="grid" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="7">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFAFBFA" Offset="0.014"/>
+                    <GradientStop Color="{DynamicResource AccentColor}" Offset="0.019"/>
+                    <GradientStop Color="Green" Offset="0.956"/>
+                    <GradientStop Color="Green" Offset="0.956"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -44,7 +52,7 @@
             </Grid.RowDefinitions>
             
             <Label x:Name="DateTimeLabel"  HorizontalAlignment="Right" Grid.Column="6" Grid.Row="0" Grid.RowSpan="2" HorizontalContentAlignment="Right" Foreground="White" FontSize="17" VerticalAlignment="Bottom"/>
-            <Label HorizontalAlignment="Right" Content="Виктор Викторович"  Grid.Column="6" Grid.Row="0" Foreground="White" HorizontalContentAlignment="Right" FontSize="15" Background="{StaticResource AccentColorBrush}" />
+            <Label HorizontalAlignment="Right" Content="Виктор Викторович"  Grid.Column="6" Grid.Row="0" Foreground="White" HorizontalContentAlignment="Right" FontSize="15" />
             <TextBlock x:Name="TextBlockAny" Grid.Column="7" Grid.RowSpan="2"  TextWrapping="WrapWithOverflow" Foreground="White" FontSize="15" HorizontalAlignment="Right"/>
             <TextBox x:Name="TextBoxSearch" Controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="2" VerticalAlignment="Center"
                      PreviewKeyDown="TextBoxSearch_PreviewKeyDown" GotFocus="TextBoxSearch_GotFocus" TextChanged="TextBoxSearch_OnTextChanged">
