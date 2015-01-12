@@ -22,8 +22,10 @@
 			
             
 		</Grid>
-        <Expander Header="Вернуться" Grid.Column="0" Grid.Row="0" ExpandDirection="Left" MouseLeftButtonDown="UIElement_OnMouseLeftButtonDown" Expanded="Expander_OnExpanded">
-        </Expander>
-
+        <Rectangle MouseLeftButtonDown="UIElement_OnMouseLeftButtonDown" Width="auto" Height="auto">
+            <Rectangle.Fill>
+           <VisualBrush Visual="{StaticResource appbar_arrow_left}" Stretch="Uniform"></VisualBrush>
+        </Rectangle.Fill>
+        </Rectangle>
     </Grid>
 </Window>
