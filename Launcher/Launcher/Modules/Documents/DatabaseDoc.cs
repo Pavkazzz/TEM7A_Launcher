@@ -62,27 +62,28 @@ namespace Launcher.Modules.Documents
             if (CheckHistory(name))
             {
                 sqLiteCommand = new SQLiteCommand(
-                    string.Format("Update History set numb = 1 where Name = '{0}'", name), _sqLiteConnectionDatabase);
-                sqlReader = sqLiteCommand.ExecuteReader();
-                sqlReader.Close();
+                    string.Format("Update History set numb = 1 where Name = '{0}'", name), _sqLiteConnectionDatabase);  
             }
             else
             {
                 sqLiteCommand = new SQLiteCommand(string.Format("Insert into History values('{0}', 1, 0)", name),
-                    _sqLiteConnectionDatabase);
-                sqlReader = sqLiteCommand.ExecuteReader();
-                sqlReader.Close();
+                    _sqLiteConnectionDatabase);   
             }
-
+            sqlReader = sqLiteCommand.ExecuteReader();
+            sqlReader.Close();
             CloseConnectionSqlite();
         }
 
         private static bool CheckHistory(string name)
         {
+            ConnectToDB(App.ResourcePath);
             var sqlCommand = new SQLiteCommand(string.Format("Select Name from History where Name = '{0}'", name),
                 _sqLiteConnectionDatabase);
             SQLiteDataReader sqlReader = sqlCommand.ExecuteReader();
-            return sqlReader.HasRows;
+            var result = sqlReader.HasRows;
+            sqlReader.Close();
+            CloseConnectionSqlite();
+            return result;
         }
 
         public static List<Book> GetHistory()

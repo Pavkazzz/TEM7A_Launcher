@@ -63,8 +63,11 @@ namespace DocumentModule
                 ListBoxItem a = new ListBoxItem();
                 a.Content = item;
                 a.FontSize = 18;
-                a.Height = 40;
-                a.Tag = Path.Combine(App.DocPath, item.Replace("\r\n", ""), ".pdf");
+                a.Height = 50;
+                //TODO WIDTH
+                a.Width = Width;
+                
+                a.Tag = Path.Combine(App.DocPath, item.Replace('\r', ' ').Replace('\n', ' ').Replace('\"', ' ').Replace('"', ' ') + ".pdf");
                 doc.Items.Add(a);
         }
             GridDocument.Children.Add(doc);
