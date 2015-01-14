@@ -108,5 +108,10 @@ namespace Launcher
             
 
         }
+
+        private void ListBoxSearch_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

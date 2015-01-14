@@ -7,6 +7,7 @@
         Title="Помощник машиниста мобильное приложение" 
         WindowState="Maximized" WindowStyle="None" 
         Loaded="MetroWindow_Loaded">
+
     <Grid x:Name="MainGrid" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -61,7 +62,7 @@
                 </TextBox.Style>
             </TextBox>
             <Popup Width="{Binding RelativeSource={RelativeSource Self}, Path=PlacementTarget.ActualWidth}"
-                    Placement="Bottom" PlacementTarget="{Binding ElementName=TextBoxSearch}">
+                    Placement="Bottom" PlacementTarget="{Binding ElementName=TextBoxSearch}"   >
                 <Popup.Style>
                     <Style TargetType="{x:Type Popup}">
                         <Setter Property="IsOpen" Value="False" />
@@ -73,7 +74,21 @@
                     </Style>
                 </Popup.Style>
 
-                <ListBox x:Name="ListBoxSearch" >
+                <ListBox x:Name="ListBoxSearch" Background="#008000" ScrollViewer.VerticalScrollBarVisibility="Hidden" FontSize="18" SelectionChanged="ListBoxSearch_SelectionChanged">
+                <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Background" Value="WhiteSmoke"/>
+                            <Setter Property="Margin" Value="1"/>
+                            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+                            <Setter Property="ScrollViewer.VerticalScrollBarVisibility"   Value="Hidden"/>
+                            <Setter Property="BorderThickness" Value="1,0,0,0"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="White"></Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                </ListBox.ItemContainerStyle>    
                 </ListBox>
             </Popup>
 

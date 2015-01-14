@@ -55,7 +55,7 @@ namespace DocumentModule
         private void Collection_Create(string name)
         {
             GridDocument.Children.Clear();
-            var doc = new ListBox();
+           ControlTextListBoxWrap doc = new ControlTextListBoxWrap();
 
             doc.HorizontalContentAlignment = HorizontalAlignment.Stretch;
             doc.VerticalContentAlignment = VerticalAlignment.Bottom;
@@ -63,6 +63,7 @@ namespace DocumentModule
             doc.AlternationCount = 2;
             foreach (var item in DatabaseDoc.GetCategory(name))
             {
+                
                 TextBlock a = new TextBlock();
                 a.Text = item;
                 a.TextAlignment = TextAlignment.Justify;
@@ -71,9 +72,9 @@ namespace DocumentModule
                 a.TextWrapping = TextWrapping.Wrap;
                 a.FontSize = 18;
                 a.Height = 70;
-                a.Width = 1000;
+                a.Width = 1300;
                 //TODO WIDTH
-                a.Width = Width;
+             //   a.Width = Width;
                 
                 a.Tag = Path.Combine(App.DocPath, Correct(item) + ".pdf");
                 doc.Items.Add(a);

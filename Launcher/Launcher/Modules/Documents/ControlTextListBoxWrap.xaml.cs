@@ -18,11 +18,11 @@ namespace Launcher.Modules.Documents
     /// <summary>
     /// Логика взаимодействия для ControlTextListBoxWrap.xaml
     /// </summary>
-    public partial class ControlTextListBoxWrap : UserControl
+    public partial class ControlTextListBoxWrap : ListBox
     {
         public ControlTextListBoxWrap()
         {
-            InitializeComponent();
+           
         }
     }
 }
