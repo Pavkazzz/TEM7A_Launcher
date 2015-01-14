@@ -132,6 +132,7 @@
       <DependentUpon>MainWindowControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modules\Documents\Pdf.cs" />
+    <Compile Include="Modules\Documents\Search.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Security.cs" />
     <Compile Include="User.cs" />

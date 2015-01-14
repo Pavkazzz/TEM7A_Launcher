@@ -1,12 +1,16 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.Common;
 using System.Data.SQLite;
+using System.Net.Mime;
 
 namespace Launcher.Modules.Documents
 {
     internal static class DatabaseDoc
     {
+        
+
         private static SQLiteConnection _sqLiteConnectionDatabase;
 
         private static void ConnectToDB(string path)
@@ -111,6 +115,55 @@ namespace Launcher.Modules.Documents
             SQLiteDataReader sqlReader = sqLiteCommand.ExecuteReader();
             sqlReader.Close();
             CloseConnectionSqlite();
+        }
+
+
+        public static List<string> Search(string searchstring)
+        {
+            
+
+            var result = new List<string>();
+
+            List<string> tables = GetTables(App.ResourcePath, new List<string>{"History", "CategoryDocuments"});
+
+
+            ConnectToDB(App.ResourcePath);
+            SQLiteDataReader sqlReader = null;
+            foreach (var table in tables)
+            {
+                SQLiteCommand sqLiteCommand =
+                new SQLiteCommand(string.Format("Select Name from {0} where Name LIKE '%{1}%'", table, searchstring),
+                    _sqLiteConnectionDatabase);
+                sqlReader = sqLiteCommand.ExecuteReader();
+                foreach (DbDataRecord record in sqlReader)
+                {
+                    result.Add(record["Name"].ToString());
+                }
+            }
+            if (sqlReader != null && !sqlReader.IsClosed) sqlReader.Close();
+            CloseConnectionSqlite();
+
+            return result;
+        }
+
+        private static List<string> GetTables(string path, List<string> excludeTable)
+        {
+            ConnectToDB(path);
+            List<string> result = new List<string>();
+            var sqlCommand = new SQLiteCommand("select name from sqlite_master where type = 'table'",
+                _sqLiteConnectionDatabase);
+            SQLiteDataReader sqlReader = sqlCommand.ExecuteReader();
+            foreach (DbDataRecord record in sqlReader)
+            {
+                if (!excludeTable.Contains(record["name"].ToString()))
+                {
+                    result.Add(record["name"].ToString());
+                }
+            }
+            sqlReader.Close();
+            CloseConnectionSqlite();
+            return result;
+
         }
     }
 }

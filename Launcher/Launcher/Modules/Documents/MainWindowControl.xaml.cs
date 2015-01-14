@@ -67,13 +67,18 @@ namespace DocumentModule
                 //TODO WIDTH
                 a.Width = Width;
                 
-                a.Tag = Path.Combine(App.DocPath, item.Replace('\r', ' ').Replace('\n', ' ').Replace('\"', ' ').Replace('"', ' ') + ".pdf");
+                a.Tag = Path.Combine(App.DocPath, Correct(item) + ".pdf");
                 doc.Items.Add(a);
         }
             GridDocument.Children.Add(doc);
         }
 
-       private void Docum_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private static string Correct(string item)
+        {
+            return item.Replace('\r', ' ').Replace('\n', ' ').Replace('\"', ' ').Replace('"', ' ');
+        }
+
+        private void Docum_SelectionChanged(object sender, SelectionChangedEventArgs e)
        {
            var lb = ((ListBox)sender);
            Pdf.ShowPdf(((ListBoxItem)lb.SelectedItem).Tag.ToString(), 0);
