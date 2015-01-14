@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DocumentModule;
+using Launcher.Modules.Documents;
 using MahApps.Metro.Controls;
 using System.Windows.Threading;
 using System.Xml;
@@ -98,6 +99,13 @@ namespace Launcher
         {
             ListBoxSearch.Items.Clear();
 
+            var search = new Search();
+
+            foreach (var searchresult in search.DoSearch(((TextBox) sender).Text))
+            {
+                ListBoxSearch.Items.Add(searchresult);
+            }
+            
 
         }
     }

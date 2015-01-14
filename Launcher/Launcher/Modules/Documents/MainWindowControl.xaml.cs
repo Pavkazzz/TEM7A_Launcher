@@ -72,11 +72,18 @@ namespace DocumentModule
                 a.FontSize = 18;
                 a.Height = 70;
                 a.Width = 1000;
-                //TODO WIDTH 
-                a.Tag = Path.Combine(App.DocPath, item.Replace('\r', ' ').Replace('\n', ' ').Replace('\"', ' ').Replace('"', ' ') + ".pdf");
+                //TODO WIDTH
+                a.Width = Width;
+                
+                a.Tag = Path.Combine(App.DocPath, Correct(item) + ".pdf");
                 doc.Items.Add(a);
         }
             GridDocument.Children.Add(doc);
+        }
+
+        private static string Correct(string item)
+        {
+            return item.Replace('\r', ' ').Replace('\n', ' ').Replace('\"', ' ').Replace('"', ' ');
         }
 
        private void Docum_SelectionChanged(object sender, SelectionChangedEventArgs e)
