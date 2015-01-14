@@ -38,9 +38,14 @@
                     <Setter Property="Margin" Value="0"/>
                     <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
                     <Setter Property="ScrollViewer.VerticalScrollBarVisibility"   Value="Hidden"/>
-                    <Setter Property="BorderThickness" Value="0,0,0,0"/>
+                    <Setter Property="BorderThickness" Value="0,0,0,0"/>   
                 </Style>
             </ListBox.ItemContainerStyle>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Vertical" IsItemsHost="True"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
         </ListBox>
     </Grid>
 </UserControl>
