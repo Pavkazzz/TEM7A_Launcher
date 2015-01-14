@@ -74,7 +74,7 @@
                     </Style>
                 </Popup.Style>
 
-                <ListBox x:Name="ListBoxSearch" Background="#008000" ScrollViewer.VerticalScrollBarVisibility="Hidden" FontSize="18" SelectionChanged="ListBoxSearch_SelectionChanged">
+                <ListBox x:Name="ListBoxSearch" Background="#008000" ScrollViewer.VerticalScrollBarVisibility="Hidden" FontSize="18" >
                 <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem">
                             <Setter Property="Background" Value="WhiteSmoke"/>

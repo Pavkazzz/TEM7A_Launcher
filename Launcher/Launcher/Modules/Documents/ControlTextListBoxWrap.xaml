@@ -1,9 +1,9 @@
 ﻿<ListBox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
     <ListBox.ItemTemplate>
         <DataTemplate>
-            <WrapPanel>
+            <StackPanel>
                 <TextBlock TextWrapping="Wrap"></TextBlock>
-            </WrapPanel>
+            </StackPanel>
         </DataTemplate>
     </ListBox.ItemTemplate>
 </ListBox>
