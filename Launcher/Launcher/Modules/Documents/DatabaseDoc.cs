@@ -6,6 +6,7 @@ using System.Data.Common;
 using System.Data.SQLite;
 using System.Net.Mime;
 using System.Data.SQLite.Linq;
+using Launcher.Annotations;
 
 namespace Launcher.Modules.Documents
 {
@@ -62,33 +63,33 @@ namespace Launcher.Modules.Documents
             ConnectToDB(App.ResourcePath);
             //Все numb +1
             var sqLiteCommand = new SQLiteCommand("UPDATE History SET numb = numb + 1", _sqLiteConnectionDatabase);
-            SQLiteDataReader sqlReader = sqLiteCommand.ExecuteReader();
-          //  sqlReader.Close();
-
+            sqLiteCommand.ExecuteReader();
+            //sqlReader.Close();
+            
             if (CheckHistory(name))
             {
                 sqLiteCommand = new SQLiteCommand(
-                    string.Format("Update History set numb = 1 where Name = '{0}'", name), _sqLiteConnectionDatabase);  
+                    string.Format("Update History set numb = 1 where Name = '{0}'", name), _sqLiteConnectionDatabase);
+                var sqlReader = sqLiteCommand.ExecuteReader();
+                sqlReader.Close();
             }
             else
             {
                 sqLiteCommand = new SQLiteCommand(string.Format("Insert into History values('{0}', 1, 0)", name),
-                    _sqLiteConnectionDatabase);   
+                    _sqLiteConnectionDatabase);
+                var sqlReader = sqLiteCommand.ExecuteReader();
+                sqlReader.Close();
             }
-            sqlReader = sqLiteCommand.ExecuteReader();
-            sqlReader.Close();
             CloseConnectionSqlite();
         }
 
         private static bool CheckHistory(string name)
         {
-            ConnectToDB(App.ResourcePath);
             var sqlCommand = new SQLiteCommand(string.Format("Select Name from History where Name = '{0}'", name),
                 _sqLiteConnectionDatabase);
             SQLiteDataReader sqlReader = sqlCommand.ExecuteReader();
             var result = sqlReader.HasRows;
             sqlReader.Close();
-            CloseConnectionSqlite();
             return result;
         }
 
@@ -165,15 +166,6 @@ namespace Launcher.Modules.Documents
             sqlReader.Close();
             CloseConnectionSqlite();
             return result;
-        }
-
-        [SQLiteFunction(Name = "MYSEQUENCE", FuncType = FunctionType.Collation)]
-        class MySequence : SQLiteFunction
-        {
-            public override int Compare(string param1, string param2)
-            {
-                return String.Compare(param1, param2, StringComparison.OrdinalIgnoreCase);
-            }
         }
     }
 }
