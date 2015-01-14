@@ -293,6 +293,7 @@
   <ItemGroup>
     <Content Include="Resources\GhostscriptSharp.dll" />
     <Content Include="Resources\GhostscriptSharp.pdb" />
+    <Resource Include="Resources\LALALA.png" />
     <Content Include="Resources\libmupdf.dll" />
     <Resource Include="Resources\Logo_C_Sharp.png" />
     <Content Include="Resources\MoonPdfLib.dll" />

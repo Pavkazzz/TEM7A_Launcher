@@ -22,10 +22,7 @@
 			
             
 		</Grid>
-        <Rectangle MouseLeftButtonDown="UIElement_OnMouseLeftButtonDown" Width="auto" Height="auto">
-            <Rectangle.Fill>
-           <VisualBrush Visual="{StaticResource appbar_layout_collapse_left}" Stretch="Uniform"></VisualBrush>
-        </Rectangle.Fill>
-        </Rectangle>
+        <Image Grid.Row="0" Grid.Column="0" Source="../../Resources/LALALA.png" MouseLeftButtonDown="UIElement_OnMouseLeftButtonDown"></Image>
+
     </Grid>
 </Window>
