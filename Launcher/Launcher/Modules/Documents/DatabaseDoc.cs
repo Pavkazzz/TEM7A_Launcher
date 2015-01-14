@@ -63,7 +63,7 @@ namespace Launcher.Modules.Documents
             //Все numb +1
             var sqLiteCommand = new SQLiteCommand("UPDATE History SET numb = numb + 1", _sqLiteConnectionDatabase);
             SQLiteDataReader sqlReader = sqLiteCommand.ExecuteReader();
-            sqlReader.Close();
+          //  sqlReader.Close();
 
             if (CheckHistory(name))
             {

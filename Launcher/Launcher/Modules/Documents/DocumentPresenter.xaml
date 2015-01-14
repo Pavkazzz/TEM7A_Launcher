@@ -24,7 +24,7 @@
 		</Grid>
         <Rectangle MouseLeftButtonDown="UIElement_OnMouseLeftButtonDown" Width="auto" Height="auto">
             <Rectangle.Fill>
-           <VisualBrush Visual="{StaticResource appbar_arrow_left}" Stretch="Uniform"></VisualBrush>
+           <VisualBrush Visual="{StaticResource appbar_layout_collapse_left}" Stretch="Uniform"></VisualBrush>
         </Rectangle.Fill>
         </Rectangle>
     </Grid>

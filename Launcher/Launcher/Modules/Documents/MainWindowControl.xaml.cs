@@ -64,12 +64,12 @@ namespace DocumentModule
             foreach (var item in DatabaseDoc.GetCategory(name))
             {
                 
-                TextBlock a = new TextBlock();
-                a.Text = item;
-                a.TextAlignment = TextAlignment.Justify;
+                ListBoxItem a = new ListBoxItem();
+                a.Content = item;
+                //a.TextAlignment = TextAlignment.Justify;
                 a.HorizontalAlignment = HorizontalAlignment.Stretch;
                 a.VerticalAlignment = VerticalAlignment.Center;
-                a.TextWrapping = TextWrapping.Wrap;
+               // a.TextWrapping = TextWrapping.Wrap;
                 a.FontSize = 18;
                 a.Height = 70;
                 a.Width = 1300;
@@ -89,9 +89,10 @@ namespace DocumentModule
 
        private void Docum_SelectionChanged(object sender, SelectionChangedEventArgs e)
        {
-           var lb = ((ListBox)sender);
-           Pdf.ShowPdf(((ListBoxItem)lb.SelectedItem).Tag.ToString(), 0);
-        }
+           var lb = ((ControlTextListBoxWrap)sender);
+          Pdf.ShowPdf(((ListBoxItem)lb.SelectedItem).Tag.ToString(), 0);
+         
+       }
 
 
     }
