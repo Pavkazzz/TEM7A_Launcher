@@ -1,21 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Data.SQLite;
 using Launcher;
 using Launcher.Modules.Documents;
-using MoonPdfLib;
 using Path = System.IO.Path;
 
 namespace DocumentModule
@@ -55,10 +41,12 @@ namespace DocumentModule
         private void Collection_Create(string name)
         {
             GridDocument.Children.Clear();
-           ControlTextListBoxWrap doc = new ControlTextListBoxWrap();
+            var doc = new ControlTextListBoxWrap
+            {
+                HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                VerticalContentAlignment = VerticalAlignment.Bottom
+            };
 
-            doc.HorizontalContentAlignment = HorizontalAlignment.Stretch;
-            doc.VerticalContentAlignment = VerticalAlignment.Bottom;
             doc.SelectionChanged += Docum_SelectionChanged;
             doc.AlternationCount = 2;
             foreach (var item in DatabaseDoc.GetCategory(name))
@@ -69,16 +57,16 @@ namespace DocumentModule
                 //a.TextAlignment = TextAlignment.Justify;
                 a.HorizontalAlignment = HorizontalAlignment.Stretch;
                 a.VerticalAlignment = VerticalAlignment.Center;
-               // a.TextWrapping = TextWrapping.Wrap;
+                // a.TextWrapping = TextWrapping.Wrap;
                 a.FontSize = 18;
                 a.Height = 70;
                 a.Width = 1300;
                 //TODO WIDTH
-             //   a.Width = Width;
+                //a.Width = Width;
                 
                 a.Tag = Path.Combine(App.DocPath, Correct(item) + ".pdf");
                 doc.Items.Add(a);
-        }
+            }
             GridDocument.Children.Add(doc);
         }
 
@@ -89,8 +77,8 @@ namespace DocumentModule
 
        private void Docum_SelectionChanged(object sender, SelectionChangedEventArgs e)
        {
-           var lb = ((ControlTextListBoxWrap)sender);
-          Pdf.ShowPdf(((ListBoxItem)lb.SelectedItem).Tag.ToString(), 0);
+            var lb = ((ControlTextListBoxWrap)sender);
+            Pdf.ShowPdf(((ListBoxItem)lb.SelectedItem).Tag.ToString(), 0);
          
        }
 
