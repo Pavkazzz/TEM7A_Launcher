@@ -120,6 +120,9 @@
     <Compile Include="Modules\Documents\CategoryControl.xaml.cs">
       <DependentUpon>CategoryControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Documents\ControlTextListBoxWrap.xaml.cs">
+      <DependentUpon>ControlTextListBoxWrap.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Documents\DatabaseDoc.cs" />
     <Compile Include="Modules\Documents\DocumentPresenter.xaml.cs">
       <DependentUpon>DocumentPresenter.xaml</DependentUpon>
@@ -167,6 +170,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Modules\Documents\ControlTextListBoxWrap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modules\Documents\DocumentPresenter.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -188,6 +195,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

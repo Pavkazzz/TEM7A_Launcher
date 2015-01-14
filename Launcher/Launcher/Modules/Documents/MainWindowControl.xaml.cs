@@ -56,17 +56,23 @@ namespace DocumentModule
         {
             GridDocument.Children.Clear();
             var doc = new ListBox();
+
+            doc.HorizontalContentAlignment = HorizontalAlignment.Stretch;
+            doc.VerticalContentAlignment = VerticalAlignment.Bottom;
             doc.SelectionChanged += Docum_SelectionChanged;
             doc.AlternationCount = 2;
             foreach (var item in DatabaseDoc.GetCategory(name))
             {
-                ListBoxItem a = new ListBoxItem();
-                a.Content = item;
+                TextBlock a = new TextBlock();
+                a.Text = item;
+                a.TextAlignment = TextAlignment.Justify;
+                a.HorizontalAlignment = HorizontalAlignment.Stretch;
+                a.VerticalAlignment = VerticalAlignment.Center;
+                a.TextWrapping = TextWrapping.Wrap;
                 a.FontSize = 18;
-                a.Height = 50;
-                //TODO WIDTH
-                a.Width = Width;
-                
+                a.Height = 70;
+                a.Width = 1000;
+                //TODO WIDTH 
                 a.Tag = Path.Combine(App.DocPath, item.Replace('\r', ' ').Replace('\n', ' ').Replace('\"', ' ').Replace('"', ' ') + ".pdf");
                 doc.Items.Add(a);
         }
