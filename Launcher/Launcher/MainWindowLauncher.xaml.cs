@@ -97,6 +97,7 @@ namespace Launcher
 
         private void TextBoxSearch_OnTextChanged(object sender, TextChangedEventArgs e)
         {
+            var now = DateTime.Now;
             ListBoxSearch.Items.Clear();
 
             var search = new Search();
@@ -106,7 +107,7 @@ namespace Launcher
                 ListBoxSearch.Items.Add(searchresult);
             }
             
-
+            Console.WriteLine((now - DateTime.Now).TotalSeconds);
         }
     }
 }

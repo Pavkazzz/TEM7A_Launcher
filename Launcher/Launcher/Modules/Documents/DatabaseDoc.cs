@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.Common;
 using System.Data.SQLite;
 using System.Net.Mime;
+using System.Data.SQLite.Linq;
 
 namespace Launcher.Modules.Documents
 {
@@ -132,7 +134,7 @@ namespace Launcher.Modules.Documents
             foreach (var table in tables)
             {
                 SQLiteCommand sqLiteCommand =
-                new SQLiteCommand(string.Format("Select Name from {0} where Name LIKE '%{1}%'", table, searchstring),
+                new SQLiteCommand(string.Format("Select Name from {0} where Name LIKE '%{1}%' COLLATE NOCASE", table, searchstring),
                     _sqLiteConnectionDatabase);
                 sqlReader = sqLiteCommand.ExecuteReader();
                 foreach (DbDataRecord record in sqlReader)
@@ -163,7 +165,15 @@ namespace Launcher.Modules.Documents
             sqlReader.Close();
             CloseConnectionSqlite();
             return result;
+        }
 
+        [SQLiteFunction(Name = "MYSEQUENCE", FuncType = FunctionType.Collation)]
+        class MySequence : SQLiteFunction
+        {
+            public override int Compare(string param1, string param2)
+            {
+                return String.Compare(param1, param2, StringComparison.OrdinalIgnoreCase);
+            }
         }
     }
 }
