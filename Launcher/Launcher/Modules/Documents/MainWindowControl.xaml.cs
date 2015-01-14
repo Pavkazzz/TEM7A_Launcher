@@ -1,21 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Data.SQLite;
 using Launcher;
 using Launcher.Modules.Documents;
-using MoonPdfLib;
 using Path = System.IO.Path;
 
 namespace DocumentModule
@@ -80,7 +66,7 @@ namespace DocumentModule
                 
                 a.Tag = Path.Combine(App.DocPath, Correct(item) + ".pdf");
                 doc.Items.Add(a);
-        }
+            }
             GridDocument.Children.Add(doc);
         }
 
@@ -91,8 +77,8 @@ namespace DocumentModule
 
        private void Docum_SelectionChanged(object sender, SelectionChangedEventArgs e)
        {
-           var lb = ((ControlTextListBoxWrap)sender);
-          Pdf.ShowPdf(((ListBoxItem)lb.SelectedItem).Tag.ToString(), 0);
+            var lb = ((ControlTextListBoxWrap)sender);
+            Pdf.ShowPdf(((ListBoxItem)lb.SelectedItem).Tag.ToString(), 0);
          
        }
 
