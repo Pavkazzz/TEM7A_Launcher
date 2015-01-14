@@ -14,7 +14,8 @@ namespace Launcher.Modules.Documents
 
         public Book()
         {
-            
+            Name = string.Empty;
+            Page = 0;
         }
 
         public Book(string name, int page)

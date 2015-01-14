@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Odbc;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DocumentModule;
 using MoonPdfLib;
-using GhostscriptSharp;
 
 namespace Launcher.Modules.Documents
 {
@@ -17,7 +11,13 @@ namespace Launcher.Modules.Documents
         {
             var dp = new DocumentPresenter();
             var pdf = new MoonPdfPanel();
-            pdf.OpenFile(path);
+            if (File.Exists(path)) pdf.OpenFile(path);
+            else
+            {
+                Console.WriteLine(@"Файл не найден:" + path);
+                return;
+            }
+
             pdf.Tag = path;
             DatabaseDoc.AddToHistory(path);
             pdf.GotoPage(page);
@@ -31,7 +31,7 @@ namespace Launcher.Modules.Documents
         
         static public void GeneratePageThumb(string path)
         {
-            //GhostscriptWrapper.GeneratePageThumb(path, string.Format("{0}.jpg", path), 1, 750, 750, 1000, 1000);
+            
         }
     }
 }

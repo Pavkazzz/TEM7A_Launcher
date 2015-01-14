@@ -44,12 +44,14 @@ namespace DocumentModule
                 sp.TiltFactor = 1;
                 if (File.Exists(string.Format("{0}.jpg", item.Name)))
                 {
-                    //sp.Background = new ImageBrush(new BitmapImage(new Uri(string.Format("{0}.jpg", item))));
+                    sp.Background = new ImageBrush(new BitmapImage(new Uri(string.Format("{0}.jpg", item))));
                 }
                 sp.Tag = item.Page;
                 sp.Title = item.Name;
                 sp.Width = GridHistory.ActualWidth/3;
                 sp.Height = GridHistory.ActualHeight/3;
+
+                //Магия квадрата
                 Grid.SetRow(sp, count / 3);
                 Grid.SetColumn(sp, count % 3);
                 GridHistory.Children.Add(sp);
