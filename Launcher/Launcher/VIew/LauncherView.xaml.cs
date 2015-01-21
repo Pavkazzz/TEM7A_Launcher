@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Launcher.VIew
+namespace Launcher
 {
     /// <summary>
     /// Interaction logic for LauncherView.xaml

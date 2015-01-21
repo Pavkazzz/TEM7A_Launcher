@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Launcher.VIew
+namespace Launcher
 {
     /// <summary>
     /// Interaction logic for UpdaterView_2_.xaml
     /// </summary>
-    public partial class UpdaterView_2_ : UserControl
+    public partial class UpdaterView : UserControl
     {
-        public UpdaterView_2_()
+        public UpdaterView()
         {
             InitializeComponent();
         }

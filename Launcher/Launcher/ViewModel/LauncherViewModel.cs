@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
 
-namespace Launcher.ViewModel
+namespace Launcher
 {
     [Export(typeof(LauncherViewModel))]
     class LauncherViewModel : Screen
@@ -14,7 +14,7 @@ namespace Launcher.ViewModel
         private IEventAggregator _eventAggregator;
 
         [ImportingConstructor]
-        public LauncherViewModel(IEventAggregator eventAggregator, Model model)
+        public LauncherViewModel(IEventAggregator eventAggregator)
         {
             _eventAggregator = eventAggregator;
         }

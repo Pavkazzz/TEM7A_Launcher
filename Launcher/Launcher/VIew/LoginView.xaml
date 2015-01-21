@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Launcher.VIew.LoginView"
+﻿<UserControl x:Class="Launcher.LoginView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TabControl HorizontalAlignment="Left" VerticalAlignment="Top" SelectedIndex="1">
+        <TabControl SelectedIndex="1">
             <TabControl.Resources>
                 <Style TargetType="{x:Type TabPanel}">
                     <Setter Property="HorizontalAlignment" Value="Center" />
@@ -63,16 +63,16 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Label              Grid.Column="0" Grid.Row="0" Content="Табельный номер" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"   BorderBrush="Black" Background="White" BorderThickness="0.4" Margin="5,5,2.5,2.5" HorizontalAlignment="Stretch" />
-                    <TextBox            Grid.Column="1" Grid.Row="0" Name="EntryLogin"    VerticalAlignment="Bottom" Margin="2.5,2.5,5,2.5" Height="50"/>
+                    <TextBox            Grid.Column="1" Grid.Row="0" Name="EntryLogin" Margin="2.5,2.5,5,2.5" />
                     <Label              Grid.Column="0" Grid.Row="1" Content="Пароль"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" Background="White" BorderThickness="0.4" Margin="5,2.5,2.5,2.5" HorizontalAlignment="Stretch"  />
-                    <PasswordBox        Grid.Column="1" Grid.Row="1" Name="EntryPassword"   VerticalAlignment="Center" Margin="2,3,5,2" Height="54"/>
+                    <PasswordBox        Grid.Column="1" Grid.Row="1" Name="EntryPassword" Margin="2,3,5,2" />
                     <Label              Grid.Column="0" Grid.Row="2" Content="Номер локомотива" Background="White" Margin="5,2.5,2.5,2.5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black"  BorderThickness="0.4"  HorizontalAlignment="Stretch" />
                     <TextBox            Grid.Column="1" Grid.Row="2" x:Name="Number_Locomotion"  Margin="2.5,2.5,5,2.5"/>
                     <Label              Grid.Column="0" Grid.Row="3" Content="Номер поезда" Background="White" Margin="5,2.5,2.5,2.5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black"  BorderThickness="0.4" />
                     <TextBox            Grid.Column="1" Grid.Row="3" Margin="2.5,2.5,5,2.5"/>
                     <Label              Grid.Column="0" Grid.Row="4" Content="Вес поезда (тонн)" Background="White" Margin="5,2.5,2.5,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black"  BorderThickness="0.4"  HorizontalAlignment="Stretch" />
                     <TextBox            Grid.Column="1" Grid.Row="4" Margin="2.5,2.5,5,5"/>
-                    <Button             Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Content="Вход в программу" FontSize="19" Foreground="{StaticResource AccentColorBrush}"/>
+                    <Button             Grid.Column="0" Grid.Row="5" x:Name="Login" Grid.ColumnSpan="2" Content="Вход в программу" FontSize="19" Foreground="{StaticResource AccentColorBrush}"/>
                 </Grid>
             </TabItem>
         </TabControl>
