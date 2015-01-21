@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SQLite;
-using System.Diagnostics;
 using System.Windows;
 using Launcher.Core;
 
@@ -25,44 +24,29 @@ namespace Launcher.Core
         {
             _sqLiteConnectionDatabase.Close();
         }
-        //TODO REFACTOR TO USER
-        //public bool Login(String login, String pass)
-        //{
-        //    bool result = false;
-        //    string hashPass = Security.GetSHA512(pass);
-        //    try
-        //    {
-        //        OpenConnectionSqlite(App.ResourcePath);
-        //        var sqlSelect = new SQLiteCommand(string.Format("Select Name, Lastname from Accounts where Login = '{0}' and Password = '{1}'", login, hashPass),
-        //            _sqLiteConnectionDatabase);
-        //        SQLiteDataReader sqlReader = sqlSelect.ExecuteReader();
-        //        result = sqlReader.HasRows;
-        //        sqlReader.Close();
-        //        CloseConnectionSqlite();
-        //    }
-        //    catch (Exception exception)
-        //    {
-        //        Debug.WriteLine(exception.ToString());
-        //    }
-        //    return result;
-        //}
-        //public void Registration(User user)
-        //{
-        //    string hashPass = Security.GetSHA512(user.Password);
-        //    try
-        //    {
-        //        OpenConnectionSqlite(App.ResourcePath);
-        //        var sqlSelect = new SQLiteCommand(string.Format("Insert Into Accounts Values ('{0}', '{1}', '{2}', '{3}', '{4}')", user.Login,
-        //            hashPass, user.Name, user.Lastname, user.Email), _sqLiteConnectionDatabase);
-        //        SQLiteDataReader sqlReader = sqlSelect.ExecuteReader();
-        //        sqlReader.Close();
-        //    }
-        //    catch (Exception exception)
-        //    {
-        //        Debug.WriteLine(exception.ToString());
-        //    }
-        //}
-        //TODO REFACTOR TO VIEW LAUNCHER
+
+        public bool Login(String login, String pass)
+        {
+            bool result = false;
+            string hashPass = Security.GetSHA512(pass);
+            try
+            {
+                OpenConnectionSqlite(App.ResourcePath);
+                var sqlSelect = new SQLiteCommand(string.Format("Select Name, Lastname from Accounts where Login = '{0}' and Password = '{1}'", login, hashPass),
+                    _sqLiteConnectionDatabase);
+                SQLiteDataReader sqlReader = sqlSelect.ExecuteReader();
+                result = sqlReader.HasRows;
+                sqlReader.Close();
+                CloseConnectionSqlite();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+            
+            return result;
+        }
+
         //public List<ListBoxItemModuleControl> SelectModulesList(string path)
         //{
         //    var result = new List<ListBoxItemModuleControl>();
@@ -89,7 +73,22 @@ namespace Launcher.Core
         //}
 
 
-
+        public void Registration(User user)
+        {
+            string hashPass = Security.GetSHA512(user.Password);
+            try
+            {
+                OpenConnectionSqlite(App.ResourcePath);
+                var sqlSelect = new SQLiteCommand(string.Format("Insert Into Accounts Values ('{0}', '{1}', '{2}', '{3}', '{4}')", user.Login,
+                    hashPass, user.Name, user.Lastname, user.Email), _sqLiteConnectionDatabase);
+                SQLiteDataReader sqlReader = sqlSelect.ExecuteReader();
+                sqlReader.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+        }
 
     }
 }
