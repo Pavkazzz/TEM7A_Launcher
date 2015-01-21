@@ -51,6 +51,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Caliburn.Micro">
+      <HintPath>..\packages\Caliburn.Micro.Core.2.0.1\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform">
+      <HintPath>..\packages\Caliburn.Micro.2.0.1\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -84,7 +90,7 @@
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.94.1\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.0.14.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\packages\Caliburn.Micro.2.0.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -103,15 +109,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ApplicationUpdater.xaml.cs">
-      <DependentUpon>ApplicationUpdater.xaml</DependentUpon>
+    <Compile Include="AppBootstrapper.cs" />
+    <Compile Include="VIew\UpdaterView.xaml.cs">
+      <DependentUpon>UpdaterView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataBase.cs" />
-    <Compile Include="MainWindowLauncher.xaml.cs">
-      <DependentUpon>MainWindowLauncher.xaml</DependentUpon>
+    <Compile Include="IShell.cs" />
+    <Compile Include="VIew\Launcher.xaml.cs">
+      <DependentUpon>Launcher.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ListBoxItemModuleControl.xaml.cs">
-      <DependentUpon>ListBoxItemModuleControl.xaml</DependentUpon>
+    <Compile Include="UserControl\ListBoxModule.xaml.cs">
+      <DependentUpon>ListBoxModule.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modules\Documents\Book.cs" />
     <Compile Include="Modules\Documents\CategoryControl.xaml.cs">
@@ -134,13 +141,12 @@
     <Compile Include="Modules\Documents\Pdf.cs" />
     <Compile Include="Modules\Documents\Search.cs" />
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="Security.cs" />
-    <Compile Include="User.cs" />
-    <Page Include="ApplicationUpdater.xaml">
+    <Compile Include="ViewModel\ShellViewModel.cs" />
+    <Page Include="VIew\UpdaterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LoginWindow.xaml">
+    <Page Include="VIew\LoginView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -148,21 +154,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LoginWindow.xaml.cs">
-      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    <Compile Include="VIew\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MainWindowLauncher.xaml">
+    <Page Include="VIew\Launcher.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ListBoxItemModuleControl.xaml">
+    <Page Include="UserControl\ListBoxModule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MetroStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Modules\Documents\CategoryControl.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -184,19 +186,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Resources\Style.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Simple Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Generic.xaml">
+    <Page Include="VIew\ShellView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -257,7 +251,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Resources\db.db" />
     <Resource Include="Resources\Entypo.ttf" />
   </ItemGroup>
   <ItemGroup>
@@ -287,15 +280,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Content Include="Resources\GhostscriptSharp.dll" />
-    <Content Include="Resources\GhostscriptSharp.pdb" />
-    <Resource Include="Resources\LALALA.png" />
-    <Content Include="Resources\libmupdf.dll" />
-    <Resource Include="Resources\Logo_C_Sharp.png" />
-    <Content Include="Resources\MoonPdfLib.dll" />
-    <Content Include="Resources\MouseKeyboardActivityMonitor.dll" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
