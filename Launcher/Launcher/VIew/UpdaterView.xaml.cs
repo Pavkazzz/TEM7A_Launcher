@@ -10,17 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MahApps.Metro.Controls;
 
-namespace Launcher
+namespace Launcher.VIew
 {
     /// <summary>
-    /// Логика взаимодействия для ApplicationUpdater.xaml
+    /// Interaction logic for UpdaterView_2_.xaml
     /// </summary>
-    public partial class ApplicationUpdater : MetroWindow
+    public partial class UpdaterView_2_ : UserControl
     {
-        public ApplicationUpdater()
+        public UpdaterView_2_()
         {
             InitializeComponent();
         }

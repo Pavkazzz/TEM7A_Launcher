@@ -8,7 +8,7 @@ using Launcher.Core;
 
 namespace Launcher.Core
 {
-    class DataBase
+    public class DataBase
     {
         private SQLiteConnection _sqLiteConnectionDatabase;
 /*

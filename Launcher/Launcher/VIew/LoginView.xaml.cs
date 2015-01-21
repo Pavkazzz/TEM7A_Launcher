@@ -1,43 +1,28 @@
-﻿using System.Windows;
-using MahApps.Metro.Controls;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
-namespace Launcher
+namespace Launcher.VIew
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for LoginView.xaml
     /// </summary>
-    public partial class LoginWindow : MetroWindow
+    public partial class LoginView : UserControl
     {
-        private readonly DataBase _dataBase = new DataBase();
-        public LoginWindow()
+        public LoginView()
         {
             InitializeComponent();
-        }
-
-        private void Accept_btn_Click(object sender, RoutedEventArgs e)
-        {
-            if (Passwb1.Password == Passwb2.Password)
-            {
-                var user = new User(Login_tbx.Text, Passwb1.Password, Name_tbx.Text, Family_tbx.Text, email_tbx.Text);
-                _dataBase.Registration(user);   
-            }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (_dataBase.Login(EntryLogin.Text, EntryPassword.Password))
-            {
-                new MainWindowLauncher().ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Запись не найдена");
-            }
-        }
-
-        private void Hyperlink_Click(object sender, RoutedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://pkbzht.ru");
         }
     }
 }

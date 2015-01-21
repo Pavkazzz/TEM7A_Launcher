@@ -1,9 +1,0 @@
-﻿<ListBox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-    <ListBox.ItemTemplate>
-        <DataTemplate>
-            <StackPanel>
-                <TextBlock TextWrapping="Wrap"></TextBlock>
-            </StackPanel>
-        </DataTemplate>
-    </ListBox.ItemTemplate>
-</ListBox>
