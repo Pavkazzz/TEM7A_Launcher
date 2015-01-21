@@ -4,7 +4,7 @@ using Caliburn.Micro;
 namespace Launcher.ViewModel
 {
     [Export(typeof (IShell))]
-    public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell
+    public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<string>
     {
         private IEventAggregator _eventAggregator;
 
@@ -18,7 +18,16 @@ namespace Launcher.ViewModel
 
         public void Handle(string message)
         {
-            var model = IoC.Get<Model>();
+            if (message == "UpdateSuccess")
+            {
+                ActivateItem(IoC.Get<LoginViewModel>());
+            }
+
+            if (message == "LoginSuccess")
+            {
+                ActivateItem(IoC.Get<LauncherViewModel>());
+            }
+            //var model = IoC.Get<Model>();
             //if (model.Auth)
             //{
             //    ActivateItem(IoC.Get<AppViewModel>());

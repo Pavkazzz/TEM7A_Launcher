@@ -18,10 +18,5 @@ namespace Launcher.ViewModel
         {
             _eventAggregator = eventAggregator;
         }
-
-        public void Start()
-        {
-            _eventAggregator.PublishOnBackgroundThread("UpdateSuccess");
-        }
     }
 }
