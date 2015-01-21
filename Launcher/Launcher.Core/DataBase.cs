@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SQLite;
 using System.Windows;
+using Launcher.Core;
 
-namespace Launcher
+namespace Launcher.Core
 {
     class DataBase
     {

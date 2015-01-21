@@ -1,3 +1,6 @@
 namespace Launcher {
-    public class ShellViewModel : Caliburn.Micro.PropertyChangedBase, IShell { }
+    public class ShellViewModel : Caliburn.Micro.PropertyChangedBase, IShell
+    {
+        
+    }
 }
