@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.Linq;
+using Launcher.Core;
 using System.Windows;
 using Caliburn.Micro;
 
@@ -27,6 +28,7 @@ namespace Launcher {
             batch.AddExportedValue<IWindowManager>(new WindowManager());
             batch.AddExportedValue<IEventAggregator>(new EventAggregator());
             batch.AddExportedValue(new Model());
+            batch.AddExportedValue(new User());
 
             batch.AddExportedValue(container);
 

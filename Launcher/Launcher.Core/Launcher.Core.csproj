@@ -49,7 +49,7 @@
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DB\db.db" />
+    <None Include="Db\db.db" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

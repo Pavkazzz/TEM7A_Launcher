@@ -25,43 +25,36 @@ namespace Launcher.Core
         {
             _sqLiteConnectionDatabase.Close();
         }
-        //TODO REFACTOR TO USER
-        //public bool Login(String login, String pass)
-        //{
-        //    bool result = false;
-        //    string hashPass = Security.GetSHA512(pass);
-        //    try
-        //    {
-        //        OpenConnectionSqlite(App.ResourcePath);
-        //        var sqlSelect = new SQLiteCommand(string.Format("Select Name, Lastname from Accounts where Login = '{0}' and Password = '{1}'", login, hashPass),
-        //            _sqLiteConnectionDatabase);
-        //        SQLiteDataReader sqlReader = sqlSelect.ExecuteReader();
-        //        result = sqlReader.HasRows;
-        //        sqlReader.Close();
-        //        CloseConnectionSqlite();
-        //    }
-        //    catch (Exception exception)
-        //    {
-        //        Debug.WriteLine(exception.ToString());
-        //    }
-        //    return result;
-        //}
-        //public void Registration(User user)
-        //{
-        //    string hashPass = Security.GetSHA512(user.Password);
-        //    try
-        //    {
-        //        OpenConnectionSqlite(App.ResourcePath);
-        //        var sqlSelect = new SQLiteCommand(string.Format("Insert Into Accounts Values ('{0}', '{1}', '{2}', '{3}', '{4}')", user.Login,
-        //            hashPass, user.Name, user.Lastname, user.Email), _sqLiteConnectionDatabase);
-        //        SQLiteDataReader sqlReader = sqlSelect.ExecuteReader();
-        //        sqlReader.Close();
-        //    }
-        //    catch (Exception exception)
-        //    {
-        //        Debug.WriteLine(exception.ToString());
-        //    }
-        //}
+
+        public List<Dictionary<string, string>> SqlSelect(string sqlQuery, List<string> columnName, string path = "...resource...")
+        {
+            OpenConnectionSqlite(System.IO.Path.GetFullPath(@"../../../Launcher.Core/Db"));
+            var result = new List<Dictionary<string, string>>();
+            var sqlSelect = new SQLiteCommand(sqlQuery, _sqLiteConnectionDatabase);
+            SQLiteDataReader sqlReader = sqlSelect.ExecuteReader();
+            try
+            {
+                foreach (DbDataRecord record in sqlReader)
+                {
+                    var temp = new Dictionary<string, string>();
+                    foreach (var column in columnName)
+                    {
+                        temp.Add(column, record[column].ToString());
+                    }
+                    result.Add(temp);
+                }
+            }
+
+            catch (Exception e)
+            {
+                Debug.WriteLine("Select upal " + e.Message);
+            }
+
+            sqlReader.Close();
+            CloseConnectionSqlite();
+            return result;
+        } 
+
         //TODO REFACTOR TO VIEW LAUNCHER
         //public List<ListBoxItemModuleControl> SelectModulesList(string path)
         //{

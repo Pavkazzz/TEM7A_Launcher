@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
+using Launcher.Core;
 
 namespace Launcher
 {
@@ -12,16 +13,21 @@ namespace Launcher
     class LoginViewModel : Screen
     {
         private IEventAggregator _eventAggregator;
+        private User _user;
 
         [ImportingConstructor]
-        public LoginViewModel(IEventAggregator eventAggregator)
+        public LoginViewModel(IEventAggregator eventAggregator, User user)
         {
             _eventAggregator = eventAggregator;
+            _user = user;
         }
 
         public void Login()
         {
-            _eventAggregator.PublishOnBackgroundThread("LoginSuccess");
+            if (_user.Login("admin", "admin"))
+            {
+                _eventAggregator.PublishOnBackgroundThread("LoginSuccess");    
+            }
         }
     }
 }
