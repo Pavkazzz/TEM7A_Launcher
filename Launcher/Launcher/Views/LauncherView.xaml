@@ -90,13 +90,7 @@
         </Grid>
         <ListBox x:Name="ListBoxModules" Margin="0,0,0,0" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
                  ScrollViewer.VerticalScrollBarVisibility="Hidden"  Background="{DynamicResource AccentColorBrush}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <Panel x:Name="Song" Text="{Binding Path=title}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
+           
 
         </ListBox>
 
