@@ -13,5 +13,7 @@ namespace Launcher.Module.Document.ViewModels
         {
             _eventAggregator = eventAggregator;
         }
+
+
     }
 }

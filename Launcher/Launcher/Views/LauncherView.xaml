@@ -94,6 +94,7 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <Button x:Name="SelectedModule" Content="{Binding Name}"/>
+                        <TextBox Text="{Binding Description}"></TextBox>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
@@ -17,6 +18,10 @@ namespace Launcher.ViewModels
         [ImportMany(typeof(IModule))]
         public IEnumerable<Lazy<IModule>> ModuleList { get; set; }
 
+        [ImportMany(typeof(IModuleName))]
+        public IEnumerable<Lazy<IModuleName>> ModuleListName { get; set; }
+            
+
         private IEventAggregator _eventAggregator;
 
 
@@ -24,7 +29,14 @@ namespace Launcher.ViewModels
         public LauncherViewModel(IEventAggregator eventAggregator)
         {
             _eventAggregator = eventAggregator;
-            Modules = new BindableCollection<Module>{new Module { Name = "Модуль нормативные документы", Description = "111" }};
+            //Modules = new BindableCollection<Module>{new Module { Name = "Модуль нормативные документы", Description = "111" }};
+            Modules = new BindableCollection<Module>();
+
+            //foreach (IModuleName moduleName in ModuleListName)
+            //{
+            //    Modules.Add(new Module(moduleName.DisplayName, moduleName.DisplayDescription));
+            //}
+            var qqwe = ModuleListName.ToList()[0].Value.DisplayName;
         }
 
         public void Test()
