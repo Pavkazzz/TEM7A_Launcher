@@ -20,7 +20,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <ListBox x:Name="ListBoxMainInspectionModule" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Background="Gray"/>
-        <Label HorizontalAlignment="Right" VerticalAlignment="Top" Content="Таймер обратного отчёта" Grid.Row="0" Grid.Column="3"/>
+        <Label HorizontalAlignment="Right" VerticalAlignment="Top" Content="Таймер обратного отчёта" Grid.Row="0" Grid.Column="3" FontSize="22"/>
         <TabControl x:Name="TabControlInspectionModule" Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" Grid.ColumnSpan="3" Background="LightGray">
             <TabItem Header="Машинист">
                 <Grid>
@@ -45,21 +45,21 @@
                     <ListView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5" Background="DarkGray" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                         <ListView.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal" Background="DarkGray" />
+                                <StackPanel Orientation="Horizontal" Background="DarkGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-                        <ListBoxItem Content="Фото" FontSize="30" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3"/>
-                        <ListBoxItem Content="Чертежи" FontSize="30" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" />
-                        <ListBoxItem Content="Документы" FontSize="30" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3"/>
-                        <ListBoxItem Background="#26A65B" Content="Без замечаний" FontSize="30" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3"/>
-                        <ListBoxItem Background="#FFDAE402" Content="Замечания" FontSize="30" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3"/>
-                        <ListBoxItem Content="Комментарий" FontSize="30" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3"/>
+                        <ListBoxItem Content="Фото" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170" Margin="2"/>
+                        <ListBoxItem Content="Чертежи" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
+                        <ListBoxItem Content="Документы" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
+                        <ListBoxItem Background="#26A65B" Content="Без замечаний" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
+                        <ListBoxItem Background="#FFDAE402" Content="Замечания" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
+                        <ListBoxItem Content="Комментарий" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
                         <StackPanel Orientation="Horizontal"/>
                     </ListView>
-                    <ListView x:Name="ZhalobaPanel" Background="Azure" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="5" Visibility="Collapsed">
+                    <ListView x:Name="ZhalobaPanel" Background="Azure" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="5" Visibility="Collapsed" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                         <ListView.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal" Background="Wheat" />
+                                <StackPanel Orientation="Horizontal" Background="Wheat" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
                         <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontSize="33" Width="672" />
@@ -89,10 +89,10 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <ListView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5" Background="DarkGray" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                    <ListView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5" Background="DarkGray" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                         <ListView.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal" Background="DarkGray"  />
+                                <StackPanel Orientation="Horizontal" Background="DarkGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
                         <ListBoxItem Content="Фото" FontSize="30" Foreground="White"/>
