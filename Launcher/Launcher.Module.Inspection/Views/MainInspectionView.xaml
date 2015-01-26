@@ -4,26 +4,31 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="1000" d:DesignWidth="1000">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="130"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="130"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <ListBox x:Name="ListBoxMainInspectionModule" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Background="Gray"/>
+        <Label HorizontalAlignment="Right" VerticalAlignment="Top" Content="Таймер обратного отчёта" Grid.Row="0" Grid.Column="3"/>
         <TabControl x:Name="TabControlInspectionModule" Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" Grid.ColumnSpan="3" Background="LightGray">
             <TabItem Header="Машинист">
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
@@ -37,12 +42,105 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
+                    <ListView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5" Background="DarkGray" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" Background="DarkGray" />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListBoxItem Content="Фото" FontSize="30" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3"/>
+                        <ListBoxItem Content="Чертежи" FontSize="30" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" />
+                        <ListBoxItem Content="Документы" FontSize="30" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3"/>
+                        <ListBoxItem Background="#26A65B" Content="Без замечаний" FontSize="30" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3"/>
+                        <ListBoxItem Background="#FFDAE402" Content="Замечания" FontSize="30" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3"/>
+                        <ListBoxItem Content="Комментарий" FontSize="30" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3"/>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ListView>
+                    <ListView Background="Azure" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="5">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" Background="Wheat" />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" FontSize="33"/>
+                        <Button Content="Отправить" FontSize="33" />
+                    </ListView>
                 </Grid>
-               
-            </TabItem>
-            <TabItem Header="Помощник Машиниста">
                 
             </TabItem>
+            
+            <TabItem Header="Помощник Машиниста">
+            <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="130"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <ListView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5" Background="DarkGray" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" Background="DarkGray"  />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListBoxItem Content="Фото" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Content="Чертежи" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Content="Документы" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Background="#26A65B" Content="Без замечаний" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Background="#FFDAE402" Content="Замечания" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Content="Комментарий" FontSize="30" Foreground="White"/>
+                    </ListView>
+                </Grid>    
+            </TabItem>
+            <TabItem Header="Ремонтники">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="130"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <ListView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5" Background="DarkGray" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" Background="DarkGray"  />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListBoxItem Content="Фото" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Content="Чертежи" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Content="Документы" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Background="#26A65B" Content="Без замечаний" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Background="#FFDAE402" Content="Замечания" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Content="Комментарий" FontSize="30" Foreground="White"/>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            
+
         </TabControl>
     </Grid>
 </UserControl>
