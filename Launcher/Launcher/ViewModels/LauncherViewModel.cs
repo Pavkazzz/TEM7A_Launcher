@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Controls;
 using Caliburn.Micro;
 using Launcher.Core;
+using Launcher.Model;
 
 namespace Launcher.ViewModels
 {
@@ -18,26 +19,39 @@ namespace Launcher.ViewModels
 
         private IEventAggregator _eventAggregator;
 
-        BindableCollection<string> Modules;
 
         [ImportingConstructor]
         public LauncherViewModel(IEventAggregator eventAggregator)
         {
             _eventAggregator = eventAggregator;
-            Modules = new BindableCollection<string>();
-            Modules.Add("Модуль нормативные документы");
-           
+            Modules = new BindableCollection<Module>{new Module { Name = "Модуль нормативные документы", Description = "111" }};
         }
-
-
 
         public void Test()
         {
             ActivateItem(ModuleList.ToList()[0].Value as IScreen);
         }
 
-        
+        private BindableCollection<Module> _myModules;
+        public BindableCollection<Module> Modules
+        {
+            get { return _myModules; }
+            set
+            {
+                _myModules = value;
+                NotifyOfPropertyChange(() => Modules);
+            }
+        }
 
+        private Module _selectedModule;
+        public Module SelectedModule
+        {
+            get { return _selectedModule; }
+            set
+            {
+                _selectedModule = value;
+                NotifyOfPropertyChange(() => SelectedModule);
+            }
+        }
     }
-
 }
