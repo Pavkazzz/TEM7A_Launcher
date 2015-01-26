@@ -62,7 +62,7 @@
                                 <StackPanel Orientation="Horizontal" Background="Wheat" />
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-                        <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" FontSize="33"/>
+                        <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" FontSize="33" />
                         <Button Content="Отправить" FontSize="33" />
                     </ListView>
                 </Grid>
