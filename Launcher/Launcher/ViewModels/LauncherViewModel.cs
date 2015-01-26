@@ -18,10 +18,6 @@ namespace Launcher.ViewModels
         [ImportMany(typeof(IModule))]
         public IEnumerable<Lazy<IModule>> ModuleList { get; set; }
 
-        [ImportMany(typeof(IModuleName))]
-        public IEnumerable<Lazy<IModuleName>> ModuleListName { get; set; }
-            
-
         private IEventAggregator _eventAggregator;
 
 
@@ -36,7 +32,7 @@ namespace Launcher.ViewModels
             //{
             //    Modules.Add(new Module(moduleName.DisplayName, moduleName.DisplayDescription));
             //}
-            var qqwe = ModuleListName.ToList()[0].Value.DisplayName;
+            //var qqwe = ModuleListName.ToList()[0].Value.DisplayName;
         }
 
         public void Test()
