@@ -8,6 +8,13 @@ namespace Launcher.Module.Document.ViewModels
     {
         private IEventAggregator _eventAggregator;
 
+
+
+        public override string DisplayName
+        {
+            get { return "Модуль документ"; }
+        }
+
         [ImportingConstructor]
         public MainDocViewModel(IEventAggregator eventAggregator)
         {
