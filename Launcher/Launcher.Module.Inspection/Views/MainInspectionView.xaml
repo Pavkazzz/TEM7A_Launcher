@@ -56,13 +56,13 @@
                         <ListBoxItem Content="Комментарий" FontSize="30" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3"/>
                         <StackPanel Orientation="Horizontal"/>
                     </ListView>
-                    <ListView Background="Azure" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="5">
+                    <ListView x:Name="ZhalobaPanel" Background="Azure" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="5" Visibility="Collapsed">
                         <ListView.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel Orientation="Horizontal" Background="Wheat" />
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-                        <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" FontSize="33" />
+                        <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontSize="33" Width="672" />
                         <Button Content="Отправить" FontSize="33" />
                     </ListView>
                 </Grid>
