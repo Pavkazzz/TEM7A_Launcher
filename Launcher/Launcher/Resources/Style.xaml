@@ -4,9 +4,9 @@
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     mc:Ignorable="options">
 
-    <Color x:Key="HighlightColor">#970000</Color>
+    <Color x:Key="HighlightColor">#008000</Color>
 
-    <Color x:Key="AccentColor">#008000</Color>
+    <Color x:Key="AccentColor">#26A65B</Color>
     <!--60% Выделение-->
     <Color x:Key="AccentColor2">#26A65B</Color>
     <!--40% -->

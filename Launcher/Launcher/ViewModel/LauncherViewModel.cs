@@ -9,7 +9,7 @@ using Caliburn.Micro;
 namespace Launcher
 {
     [Export(typeof(LauncherViewModel))]
-    class LauncherViewModel : Screen
+    class LauncherViewModel : Conductor<IScreen>.Collection.OneActive
     {
         private IEventAggregator _eventAggregator;
 
@@ -18,5 +18,6 @@ namespace Launcher
         {
             _eventAggregator = eventAggregator;
         }
+
     }
 }

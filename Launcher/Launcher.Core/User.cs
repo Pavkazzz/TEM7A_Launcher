@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -44,7 +45,7 @@ namespace Launcher.Core
                 string.Format("Select Name, Lastname from Accounts where Login = '{0}' and Password = '{1}'", login,
                     hashPass), new List<string> {"Name", "Lastname"});
 
-
+            result = select.Count > 0;
             return result;
         }
         public void Registration(User user)
