@@ -1,8 +1,8 @@
-﻿namespace Launcher
+﻿namespace Launcher.Model
 {
-    public class Model
+    public class MainModel
     {
-        public Model()
+        public MainModel()
         {
         }
     }

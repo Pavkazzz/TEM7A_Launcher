@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using Launcher.Core;
 using System.Windows;
+using Launcher.Model;
 
 namespace Launcher {
     using System;
@@ -30,7 +31,7 @@ namespace Launcher {
 
             batch.AddExportedValue<IWindowManager>(new WindowManager());
             batch.AddExportedValue<IEventAggregator>(new EventAggregator());
-            batch.AddExportedValue(new Model());
+            batch.AddExportedValue(new MainModel());
             batch.AddExportedValue(new User());
 
             batch.AddExportedValue(container);
