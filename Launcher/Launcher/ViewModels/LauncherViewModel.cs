@@ -20,6 +20,8 @@ namespace Launcher.ViewModels
 
         private IEventAggregator _eventAggregator;
 
+        [Import(typeof(IModuleName))]
+        public string Name { get; set; }
 
         [ImportingConstructor]
         public LauncherViewModel(IEventAggregator eventAggregator)
@@ -32,7 +34,7 @@ namespace Launcher.ViewModels
             //{
             //    Modules.Add(new Module(moduleName.DisplayName, moduleName.DisplayDescription));
             //}
-            //var name = (ModuleList.ToList()[0].Value as IHaveDisplayName).DisplayName;
+            var name = Name;
         }
 
         public void Test()

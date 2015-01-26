@@ -8,13 +8,10 @@ namespace Launcher.Module.Document.ViewModels
     {
         private IEventAggregator _eventAggregator;
 
-
         [ImportingConstructor]
         public MainDocViewModel(IEventAggregator eventAggregator)
         {
             _eventAggregator = eventAggregator;
         }
-
-
     }
 }
