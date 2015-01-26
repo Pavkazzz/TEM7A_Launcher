@@ -25,7 +25,7 @@ namespace Launcher {
             var catalog = new AggregateCatalog(AssemblySource.Instance.Select(x => new AssemblyCatalog(x)));
             
             container = new CompositionContainer(catalog);
-            container.ComposeParts(this, new DirectoryCatalog("Modules"));
+            container.ComposeParts(this, new DirectoryCatalog("../../Modules"));
 
             var batch = new CompositionBatch();
 
@@ -59,8 +59,7 @@ namespace Launcher {
 
         protected override IEnumerable<Assembly> SelectAssemblies()
         {
-            var ret = new[] { Assembly.GetExecutingAssembly()};
-            return ret;
+            return new[] { Assembly.GetExecutingAssembly()};
         }
 
         protected override void OnStartup(object sender, StartupEventArgs e) {
