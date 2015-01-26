@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApplication1
+namespace Launcher.Module.Inspection.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainInspectionView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainInspectionView : UserControl
     {
-        public MainWindow()
+        public MainInspectionView()
         {
             InitializeComponent();
         }
