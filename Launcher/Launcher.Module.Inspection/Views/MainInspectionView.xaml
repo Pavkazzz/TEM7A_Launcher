@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:micro="http://www.caliburnproject.org"
              mc:Ignorable="d" 
              d:DesignHeight="1000" d:DesignWidth="1000">
     <Grid>
@@ -48,23 +49,17 @@
                                 <StackPanel Orientation="Horizontal" Background="DarkGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-                        <ListBoxItem Content="Фото" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170" Margin="2"/>
+                        <ListBoxItem Content="Фото" FontSize="22" Foreground="White" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170" Margin="2">
+                            <ListBoxItem.HorizontalContentAlignment>Center</ListBoxItem.HorizontalContentAlignment>
+                        </ListBoxItem>
                         <ListBoxItem Content="Чертежи" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
                         <ListBoxItem Content="Документы" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
                         <ListBoxItem Background="#26A65B" Content="Без замечаний" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
-                        <ListBoxItem Background="#FFDAE402" Content="Замечания" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
+                        <ListBoxItem x:Name="Notice" Background="#FFDAE402" Content="Замечания" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
                         <ListBoxItem Content="Комментарий" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
                         <StackPanel Orientation="Horizontal"/>
                     </ListView>
-                    <ListView x:Name="ZhalobaPanel" Background="Azure" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="5" Visibility="Collapsed" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                        <ListView.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal" Background="Wheat" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
-                            </ItemsPanelTemplate>
-                        </ListView.ItemsPanel>
-                        <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" FontSize="33" Width="672" />
-                        <Button Content="Отправить" FontSize="33" />
-                    </ListView>
+                    <ContentControl x:Name="NoticeContentControl" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="5" ></ContentControl>
                 </Grid>
                 
             </TabItem>
