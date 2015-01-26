@@ -93,7 +93,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBox x:Name="SelectedModule" Text="{Binding Path=}"/>
+                        <TextBox x:Name="SelectedModule" Text="{Binding Path=Name}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
