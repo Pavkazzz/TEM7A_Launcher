@@ -59,11 +59,8 @@ namespace Launcher {
         protected override IEnumerable<Assembly> SelectAssemblies()
         {
             var assemblyList = new List<Assembly> { Assembly.GetExecutingAssembly() };
-            foreach (var file in Directory.GetFiles(Path.GetFullPath(@"../../Modules"), "*.dll"))
-            {
-                assemblyList.Add(Assembly.LoadFile(file));
-            }
-
+            //Грузим все модули из папки
+            assemblyList.AddRange(Directory.GetFiles(Path.GetFullPath(@"../../Modules"), "*.dll").Select(Assembly.LoadFile)); 
 
 
             return assemblyList.ToArray();
