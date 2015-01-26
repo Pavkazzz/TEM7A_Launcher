@@ -32,7 +32,6 @@ namespace Launcher.ViewModels
             //{
             //    Modules.Add(new Module(moduleName.DisplayName, moduleName.DisplayDescription));
             //}
-            var qqwe = ModuleList.ToList()[1].Value.DisplayName;
         }
 
         public void Test()
