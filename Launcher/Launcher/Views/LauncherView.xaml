@@ -102,6 +102,6 @@
         </ListBox>
 
 
-        <ContentControl Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="6" Grid.RowSpan="7"  x:Name="ActiveItem"/>
+        <ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7"  x:Name="ActiveItem"/>
     </Grid>
 </UserControl>

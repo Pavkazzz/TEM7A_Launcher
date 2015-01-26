@@ -32,11 +32,12 @@ namespace Launcher.ViewModels
             //{
             //    Modules.Add(new Module(moduleName.DisplayName, moduleName.DisplayDescription));
             //}
+            //var name = (ModuleList.ToList()[0].Value as IHaveDisplayName).DisplayName;
         }
 
         public void Test()
         {
-            ActivateItem(ModuleList.ToList()[0].Value as IScreen);
+            ActivateItem(ModuleList.ToList()[1].Value as IScreen);
         }
 
         private BindableCollection<Module> _myModules;
