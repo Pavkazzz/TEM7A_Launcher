@@ -1,7 +1,9 @@
 using System;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
+using System.ComponentModel.Composition.Primitives;
 using System.Linq;
+using System.Reflection;
 using Launcher.Core;
 using System.Windows;
 using Caliburn.Micro;
@@ -18,10 +20,12 @@ namespace Launcher {
             Initialize();
         }
 
-        protected override void Configure() {
-            container = new CompositionContainer(
-                new AggregateCatalog(AssemblySource.Instance.Select(x => new AssemblyCatalog(x)))
-                );
+        protected override void Configure()
+        {
+            var catalog = new AggregateCatalog(AssemblySource.Instance.Select(x => new AssemblyCatalog(x)));
+            
+            container = new CompositionContainer(catalog);
+            container.ComposeParts(this, new DirectoryCatalog("Modules"));
 
             var batch = new CompositionBatch();
 
@@ -53,7 +57,13 @@ namespace Launcher {
             container.SatisfyImportsOnce(instance);
         }
 
-        protected override void OnStartup(object sender, System.Windows.StartupEventArgs e) {
+        protected override IEnumerable<Assembly> SelectAssemblies()
+        {
+            var ret = new[] { Assembly.GetExecutingAssembly()};
+            return ret;
+        }
+
+        protected override void OnStartup(object sender, StartupEventArgs e) {
             DisplayRootViewFor<IShell>();
         }
     }
