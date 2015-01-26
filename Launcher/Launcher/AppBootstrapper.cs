@@ -23,7 +23,6 @@ namespace Launcher {
         protected override void Configure()
         {
             var catalog = new AggregateCatalog(AssemblySource.Instance.Select(x => new AssemblyCatalog(x)));
-                //.Concat(new ComposablePartCatalog[] { new DirectoryCatalog("../../Modules") }));
             
             container = new CompositionContainer(catalog);
 
