@@ -10,17 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
-namespace Launcher
+namespace Launcher.Views
 {
     /// <summary>
-    /// Interaction logic for LoginView.xaml
+    /// Interaction logic for ShellView.xaml
     /// </summary>
-    public partial class LoginView : UserControl
+    public partial class ShellView : MetroWindow
     {
-        public LoginView()
+        public ShellView()
         {
             InitializeComponent();
         }

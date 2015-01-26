@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Caliburn.Micro;
 
 namespace Launcher
 {

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Launcher.LauncherView"
+﻿<UserControl x:Class="Launcher.Views.LauncherView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -47,6 +47,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            <Button x:Name="Test"></Button>
             <Label x:Name="DateTimeLabel"  HorizontalAlignment="Right" Grid.Column="6" Grid.Row="0" Grid.RowSpan="2" HorizontalContentAlignment="Right" Foreground="White" FontSize="17" VerticalAlignment="Bottom"/>
             <Label HorizontalAlignment="Right" Content="Виктор Викторович"  Grid.Column="6" Grid.Row="0" Foreground="White" HorizontalContentAlignment="Right" FontSize="15" />
             <TextBlock x:Name="TextBlockAny" Grid.Column="7" Grid.RowSpan="2"  TextWrapping="WrapWithOverflow" Foreground="White" FontSize="15" HorizontalAlignment="Right"/>

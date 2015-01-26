@@ -2,11 +2,11 @@ using System;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using Launcher.Core;
 using System.Windows;
-using Caliburn.Micro;
 
 namespace Launcher {
     using System;
@@ -23,9 +23,9 @@ namespace Launcher {
         protected override void Configure()
         {
             var catalog = new AggregateCatalog(AssemblySource.Instance.Select(x => new AssemblyCatalog(x)));
+                //.Concat(new ComposablePartCatalog[] { new DirectoryCatalog("../../Modules") }));
             
             container = new CompositionContainer(catalog);
-            container.ComposeParts(this, new DirectoryCatalog("../../Modules"));
 
             var batch = new CompositionBatch();
 
@@ -59,7 +59,15 @@ namespace Launcher {
 
         protected override IEnumerable<Assembly> SelectAssemblies()
         {
-            return new[] { Assembly.GetExecutingAssembly()};
+            var assemblyList = new List<Assembly> { Assembly.GetExecutingAssembly() };
+            foreach (var file in Directory.GetFiles(Path.GetFullPath(@"../../Modules"), "*.dll"))
+            {
+                assemblyList.Add(Assembly.LoadFile(file));
+            }
+
+
+
+            return assemblyList.ToArray();
         }
 
         protected override void OnStartup(object sender, StartupEventArgs e) {

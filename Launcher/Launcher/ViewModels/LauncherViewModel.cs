@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Caliburn.Micro;
+using Launcher.Core;
 
-namespace Launcher
+namespace Launcher.ViewModels
 {
+
     [Export(typeof(LauncherViewModel))]
     class LauncherViewModel : Conductor<IScreen>.Collection.OneActive
     {
@@ -19,5 +19,15 @@ namespace Launcher
             _eventAggregator = eventAggregator;
         }
 
+
+        [ImportMany(typeof(IModule))]
+        public IEnumerable<Lazy<IModule>> getIMain { get; set; }
+
+        public void Test()
+        {
+
+            ActivateItem(getIMain.ToList()[0].Value as IScreen);
+        }
     }
+
 }

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.Composition;
 using Caliburn.Micro;
 using Launcher.Core;
 
-namespace Launcher
+namespace Launcher.ViewModels
 {
     [Export(typeof(LoginViewModel))]
     class LoginViewModel : Screen

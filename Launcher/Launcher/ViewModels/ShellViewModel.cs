@@ -1,7 +1,7 @@
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
 
-namespace Launcher
+namespace Launcher.ViewModels
 {
     [Export(typeof (IShell))]
     public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<string>

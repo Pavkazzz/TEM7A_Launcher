@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Launcher
+namespace Launcher.Views
 {
     /// <summary>
     /// Interaction logic for UpdaterView_2_.xaml
