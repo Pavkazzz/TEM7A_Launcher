@@ -28,20 +28,15 @@ namespace Launcher.ViewModels
             //Modules.Add(new Module { Name = _aboutModule.Name, Description = _aboutModule.Description});
         }
 
+        public override sealed void ActivateItem(IScreen item)
+        {
+            base.ActivateItem(item);
+        }
+
         //public void Test()
         //{
         //    ActivateItem(ModuleList.ToList()[1].Value as IScreen);
         //}
-
-        public void Handle(IScreen viewModel)
-        {
-            ActivateItem(viewModel);
-            //var model = IoC.Get<Model>();
-            //if (model.Auth)
-            //{
-            //    ActivateItem(IoC.Get<AppViewModel>());
-            //}
-        }
 
     }
 }
