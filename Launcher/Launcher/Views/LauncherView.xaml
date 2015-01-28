@@ -88,19 +88,6 @@
                 </ListBox>
             </Popup>
         </Grid>
-        <ListBox x:Name="Modules" Margin="0,0,0,0" Grid.Row="1" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="1" ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
-                 ScrollViewer.VerticalScrollBarVisibility="Hidden" Background="{DynamicResource AccentColorBrush}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <Button x:Name="SelectedModule" Content="{Binding Name}"/>
-                        <TextBox Text="{Binding Description}"></TextBox>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-
-        </ListBox>
-
 
         <ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7"  x:Name="ActiveItem"/>
     </Grid>

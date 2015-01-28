@@ -9,5 +9,6 @@ namespace Launcher.Core
     public interface IModuleName
     {
         string Name { get; set; }
+        string Description { get; set; }
     }
 }

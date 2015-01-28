@@ -12,55 +12,40 @@ namespace Launcher.ViewModels
 {
 
     [Export(typeof(LauncherViewModel))]
-    class LauncherViewModel : Conductor<IScreen>.Collection.OneActive 
+    class LauncherViewModel : Conductor<IScreen>.Collection.OneActive, IHandle<IScreen>
     {
-
-        [ImportMany(typeof(IModule))]
-        public IEnumerable<Lazy<IModule>> ModuleList { get; set; }
-
         private IEventAggregator _eventAggregator;
-
-
 
         [ImportingConstructor]
         public LauncherViewModel(IEventAggregator eventAggregator)
         {
             _eventAggregator = eventAggregator;
-            //Modules = new BindableCollection<Module>{new Module { Name = "Модуль нормативные документы", Description = "111" }};
-            Modules = new BindableCollection<Module>();
+            _eventAggregator.Subscribe(this);
 
-            //foreach (IModuleName moduleName in ModuleListName)
+            ActivateItem(IoC.Get<ModuleListViewModel>());
+
+            //var qwe = _aboutModule.Name;
+            //Modules.Add(new Module { Name = _aboutModule.Name, Description = _aboutModule.Description});
+        }
+
+        //public void Test()
+        //{
+        //    ActivateItem(ModuleList.ToList()[1].Value as IScreen);
+        //}
+
+        public void Handle(IScreen viewModel)
+        {
+            ActivateItem(viewModel);
+            //var model = IoC.Get<Model>();
+            //if (model.Auth)
             //{
-            //    Modules.Add(new Module(moduleName.DisplayName, moduleName.DisplayDescription));
+            //    ActivateItem(IoC.Get<AppViewModel>());
             //}
-            
         }
 
-        public void Test()
+        public override sealed void ActivateItem(IScreen item)
         {
-            ActivateItem(ModuleList.ToList()[1].Value as IScreen);
-        }
-
-        private BindableCollection<Module> _myModules;
-        public BindableCollection<Module> Modules
-        {
-            get { return _myModules; }
-            set
-            {
-                _myModules = value;
-                NotifyOfPropertyChange(() => Modules);
-            }
-        }
-
-        private Module _selectedModule;
-        public Module SelectedModule
-        {
-            get { return _selectedModule; }
-            set
-            {
-                _selectedModule = value;
-                NotifyOfPropertyChange(() => SelectedModule);
-            }
+            base.ActivateItem(item);
         }
     }
 }

@@ -11,18 +11,21 @@ using Launcher.Module.Inspection.Views;
 
 namespace Launcher.Module.Inspection.ViewModels
 {
+    [Export(typeof(IModule))]
     class MainInspectionViewModel: Conductor<IScreen>.Collection.OneActive, IModule
     {
         private IEventAggregator _eventAggregator;
         private object _noticeContentControl;
+
         [ImportingConstructor]
-        public MainInspectionViewModel()
+        public MainInspectionViewModel(IEventAggregator eventAggregator)
         {
+            _eventAggregator = eventAggregator;
         }
 
         public void Notice()
         {
-            NoticeContentControl = IoC.Get<NoticeViewModel>();
+            //NoticeContentControl = IoC.Get<NoticeViewModel>();
         }
 
         public object NoticeContentControl

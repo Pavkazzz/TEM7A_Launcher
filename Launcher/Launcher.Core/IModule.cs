@@ -10,7 +10,7 @@ using Caliburn.Micro;
 
 namespace Launcher.Core
 {
-    [InheritedExport(typeof(IModule))]
+    
     public interface IModule : IHaveDisplayName
     {
 
