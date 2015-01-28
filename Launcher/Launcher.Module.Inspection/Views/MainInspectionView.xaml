@@ -50,8 +50,6 @@
                                 <StackPanel Orientation="Horizontal" Background="DarkGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-                        
-                        <dc:CircularProgressControl Type="Basic" InnerRadius=".5" ValueStringFormat="%" RotationSpeedMultiplier="1.24" Width="170" Background="Transparent"/>
                         <Button Background="#26A65B" Content="Без замечаний" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
                         <Button x:Name="Notice" Background="#FFDAE402" Content="Замечания" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
                         <Button Content="Комментарий" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
