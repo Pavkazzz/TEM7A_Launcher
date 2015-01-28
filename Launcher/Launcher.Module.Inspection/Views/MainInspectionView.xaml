@@ -42,7 +42,7 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="0.8*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <ListView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5" Background="DarkGray" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                         <ListView.ItemsPanel>
@@ -50,23 +50,26 @@
                                 <StackPanel Orientation="Horizontal" Background="DarkGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
+
+
                         <Button Background="#26A65B" Content="Без замечаний" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
                         <Button x:Name="Notice" Background="#FFDAE402" Content="Замечания" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
                         <Button Content="Комментарий" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
                         <StackPanel Orientation="Horizontal"/>
+                        <dc:CircularProgressControl Type="Basic" InnerRadius=".5" ValueStringFormat="%" RotationSpeedMultiplier="1.24" Width="170" Background="Transparent" VerticalContentAlignment="Stretch" HorizontalAlignment="Right" HorizontalContentAlignment="Right"/>
                     </ListView>
-                    <ListView Grid.Column="4" Grid.Row="0" Grid.RowSpan="7">
-                    <Button Content="Фото" FontSize="22" Foreground="White" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
-                        <Button Content="Чертежи" FontSize="22" Foreground="White" VerticalContentAlignment="Center" BorderBrush="Black"   BorderThickness="3"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" />
-                    <Button Content="Документы" FontSize="22" Foreground="White"  VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+                    <ListView Grid.Column="4" Grid.Row="0" Grid.RowSpan="8" Background="LightGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                        <Button Content="Фото" FontSize="22" Foreground="White" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Height="199" Width="210"/>
+                        <Button Content="Чертежи" FontSize="22" Foreground="White" VerticalContentAlignment="Center" BorderBrush="Black"   BorderThickness="3"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Height="199" Width="210" />
+                        <Button Content="Документы" FontSize="22" Foreground="White"  VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Height="199" Width="210"/>
                     </ListView>
                     <ContentControl x:Name="NoticeContentControl" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="5" ></ContentControl>
                 </Grid>
-                
+
             </TabItem>
-            
+
             <TabItem Header="Помощник Машиниста">
-            <Grid>
+                <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="130"></RowDefinition>
                         <RowDefinition></RowDefinition>
@@ -98,7 +101,7 @@
                         <ListBoxItem Background="#FFDAE402" Content="Замечания" FontSize="30" Foreground="White"/>
                         <ListBoxItem Content="Комментарий" FontSize="30" Foreground="White"/>
                     </ListView>
-                </Grid>    
+                </Grid>
             </TabItem>
             <TabItem Header="Ремонтники">
                 <Grid>
@@ -135,7 +138,7 @@
                     </ListView>
                 </Grid>
             </TabItem>
-            
+
 
         </TabControl>
     </Grid>
