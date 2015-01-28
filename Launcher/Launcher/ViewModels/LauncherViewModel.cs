@@ -43,9 +43,5 @@ namespace Launcher.ViewModels
             //}
         }
 
-        public override sealed void ActivateItem(IScreen item)
-        {
-            base.ActivateItem(item);
-        }
     }
 }
