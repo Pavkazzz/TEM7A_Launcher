@@ -52,16 +52,16 @@
                         </ListView.ItemsPanel>
 
 
-                        <Button Background="#26A65B" Content="Без замечаний" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="180"/>
-                        <Button x:Name="Notice" Background="#FFDAE402" Content="Замечания" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="180"/>
-                        <Button Content="Комментарий" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="180"/>
+                        <Button Background="#26A65B" Content="Без замечаний" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="2" Width="200"/>
+                        <Button x:Name="Notice" Background="#FFDAE402" Content="Замечания" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="2" Width="200"/>
+                        <Button Content="Комментарий" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="2" Width="200"/>
                         <StackPanel Orientation="Horizontal"/>
                         <!--<dc:CircularProgressControl Type="Basic" InnerRadius=".5" ValueStringFormat="%" RotationSpeedMultiplier="1.24" Width="170" Background="Transparent" VerticalContentAlignment="Stretch" HorizontalAlignment="Right" HorizontalContentAlignment="Right"/>-->
                     </ListView>
-                    <ListView Grid.Column="4" Grid.Row="0" Grid.RowSpan="8" Background="LightGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                        <Button Content="Фото" FontSize="22"  VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Height="199" Width="210"/>
-                        <Button Content="Чертежи" FontSize="22"  VerticalContentAlignment="Center" BorderBrush="Black"   BorderThickness="3"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Height="199" Width="210" />
-                        <Button Content="Документы" FontSize="22"   VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Height="199" Width="210"/>
+                    <ListView Grid.Column="4" Grid.Row="2" Grid.RowSpan="3" Background="LightGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                        <Button Content="Фото" FontSize="22"  VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Height="50"/>
+                        <Button Content="Чертежи" FontSize="22"  VerticalContentAlignment="Center" BorderBrush="Green"   BorderThickness="3"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"  Height="50" />
+                        <Button Content="Документы" FontSize="22"   VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="3"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Height="50" />
                     </ListView>
                     <ContentControl x:Name="NoticeContentControl" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="5" ></ContentControl>
                 </Grid>
