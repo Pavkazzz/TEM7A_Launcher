@@ -61,16 +61,10 @@ namespace Launcher.ViewModels
 
         public void OpenModule(Module module)
         {
-            var watch = Stopwatch.StartNew();
             foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == module.ViewModel))
             {
                 _eventAggregator.PublishOnBackgroundThread(name);
-
-                break;
             }
-            watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
-            Debug.Write(elapsedMs);
         }
     }
 }
