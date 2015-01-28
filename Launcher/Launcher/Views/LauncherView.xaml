@@ -30,7 +30,7 @@
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFFAFBFA" Offset="0.008"/>
-                    <GradientStop Color="{DynamicResource AccentColor4}" Offset="0.008"/>
+                    <GradientStop Color="{DynamicResource AccentColor}" Offset="0.008"/>
                 </LinearGradientBrush>
             </Grid.Background>
             <Grid.ColumnDefinitions>
@@ -87,7 +87,7 @@
                 </ListBox>
             </Popup>
         </Grid>
-        <ListBox x:Name="CurrentModuleState" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0" Background="{DynamicResource AccentColorBrush4}"></ListBox>
+        <ListBox x:Name="CurrentModuleState" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0" Background="{DynamicResource AccentColorBrush}"></ListBox>
         <ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7" x:Name="ActiveItem"/>
     </Grid>
 </UserControl>
