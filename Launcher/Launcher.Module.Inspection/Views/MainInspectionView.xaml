@@ -56,7 +56,7 @@
                         <Button x:Name="Notice" Background="#FFDAE402" Content="Замечания" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="180"/>
                         <Button Content="Комментарий" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="180"/>
                         <StackPanel Orientation="Horizontal"/>
-                        <dc:CircularProgressControl Type="Basic" InnerRadius=".5" ValueStringFormat="%" RotationSpeedMultiplier="1.24" Width="170" Background="Transparent" VerticalContentAlignment="Stretch" HorizontalAlignment="Right" HorizontalContentAlignment="Right"/>
+                        <!--<dc:CircularProgressControl Type="Basic" InnerRadius=".5" ValueStringFormat="%" RotationSpeedMultiplier="1.24" Width="170" Background="Transparent" VerticalContentAlignment="Stretch" HorizontalAlignment="Right" HorizontalContentAlignment="Right"/>-->
                     </ListView>
                     <ListView Grid.Column="4" Grid.Row="0" Grid.RowSpan="8" Background="LightGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                         <Button Content="Фото" FontSize="22"  VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Height="199" Width="210"/>
