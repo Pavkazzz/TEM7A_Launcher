@@ -38,5 +38,15 @@ namespace Launcher.ViewModels
         //    ActivateItem(ModuleList.ToList()[1].Value as IScreen);
         //}
 
+        public void Handle(IScreen viewModel)
+        {
+            ActivateItem(viewModel);
+            //var model = IoC.Get<Model>();
+            //if (model.Auth)
+            //{
+            //    ActivateItem(IoC.Get<AppViewModel>());
+            //}
+        }
+
     }
 }
