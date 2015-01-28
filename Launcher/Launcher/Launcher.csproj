@@ -113,9 +113,6 @@
       <DependentUpon>UpdaterView.xaml</DependentUpon>
     </Compile>
     <Compile Include="IShell.cs" />
-    <Compile Include="UserControl\ListBoxModule.xaml.cs">
-      <DependentUpon>ListBoxModule.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Page Include="Resources\Style.xaml">
@@ -146,10 +143,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UserControl\ListBoxModule.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
