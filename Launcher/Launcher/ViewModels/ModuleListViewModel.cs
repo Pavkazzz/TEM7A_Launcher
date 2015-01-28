@@ -4,6 +4,7 @@ using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Caliburn.Micro;
 using Launcher.Core;
 using Launcher.Model;
@@ -53,8 +54,21 @@ namespace Launcher.ViewModels
 
             foreach (var module in _aboutModule)
             {
-                Modules.Add(new Module(module.Name, module.Description));
+                Modules.Add(new Module(module.Name, module.Description, module.ViewModel));
             }
+        }
+
+        public void OpenModule(Module module)
+        {
+            foreach (var name in IoC.GetAll<IModule>())
+            {
+                if (name.GetType() == module.ViewModel)
+                {
+                    _eventAggregator.PublishOnBackgroundThread(name);
+                    break;
+                }
+            }
+            
         }
     }
 }
