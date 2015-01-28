@@ -59,6 +59,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Lib\DevComponents.WPF.Controls.dll" />
     <Content Include="Lib\GhostscriptSharp.dll" />
     <Content Include="Lib\libmupdf.dll" />
     <Content Include="Lib\MoonPdfLib.dll" />
