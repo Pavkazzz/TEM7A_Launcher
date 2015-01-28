@@ -7,18 +7,29 @@
              d:DesignHeight="300" d:DesignWidth="300">
     
     <Grid>
-        <ListBox x:Name="Modules" ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
-                 ScrollViewer.VerticalScrollBarVisibility="Hidden" Background="{DynamicResource AccentColorBrush}">
+        <ListBox x:Name="Modules" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" 
+                 Background="{DynamicResource AccentColorBrush4}" BorderThickness="0" HorizontalContentAlignment="Stretch"  >
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Style.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
+                    </Style.Resources>
+                </Style>
+            </ListBox.Resources>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
                                 <RowDefinition></RowDefinition>
+                                <RowDefinition Height="5"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Label x:Name="SelectedModule" Grid.Row="0" Content="{Binding Name}"/>
-                            <TextBox Grid.Row="1" Text="{Binding Description}"></TextBox>
+                            <Label x:Name="SelectedModule" Grid.Row="0" Content="{Binding Name}" FontSize="20" FontFamily="Calibri Light" HorizontalAlignment="Center" />
+                            <TextBlock Grid.Row="1" Text="{Binding Description}" FontSize="15" FontFamily="Calibri" HorizontalAlignment="Center" />
+                           
                         </Grid>
                     </StackPanel>
                 </DataTemplate>
