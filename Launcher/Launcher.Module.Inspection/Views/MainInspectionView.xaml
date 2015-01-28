@@ -58,25 +58,7 @@
                         <StackPanel Orientation="Horizontal"/>
                         <!--<dc:CircularProgressControl Type="Basic" InnerRadius=".5" ValueStringFormat="%" RotationSpeedMultiplier="1.24" Width="170" Background="Transparent" VerticalContentAlignment="Stretch" HorizontalAlignment="Right" HorizontalContentAlignment="Right"/>-->
                     </ListView>
-                    <ListView Grid.Column="4" Grid.Row="2" Grid.RowSpan="4" Background="LightGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" Focusable="False">
-                        <ListView.Style>
-                            <Style TargetType="ListView">
-                                <Style.Triggers>
-                                    <Trigger Property="Control.IsFocused" Value="true">
-                                        <Setter Property="Control.Foreground" Value="Azure"/>
-                                        <Setter Property="BorderBrush" Value="AliceBlue"/>
-                                    </Trigger>
-                                    <Trigger Property="Control.IsMouseOver" Value="True">
-                                        <Setter Property="Control.Foreground" Value="LightYellow" />
-                                        <Setter Property="Control.FontWeight" Value="Bold" />
-                                        <Setter Property="BorderBrush" Value="Olive" />
-                                    </Trigger>
-                                    <Trigger Property="Button.IsPressed" Value="True">
-                                        <Setter Property="Control.Foreground" Value="Red" />
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </ListView.Style>
+                    <ListView Grid.Column="4" Grid.Row="2" Grid.RowSpan="4" Background="LightGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" Focusable="False" HorizontalAlignment="Right">
                         <Button Margin="1" Content="Фото"   VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="2" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Height="100" Width="100"/>
                         <Button Margin="1" Content="Чертежи"   VerticalContentAlignment="Center" BorderBrush="Green"   BorderThickness="2"  HorizontalAlignment="Right" HorizontalContentAlignment="Center"  Height="100" Width="100"/>
                         <Button Margin="1" Content="Документы"   VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="2"  HorizontalAlignment="Right" HorizontalContentAlignment="Center" Height="100"  Width="100"/>
