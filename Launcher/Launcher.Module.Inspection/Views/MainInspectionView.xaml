@@ -50,15 +50,13 @@
                                 <StackPanel Orientation="Horizontal" Background="DarkGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-                        <ListBoxItem Content="Фото" FontSize="22" Foreground="White" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170" Margin="2">
-                            <ListBoxItem.HorizontalContentAlignment>Center</ListBoxItem.HorizontalContentAlignment>
-                        </ListBoxItem>
+                        <Button Content="Фото" FontSize="22" Foreground="White" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170" Margin="2"/>
                         <dc:CircularProgressControl Type="Basic" InnerRadius=".5" ValueStringFormat="%" RotationSpeedMultiplier="1.24" Width="170"/>
-                        <ListBoxItem Content="Чертежи" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
-                        <ListBoxItem Content="Документы" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
-                        <ListBoxItem Background="#26A65B" Content="Без замечаний" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
-                        <ListBoxItem x:Name="Notice" Background="#FFDAE402" Content="Замечания" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
-                        <ListBoxItem Content="Комментарий" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
+                        <Button Content="Чертежи" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
+                        <Button Content="Документы" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
+                        <Button Background="#26A65B" Content="Без замечаний" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
+                        <Button x:Name="Notice" Background="#FFDAE402" Content="Замечания" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
+                        <Button Content="Комментарий" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="3" Width="170"/>
                         <StackPanel Orientation="Horizontal"/>
                     </ListView>
                     <ContentControl x:Name="NoticeContentControl" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="5" ></ContentControl>
