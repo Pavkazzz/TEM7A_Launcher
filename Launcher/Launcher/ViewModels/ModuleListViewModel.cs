@@ -60,15 +60,11 @@ namespace Launcher.ViewModels
 
         public void OpenModule(Module module)
         {
-            foreach (var name in IoC.GetAll<IModule>())
+            foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == module.ViewModel))
             {
-                if (name.GetType() == module.ViewModel)
-                {
-                    _eventAggregator.PublishOnBackgroundThread(name);
-                    break;
-                }
+                _eventAggregator.PublishOnBackgroundThread(name);
+                break;
             }
-            
         }
     }
 }
