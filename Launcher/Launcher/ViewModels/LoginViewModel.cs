@@ -19,6 +19,7 @@ namespace Launcher.ViewModels
 
         public void Login()
         {
+            //TODO Login
             if (_user.Login("admin", "admin"))
             {
                 _eventAggregator.PublishOnBackgroundThread("LoginSuccess");    

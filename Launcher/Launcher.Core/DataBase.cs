@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SQLite;
 using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 using System.Windows;
 using Launcher.Core;
 
@@ -26,8 +28,10 @@ namespace Launcher.Core
             _sqLiteConnectionDatabase.Close();
         }
 
+        //TODO path
         public List<Dictionary<string, string>> SqlSelect(string sqlQuery, List<string> columnName, string path = "...resource...")
         {
+            string directoryPath = Path.GetDirectoryName(Assembly.GetAssembly(typeof(DataBase)).Location);
             OpenConnectionSqlite(System.IO.Path.GetFullPath(@"../../../Launcher.Core/Db"));
             var result = new List<Dictionary<string, string>>();
             var sqlSelect = new SQLiteCommand(sqlQuery, _sqLiteConnectionDatabase);

@@ -62,12 +62,13 @@ namespace Launcher {
             var assemblyList = new List<Assembly> { Assembly.GetExecutingAssembly() };
             
             //Грузим все модули из папки
-            assemblyList.AddRange(from file in Directory.GetFiles(Path.GetFullPath(@"../../Modules"), "*.dll") where file.Contains("Launcher.") select Assembly.LoadFile(file));
+            assemblyList.AddRange(from file in Directory.GetFiles(Path.GetFullPath(Path.GetFullPath(@"../../../../Modules")), "*.dll") where file.Contains("Launcher.") select Assembly.LoadFile(file));
 
             return assemblyList.ToArray();
         }
 
-        protected override void OnStartup(object sender, StartupEventArgs e) {
+        protected override void OnStartup(object sender, StartupEventArgs e)
+        {
             DisplayRootViewFor<IShell>();
         }
     }
