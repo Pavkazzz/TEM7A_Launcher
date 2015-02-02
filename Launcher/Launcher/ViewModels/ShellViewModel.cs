@@ -6,7 +6,7 @@ namespace Launcher.ViewModels
     [Export(typeof (IShell))]
     public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<string>
     {
-        private IEventAggregator _eventAggregator;
+        private readonly IEventAggregator _eventAggregator;
 
         [ImportingConstructor]
         public ShellViewModel(IEventAggregator eventAggregator)

@@ -4,7 +4,7 @@ using Launcher.Core;
 
 namespace Launcher.Module.Document.ViewModels
 {
-    [Export(typeof(IModule))]
+    [Export(typeof (IModule))]
     public class MainDocViewModel : Screen, IModule
     {
         private IEventAggregator _eventAggregator;

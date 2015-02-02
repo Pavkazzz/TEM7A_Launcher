@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
+﻿using System.ComponentModel.Composition;
 using Caliburn.Micro;
 using Launcher.Core;
-using Launcher.Module.Inspection.Views;
 
 namespace Launcher.Module.Inspection.ViewModels
 {
-    [Export(typeof(IModule))]
-    class MainInspectionViewModel: Conductor<IScreen>.Collection.OneActive, IModule
+    [Export(typeof (IModule))]
+    internal class MainInspectionViewModel : Conductor<IScreen>.Collection.OneActive, IModule
     {
         private IEventAggregator _eventAggregator;
         private object _noticeContentControl;
@@ -21,11 +14,6 @@ namespace Launcher.Module.Inspection.ViewModels
         public MainInspectionViewModel(IEventAggregator eventAggregator)
         {
             _eventAggregator = eventAggregator;
-        }
-
-        public void Notice()
-        {
-            //NoticeContentControl = IoC.Get<NoticeViewModel>();
         }
 
         public object NoticeContentControl
@@ -38,5 +26,9 @@ namespace Launcher.Module.Inspection.ViewModels
             }
         }
 
+        public void Notice()
+        {
+            //NoticeContentControl = IoC.Get<NoticeViewModel>();
+        }
     }
 }

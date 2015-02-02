@@ -1,3 +1,6 @@
-namespace Launcher {
-    public interface IShell {}
+namespace Launcher
+{
+    public interface IShell
+    {
+    }
 }
