@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Caliburn.Micro;
 using Launcher.Core;
 
-namespace Launcher.Model
+namespace Launcher.Core
 {
-    class ModuleItem
+    public class ModuleItem
     {
         public string Name { get; set; }
         public string Description { get; set; }
@@ -23,6 +25,10 @@ namespace Launcher.Model
         public ModuleItem()
         {
             
+        }
+        public ModuleItem(string name)
+        {
+            Name = name;
         }
     }
 }

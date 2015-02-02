@@ -20,8 +20,6 @@ namespace Launcher.ViewModels
 
         private IEnumerable<IModuleName> _aboutModule;
 
-        [ImportMany(typeof(IModule))]
-        public IEnumerable<Lazy<IModule>> ModuleList { get; set; }
 
         private BindableCollection<ModuleItem> _myModules = new BindableCollection<ModuleItem>();
         public BindableCollection<ModuleItem> Modules
@@ -34,6 +32,7 @@ namespace Launcher.ViewModels
             }
         }
 
+        
         private ModuleItem _selectedModule;
         public ModuleItem SelectedModule
         {

@@ -98,14 +98,13 @@
         <ListBox x:Name="CurrentModuleState" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0"
                  Background="{DynamicResource AccentColorBrush}" />
         <ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7" x:Name="ActiveItem" />
+        
         <ListBox x:Name="ModulesListBox" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0"
                  Background="{DynamicResource AccentColorBrush}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-
-                            <TextBlock x:Name="NameModule" Text="{Binding Name}" />
-                        
+                        <TextBlock x:Name="NameModule" Text="{Binding Name}" />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

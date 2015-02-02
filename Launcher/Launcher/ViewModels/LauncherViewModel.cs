@@ -37,15 +37,16 @@ namespace Launcher.ViewModels
         public void Handle(IModule viewModel)
         {
             var moduleslist = Items[0] as ModuleListViewModel;
-            foreach (var item in moduleslist.Modules)
-            {
-                ModulesListBox.Add(item);    
-            }
+            if (moduleslist != null)
+                foreach (var item in moduleslist.Modules)
+                {
+                    ModulesListBox.Add(item);    
+                }
 
             ActivateItem((IScreen) viewModel);
         }
 
-
+        //После изменения иерархии модуля
         public void Handle(IScreen message)
         {
             ActivateItem(message);
