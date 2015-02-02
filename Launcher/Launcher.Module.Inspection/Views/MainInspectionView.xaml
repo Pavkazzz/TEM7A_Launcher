@@ -52,9 +52,9 @@
                         </ListView.ItemsPanel>
 
 
-                        <Button Background="#26A65B" Content="Без замечаний" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="2" Width="200" Margin="1"/>
-                        <Button x:Name="Notice" Background="#FFDAE402" Content="Замечания" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="2" Width="200" Margin="1"/>
-                        <Button Content="Комментарий" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="2" Width="200" Margin="1"/>
+                        <Button Background="#26A65B" Content="Без замечаний" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="6" Width="200" Margin="1"/>
+                        <Button x:Name="Notice" Background="#FFBF00" Content="Замечания"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="2" Width="200" Margin="1"/>
+                        <Button Content="Комментарий"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="2" Width="200" Margin="1"/>
                         <StackPanel Orientation="Horizontal"/>
                         <!--<dc:CircularProgressControl Type="Basic" InnerRadius=".5" ValueStringFormat="%" RotationSpeedMultiplier="1.24" Width="170" Background="Transparent" VerticalContentAlignment="Stretch" HorizontalAlignment="Right" HorizontalContentAlignment="Right"/>-->
                     </ListView>
