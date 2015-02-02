@@ -15,7 +15,7 @@ namespace Launcher {
     using Caliburn.Micro;
 
     public class AppBootstrapper : BootstrapperBase {
-        private CompositionContainer container;
+        private CompositionContainer _container;
 
         public AppBootstrapper() {
             Initialize();
@@ -25,7 +25,7 @@ namespace Launcher {
         {
             var catalog = new AggregateCatalog(AssemblySource.Instance.Select(x => new AssemblyCatalog(x)));
             
-            container = new CompositionContainer(catalog);
+            _container = new CompositionContainer(catalog);
 
             var batch = new CompositionBatch();
 
@@ -34,14 +34,14 @@ namespace Launcher {
             batch.AddExportedValue(new MainModel());
             batch.AddExportedValue(new User());
 
-            batch.AddExportedValue(container);
+            batch.AddExportedValue(_container);
 
-            container.Compose(batch);
+            _container.Compose(batch);
         }
 
         protected override object GetInstance(Type service, string key) {
             var contract = string.IsNullOrEmpty(key) ? AttributedModelServices.GetContractName(service) : key;
-            var exports = container.GetExportedValues<object>(contract);
+            var exports = _container.GetExportedValues<object>(contract);
 
             if (exports.Any())
                 return exports.First();
@@ -50,11 +50,11 @@ namespace Launcher {
         }
 
         protected override IEnumerable<object> GetAllInstances(Type service) {
-            return container.GetExportedValues<object>(AttributedModelServices.GetContractName(service));
+            return _container.GetExportedValues<object>(AttributedModelServices.GetContractName(service));
         }
 
         protected override void BuildUp(object instance) {
-            container.SatisfyImportsOnce(instance);
+            _container.SatisfyImportsOnce(instance);
         }
 
         protected override IEnumerable<Assembly> SelectAssemblies()
@@ -63,8 +63,6 @@ namespace Launcher {
             
             //Грузим все модули из папки
             assemblyList.AddRange(from file in Directory.GetFiles(Path.GetFullPath(@"../../Modules"), "*.dll") where file.Contains("Launcher.") select Assembly.LoadFile(file));
-            //assemblyList.AddRange(Directory.GetFiles(Path.GetFullPath(@"../../Modules"), "*.dll").Select(file => Assembly.LoadFile(file))); 
-
 
             return assemblyList.ToArray();
         }
