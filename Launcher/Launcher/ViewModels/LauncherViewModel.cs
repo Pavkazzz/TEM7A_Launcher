@@ -18,10 +18,7 @@ namespace Launcher.ViewModels
         private IEventAggregator _eventAggregator;
 
         public BindableCollection<ModuleItem> ModulesListBox { get; set; }
-            
-            
-            
-            
+               
         [ImportingConstructor]
         public LauncherViewModel(IEventAggregator eventAggregator)
         {
@@ -30,7 +27,6 @@ namespace Launcher.ViewModels
             ModulesListBox = new BindableCollection<ModuleItem>();
 
             ActivateItem(IoC.Get<ModuleListViewModel>());
-
         }
 
         //После выбора модулей
