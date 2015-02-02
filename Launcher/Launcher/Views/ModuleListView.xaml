@@ -9,7 +9,8 @@
     
     <Grid>
         <ListBox x:Name="Modules" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" 
-                 Background="{DynamicResource AccentColorBrush4}" BorderThickness="0" HorizontalContentAlignment="Stretch"  >
+                 Background="{DynamicResource AccentColorBrush4}" BorderThickness="0" HorizontalContentAlignment="Stretch" 
+                 cal:Message.Attach="[Event SelectionChanged] = [Action OpenModule]">
 
 
             <ListBox.Resources>
@@ -23,7 +24,7 @@
             </ListBox.Resources>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border cal:Message.Attach="[Event MouseDown] = [Action OpenModule($dataContext)]">
+                    <Border >
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="30"></RowDefinition>

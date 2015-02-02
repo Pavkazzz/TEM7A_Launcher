@@ -14,10 +14,12 @@ namespace Launcher {
     using System.Collections.Generic;
     using Caliburn.Micro;
 
-    public class AppBootstrapper : BootstrapperBase {
+    public class AppBootstrapper : BootstrapperBase
+    {
         private CompositionContainer _container;
 
-        public AppBootstrapper() {
+        public AppBootstrapper()
+        {
             Initialize();
         }
 

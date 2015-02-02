@@ -31,8 +31,7 @@ namespace Launcher.Core
         //TODO path
         public List<Dictionary<string, string>> SqlSelect(string sqlQuery, List<string> columnName, string path = "...resource...")
         {
-            string directoryPath = Path.GetDirectoryName(Assembly.GetAssembly(typeof(DataBase)).Location);
-            OpenConnectionSqlite(System.IO.Path.GetFullPath(@"../../../Launcher.Core/Db"));
+            OpenConnectionSqlite(System.IO.Path.GetFullPath(@"../../../../Launcher.Core/Db"));
             var result = new List<Dictionary<string, string>>();
             var sqlSelect = new SQLiteCommand(sqlQuery, _sqLiteConnectionDatabase);
             SQLiteDataReader sqlReader = sqlSelect.ExecuteReader();

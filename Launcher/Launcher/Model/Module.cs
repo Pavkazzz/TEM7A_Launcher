@@ -7,20 +7,20 @@ using Launcher.Core;
 
 namespace Launcher.Model
 {
-    class Module 
+    class ModuleItem
     {
         public string Name { get; set; }
         public string Description { get; set; }
         public Type ViewModel { get; set; }
 
-        public Module(string name, string description, Type viewModel)
+        public ModuleItem(string name, string description, Type viewModel)
         {
             Name = name;
             Description = description;
             ViewModel = viewModel;
         }
 
-        public Module()
+        public ModuleItem()
         {
             
         }

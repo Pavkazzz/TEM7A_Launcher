@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
+using System.Net.Configuration;
 using System.Windows.Controls;
 using Caliburn.Micro;
 using Launcher.Core;
@@ -12,41 +13,42 @@ namespace Launcher.ViewModels
 {
 
     [Export(typeof(LauncherViewModel))]
-    class LauncherViewModel : Conductor<IScreen>.Collection.OneActive, IHandle<IScreen>
+    class LauncherViewModel : Conductor<IScreen>.Collection.OneActive, IHandle<IModule>, IHandle<IScreen>
     {
         private IEventAggregator _eventAggregator;
 
+        public BindableCollection<ModuleItem> ModulesListBox { get; set; }
+            
+            
+            
+            
         [ImportingConstructor]
         public LauncherViewModel(IEventAggregator eventAggregator)
         {
             _eventAggregator = eventAggregator;
             _eventAggregator.Subscribe(this);
+            ModulesListBox = new BindableCollection<ModuleItem>();
 
             ActivateItem(IoC.Get<ModuleListViewModel>());
 
-            //var qwe = _aboutModule.Name;
-            //Modules.Add(new Module { Name = _aboutModule.Name, Description = _aboutModule.Description});
         }
 
-        public override sealed void ActivateItem(IScreen item)
+        //После выбора модулей
+        public void Handle(IModule viewModel)
         {
-            base.ActivateItem(item);
+            var moduleslist = Items[0] as ModuleListViewModel;
+            foreach (var item in moduleslist.Modules)
+            {
+                ModulesListBox.Add(item);    
+            }
+
+            ActivateItem((IScreen) viewModel);
         }
 
-        //public void Test()
-        //{
-        //    ActivateItem(ModuleList.ToList()[1].Value as IScreen);
-        //}
 
-        public void Handle(IScreen viewModel)
+        public void Handle(IScreen message)
         {
-            ActivateItem(viewModel);
-            //var model = IoC.Get<Model>();
-            //if (model.Auth)
-            //{
-            //    ActivateItem(IoC.Get<AppViewModel>());
-            //}
+            ActivateItem(message);
         }
-
     }
 }

@@ -20,12 +20,11 @@ namespace Launcher.ViewModels
 
         private IEnumerable<IModuleName> _aboutModule;
 
-
         [ImportMany(typeof(IModule))]
         public IEnumerable<Lazy<IModule>> ModuleList { get; set; }
 
-        private BindableCollection<Module> _myModules = new BindableCollection<Module>();
-        public BindableCollection<Module> Modules
+        private BindableCollection<ModuleItem> _myModules = new BindableCollection<ModuleItem>();
+        public BindableCollection<ModuleItem> Modules
         {
             get { return _myModules; }
             set
@@ -35,8 +34,8 @@ namespace Launcher.ViewModels
             }
         }
 
-        private Module _selectedModule;
-        public Module SelectedModule
+        private ModuleItem _selectedModule;
+        public ModuleItem SelectedModule
         {
             get { return _selectedModule; }
             set
@@ -55,15 +54,15 @@ namespace Launcher.ViewModels
 
             foreach (var module in _aboutModule)
             {
-                Modules.Add(new Module(module.Name, module.Description, module.ViewModel));
+                Modules.Add(new ModuleItem(module.Name, module.Description, module.ViewModel));
             }
         }
 
-        public void OpenModule(Module module)
+        public void OpenModule()
         {
-            foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == module.ViewModel))
+            foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == SelectedModule.ViewModel))
             {
-                _eventAggregator.PublishOnBackgroundThread(name);
+                _eventAggregator.PublishOnBackgroundThread((IModule)name);
             }
         }
     }
