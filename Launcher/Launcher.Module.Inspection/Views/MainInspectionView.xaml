@@ -58,7 +58,7 @@
                     </Setter>
                 </Style>
             </ListBox.ItemContainerStyle>
-            <UserControls:SquareButtonWithRoundedBorders Height="120" Width="120" />
+            <UserControls:SquareButtonWithRoundedBorders Height="125" Width="125" Margin="-5,0,0,0"/>
         </ListBox>
         <Label HorizontalAlignment="Right" VerticalAlignment="Top" Content="Таймер обратного отчёта" Grid.Row="0" Grid.Column="3" FontSize="22"/>
         <TabControl x:Name="TabControlInspectionModule" Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" Grid.ColumnSpan="3" Background="LightGray">
