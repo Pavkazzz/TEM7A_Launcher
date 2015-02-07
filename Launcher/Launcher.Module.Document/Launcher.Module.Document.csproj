@@ -111,6 +111,10 @@
       <Project>{bd1b8356-08b1-4b0c-b08d-d2504d954be2}</Project>
       <Name>Launcher.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Launcher\Launcher.csproj">
+      <Project>{A4907F7B-534B-427E-8600-0E045705B161}</Project>
+      <Name>Launcher</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

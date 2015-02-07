@@ -54,6 +54,7 @@ namespace Launcher.Module.Document.ViewModels
         {
             var sel = SelectedCategoryList;
             
+            ActivateItem(IoC.Get<DocumentListViewModel>());
         }
     }
 

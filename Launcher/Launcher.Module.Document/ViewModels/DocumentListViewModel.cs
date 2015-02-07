@@ -1,14 +1,26 @@
 ﻿using System.ComponentModel.Composition;
 using Caliburn.Micro;
+using Launcher.ViewModels;
 
-[Export(typeof(DocumentListViewModel))]
-public class DocumentListViewModel : Screen
+namespace Launcher.Module.Document.ViewModels
 {
-    private IEventAggregator _eventAggregator;
-
-    [ImportingConstructor]
-    public DocumentListViewModel(IEventAggregator eventAggregator)
+    [Export(typeof(DocumentListViewModel))]
+    public class DocumentListViewModel : Screen
     {
-        _eventAggregator = eventAggregator;
+        private IEventAggregator _eventAggregator;
+        private IWindowManager _windowManager;
+
+        [ImportingConstructor]
+        public DocumentListViewModel(IEventAggregator eventAggregator, IWindowManager windowManager)
+        {
+            _eventAggregator = eventAggregator;
+            _windowManager = windowManager;
+        }
+
+        public void ShowDoc()
+        {
+            //view для документа.
+            //_windowManager.ShowDialog(IoC.Get<>());
+        }
     }
 }
