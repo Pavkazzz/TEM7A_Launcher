@@ -1,38 +1,45 @@
-﻿using System.ComponentModel.Composition;
+﻿using System.Collections.Generic;
+using System.ComponentModel.Composition;
+using System.Linq;
 using Caliburn.Micro;
 using Launcher.Core;
+using Launcher.Model;
 
 namespace Launcher.ViewModels
 {
     [Export(typeof (LauncherViewModel))]
     public class LauncherViewModel : Conductor<IScreen>.Collection.OneActive, IHandle<IModule>, IHandle<IScreen>
     {
-        private readonly IEventAggregator _eventAggregator;
+        public BindableCollection<ModuleItem> ModulesListBox { get; set; }
 
         [ImportingConstructor]
-        public LauncherViewModel(IEventAggregator eventAggregator)
+        public LauncherViewModel(IEventAggregator eventAggregator, [ImportMany(typeof(IModuleName))] IEnumerable<IModuleName> aboutModule, MainModel model)
         {
-            _eventAggregator = eventAggregator;
-            _eventAggregator.Subscribe(this);
-            ModulesListBox = new BindableCollection<ModuleItem>();
+            eventAggregator.Subscribe(this);
+
+            foreach (var moduleName in aboutModule)
+            {
+                model.Modules.Add(new ModuleItem(moduleName));
+            }
 
             ActivateItem(IoC.Get<ModuleListViewModel>());
         }
 
-        public BindableCollection<ModuleItem> ModulesListBox { get; set; }
         //После выбора модулей
         public void Handle(IModule viewModel)
         {
-            var moduleslist = Items[0] as ModuleListViewModel;
-            if (moduleslist != null)
-                foreach (var item in moduleslist.Modules)
-                {
-                    ModulesListBox.Add(item);
-                }
+            //TODO список модулей
+            //var moduleslist = Items[0] as ModuleListViewModel;
+            //if (moduleslist != null)
+            //    foreach (var item in moduleslist.Modules)
+            //    {
+            //        ModulesListBox.Add(item);
+            //    }
+
             ActivateItem((IScreen) viewModel);
         }
 
-        //После изменения иерархии модуля
+        //После выбора  модуля
         public void Handle(IScreen message)
         {
             ActivateItem(message);

@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
+using Launcher.Core;
 
 namespace Launcher.ViewModels
 {

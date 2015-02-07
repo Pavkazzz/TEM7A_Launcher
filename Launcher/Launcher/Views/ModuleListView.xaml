@@ -13,7 +13,7 @@
                  Background="{DynamicResource AccentColorBrush4}" BorderThickness="0"
                  HorizontalContentAlignment="Stretch"
                  cal:Message.Attach="[Event SelectionChanged] = [Action OpenModule]">
-
+                 
 
             <ListBox.Resources>
                 <Style TargetType="ListBoxItem">
@@ -37,7 +37,7 @@
                                    HorizontalAlignment="Center" />
                             <TextBlock Grid.Row="1" Text="{Binding Description}" FontSize="15" FontFamily="Calibri"
                                        HorizontalAlignment="Center" />
-
+                            
                         </Grid>
                     </Border>
                 </DataTemplate>
