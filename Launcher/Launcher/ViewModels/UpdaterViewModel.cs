@@ -4,9 +4,9 @@ using Caliburn.Micro;
 namespace Launcher.ViewModels
 {
     [Export(typeof (UpdaterViewModel))]
-    class UpdaterViewModel : Screen
+    internal class UpdaterViewModel : Screen
     {
-        private IEventAggregator _eventAggregator;
+        private readonly IEventAggregator _eventAggregator;
 
         [ImportingConstructor]
         public UpdaterViewModel(IEventAggregator eventAggregator)

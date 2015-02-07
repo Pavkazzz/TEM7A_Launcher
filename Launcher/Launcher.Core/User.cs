@@ -1,22 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.ComponentModel.Composition;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Launcher.Core
 {
     public class User
     {
-        public string LoginName { get; private set; }
-        public string Password { get; private set; }
-        public string Name { get; private set; }
-        public string Lastname { get; private set; }
-        public string Email { get; private set; }
-
         public User(string login, string password, string name, string lastname, string email)
         {
             LoginName = login;
@@ -35,12 +24,17 @@ namespace Launcher.Core
             Email = String.Empty;
         }
 
+        public string LoginName { get; private set; }
+        public string Password { get; private set; }
+        public string Name { get; private set; }
+        public string Lastname { get; private set; }
+        public string Email { get; private set; }
 
         public bool Login(String login, String pass)
         {
             var db = new DataBase();
-            bool result = false;
-            string hashPass = Security.GetSHA512(pass);
+            var result = false;
+            var hashPass = Security.GetSHA512(pass);
             var select = db.SqlSelect(
                 string.Format("Select Name, Lastname from Accounts where Login = '{0}' and Password = '{1}'", login,
                     hashPass), new List<string> {"Name", "Lastname"});
@@ -48,9 +42,10 @@ namespace Launcher.Core
             result = select.Count > 0;
             return result;
         }
+
         public void Registration(User user)
         {
-            string hashPass = Security.GetSHA512(user.Password);
+            var hashPass = Security.GetSHA512(user.Password);
             try
             {
                 //OpenConnectionSqlite(App.ResourcePath);
