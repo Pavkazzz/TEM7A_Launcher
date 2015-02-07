@@ -10,7 +10,11 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <ListBox x:Name="CategoryList" ItemContainerStyle="{StaticResource ListBoxItemCategory}">
-            <Button>qwe</Button>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
         <ContentControl Grid.Column="1" x:Name="ActiveItem"></ContentControl>
     </Grid>
