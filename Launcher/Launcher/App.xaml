@@ -6,13 +6,15 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
+                    <!-- ReSharper disable once InconsistentNaming -->
                     <Launcher:AppBootstrapper x:Key="bootstrapper" />
                 </ResourceDictionary>
-                <ResourceDictionary Source="Resources/Icons.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Style.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Launcher.Core.Gui;component/Icons.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Launcher.Core.Gui;component/Style.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Launcher.Core.Gui;component/Style/ListBox.xaml" />
                 <!--<ResourceDictionary Source="/Launcher.Core/UserControls/SquareButtonWithRoundedBorders.xaml"/>-->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

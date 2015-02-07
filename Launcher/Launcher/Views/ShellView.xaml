@@ -5,8 +5,8 @@
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
                       mc:Ignorable="d"
-                      Width="500" Height="600"
-                      d:DesignHeight="300" d:DesignWidth="300">
+                      
+                      d:DesignHeight="300" d:DesignWidth="300" WindowState="Maximized" WindowStartupLocation="CenterScreen">
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
             <Button Content="About" />
