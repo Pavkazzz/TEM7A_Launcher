@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Caliburn.Micro;
 using Xunit;
 
 namespace Launcher.Test
@@ -27,7 +28,7 @@ namespace Launcher.Test
         [Fact]
         public void TestBootstrapper()
         {
-            var boot = new AppBootstrapper(Path.GetFullPath(Path.GetFullPath(@"../../../../Modules")));
+            var boot = new AppBootstrapper(Path.GetFullPath(@"../../../Modules"));
             Assert.NotNull(boot);
         }
     }

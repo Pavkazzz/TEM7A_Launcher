@@ -15,18 +15,23 @@ namespace Launcher
     public class AppBootstrapper : BootstrapperBase
     {
         private CompositionContainer _container;
-        private string _modulesPath = Path.GetFullPath(Path.GetFullPath(@"../../../../Modules"));
+        private readonly string _modulesPath = Path.GetFullPath(@"../../../../Modules");
 
         public AppBootstrapper()
         {
             Initialize();
+            
 
         }
 
+        //Для теста
         public AppBootstrapper(string path)
         {
-            Initialize();
+            
             _modulesPath = path;
+            PlatformProvider.Current = new XamlPlatformProvider();
+            base.StartDesignTime();
+            
         }
 
         protected override void Configure()
