@@ -13,7 +13,6 @@
             <Setter Property="FontSize" Value="22"/>
             <Setter Property="Width" Value="125"/>
             <Setter Property="Height" Value="125"/>
-            <Setter Property="Margin" Value="-5,0,0,0"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -61,7 +60,23 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="ListBoxWithoutIsolation" TargetType="ListBoxItem">
+        <Style x:Key="ListBoxWithoutIsolation" TargetType="ListBox">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="Height" Value="Auto"/>
+            <!--<Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#000000" />
+                --><!-- Background of selected item when focussed --><!--
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#000000" />
+                --><!-- Background of selected item when not focussed --><!--
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#000000" />
+            </Style.Resources>-->
+        </Style>
+        <Style x:Key="ListBoxItemWithoutIsolation" TargetType="ListBoxItem">
             <Style.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#000000" />
                 <!-- Background of selected item when focussed -->
@@ -69,7 +84,7 @@
                 <!-- Background of selected item when not focussed -->
                 <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#000000" />
             </Style.Resources>
-            <Setter Property="Template">
+        <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ListBoxItem}">
                         <Border BorderThickness="{TemplateBinding BorderThickness}"
@@ -85,8 +100,11 @@
 
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="#ADADAD"/>
+                                <Setter Property="Foreground" Value="Red"/>
                             </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                               <Setter Property="Background" Value="Transparent"/>
+                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -178,12 +196,12 @@
                         </ListView.ItemsPanel>
 
 
-                        <Button Background="#26A65B" Content="Без замечаний" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="6" Width="200" Margin="1"/>
-                        <Button x:Name="Notice" Background="#FFBF00" Content="Замечания"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="2" Width="200" Margin="1"/>
-                        <Button Content="Комментарий"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="2" Width="200" Margin="1"/>
+                        <Button Style="{StaticResource SquareButtonRound}" Background="#26A65B" Content="Без замечаний" Width="200"/>
+                        <Button Style="{StaticResource SquareButtonRound}" x:Name="Notice" Background="#FFBF00" Content="Замечания"  Width="200"/>
+                        <Button Style="{StaticResource SquareButtonRound}" Content="Комментарий" Width="200"/>
                         <StackPanel Orientation="Horizontal"/>
                     </ListView>
-                    <ListBox  Grid.Column="4" Grid.Row="2" Grid.RowSpan="4">
+                    <ListBox Style="{StaticResource ListBoxWithoutIsolation}" ItemContainerStyle="{StaticResource ListBoxItemWithoutIsolation}" Background="Transparent"  Grid.Column="4" Grid.Row="2" Grid.RowSpan="4" Height="auto" >
                         <Button Style="{StaticResource SquareButtonRound}" Content="Фото"/>
                         <Button Style="{StaticResource SquareButtonRound}" Content="Чертежи"/>
                         <Button Style="{StaticResource SquareButtonRound}" Content="Документы"/>
