@@ -29,7 +29,6 @@ namespace Launcher.ViewModels
                 {
                     ModulesListBox.Add(item);
                 }
-
             ActivateItem((IScreen) viewModel);
         }
 

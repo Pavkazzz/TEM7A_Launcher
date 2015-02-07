@@ -13,9 +13,10 @@ namespace Launcher.ViewModels
         {
             _eventAggregator = eventAggregator;
             _eventAggregator.Subscribe(this);
+            
             ActivateItem(IoC.Get<UpdaterViewModel>());
         }
-
+        //Todo type isntead of string.
         public void Handle(string message)
         {
             if (message == "UpdateSuccess")
