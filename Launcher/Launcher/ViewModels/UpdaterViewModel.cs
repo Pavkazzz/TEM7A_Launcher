@@ -4,7 +4,7 @@ using Caliburn.Micro;
 namespace Launcher.ViewModels
 {
     [Export(typeof (UpdaterViewModel))]
-    internal class UpdaterViewModel : Screen
+    public class UpdaterViewModel : Screen
     {
         private readonly IEventAggregator _eventAggregator;
 
@@ -16,7 +16,7 @@ namespace Launcher.ViewModels
 
         public void Start()
         {
-            _eventAggregator.PublishOnBackgroundThread("UpdateSuccess");
+            _eventAggregator.PublishOnBackgroundThread(this);
         }
     }
 }

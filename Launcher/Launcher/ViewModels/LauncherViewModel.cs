@@ -5,7 +5,7 @@ using Launcher.Core;
 namespace Launcher.ViewModels
 {
     [Export(typeof (LauncherViewModel))]
-    internal class LauncherViewModel : Conductor<IScreen>.Collection.OneActive, IHandle<IModule>, IHandle<IScreen>
+    public class LauncherViewModel : Conductor<IScreen>.Collection.OneActive, IHandle<IModule>, IHandle<IScreen>
     {
         private readonly IEventAggregator _eventAggregator;
 

@@ -5,7 +5,7 @@ using Launcher.Core;
 namespace Launcher.ViewModels
 {
     [Export(typeof (LoginViewModel))]
-    internal class LoginViewModel : Screen
+    public class LoginViewModel : Screen
     {
         private readonly IEventAggregator _eventAggregator;
         private readonly User _user;
@@ -22,7 +22,7 @@ namespace Launcher.ViewModels
             //TODO Login
             if (_user.Login("admin", "admin"))
             {
-                _eventAggregator.PublishOnBackgroundThread("LoginSuccess");
+                _eventAggregator.PublishOnBackgroundThread(this);
             }
         }
     }

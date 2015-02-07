@@ -4,7 +4,7 @@ using Caliburn.Micro;
 namespace Launcher.ViewModels
 {
     [Export(typeof (IShell))]
-    public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<string>
+    public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<LoginViewModel>, IHandle<UpdaterViewModel>
     {
         private readonly IEventAggregator _eventAggregator;
 
@@ -16,28 +16,28 @@ namespace Launcher.ViewModels
             
             ActivateItem(IoC.Get<UpdaterViewModel>());
         }
-        //Todo type isntead of string.
-        public void Handle(string message)
-        {
-            if (message == "UpdateSuccess")
-            {
-                ActivateItem(IoC.Get<LoginViewModel>());
-            }
-
-            if (message == "LoginSuccess")
-            {
-                ActivateItem(IoC.Get<LauncherViewModel>());
-            }
-            //var model = IoC.Get<Model>();
-            //if (model.Auth)
-            //{
-            //    ActivateItem(IoC.Get<AppViewModel>());
-            //}
-        }
+        //public void Handle(string message)
+        //{
+        //    //var model = IoC.Get<Model>();
+        //    //if (model.Auth)
+        //    //{
+        //    //    ActivateItem(IoC.Get<AppViewModel>());
+        //    //}
+        //}
 
         public override sealed void ActivateItem(IScreen item)
         {
             base.ActivateItem(item);
+        }
+
+        public void Handle(LoginViewModel message)
+        {
+            ActivateItem(IoC.Get<LauncherViewModel>());
+        }
+
+        public void Handle(UpdaterViewModel message)
+        {
+            ActivateItem(IoC.Get<LoginViewModel>());
         }
     }
 }
