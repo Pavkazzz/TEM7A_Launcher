@@ -6,8 +6,9 @@
              xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
+    
     <Grid>
-        <ListBox cal:Message.Attach="[Event SelectionChanged] = [Action ShowDoc]">
+        <ListBox cal:Message.Attach="[Event SelectionChanged] = [Action ShowDoc]" ItemContainerStyle="{StaticResource DocumentListBoxStyle}">
             <ListBoxItem>wqe</ListBoxItem>
             <ListBoxItem>wqe</ListBoxItem>
             <ListBoxItem>wqe</ListBoxItem>
