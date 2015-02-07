@@ -5,7 +5,6 @@ using Launcher.Module.Document.ViewModels;
 
 namespace Launcher.Module.Document
 {
-    [Export(typeof (IModuleName))]
     internal class AboutDoc : IModuleName
     {
         private AboutDoc()

@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutDoc.cs" />
+    <Compile Include="Search.cs" />
     <Compile Include="ViewModels\DocumentListViewModel.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="ViewModels\MainDocViewModel.cs" />

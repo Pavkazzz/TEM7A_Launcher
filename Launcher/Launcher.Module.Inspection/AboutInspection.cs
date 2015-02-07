@@ -5,7 +5,7 @@ using Launcher.Module.Inspection.ViewModels;
 
 namespace Launcher.Module.Inspection
 {
-    [Export(typeof (IModuleName))]
+    
     internal class AboutInspection : IModuleName
     {
         private AboutInspection()
