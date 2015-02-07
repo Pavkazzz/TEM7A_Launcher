@@ -11,6 +11,6 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <ListBox x:Name="CategoryList"></ListBox>
-        <ContentControl Grid.Column="1" x:Name="Items"></ContentControl>
+        <ContentControl Grid.Column="1" x:Name="ActiveItem"></ContentControl>
     </Grid>
 </UserControl>
