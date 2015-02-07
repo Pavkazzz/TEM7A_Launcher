@@ -61,7 +61,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="ListBoxWithoutIsolation" TargetType="ListBox">
+        <Style x:Key="ListBoxWithoutIsolation" TargetType="ListBoxItem">
             <Style.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#000000" />
                 <!-- Background of selected item when focussed -->
@@ -71,7 +71,7 @@
             </Style.Resources>
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ListBox}">
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
                         <Border BorderThickness="{TemplateBinding BorderThickness}"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
@@ -183,7 +183,7 @@
                         <Button Content="Комментарий"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Green" BorderThickness="2" Width="200" Margin="1"/>
                         <StackPanel Orientation="Horizontal"/>
                     </ListView>
-                    <ListBox Style="{StaticResource ListBoxWithoutIsolation }" Grid.Column="4" Grid.Row="2" Grid.RowSpan="4">
+                    <ListBox  Grid.Column="4" Grid.Row="2" Grid.RowSpan="4">
                         <Button Style="{StaticResource SquareButtonRound}" Content="Фото"/>
                         <Button Style="{StaticResource SquareButtonRound}" Content="Чертежи"/>
                         <Button Style="{StaticResource SquareButtonRound}" Content="Документы"/>
