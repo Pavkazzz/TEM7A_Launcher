@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Launcher.Core;
 
 namespace Launcher.Module.Inspection
 {
-    class Search
+    class Search : ISearch
     {
         public List<string> DoSearch(string name)
         {
