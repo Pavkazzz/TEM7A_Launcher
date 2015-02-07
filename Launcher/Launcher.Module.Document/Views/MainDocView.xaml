@@ -9,7 +9,9 @@
             <ColumnDefinition Width="129"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="CategoryList" ItemContainerStyle="{StaticResource ListBoxItemSem}"/>
+        <ListBox x:Name="CategoryList" ItemContainerStyle="{StaticResource ListBoxItemCategory}">
+            <Button>qwe</Button>
+        </ListBox>
         <ContentControl Grid.Column="1" x:Name="ActiveItem"></ContentControl>
     </Grid>
 </UserControl>
