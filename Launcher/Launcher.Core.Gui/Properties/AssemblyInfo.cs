@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Launcher.Test")]
+[assembly: AssemblyTitle("Launcher.Core.Gui")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Launcher.Test")]
+[assembly: AssemblyProduct("Launcher.Core.Gui")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0516abc8-2a88-4aa0-9183-8c4b65a5781a")]
+[assembly: Guid("141eb3a6-ee07-45d4-9082-b14e6d8c51d4")]
 
 // Version information for an assembly consists of the following four values:
 //
