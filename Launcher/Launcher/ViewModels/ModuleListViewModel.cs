@@ -14,13 +14,7 @@ namespace Launcher.ViewModels
         private BindableCollection<ModuleItem> _myModules = new BindableCollection<ModuleItem>();
         private ModuleItem _selectedModule;
 
-        [ImportingConstructor]
-        public ModuleListViewModel(IEventAggregator eventAggregator, MainModel model)
-        {
-            _eventAggregator = eventAggregator;
-            Modules = model.Modules;
-        }
-
+        #region PropertyForView
         public BindableCollection<ModuleItem> Modules
         {
             get { return _myModules; }
@@ -40,6 +34,15 @@ namespace Launcher.ViewModels
                 NotifyOfPropertyChange(() => SelectedModule);
             }
         }
+        #endregion
+
+        [ImportingConstructor]
+        public ModuleListViewModel(IEventAggregator eventAggregator, MainModel model)
+        {
+            _eventAggregator = eventAggregator;
+            Modules = model.Modules;
+        }
+
 
         public void OpenModule()
         {

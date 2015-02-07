@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid x:Name="MainGrid" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
@@ -64,10 +65,13 @@
                 </TextBox.Style>
             </TextBox>
             <Popup Width="{Binding RelativeSource={RelativeSource Self}, Path=PlacementTarget.ActualWidth}"
-                   Placement="Bottom" PlacementTarget="{Binding ElementName=TextBoxSearch}">
+                   Placement="Bottom" PlacementTarget="{Binding ElementName=TextBoxSearch}" 
+                   cal:Message.Attach="[Event Opened] = [Action Search]">
+                
                 <Popup.Style>
                     <Style TargetType="{x:Type Popup}">
                         <Setter Property="IsOpen" Value="False" />
+                        
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding IsFocused, ElementName=TextBoxSearch}" Value="True">
                                 <Setter Property="IsOpen" Value="True" />
@@ -76,7 +80,7 @@
                     </Style>
                 </Popup.Style>
 
-                <ListBox x:Name="ListBoxSearch" Background="{DynamicResource AccentColorBrush}"
+                <ListBox x:Name="SearchResult" Background="{DynamicResource AccentColorBrush}"
                          ScrollViewer.VerticalScrollBarVisibility="Hidden" FontSize="18">
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem">
@@ -85,6 +89,7 @@
                             <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
                             <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden" />
                             <Setter Property="BorderThickness" Value="1,0,0,0" />
+                            <!--<Setter Property="Content" Value="{Binding Name}"/>-->
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter Property="Foreground" Value="White" />
@@ -92,6 +97,11 @@
                             </Style.Triggers>
                         </Style>
                     </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
                 </ListBox>
             </Popup>
         </Grid>
