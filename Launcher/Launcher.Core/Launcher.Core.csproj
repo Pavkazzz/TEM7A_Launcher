@@ -82,7 +82,6 @@
   <ItemGroup>
     <None Include="Db\db.db" />
     <None Include="packages.config" />
-    <Resource Include="Resources\Entypo.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Lib\GhostscriptSharp.dll" />
@@ -91,17 +90,8 @@
     <Content Include="Lib\MouseKeyboardActivityMonitor.dll" />
     <Content Include="Lib\SQLite.Interop.dll" />
     <Resource Include="Resources\WindowsIcons-license.txt" />
-    <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Resources\Icons.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Resources\Style.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="UserControls\SquareButtonWithRoundedBorders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
