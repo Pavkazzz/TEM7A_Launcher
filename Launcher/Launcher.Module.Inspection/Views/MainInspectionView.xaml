@@ -30,6 +30,36 @@
                                 </Grid.ColumnDefinitions>
                                 <Border x:Name="FirstBorder" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" BorderBrush="Green" BorderThickness="3" HorizontalAlignment="Stretch" Margin="1" VerticalAlignment="Stretch" CornerRadius="11">
 
+                                    <Border x:Name="SecondBorder" BorderBrush="Yellow" BorderThickness="3" Margin="1" CornerRadius="3" Background="DarkGreen">
+                                        <Border.Style>
+                                            <Style TargetType="{x:Type Border}">
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="DarkGoldenrod"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Grid.Style>
+                                                <Style TargetType="{x:Type Grid}">
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="Background" Value="DarkGoldenrod"/>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Grid.Style>
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </Border>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <Style x:Key="ListBoxWithoutIsolation" TargetType="ListBox">
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -38,9 +68,13 @@
             <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
             <!--<Style.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#000000" />
-                --><!-- Background of selected item when focussed --><!--
+                -->
+            <!-- Background of selected item when focussed -->
+            <!--
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#000000" />
-                --><!-- Background of selected item when not focussed --><!--
+                -->
+            <!-- Background of selected item when not focussed -->
+            <!--
                 <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#000000" />
             </Style.Resources>-->
         </Style>
@@ -75,7 +109,7 @@
                 <!-- Background of selected item when not focussed -->
                 <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#000000" />
             </Style.Resources>
-        <Setter Property="Template">
+            <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ListBoxItem}">
                         <Border BorderThickness="{TemplateBinding BorderThickness}"
@@ -94,8 +128,8 @@
                                 <Setter Property="Foreground" Value="Red"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                               <Setter Property="Background" Value="Transparent"/>
-                             </Trigger>
+                                <Setter Property="Background" Value="Transparent"/>
+                            </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
