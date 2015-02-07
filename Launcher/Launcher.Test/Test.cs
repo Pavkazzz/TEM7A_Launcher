@@ -40,10 +40,10 @@ namespace Launcher.Test
         public void TestSqlSelect()
         {
             var db = new DataBase(Path.GetFullPath(@"../../../Launcher.Core/Db"));
-            var query = @"Select Name, Lastname from Accounts";
+            var query = @"Select Name, Lastname from Accounts LIMIT 10";
             var column = new List<string> {"Name", "Lastname"};
             var select = db.SqlSelect(query, column);
-            Assert.Equal(select.Count, 1);
+            Assert.InRange(select.Count, 1, 10);
         }
     }
 }
