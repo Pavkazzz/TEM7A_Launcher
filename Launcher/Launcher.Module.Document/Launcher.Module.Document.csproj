@@ -75,8 +75,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutDoc.cs" />
+    <Compile Include="ViewModels\DocumentListViewModel.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="ViewModels\MainDocViewModel.cs" />
+    <Compile Include="Views\DocumentListView.xaml.cs">
+      <DependentUpon>DocumentListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HistoryView.xaml.cs">
       <DependentUpon>HistoryView.xaml</DependentUpon>
     </Compile>
@@ -89,6 +93,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\DocumentListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\HistoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
