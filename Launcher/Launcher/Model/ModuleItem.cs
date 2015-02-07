@@ -2,7 +2,8 @@
 
 namespace Launcher.Core
 {
-    public class ModuleItem : IModuleName
+    //TODO inheritance from IModuleName
+    public class ModuleItem 
     {
         public ModuleItem(string name, string description, Type viewModel)
         {

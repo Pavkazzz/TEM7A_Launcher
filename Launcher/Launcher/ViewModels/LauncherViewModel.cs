@@ -19,6 +19,7 @@ namespace Launcher.ViewModels
 
             foreach (var moduleName in aboutModule)
             {
+                if (moduleName != null)
                 model.Modules.Add(new ModuleItem(moduleName));
             }
 
