@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,11 @@ namespace Launcher.Test
 
     public class Bootstrapper
     {
-
+        [Fact]
+        public void TestBootstrapper()
+        {
+            var boot = new AppBootstrapper(Path.GetFullPath(Path.GetFullPath(@"../../../../Modules")));
+            Assert.NotNull(boot);
+        }
     }
 }

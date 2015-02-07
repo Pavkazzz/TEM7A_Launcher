@@ -15,10 +15,18 @@ namespace Launcher
     public class AppBootstrapper : BootstrapperBase
     {
         private CompositionContainer _container;
+        private string _modulesPath = Path.GetFullPath(Path.GetFullPath(@"../../../../Modules"));
 
         public AppBootstrapper()
         {
             Initialize();
+
+        }
+
+        public AppBootstrapper(string path)
+        {
+            Initialize();
+            _modulesPath = path;
         }
 
         protected override void Configure()
@@ -66,7 +74,7 @@ namespace Launcher
 
             //Грузим все модули из папки
             assemblyList.AddRange(
-                from file in Directory.GetFiles(Path.GetFullPath(Path.GetFullPath(@"../../../../Modules")), "*.dll")
+                from file in Directory.GetFiles(_modulesPath, "*.dll")
                 where file.Contains("Launcher.")
                 select Assembly.LoadFile(file));
 
