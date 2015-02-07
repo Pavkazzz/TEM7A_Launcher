@@ -4,16 +4,15 @@ using Launcher.Core;
 
 namespace Launcher.Module.Document.ViewModels
 {
-    [Export(typeof (IModule))]
-    public sealed class MainDocViewModel : Conductor<IScreen>.Collection.OneActive, IModule
+    [Export(typeof(HistoryViewModel))]
+    public class HistoryViewModel : Screen
     {
         private IEventAggregator _eventAggregator;
 
         [ImportingConstructor]
-        public MainDocViewModel(IEventAggregator eventAggregator)
+        public HistoryViewModel(IEventAggregator eventAggregator)
         {
             _eventAggregator = eventAggregator;
-            ActivateItem(IoC.Get<HistoryViewModel>());
         }
     }
 }

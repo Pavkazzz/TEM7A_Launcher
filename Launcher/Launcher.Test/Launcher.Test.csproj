@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -70,8 +71,12 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Launcher.Core\Launcher.Core.csproj">
+      <Project>{BD1B8356-08B1-4B0C-B08D-D2504D954BE2}</Project>
+      <Name>Launcher.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Launcher\Launcher.csproj">
-      <Project>{A4907F7B-534B-427E-8600-0E045705B161}</Project>
+      <Project>{a4907f7b-534b-427e-8600-0e045705b161}</Project>
       <Name>Launcher</Name>
     </ProjectReference>
   </ItemGroup>

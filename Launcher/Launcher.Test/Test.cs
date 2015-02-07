@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
+using Launcher.Core;
 using Xunit;
 
 namespace Launcher.Test
@@ -30,6 +31,19 @@ namespace Launcher.Test
         {
             var boot = new AppBootstrapper(Path.GetFullPath(@"../../../Modules"));
             Assert.NotNull(boot);
+        }
+    }
+
+    public class Sql
+    {
+        [Fact]
+        public void TestSqlSelect()
+        {
+            var db = new DataBase(Path.GetFullPath(@"../../../Launcher.Core/Db"));
+            var query = @"Select Name, Lastname from Accounts";
+            var column = new List<string> {"Name", "Lastname"};
+            var select = db.SqlSelect(query, column);
+            Assert.Equal(select.Count, 1);
         }
     }
 }

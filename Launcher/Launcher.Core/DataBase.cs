@@ -10,9 +10,21 @@ namespace Launcher.Core
     public class DataBase
     {
         private SQLiteConnection _sqLiteConnectionDatabase;
-/*
-        private SQLiteDataAdapter _sqLiteDataAdapter;
-*/
+
+        private readonly string _connectionPath;
+    
+        //private SQLiteDataAdapter _sqLiteDataAdapter;
+
+
+        public DataBase()
+        {
+            _connectionPath = Path.GetFullPath(@"../../../../Launcher.Core/Db");
+        }
+
+        public DataBase(string path)
+        {
+            _connectionPath = path;
+        }
 
         private void OpenConnectionSqlite(string path)
         {
@@ -26,10 +38,9 @@ namespace Launcher.Core
         }
 
         //TODO path
-        public List<Dictionary<string, string>> SqlSelect(string sqlQuery, List<string> columnName,
-            string path = "...resource...")
+        public List<Dictionary<string, string>> SqlSelect(string sqlQuery, List<string> columnName)
         {
-            OpenConnectionSqlite(Path.GetFullPath(@"../../../../Launcher.Core/Db"));
+            OpenConnectionSqlite(_connectionPath);
             var result = new List<Dictionary<string, string>>();
             var sqlSelect = new SQLiteCommand(sqlQuery, _sqLiteConnectionDatabase);
             var sqlReader = sqlSelect.ExecuteReader();

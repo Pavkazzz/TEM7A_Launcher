@@ -89,6 +89,7 @@
     <Content Include="Lib\libmupdf.dll" />
     <Content Include="Lib\MoonPdfLib.dll" />
     <Content Include="Lib\MouseKeyboardActivityMonitor.dll" />
+    <Content Include="Lib\SQLite.Interop.dll" />
     <Resource Include="Resources\WindowsIcons-license.txt" />
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
