@@ -73,18 +73,45 @@
         <Setter.Value>
           <ControlTemplate TargetType="{x:Type ListBoxItem}">
             <Border BorderBrush="DarkGreen" CornerRadius="2" BorderThickness="2">
-                        <Border.Style>
+                        <!--<Border.Style>
                             <Style TargetType="{x:Type Border}">
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="BorderBrush" Value="White"/>
                                         <Setter Property="Background" Value="DarkGreen"/>
+                                        <Setter Property="TextElement.Foreground" Value="White"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="Background" Value="SaddleBrown"/>
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>
-                        </Border.Style>
-                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-              </Border> 
+                        </Border.Style>-->
+                        <StackPanel>
+                            <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                    <Style.Triggers>
+                                        <Trigger Property="StackPanel.IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="DarkGreen"/>
+                                            <Setter Property="TextElement.Foreground" Value="White"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </StackPanel.Style>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <!--<ContentPresenter.Style>
+                                <Style TargetType="ContentPresenter">
+                                    <Style.Triggers>
+                                        <Trigger Property="Border.IsMouseOver" Value="True">
+                                            <Setter Property="" Value="True"/>
+                                           
+                                            
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ContentPresenter.Style>-->
+                        </ContentPresenter>
+                        </StackPanel>
+                    </Border> 
           </ControlTemplate>
         </Setter.Value>
       </Setter>
