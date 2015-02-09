@@ -49,7 +49,7 @@ namespace Launcher.Module.Document.ViewModels
         }
 
         public void ShowDoc()
-        {
+        {sql
             //view для документа.
             _windowManager.ShowDialog(IoC.Get<DocumentViewModel>());
 
