@@ -59,21 +59,20 @@
                        Foreground="White" FontSize="15" HorizontalAlignment="Right" />
             <TextBox x:Name="TextBoxSearch" controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="1"
                      Grid.ColumnSpan="5" Grid.RowSpan="2" VerticalAlignment="Center"
-                     FontSize="17" cal:Message.Attach="[Event PreviewMouseDown] = [Action Search]">
+                     FontSize="17" cal:Message.Attach="[Event PreviewKeyDown] = [Action Search]">
                 <TextBox.Style>
                     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource SearchMetroTextBox}" />
+                
                 </TextBox.Style>
             </TextBox>
             <Popup Width="{Binding RelativeSource={RelativeSource Self}, Path=PlacementTarget.ActualWidth}"
-                   Placement="Bottom" PlacementTarget="{Binding ElementName=TextBoxSearch}" 
-                   >
-                
+                   Placement="Bottom" PlacementTarget="{Binding ElementName=TextBoxSearch}">   
                 <Popup.Style>
                     <Style TargetType="{x:Type Popup}">
                         <Setter Property="IsOpen" Value="False" />
                         
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding IsFocused, ElementName=TextBoxSearch}" Value="True">
+                            <DataTrigger Binding="{Binding Path=IsFocused, ElementName=TextBoxSearch}" Value="True">
                                 <Setter Property="IsOpen" Value="True" />
                             </DataTrigger>
                         </Style.Triggers>
