@@ -39,7 +39,7 @@ namespace Launcher.Test
         [Fact]
         public void TestSqlSelect()
         {
-            var db = new DataBase(Path.GetFullPath(@"../../../Launcher.Core/Db"));
+            var db = new DataBase(Path.GetFullPath(@"../../../Launcher.Core/Db/db.db"));
             var query = @"Select Name, Lastname from Accounts LIMIT 10";
             var column = new List<string> {"Name", "Lastname"};
             var select = db.SqlSelect(query, column);
