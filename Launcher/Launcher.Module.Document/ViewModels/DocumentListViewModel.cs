@@ -51,8 +51,8 @@ namespace Launcher.Module.Document.ViewModels
         public void ShowDoc()
         {sql
             //view для документа.
+            //_eventAggregator.PublishOnBackgroundThread(IoC.Get<DocumentViewModel>());
             _windowManager.ShowDialog(IoC.Get<DocumentViewModel>());
-
         }
 
         public void Handle(Category message)
@@ -68,6 +68,7 @@ namespace Launcher.Module.Document.ViewModels
             }
         }
     }
+
     public class DocFile
     {
         public DocFile(string name)
