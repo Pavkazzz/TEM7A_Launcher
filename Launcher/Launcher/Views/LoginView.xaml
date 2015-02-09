@@ -47,7 +47,7 @@
                     <PasswordBox Name="Passwb2"     Grid.Row="5" Grid.Column="1" Style="{StaticResource PasswordBoxStyleGreen}" />
                     <Label Name="email_lbl"         Grid.Row="6" Grid.Column="0" Style="{StaticResource LabelStyleGreen}" Content="Электронная почта"  />
                     <TextBox Name="email_tbx"       Grid.Row="6" Grid.Column="1" Style="{StaticResource TextBoxStyleGreen}"/>
-                    <Button Name="Accept_btn"       Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Content="Зарегистрироваться" />
+                    <Button Name="Accept_btn"       Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Content="Зарегистрироваться" FontSize="17" />
                     <!--<Label-->
                 </Grid>
             </TabItem>
@@ -65,28 +65,18 @@
                         <ColumnDefinition />
                         <ColumnDefinition Width="3*" />
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Grid.Row="0" Content="Табельный номер" HorizontalContentAlignment="Center"
-                           VerticalContentAlignment="Center" BorderBrush="Black" Background="White"
-                           BorderThickness="0.4" Margin="5,5,2.5,2.5" HorizontalAlignment="Stretch" />
-                    <TextBox Grid.Column="1" Grid.Row="0" Name="EntryLogin" Margin="2.5,2.5,5,2.5" />
-                    <Label Grid.Column="0" Grid.Row="1" Content="Пароль" HorizontalContentAlignment="Center"
-                           VerticalContentAlignment="Center" BorderBrush="Black" Background="White"
-                           BorderThickness="0.4" Margin="5,2.5,2.5,2.5" HorizontalAlignment="Stretch" />
-                    <PasswordBox Grid.Column="1" Grid.Row="1" Name="EntryPassword" Margin="2,3,5,2" />
-                    <Label Grid.Column="0" Grid.Row="2" Content="Номер локомотива" Background="White"
-                           Margin="5,2.5,2.5,2.5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                           BorderBrush="Black" BorderThickness="0.4" HorizontalAlignment="Stretch" />
-                    <TextBox Grid.Column="1" Grid.Row="2" x:Name="Number_Locomotion" Margin="2.5,2.5,5,2.5" />
-                    <Label Grid.Column="0" Grid.Row="3" Content="Номер поезда" Background="White"
-                           Margin="5,2.5,2.5,2.5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
-                           VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="0.4" />
-                    <TextBox Grid.Column="1" Grid.Row="3" Margin="2.5,2.5,5,2.5" />
-                    <Label Grid.Column="0" Grid.Row="4" Content="Вес поезда (тонн)" Background="White"
-                           Margin="5,2.5,2.5,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                           BorderBrush="Black" BorderThickness="0.4" HorizontalAlignment="Stretch" />
-                    <TextBox Grid.Column="1" Grid.Row="4" Margin="2.5,2.5,5,5" />
+                    <Label Grid.Column="0" Grid.Row="0" Content="Табельный номер" Style="{StaticResource LabelStyleGreen}" />
+                    <TextBox Grid.Column="1" Grid.Row="0" Name="EntryLogin" />
+                    <Label Grid.Column="0" Grid.Row="1" Content="Пароль" Style="{StaticResource LabelStyleGreen}" />
+                    <PasswordBox Grid.Column="1" Grid.Row="1" Name="EntryPassword" />
+                    <Label Grid.Column="0" Grid.Row="2" Content="Номер локомотива" Style="{StaticResource LabelStyleGreen}" />
+                    <TextBox Grid.Column="1" Grid.Row="2" x:Name="Number_Locomotion" />
+                    <Label Grid.Column="0" Grid.Row="3" Content="Номер поезда" Style="{StaticResource LabelStyleGreen}" />
+                    <TextBox Grid.Column="1" Grid.Row="3"/>
+                    <Label Grid.Column="0" Grid.Row="4" Content="Вес поезда (тонн)" Style="{StaticResource LabelStyleGreen}" />
+                    <TextBox Grid.Column="1" Grid.Row="4"  />
                     <Button Grid.Column="0" Grid.Row="5" x:Name="Login" Grid.ColumnSpan="2" Content="Вход в программу"
-                            FontSize="19" Foreground="{StaticResource AccentColorBrush}" />
+                            FontSize="17" Foreground="Black" />
                 </Grid>
             </TabItem>
         </TabControl>

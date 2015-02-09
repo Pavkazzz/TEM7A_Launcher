@@ -6,7 +6,7 @@
 
     <Color x:Key="HighlightColor">#008000</Color>
 
-    <Color x:Key="AccentColor">#4BB54C</Color>
+    <Color x:Key="AccentColor">DarkGreen</Color>
     <!--60% Выделение-->
     <Color x:Key="AccentColor2">#60E861</Color>
     <!--40%-->
