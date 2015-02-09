@@ -19,11 +19,14 @@ namespace Launcher.Module.Document.ViewModels
         private IEventAggregator _eventAggregator;
         private MoonPdfPanel _panel;
         private DocFile _message;
+        private IWindowManager _windowsManager;
 
         [ImportingConstructor]
         public DocumentViewModel(IEventAggregator eventAggregator, IWindowManager windowManager, DocFile message)
         {
             _eventAggregator = eventAggregator;
+            _windowsManager = windowManager;
+
             _eventAggregator.Subscribe(this);
             _message = message;
 
@@ -42,6 +45,11 @@ namespace Launcher.Module.Document.ViewModels
                 _panel = value;
                 NotifyOfPropertyChange(() => PdfPanel2);
             } 
+        }
+
+        public void CloseWindow()
+        {
+            TryClose();
         }
     }
     public class FileNamePdfPanel
