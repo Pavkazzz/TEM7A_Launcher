@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,6 @@ namespace Launcher.Module.Document.ViewModels
         public DocumentViewModel(IEventAggregator eventAggregator, IWindowManager windowManager, DocFile message)
         {
             _eventAggregator = eventAggregator;
-            _eventAggregator.Subscribe(this);
 
             //var pdf = new MoonPdfPanel();
             //if (File.Exists(message.Path))
@@ -30,7 +30,6 @@ namespace Launcher.Module.Document.ViewModels
             //}
             
         }
-
 
         public MoonPdfPanel PdfPanel
         {
