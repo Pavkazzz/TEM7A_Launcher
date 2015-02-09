@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.IO;
 using System.Windows.Forms;
 using Caliburn.Micro;
 using Launcher.Core;
@@ -11,6 +12,7 @@ namespace Launcher.Module.Document.ViewModels
     {
         private IEventAggregator _eventAggregator;
 
+        #region PropertyForView
         private BindableCollection<Category> _category = new BindableCollection<Category>();
         private Category _selectedCategory;
 
@@ -21,7 +23,7 @@ namespace Launcher.Module.Document.ViewModels
             {
                 _category = value;
                 NotifyOfPropertyChange(() => CategoryList);
-            }  
+            }
         }
 
         public Category SelectedCategoryList
@@ -32,18 +34,23 @@ namespace Launcher.Module.Document.ViewModels
                 _selectedCategory = value;
                 NotifyOfPropertyChange(() => SelectedCategoryList);
             }
-        }
+        } 
+        #endregion
+
         [ImportingConstructor]
         public MainDocViewModel(IEventAggregator eventAggregator)
         {
-            //TODO database, table category.
             CategoryList = new BindableCollection<Category>();
-            CategoryList.Add(new Category(@"ГОСТ"));
-            CategoryList.Add(new Category(@"ОСТ"));
-            CategoryList.Add(new Category(@"ГОСТ Р"));
-            CategoryList.Add(new Category(@"ЕСКД"));
-            CategoryList.Add(new Category(@"ЕСПД"));
-
+            var path = Path.GetFullPath(new AboutDoc().DbPath);
+            if (File.Exists(path))
+            {
+                var db = new DataBase(path);
+                var category = db.SqlSelect("SELECT Name FROM Category", new List<string>() { "Name" });
+                foreach (var singlecategory in category)
+                {
+                    CategoryList.Add(new Category(singlecategory["Name"]));
+                }
+            }
 
             _eventAggregator = eventAggregator;
 
@@ -53,12 +60,9 @@ namespace Launcher.Module.Document.ViewModels
         public void Show()
         {
             var sel = SelectedCategoryList;
-            
             ActivateItem(IoC.Get<DocumentListViewModel>());
         }
     }
-
-    
 
     public class Category
     {

@@ -12,13 +12,13 @@ namespace Launcher.Core
         private SQLiteConnection _sqLiteConnectionDatabase;
 
         private readonly string _connectionPath;
-    
+
         //private SQLiteDataAdapter _sqLiteDataAdapter;
 
 
         public DataBase()
         {
-            _connectionPath = Path.GetFullPath(@"../../../../Launcher.Core/Db");
+            _connectionPath = Path.GetFullPath(@"..\..\..\..\Launcher.Core\Db\db.db");
         }
 
         public DataBase(string path)
@@ -28,7 +28,7 @@ namespace Launcher.Core
 
         private void OpenConnectionSqlite(string path)
         {
-            _sqLiteConnectionDatabase = new SQLiteConnection(string.Format(@"Data Source={0}\db.db", path));
+            _sqLiteConnectionDatabase = new SQLiteConnection(string.Format(@"Data Source={0}", path));
             _sqLiteConnectionDatabase.Open();
         }
 

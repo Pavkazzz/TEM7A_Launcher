@@ -13,10 +13,12 @@ namespace Launcher.Module.Inspection
             Name = @"Модуль приемки локоматива";
             Description = @"Приемка лааллалал";
             ViewModel = typeof (MainInspectionViewModel);
+            DbPath = String.Empty;
         }
 
         public string Name { get; set; }
         public string Description { get; set; }
         public Type ViewModel { get; set; }
+        public string DbPath { get; set; }
     }
 }

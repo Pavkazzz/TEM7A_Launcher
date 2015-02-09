@@ -8,14 +8,6 @@
              d:DesignHeight="300" d:DesignWidth="300">
     
     <Grid>
-        <ListBox cal:Message.Attach="[Event SelectionChanged] = [Action ShowDoc]" ItemContainerStyle="{StaticResource DocumentListBoxStyle}">
-            <ListBoxItem>wqe</ListBoxItem>
-            <ListBoxItem>wqe</ListBoxItem>
-            <ListBoxItem>wqe</ListBoxItem>
-            <ListBoxItem>wqe</ListBoxItem>
-            <ListBoxItem>wqe</ListBoxItem>
-            <ListBoxItem>wqe</ListBoxItem>
-            <ListBoxItem>wqe</ListBoxItem>
-        </ListBox>
+        <ListBox x:Name="CategoryList" cal:Message.Attach="[Event SelectionChanged] = [Action ShowDoc]" ItemContainerStyle="{StaticResource DocumentListBoxStyle}"/>
     </Grid>
 </UserControl>

@@ -7,15 +7,17 @@ namespace Launcher.Module.Document
 {
     internal class AboutDoc : IModuleName
     {
-        private AboutDoc()
+        public AboutDoc()
         {
             Name = @"Модуль нормативные документы";
             Description = @"Супер модуль";
             ViewModel = typeof (MainDocViewModel);
+            DbPath = "../../../../Launcher.Module.Document/document.sqlite";
         }
 
         public string Name { get; set; }
         public string Description { get; set; }
         public Type ViewModel { get; set; }
+        public string DbPath { get; set; }
     }
 }
