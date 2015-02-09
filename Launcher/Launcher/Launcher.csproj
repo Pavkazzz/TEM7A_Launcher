@@ -148,6 +148,9 @@
     <Compile Include="Views\ModuleListView.xaml.cs">
       <DependentUpon>ModuleListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SearchPopupView.xaml.cs">
+      <DependentUpon>SearchPopupView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
     </Compile>
@@ -171,6 +174,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ModuleListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SearchPopupView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -211,6 +218,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Compile Include="ViewModels\SearchPopupViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
