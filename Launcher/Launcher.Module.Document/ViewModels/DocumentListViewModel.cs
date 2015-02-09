@@ -8,16 +8,16 @@ using Launcher.ViewModels;
 namespace Launcher.Module.Document.ViewModels
 {
     [Export(typeof(DocumentListViewModel))]
-    public class DocumentListViewModel : Screen
+    public class DocumentListViewModel : Screen, IHandle<Category>
     {
         private IEventAggregator _eventAggregator;
         private IWindowManager _windowManager;
 
         #region PropertyForView
-        private BindableCollection<Category> _file = new BindableCollection<Category>();
-        private Category _selectedfile;
+        private BindableCollection<DocFile> _file = new BindableCollection<DocFile>();
+        private DocFile _selectedfile;
 
-        public BindableCollection<Category> FileNameList
+        public BindableCollection<DocFile> FileNameList
         {
             get { return _file; }
             set
@@ -27,7 +27,7 @@ namespace Launcher.Module.Document.ViewModels
             }
         }
 
-        public Category SelectedFileNameList
+        public DocFile SelectedFileNameList
         {
             get { return _selectedfile; }
             set
@@ -39,18 +39,12 @@ namespace Launcher.Module.Document.ViewModels
         #endregion
 
         [ImportingConstructor]
-        public DocumentListViewModel(IEventAggregator eventAggregator, IWindowManager windowManager, Category selectedCategory)
+        public DocumentListViewModel(IEventAggregator eventAggregator, IWindowManager windowManager)
         {
             _eventAggregator = eventAggregator;
             _windowManager = windowManager;
+            _eventAggregator.Subscribe(this);
 
-            var db = new DataBase(Path.GetFullPath(new AboutDoc().DbPath));
-            var category = db.SqlSelect(string.Format(@"Select Document.Name from  Document left outer join Category on Category.id == Document.category Where Category.Name = ""{0}""", 
-                selectedCategory.Name), new List<string>() { "Name" });
-            foreach (var singlecategory in category)
-            {
-                FileNameList.Add(new Category(singlecategory["Name"]));
-            }
         }
 
         public void ShowDoc()
@@ -58,14 +52,27 @@ namespace Launcher.Module.Document.ViewModels
             //view для документа.
             _windowManager.ShowDialog(IoC.Get<DocumentViewModel>());
         }
+
+        public void Handle(Category message)
+        {
+            FileNameList.Clear();
+            var db = new DataBase(Path.GetFullPath(new AboutDoc().DbPath));
+            var category = db.SqlSelect(string.Format(@"Select Document.Name from  Document left outer join Category on Category.id == Document.category Where Category.Name = ""{0}""",
+                message.Name), new List<string>() { "Name" });
+            foreach (var singlecategory in category)
+            {
+                FileNameList.Add(new DocFile(singlecategory["Name"]));
+            }
+        }
     }
     public class DocFile
     {
-        public DocFile(string path)
+        public DocFile(string name)
         {
-            Path = path;
+            Name = name;
+            Path = string.Empty;
         }
-
+        
         public DocFile(string name, string path)
         {
             Name = name;

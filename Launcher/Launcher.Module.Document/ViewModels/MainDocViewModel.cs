@@ -26,7 +26,6 @@ namespace Launcher.Module.Document.ViewModels
             }
         }
 
-        [Export(typeof(Category))]
         public Category SelectedCategoryList
         {
             get { return _selectedCategory; }
@@ -59,8 +58,8 @@ namespace Launcher.Module.Document.ViewModels
 
         public void Show()
         {
-            var sel = SelectedCategoryList;
             ActivateItem(IoC.Get<DocumentListViewModel>());
+            _eventAggregator.PublishOnBackgroundThread(SelectedCategoryList);
         }
     }
 

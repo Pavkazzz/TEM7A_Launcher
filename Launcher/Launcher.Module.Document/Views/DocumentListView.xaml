@@ -8,6 +8,12 @@
              d:DesignHeight="300" d:DesignWidth="300">
     
     <Grid>
-        <ListBox x:Name="FileNameList" cal:Message.Attach="[Event SelectionChanged] = [Action ShowDoc]" ItemContainerStyle="{StaticResource DocumentListBoxStyle}"/>
+        <ListBox x:Name="FileNameList" cal:Message.Attach="[Event SelectionChanged] = [Action ShowDoc]" ItemContainerStyle="{StaticResource DocumentListBoxStyle}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </UserControl>
