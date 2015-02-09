@@ -69,7 +69,6 @@
                 <Popup.Style>
                     <Style TargetType="{x:Type Popup}">
                         <Setter Property="IsOpen" Value="False" />
-                        
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding Path=IsFocused, ElementName=TextBoxSearch}" Value="True">
                                 <Setter Property="IsOpen" Value="True" />
