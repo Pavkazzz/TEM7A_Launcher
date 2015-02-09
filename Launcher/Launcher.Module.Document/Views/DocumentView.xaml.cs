@@ -26,7 +26,6 @@ namespace Launcher.Module.Document.Views
     /// 
     public partial class DocumentView : Window, IHandle<FileNamePdfPanel>
     {
-        [Import(typeof(IEventAggregator))]
         private IEventAggregator _eventAggregator;
 
         
