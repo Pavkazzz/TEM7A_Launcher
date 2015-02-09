@@ -126,6 +126,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Launcher.Core.Gui\Launcher.Core.Gui.csproj">
+      <Project>{7a0a61de-72d0-485e-990a-19498799a673}</Project>
+      <Name>Launcher.Core.Gui</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Launcher.Core\Launcher.Core.csproj">
       <Project>{bd1b8356-08b1-4b0c-b08d-d2504d954be2}</Project>
       <Name>Launcher.Core</Name>

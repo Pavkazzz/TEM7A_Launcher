@@ -22,12 +22,12 @@ namespace Launcher.Module.Document.ViewModels
             _eventAggregator = eventAggregator;
             _eventAggregator.Subscribe(this);
 
-            var pdf = new MoonPdfPanel();
-            if (File.Exists(message.Path))
-            {
-                pdf.OpenFile(message.Path);
-                PdfPanel = pdf;
-            }
+            //var pdf = new MoonPdfPanel();
+            //if (File.Exists(message.Path))
+            //{
+            //    pdf.OpenFile(message.Path);
+            //    PdfPanel = pdf;
+            //}
             
         }
 

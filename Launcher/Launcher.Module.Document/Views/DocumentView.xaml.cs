@@ -18,7 +18,7 @@ namespace Launcher.Module.Document.Views
     /// <summary>
     /// Interaction logic for DocumentView.xaml
     /// </summary>
-    public partial class DocumentView : UserControl
+    public partial class DocumentView : Window
     {
         public DocumentView()
         {
