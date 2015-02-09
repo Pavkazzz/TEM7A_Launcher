@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Dynamic;
 using System.Linq;
+using System.Windows.Controls.Primitives;
 using Caliburn.Micro;
 using Launcher.Core;
 using Launcher.Model;
@@ -11,16 +13,18 @@ namespace Launcher.ViewModels
     public class LauncherViewModel : Conductor<IScreen>.Collection.OneActive, IHandle<IModule>, IHandle<IScreen>
     {
         public BindableCollection<ModuleItem> ModulesListBox { get; set; }
-        
+        private IEventAggregator _eventAggregator;
 
          
         private readonly IEnumerable<ISearch> _search;
 
         [ImportingConstructor]
-        public LauncherViewModel(IEventAggregator eventAggregator, [ImportMany(typeof(IModuleName))] IEnumerable<IModuleName> aboutModule, MainModel model, [ImportMany(typeof (ISearch))] IEnumerable<ISearch> search)
+        public LauncherViewModel(IEventAggregator eventAggregator, IWindowManager windowManager, [ImportMany(typeof(IModuleName))] IEnumerable<IModuleName> aboutModule, MainModel model)
         {
-            eventAggregator.Subscribe(this);
-            _search = search;
+            _eventAggregator = eventAggregator;
+            _windowManager = windowManager;
+
+            _eventAggregator.Subscribe(this);
             foreach (var moduleName in aboutModule)
             {
                 if (moduleName != null)
@@ -32,24 +36,18 @@ namespace Launcher.ViewModels
 
         public void Search()
         {
-            List<ISearch> searches = new List<ISearch>();
-            foreach (ISearch search in _search)
-            {
-                searches.Add(search);
-            }
-            foreach (var search in searches)
-            {
-                foreach (var searchResult in search.DoSearch(TextBoxSearch))
-                {
-                    SearchResult.Add(new Search(searchResult));
-                }
-            }
+            dynamic settings = new ExpandoObject();
+            settings.Placement = PlacementMode.Relative;
+            settings.PlacementTarget = GetView();
+            settings.HorizontalOffset = 165;
+            settings.VerticalOffset = 70;
+            
+            _windowManager.ShowPopup(IoC.Get<SearchPopupViewModel>(), null, settings);
         }
 
         #region Property
         string _searchString;
-        private BindableCollection<Search> _searchResult = new BindableCollection<Search>();
-        private Search _selectedListBoxSearch;
+        private IWindowManager _windowManager;
 
         public string TextBoxSearch
         {
@@ -61,26 +59,7 @@ namespace Launcher.ViewModels
             }
         }
 
-        public BindableCollection<Search> SearchResult
-        {
-            get { return _searchResult; }
-            set
-            {
-                _searchResult = value;
-                NotifyOfPropertyChange(() => SearchResult);
-            }
-        }
-
-        public Search SelectedListBoxSearch
-        {
-            get { return _selectedListBoxSearch; }
-            set
-            {
-                _selectedListBoxSearch = value;
-                NotifyOfPropertyChange(() => SelectedListBoxSearch);
-            }
-        }
-
+        
         #endregion
 
         #region Handle
