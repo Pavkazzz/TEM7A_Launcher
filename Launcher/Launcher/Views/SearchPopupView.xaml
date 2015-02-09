@@ -28,7 +28,6 @@
                     <TextBlock Text="{Binding Name}" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
-        <ListBoxItem>qweqwe</ListBoxItem>
         </ListBox>
         
     </Grid>
