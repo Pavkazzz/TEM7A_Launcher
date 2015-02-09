@@ -59,10 +59,9 @@
                        Foreground="White" FontSize="15" HorizontalAlignment="Right" />
             <TextBox x:Name="TextBoxSearch" controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="1"
                      Grid.ColumnSpan="5" Grid.RowSpan="2" VerticalAlignment="Center"
-                     FontSize="17" cal:Message.Attach="[Event PreviewKeyDown] = [Action Search]">
+                     FontSize="17" cal:Message.Attach="[Event MouseLeftButtonDown ] = [Action Search]">
                 <TextBox.Style>
                     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource SearchMetroTextBox}" />
-                
                 </TextBox.Style>
             </TextBox>
             <Popup Width="{Binding RelativeSource={RelativeSource Self}, Path=PlacementTarget.ActualWidth}"
