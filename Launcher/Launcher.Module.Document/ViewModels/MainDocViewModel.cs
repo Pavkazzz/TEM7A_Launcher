@@ -26,6 +26,7 @@ namespace Launcher.Module.Document.ViewModels
             }
         }
 
+        [Export(typeof(Category))]
         public Category SelectedCategoryList
         {
             get { return _selectedCategory; }
@@ -41,10 +42,9 @@ namespace Launcher.Module.Document.ViewModels
         public MainDocViewModel(IEventAggregator eventAggregator)
         {
             CategoryList = new BindableCollection<Category>();
-            var path = Path.GetFullPath(new AboutDoc().DbPath);
-            if (File.Exists(path))
+            if (File.Exists(Path.GetFullPath(new AboutDoc().DbPath)))
             {
-                var db = new DataBase(path);
+                var db = new DataBase(Path.GetFullPath(new AboutDoc().DbPath));
                 var category = db.SqlSelect("SELECT Name FROM Category", new List<string>() { "Name" });
                 foreach (var singlecategory in category)
                 {
@@ -68,7 +68,7 @@ namespace Launcher.Module.Document.ViewModels
     {
         public Category()
         {
-            
+
         }
 
         public Category(string name)
