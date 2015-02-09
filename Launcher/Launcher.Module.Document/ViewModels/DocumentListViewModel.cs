@@ -20,7 +20,7 @@ namespace Launcher.Module.Document.ViewModels
         public void ShowDoc()
         {
             //view для документа.
-            //_windowManager.ShowDialog(IoC.Get<>());
+            //_windowManager.ShowDialog(IoC.Get<DocumentViewModel>());
         }
     }
 }

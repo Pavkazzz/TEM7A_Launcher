@@ -77,10 +77,14 @@
     <Compile Include="AboutDoc.cs" />
     <Compile Include="Search.cs" />
     <Compile Include="ViewModels\DocumentListViewModel.cs" />
+    <Compile Include="ViewModels\DocumentViewModel.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="ViewModels\MainDocViewModel.cs" />
     <Compile Include="Views\DocumentListView.xaml.cs">
       <DependentUpon>DocumentListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DocumentView.xaml.cs">
+      <DependentUpon>DocumentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HistoryView.xaml.cs">
       <DependentUpon>HistoryView.xaml</DependentUpon>
@@ -95,6 +99,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\DocumentListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DocumentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
