@@ -27,6 +27,7 @@ namespace Launcher.Module.Document.ViewModels
             }
         }
 
+        [Export(typeof(DocFile))]
         public DocFile SelectedFileNameList
         {
             get { return _selectedfile; }
@@ -51,17 +52,19 @@ namespace Launcher.Module.Document.ViewModels
         {
             //view для документа.
             _windowManager.ShowDialog(IoC.Get<DocumentViewModel>());
+
         }
 
         public void Handle(Category message)
         {
             FileNameList.Clear();
             var db = new DataBase(Path.GetFullPath(new AboutDoc().DbPath));
-            var category = db.SqlSelect(string.Format(@"Select Document.Name from  Document left outer join Category on Category.id == Document.category Where Category.Name = ""{0}""",
-                message.Name), new List<string>() { "Name" });
+            var category = db.SqlSelect(string.Format(@"Select Category.Path, Document.PathName, Document.Name from  Document
+                                                        left outer join Category on Category.id == Document.category Where Category.Name = ""{0}""",
+                                                        message.Name), new List<string>() { "Name", "PathName", "Path" });
             foreach (var singlecategory in category)
             {
-                FileNameList.Add(new DocFile(singlecategory["Name"]));
+                FileNameList.Add(new DocFile(singlecategory["Name"], Path.GetFullPath(Path.Combine(@"..\..\..\..\File", singlecategory["Path"], singlecategory["PathName"]))));
             }
         }
     }
