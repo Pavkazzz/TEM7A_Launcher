@@ -8,6 +8,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     
     <Grid>
+        <!-- Поменять SelectionChanged на что-то вменяемое-->
         <ListBox x:Name="FileNameList" cal:Message.Attach="[Event SelectionChanged] = [Action ShowDoc]" ItemContainerStyle="{StaticResource DocumentListBoxStyle}">
             <ListBox.ItemTemplate>
                 <DataTemplate>

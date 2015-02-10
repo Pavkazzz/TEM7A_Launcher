@@ -28,19 +28,18 @@ namespace Launcher.Module.Document.Views
     {
         private IEventAggregator _eventAggregator;
 
-        
+
         public DocumentView()
         {
             InitializeComponent();
             _eventAggregator = IoC.Get<IEventAggregator>();
             _eventAggregator.Subscribe(this);
         }
-        
-        //TODO полукостыль
+
         public void Handle(FileNamePdfPanel message)
         {
             Dispatcher.BeginInvoke(new ThreadStart(delegate { this.PdfPanel.OpenFile(message.FileName); }));
-             
+
         }
     }
 
