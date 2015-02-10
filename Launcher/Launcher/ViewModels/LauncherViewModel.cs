@@ -2,6 +2,7 @@
 using System.ComponentModel.Composition;
 using System.Dynamic;
 using System.Linq;
+using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using Caliburn.Micro;
 using Launcher.Core;
@@ -12,7 +13,6 @@ namespace Launcher.ViewModels
     [Export(typeof (LauncherViewModel))]
     public class LauncherViewModel : Conductor<IScreen>.Collection.OneActive, IHandle<IModule>, IHandle<IScreen>
     {
-        public BindableCollection<ModuleItem> ModulesListBox { get; set; }
         private IEventAggregator _eventAggregator;
 
          
@@ -23,6 +23,7 @@ namespace Launcher.ViewModels
         {
             _eventAggregator = eventAggregator;
             _windowManager = windowManager;
+            _model = model;
 
             _eventAggregator.Subscribe(this);
             foreach (var moduleName in aboutModule)
@@ -31,23 +32,62 @@ namespace Launcher.ViewModels
                 model.Modules.Add(new ModuleItem(moduleName));
             }
 
+            
+
             ActivateItem(IoC.Get<ModuleListViewModel>());
         }
 
+        public void OpenModule()
+        {
+            foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == SelectedModulesListBox.ViewModel))
+            {
+
+                _eventAggregator.PublishOnBackgroundThread(name);
+            }
+        }
+
+
+        #region Search
+
+        //http://stackoverflow.com/questions/13609669/caliburn-micro-screen-transition-via-conductor
+        //
         public void Search()
         {
+            _model.TextBoxSearchString.Name = TextBoxSearch;
+            var view = GetView();
+            dynamic settings = new ExpandoObject();
+            settings.Placement = PlacementMode.Bottom;
+            settings.PlacementTarget = GetView() as TextBox;
+            settings.HorizontalOffset = 0;
+            settings.VerticalOffset = 0;
+
+
+            _windowManager.ShowPopup(IoC.Get<SearchPopupViewModel>(), null, settings);
+        }
+
+        public void Search(string text)
+        {
+            _model.TextBoxSearchString.Name = TextBoxSearch;
+
             dynamic settings = new ExpandoObject();
             settings.Placement = PlacementMode.Relative;
             settings.PlacementTarget = GetView();
-            settings.HorizontalOffset = 165;
-            settings.VerticalOffset = 70;
-            
+
+            settings.HorizontalOffset = 200;
+            settings.VerticalOffset = 100;
+
+
             _windowManager.ShowPopup(IoC.Get<SearchPopupViewModel>(), null, settings);
-        }
+        } 
+        #endregion
+
 
         #region Property
         string _searchString;
         private IWindowManager _windowManager;
+        private MainModel _model;
+        private BindableCollection<ModuleItem> _myModules;
+        private ModuleItem _selectedModule;
 
         public string TextBoxSearch
         {
@@ -56,6 +96,26 @@ namespace Launcher.ViewModels
             {
                 _searchString = value;
                 NotifyOfPropertyChange(() => TextBoxSearch);
+            }
+        }
+
+        public BindableCollection<ModuleItem> ModulesListBox
+        {
+            get { return _myModules; }
+            set
+            {
+                _myModules = value;
+                NotifyOfPropertyChange(() => ModulesListBox);
+            }
+        }
+
+        public ModuleItem SelectedModulesListBox
+        {
+            get { return _selectedModule; }
+            set
+            {
+                _selectedModule = value;
+                NotifyOfPropertyChange(() => ModulesListBox);
             }
         }
 
@@ -68,17 +128,12 @@ namespace Launcher.ViewModels
         public void Handle(IModule viewModel)
         {
             //TODO список модулей
-            //var moduleslist = Items[0] as ModuleListViewModel;
-            //if (moduleslist != null)
-            //    foreach (var item in moduleslist.Modules)
-            //    {
-            //        ModulesListBox.Add(item);
-            //    }
+
+            ModulesListBox = _model.Modules;
 
             ActivateItem((IScreen)viewModel);
         }
 
-        //После выбора  модуля
         public void Handle(IScreen message)
         {
             ActivateItem(message);
@@ -86,18 +141,18 @@ namespace Launcher.ViewModels
         #endregion
     }
 
-    public class Search
+    public class SearchName
     {
-        public Search()
+        public SearchName()
         {
             
         }
 
-        public Search(string name)
+        public SearchName(string name)
         {
             Name = name;
         }
 
-        public string Name { get; private set; }
+        public string Name { get; set; }
     }
 }

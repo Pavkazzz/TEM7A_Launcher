@@ -6,22 +6,26 @@ using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
 using Launcher.Core;
+using Launcher.Model;
 
 namespace Launcher.ViewModels
 {
 	[Export(typeof(SearchPopupViewModel))]
+    [PartCreationPolicy(CreationPolicy.NonShared)]
     class SearchPopupViewModel : Screen
     {
 	    private IEventAggregator _eventAggregator;
-        private BindableCollection<Search> _searchResult = new BindableCollection<Search>();
-        private Search _selectedListBoxSearch;
+        private BindableCollection<SearchName> _searchResult = new BindableCollection<SearchName>();
+        private SearchName _selectedListBoxSearch;
 	    private IEnumerable<ISearch> _search;
 
 	    [ImportingConstructor]
-        SearchPopupViewModel(IEventAggregator eventAggregator, [ImportMany(typeof(ISearch))] IEnumerable<ISearch> search)
+	    public SearchPopupViewModel(IEventAggregator eventAggregator, [ImportMany(typeof(ISearch))] IEnumerable<ISearch> search)
 	    {
 	        _eventAggregator = eventAggregator;
 	        _search = search;
+
+	        
 
             List<ISearch> searches = new List<ISearch>();
             foreach (ISearch singleSearch in _search)
@@ -30,16 +34,26 @@ namespace Launcher.ViewModels
             }
             foreach (var singleSearch in searches)
             {
-                //foreach (var searchResult in singleSearch.DoSearch(SearchString.Name))
-                //{
-                //    SearchResult.Add(new Search(searchResult));
-                //}
+                foreach (var searchResult in singleSearch.DoSearch(IoC.Get<MainModel>().TextBoxSearchString.Name))
+                {
+                    SearchResult.Add(new SearchName(searchResult));
+                }
             }
 	    }
 
+        //К выбранному итему выполняем закрываем
+	    public void SelectedField()
+	    {
+	        TryClose();
+	    }
 
 
-        public BindableCollection<Search> SearchResult
+	    public SearchPopupViewModel(string textBoxSearch)
+	    {
+	        throw new NotImplementedException();
+	    }
+
+	    public BindableCollection<SearchName> SearchResult
         {
             get { return _searchResult; }
             set
@@ -49,7 +63,7 @@ namespace Launcher.ViewModels
             }
         }
 
-	    public Search SelectedListBoxSearch
+	    public SearchName SelectedListBoxSearch
 	    {
 	        get { return _selectedListBoxSearch; }
 	        set

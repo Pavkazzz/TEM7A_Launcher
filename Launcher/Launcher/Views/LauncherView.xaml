@@ -61,7 +61,7 @@
             <TextBox x:Name="TextBoxSearch" controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="1"
                      Grid.ColumnSpan="5" Grid.RowSpan="2" VerticalAlignment="Center"
                      FontSize="17" 
-                     cal:Message.Attach="[Event GotFocus] = [Action Search]">
+                     cal:Message.Attach="[Event GotFocus] = [Action Search]; [Event TextChanged] = [Action Search(TextBoxSearch.Text)]">
                 <TextBox.Style>
                     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource SearchMetroTextBox}" />
                 </TextBox.Style>
@@ -72,8 +72,10 @@
                  Background="{DynamicResource AccentColorBrush}" />
         <ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7" x:Name="ActiveItem" />
 
-        <ListBox x:Name="ModulesListBox" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0"
-                 Background="{DynamicResource AccentColorBrush}">
+        <!--TODO поменять selectionchange на что-то нормальное-->
+        <ListBox x:Name="ModulesListBox" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0" ItemContainerStyle="{StaticResource ListBoxItemCategory}"
+                 Background="{DynamicResource AccentColorBrush}"
+                  cal:Message.Attach="[Event SelectionChanged] = [Action OpenModule]">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
