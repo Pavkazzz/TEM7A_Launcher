@@ -78,12 +78,17 @@
     <Content Include="Design\LoginScreen.png" />
     <Content Include="Design\RegistrationScreen.png" />
     <Content Include="Design\Картинка Фон.png" />
+    <Content Include="Design\Модуль документации.jpg" />
+    <Content Include="Design\Модуль с историей.jpg" />
+    <Content Include="Design\Шаблончик.jpg" />
     <Content Include="Image\imageButtonExitDocument.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <None Include="Design\LoginScreen.psd" />
     <None Include="Design\RegistrationScreen.psd" />
+    <None Include="Design\Документация.psd" />
+    <None Include="Design\История.psd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
