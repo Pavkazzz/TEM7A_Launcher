@@ -3,82 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <TabControl SelectedIndex="1">
-            <TabControl.Resources>
-                <Style TargetType="{x:Type TabPanel}">
-                    <Setter Property="HorizontalAlignment" Value="Center" />
-                </Style>
-            </TabControl.Resources>
-            <TabItem Header="Регистрация" HorizontalAlignment="Center">
-                <Grid Background="{StaticResource AccentColorBrush}" Width="auto" Height="auto">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1.5*" />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="1.5*" />
-                    </Grid.ColumnDefinitions>
+             d:DesignHeight="1080" d:DesignWidth="1920">
 
-                    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="WrapWithOverflow"
-                               Foreground="White" HorizontalAlignment="Center" FontStyle="Italic"
-                               TextAlignment="Center">
-                        Здравствуйте,для работы с программой, необходимо зарегистрироваться. ООО "ПКБ ЖТ"
-                        <Hyperlink NavigateUri="http://pkbzht.ru/" Foreground="White"> http://pkbzht.ru/</Hyperlink>
-                    </TextBlock>
-                    <Label Name="Name_lbl"          Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelStyleGreen}" Content="Введите Имя"/>
-                    <TextBox Name="Name"        Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxStyleGreen}"/>
-                    <Label Name="Family_lbl"        Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelStyleGreen}" Content="Введите Фамилию"/>
-                    <TextBox Name="LastName"      Grid.Row="2" Grid.Column="1" Style="{StaticResource TextBoxStyleGreen}"/>
-                    <Label Name="Login_lbl"         Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelStyleGreen}" Content="Введите Табельный номер"  />
-                    <TextBox Name="PesonalNumberReg"       Grid.Row="3" Grid.Column="1" Style="{StaticResource TextBoxStyleGreen}" />
-                    <Label Name="Password_lbl1"     Grid.Row="4" Grid.Column="0" Style="{StaticResource LabelStyleGreen }" Content="Введите Пароль" />
-                    <PasswordBox Name="PasswordRegFirst"     Grid.Row="4" Grid.Column="1" Style="{StaticResource PasswordBoxStyleGreen}"/>
-                    <Label Name="Password_lbl2"     Grid.Row="5" Grid.Column="0" Style="{StaticResource LabelStyleGreen}" Content="Повторите пароль" />
-                    <PasswordBox Name="PasswordRegSecond"     Grid.Row="5" Grid.Column="1" Style="{StaticResource PasswordBoxStyleGreen}" />
-                    <Label Name="email_lbl"         Grid.Row="6" Grid.Column="0" Style="{StaticResource LabelStyleGreen}" Content="Электронная почта"  />
-                    <TextBox Name="Email"       Grid.Row="6" Grid.Column="1" Style="{StaticResource TextBoxStyleGreen}"/>
-                    <Button Name="Accept_btn"       Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Content="Зарегистрироваться" FontSize="17" />
-                    <!--<Label-->
-                </Grid>
-            </TabItem>
-            <TabItem Header="Вход">
-                <Grid Background="{StaticResource AccentColorBrush}">
+    <Grid Background="{StaticResource Background}">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Border Background="White" CornerRadius="10" Grid.Column="2" Grid.Row="1">
+            <StackPanel >
+                <Grid >
                     <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
                         <RowDefinition />
                         <RowDefinition />
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
                         <ColumnDefinition />
-                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="20"/>
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Grid.Row="0" Content="Табельный номер" Style="{StaticResource LabelStyleGreen}" />
-                    <TextBox x:Name="PesonalNumber" Grid.Column="1" Grid.Row="0"  />
-                    <Label Grid.Column="0" Grid.Row="1" Content="Пароль" Style="{StaticResource LabelStyleGreen}" />
-                    <PasswordBox x:Name="Password" Grid.Column="1" Grid.Row="1"  />
-                    <Label Grid.Column="0" Grid.Row="2" Content="Номер локомотива" Style="{StaticResource LabelStyleGreen}" />
-                    <TextBox Grid.Column="1" Grid.Row="2" x:Name="Number_Locomotion" />
-                    <Label Grid.Column="0" Grid.Row="3" Content="Номер поезда" Style="{StaticResource LabelStyleGreen}" />
-                    <TextBox Grid.Column="1" Grid.Row="3"/>
-                    <Label Grid.Column="0" Grid.Row="4" Content="Вес поезда (тонн)" Style="{StaticResource LabelStyleGreen}" />
-                    <TextBox Grid.Column="1" Grid.Row="4"  />
-                    <Button Grid.Column="0" Grid.Row="5" x:Name="Login" Grid.ColumnSpan="2" Content="Вход в программу"
-                            FontSize="17" Foreground="Black" />
+                    <Label Grid.Row="0" Grid.Column="1" Content="Вход" HorizontalAlignment="Center" />
+                    <TextBox Grid.Row="1" Grid.Column="1" controls:TextboxHelper.Watermark="Табелный номер"></TextBox>
+                    <PasswordBox Grid.Row="2" Grid.Column="1" controls:TextboxHelper.Watermark="Пароль"></PasswordBox>
+                    <Button Grid.Row="3" Grid.Column="1" Content="Войти"></Button>
                 </Grid>
-            </TabItem>
-        </TabControl>
+            </StackPanel>
+        </Border>
     </Grid>
 </UserControl>
