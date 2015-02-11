@@ -148,6 +148,9 @@
     <Compile Include="Views\ModuleListView.xaml.cs">
       <DependentUpon>ModuleListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\NewLauncherView.xaml.cs">
+      <DependentUpon>NewLauncherView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SearchPopupView.xaml.cs">
       <DependentUpon>SearchPopupView.xaml</DependentUpon>
     </Compile>
@@ -174,6 +177,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ModuleListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewLauncherView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
