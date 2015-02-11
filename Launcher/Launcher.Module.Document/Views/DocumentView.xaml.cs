@@ -38,7 +38,13 @@ namespace Launcher.Module.Document.Views
 
         public void Handle(FileNamePdfPanel message)
         {
-            Dispatcher.BeginInvoke(new ThreadStart(delegate { this.PdfPanel.OpenFile(message.FileName); }));
+            Dispatcher.BeginInvoke(new ThreadStart(delegate
+            {
+                this.PdfPanel.OpenFile(message.FileName);
+                this.PdfPanel.ViewType = ViewType.SinglePage;
+                this.PdfPanel.Zoom(2.0);
+                this.PdfPanel.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
+            }));
 
         }
     }
