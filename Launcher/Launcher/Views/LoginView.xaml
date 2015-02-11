@@ -36,17 +36,17 @@
                         <Hyperlink NavigateUri="http://pkbzht.ru/" Foreground="White"> http://pkbzht.ru/</Hyperlink>
                     </TextBlock>
                     <Label Name="Name_lbl"          Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelStyleGreen}" Content="Введите Имя"/>
-                    <TextBox Name="Name_tbx"        Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxStyleGreen}"/>
+                    <TextBox Name="Name"        Grid.Row="1" Grid.Column="1" Style="{StaticResource TextBoxStyleGreen}"/>
                     <Label Name="Family_lbl"        Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelStyleGreen}" Content="Введите Фамилию"/>
-                    <TextBox Name="Family_tbx"      Grid.Row="2" Grid.Column="1" Style="{StaticResource TextBoxStyleGreen}"/>
+                    <TextBox Name="LastName"      Grid.Row="2" Grid.Column="1" Style="{StaticResource TextBoxStyleGreen}"/>
                     <Label Name="Login_lbl"         Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelStyleGreen}" Content="Введите Табельный номер"  />
-                    <TextBox Name="Login_tbx"       Grid.Row="3" Grid.Column="1" Style="{StaticResource TextBoxStyleGreen}" />
+                    <TextBox Name="PesonalNumberReg"       Grid.Row="3" Grid.Column="1" Style="{StaticResource TextBoxStyleGreen}" />
                     <Label Name="Password_lbl1"     Grid.Row="4" Grid.Column="0" Style="{StaticResource LabelStyleGreen }" Content="Введите Пароль" />
-                    <PasswordBox Name="Passwb1"     Grid.Row="4" Grid.Column="1" Style="{StaticResource PasswordBoxStyleGreen}"/>
+                    <PasswordBox Name="PasswordRegFirst"     Grid.Row="4" Grid.Column="1" Style="{StaticResource PasswordBoxStyleGreen}"/>
                     <Label Name="Password_lbl2"     Grid.Row="5" Grid.Column="0" Style="{StaticResource LabelStyleGreen}" Content="Повторите пароль" />
-                    <PasswordBox Name="Passwb2"     Grid.Row="5" Grid.Column="1" Style="{StaticResource PasswordBoxStyleGreen}" />
+                    <PasswordBox Name="PasswordRegSecond"     Grid.Row="5" Grid.Column="1" Style="{StaticResource PasswordBoxStyleGreen}" />
                     <Label Name="email_lbl"         Grid.Row="6" Grid.Column="0" Style="{StaticResource LabelStyleGreen}" Content="Электронная почта"  />
-                    <TextBox Name="email_tbx"       Grid.Row="6" Grid.Column="1" Style="{StaticResource TextBoxStyleGreen}"/>
+                    <TextBox Name="Email"       Grid.Row="6" Grid.Column="1" Style="{StaticResource TextBoxStyleGreen}"/>
                     <Button Name="Accept_btn"       Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Content="Зарегистрироваться" FontSize="17" />
                     <!--<Label-->
                 </Grid>
@@ -66,9 +66,9 @@
                         <ColumnDefinition Width="3*" />
                     </Grid.ColumnDefinitions>
                     <Label Grid.Column="0" Grid.Row="0" Content="Табельный номер" Style="{StaticResource LabelStyleGreen}" />
-                    <TextBox Grid.Column="1" Grid.Row="0" Name="EntryLogin" />
+                    <TextBox x:Name="PesonalNumber" Grid.Column="1" Grid.Row="0"  />
                     <Label Grid.Column="0" Grid.Row="1" Content="Пароль" Style="{StaticResource LabelStyleGreen}" />
-                    <PasswordBox Grid.Column="1" Grid.Row="1" Name="EntryPassword" />
+                    <PasswordBox x:Name="Password" Grid.Column="1" Grid.Row="1"  />
                     <Label Grid.Column="0" Grid.Row="2" Content="Номер локомотива" Style="{StaticResource LabelStyleGreen}" />
                     <TextBox Grid.Column="1" Grid.Row="2" x:Name="Number_Locomotion" />
                     <Label Grid.Column="0" Grid.Row="3" Content="Номер поезда" Style="{StaticResource LabelStyleGreen}" />
