@@ -42,7 +42,7 @@ namespace Launcher.Module.Document.Views
             {
                 this.PdfPanel.OpenFile(message.FileName);
                 this.PdfPanel.ViewType = ViewType.SinglePage;
-                this.PdfPanel.Zoom(2.0);
+                this.PdfPanel.Zoom(1.0);
                 this.PdfPanel.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
             }));
 
