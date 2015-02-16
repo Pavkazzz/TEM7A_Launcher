@@ -73,7 +73,7 @@
         <ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7" x:Name="ActiveItem" />
 
         <!--TODO поменять selectionchange на что-то нормальное-->
-        <ListBox x:Name="ModulesListBox" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0" ItemContainerStyle="{StaticResource ListBoxItemCategory}"
+        <ListBox x:Name="ModulesListBox" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0"  ItemContainerStyle="{StaticResource ListBoxItemCategory}"
                  Background="{DynamicResource AccentColorBrush}"
                   cal:Message.Attach="[Event SelectionChanged] = [Action OpenModule]">
             <ListBox.ItemTemplate>

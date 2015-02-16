@@ -11,7 +11,7 @@
     
     <Color x:Key="HighlightColor">#008000</Color>
 
-    <Color x:Key="AccentColor">White</Color>
+    <Color x:Key="AccentColor">LightGray</Color>
     <!--60% Выделение-->
     <Color x:Key="AccentColor2">#60E861</Color>
     <!--40%-->
