@@ -97,19 +97,19 @@
                                     </Style.Triggers>
                                 </Style>
                             </StackPanel.Style>
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <!--<ContentPresenter.Style>
-                                <Style TargetType="ContentPresenter">
-                                    <Style.Triggers>
-                                        <Trigger Property="Border.IsMouseOver" Value="True">
-                                            <Setter Property="" Value="True"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <!--<ContentPresenter.Style>
+                                    <Style TargetType="ContentPresenter">
+                                        <Style.Triggers>
+                                            <Trigger Property="Border.IsMouseOver" Value="True">
+                                                <Setter Property="" Value="True"/>
                                            
                                             
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </ContentPresenter.Style>-->
-                        </ContentPresenter>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ContentPresenter.Style>-->
+                            </ContentPresenter>
                         </StackPanel>
                     </Border> 
           </ControlTemplate>

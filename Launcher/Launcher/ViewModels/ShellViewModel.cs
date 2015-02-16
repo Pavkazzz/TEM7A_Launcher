@@ -18,6 +18,7 @@ namespace Launcher.ViewModels
             
             ActivateItem(IoC.Get<LoginViewModel>());
         }
+
         //public void Handle(string message)
         //{
         //    //var model = IoC.Get<Model>();
