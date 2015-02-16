@@ -10,7 +10,7 @@
     <Grid Background="{StaticResource Background}">
         <Grid.RowDefinitions>
             <RowDefinition />
-            <RowDefinition Height="2*"/>
+            <RowDefinition MinHeight="500" Height="2*"/>
             <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
