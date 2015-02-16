@@ -60,8 +60,8 @@
 
             <TextBox x:Name="TextBoxSearch" controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="1"
                      Grid.ColumnSpan="5" Grid.RowSpan="2" VerticalAlignment="Center"
-                     FontSize="17" 
-                     cal:Message.Attach="[Event GotFocus] = [Action Search]; [Event TextChanged] = [Action Search(TextBoxSearch.Text)]">
+                     FontSize="17" >
+                     <!--cal:Message.Attach="[Event GotFocus] = [Action Search]; [Event TextChanged] = [Action Search(TextBoxSearch.Text)]">-->
                 <TextBox.Style>
                     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource SearchMetroTextBox}" />
                 </TextBox.Style>

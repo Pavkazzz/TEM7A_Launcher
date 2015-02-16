@@ -26,6 +26,7 @@ namespace Launcher.ViewModels
             _model = model;
 
             _eventAggregator.Subscribe(this);
+
             foreach (var moduleName in aboutModule)
             {
                 if (moduleName != null)
@@ -41,7 +42,6 @@ namespace Launcher.ViewModels
         {
             foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == SelectedModulesListBox.ViewModel))
             {
-
                 _eventAggregator.PublishOnBackgroundThread(name);
             }
         }
@@ -80,7 +80,6 @@ namespace Launcher.ViewModels
             _windowManager.ShowPopup(IoC.Get<SearchPopupViewModel>(), null, settings);
         } 
         #endregion
-
 
         #region Property
         string _searchString;

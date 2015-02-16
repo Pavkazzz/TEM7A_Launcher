@@ -13,16 +13,13 @@ namespace Launcher.ViewModels
     [Export(typeof(RegistrationViewModel))]
     public class RegistrationViewModel : Screen
     {
-
-
-
         #region PropertyForView
 
-        private string _personalid;
-        private string _passwordRepeat;
-        private string _password;
-        private string _name;
-        private string _lastname;
+        private string _personalid = string.Empty;
+        private string _passwordRepeat = string.Empty;
+        private string _password = string.Empty;
+        private string _name = string.Empty;
+        private string _lastname = string.Empty;
 
         public string Name {
             get { return _name; }
@@ -90,7 +87,7 @@ namespace Launcher.ViewModels
                 _user.Name = Name;
                 _user.Lastname = LastName;
                 _user.Patronymic = Patronymic;
-                _user.LoginName = PersonalNumber;
+                _user.PersonalNumber = PersonalNumber;
                 //TODO хранить сразу хэши
                 _user.Password = Password;
                 _user.Registration(_user);

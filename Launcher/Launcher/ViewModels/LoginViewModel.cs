@@ -26,10 +26,10 @@ namespace Launcher.ViewModels
         }
         public string Password
         {
-            get { return _personalid; }
+            get { return _password; }
             set
             {
-                _personalid = value;
+                _password = value;
                 NotifyOfPropertyChange(() => Password);
             }
         }
@@ -58,7 +58,7 @@ namespace Launcher.ViewModels
             //TODO Login
             if (_user.Login(PersonalNumber, Password, RememberMe))
             {
-                _eventAggregator.PublishOnBackgroundThread(IoC.Get<LauncherViewModel>());
+                _eventAggregator.PublishOnBackgroundThread("LauncherViewModel");
             }
             //TODO регистрация если нет такого
             //else
@@ -69,7 +69,7 @@ namespace Launcher.ViewModels
 
         public void Register()
         {
-            _eventAggregator.PublishOnBackgroundThread(IoC.Get<RegistrationViewModel>());
+            _eventAggregator.PublishOnBackgroundThread("RegistrationViewModel");
         }
     }
 }
