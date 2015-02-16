@@ -26,10 +26,10 @@ namespace Launcher.ViewModels
         }
         public string Password
         {
-            get { return _personalid; }
+            get { return _password; }
             set
             {
-                _personalid = value;
+                _password = value;
                 NotifyOfPropertyChange(() => Password);
             }
         }

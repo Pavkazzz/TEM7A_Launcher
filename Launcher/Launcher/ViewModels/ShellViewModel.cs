@@ -16,7 +16,7 @@ namespace Launcher.ViewModels
             _eventAggregator = eventAggregator;
             _eventAggregator.Subscribe(this);
             
-            ActivateItem(IoC.Get<LoginViewModel>());
+            ActivateItem(IoC.Get<LauncherViewModel>());
         }
         //public void Handle(string message)
         //{
@@ -34,6 +34,7 @@ namespace Launcher.ViewModels
 
         public void Handle(LauncherViewModel message)
         {
+
             ActivateItem(IoC.Get<LauncherViewModel>());
         }
 

@@ -66,5 +66,23 @@ namespace Launcher.Core
             CloseConnectionSqlite();
             return result;
         }
+
+        public bool SqlInsert(string sqlQuery)
+        {
+            try
+            {
+                OpenConnectionSqlite(_connectionPath);
+                var sqlSelect = new SQLiteCommand(sqlQuery, _sqLiteConnectionDatabase);
+                var sqlReader = sqlSelect.ExecuteReader();
+                sqlReader.Close();
+                CloseConnectionSqlite();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        } 
     }
 }
