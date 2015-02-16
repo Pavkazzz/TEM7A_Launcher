@@ -70,9 +70,9 @@
 
         <ListBox x:Name="CurrentModuleState" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0"
                  Background="{DynamicResource AccentColorBrush}" />
-        <ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7" x:Name="ActiveItem" >
+        <!--<ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7" x:Name="ActiveItem" >
         	<ListBoxItem Content="ListBoxItem" HorizontalAlignment="Left" Margin="12.142,182.5,0,0" VerticalAlignment="Top" Template="{DynamicResource ListBoxModuleTemplate}"/>
-        </ContentControl>
+        </ContentControl>-->
 
         <!--TODO поменять selectionchange на что-то нормальное-->
         <ListBox x:Name="ModulesListBox" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0" ItemContainerStyle="{StaticResource ListBoxItemCategory}"
