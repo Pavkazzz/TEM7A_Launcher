@@ -6,7 +6,7 @@ using Launcher.Core;
 namespace Launcher.ViewModels
 {
     [Export(typeof (IShell))]
-    public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<LauncherViewModel>, IHandle<RegistrationViewModel>
+    public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<string>
     {
         private readonly IEventAggregator _eventAggregator;
 
@@ -16,7 +16,7 @@ namespace Launcher.ViewModels
             _eventAggregator = eventAggregator;
             _eventAggregator.Subscribe(this);
             
-            ActivateItem(IoC.Get<LauncherViewModel>());
+            ActivateItem(IoC.Get<LoginViewModel>());
         }
         //public void Handle(string message)
         //{
@@ -27,10 +27,6 @@ namespace Launcher.ViewModels
         //    //}
         //}
 
-        public override sealed void ActivateItem(IScreen item)
-        {
-            base.ActivateItem(item);
-        }
 
         public void Handle(LauncherViewModel message)
         {
@@ -41,6 +37,18 @@ namespace Launcher.ViewModels
         public void Handle(RegistrationViewModel message)
         {
             ActivateItem(IoC.Get<RegistrationViewModel>());
+        }
+
+        public void Handle(string message)
+        {
+            if (message == "LauncherViewModel")
+            {
+                ActivateItem(IoC.Get<LauncherViewModel>());
+            }
+            if (message == "RegistrationViewModel")
+            {
+                ActivateItem(IoC.Get<RegistrationViewModel>());
+            }
         }
     }
 }
