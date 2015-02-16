@@ -9,12 +9,42 @@ namespace Launcher.ViewModels
     {
         private readonly IEventAggregator _eventAggregator;
         private readonly User _user;
+        private string _password = string.Empty;
+        private string _personalid = string.Empty;
+        private bool _remember;
 
-        //public string Name { get; set; }
-        //public string LastName { get; set; }
-        //public string Patronymic { get; set; }
-        //public string PersonalNumber { get; set; }
-        //public string Password { get; set; }
+
+        #region PropertyForView
+        public string PersonalNumber
+        {
+            get { return _personalid; }
+            set
+            {
+                _personalid = value;
+                NotifyOfPropertyChange(() => PersonalNumber);
+            }
+        }
+        public string Password
+        {
+            get { return _personalid; }
+            set
+            {
+                _personalid = value;
+                NotifyOfPropertyChange(() => Password);
+            }
+        }
+
+        public bool RememberMe
+        {
+            get { return _remember; }
+            set
+            {
+                _remember = value;
+                NotifyOfPropertyChange(() => RememberMe);
+            }
+        }
+
+        #endregion
 
         [ImportingConstructor]
         public LoginViewModel(IEventAggregator eventAggregator, User user)
@@ -25,14 +55,21 @@ namespace Launcher.ViewModels
 
         public void Login()
         {
-
-
-
             //TODO Login
-            //if (_user.Login("admin", "admin"))
+            if (_user.Login(PersonalNumber, Password, RememberMe))
+            {
+                _eventAggregator.PublishOnBackgroundThread(IoC.Get<LauncherViewModel>());
+            }
+            //TODO регистрация если нет такого
+            //else
             //{
-            //    _eventAggregator.PublishOnBackgroundThread(this);
+            //    _eventAggregator.PublishOnBackgroundThread(IoC.Get<RegistrationViewModel>());
             //}
+        }
+
+        public void Register()
+        {
+            _eventAggregator.PublishOnBackgroundThread(IoC.Get<RegistrationViewModel>());
         }
     }
 }
