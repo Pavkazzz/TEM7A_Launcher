@@ -6,7 +6,7 @@
                       xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
                       mc:Ignorable="d"
                       Height="1280" Width="800"
-                      d:DesignHeight="300" d:DesignWidth="300" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+                      d:DesignHeight="300" d:DesignWidth="300" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowTransitionsEnabled="false">
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
             <Button Content="About" />
