@@ -10,11 +10,11 @@ namespace Launcher.ViewModels
         private readonly IEventAggregator _eventAggregator;
         private readonly User _user;
 
-        public string Name { get; set; }
-        public string LastName { get; set; }
-        public string Patronymic { get; set; }
-        public string PersonalNumber { get; set; }
-        public string Password { get; set; }
+        //public string Name { get; set; }
+        //public string LastName { get; set; }
+        //public string Patronymic { get; set; }
+        //public string PersonalNumber { get; set; }
+        //public string Password { get; set; }
 
         [ImportingConstructor]
         public LoginViewModel(IEventAggregator eventAggregator, User user)
@@ -29,10 +29,10 @@ namespace Launcher.ViewModels
 
 
             //TODO Login
-            if (_user.Login("admin", "admin"))
-            {
-                _eventAggregator.PublishOnBackgroundThread(this);
-            }
+            //if (_user.Login("admin", "admin"))
+            //{
+            //    _eventAggregator.PublishOnBackgroundThread(this);
+            //}
         }
     }
 }
