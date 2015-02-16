@@ -77,7 +77,7 @@
   <ItemGroup>
     <Content Include="Design\LoginScreen.png" />
     <Content Include="Design\RegistrationScreen.png" />
-    <Content Include="Design\Картинка Фон.png" />
+    <Resource Include="Design\BackgroundImage.png" />
     <Content Include="Design\Модуль документации.jpg" />
     <Content Include="Design\Модуль с историей.jpg" />
     <Content Include="Design\Шаблончик.jpg" />
@@ -89,6 +89,7 @@
     <None Include="Design\RegistrationScreen.psd" />
     <None Include="Design\Документация.psd" />
     <None Include="Design\История.psd" />
+    <Resource Include="Ubuntu-R.ttf" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

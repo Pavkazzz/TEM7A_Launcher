@@ -4,9 +4,14 @@
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     mc:Ignorable="options">
 
+    <Style TargetType="{x:Type Window}">
+        <Setter Property="FontFamily" Value="/Ubuntu-R.ttf" />
+    </Style>
+    
+    
     <Color x:Key="HighlightColor">#008000</Color>
 
-    <Color x:Key="AccentColor">DarkGreen</Color>
+    <Color x:Key="AccentColor">White</Color>
     <!--60% Выделение-->
     <Color x:Key="AccentColor2">#60E861</Color>
     <!--40%-->
@@ -50,4 +55,6 @@
     <SolidColorBrush x:Key="IdealForegroundColorBrush" Color="{StaticResource IdealForegroundColor}"
                      options:Freeze="True" />
 
+    <ImageBrush ImageSource="pack://application:,,,/Launcher.Core.Gui;component/Design/BackgroundImage.png" x:Key="Background" />
+    
 </ResourceDictionary>

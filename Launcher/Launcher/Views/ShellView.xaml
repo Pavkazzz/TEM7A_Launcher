@@ -12,7 +12,7 @@
             <Button Content="About" />
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
-    <Grid>
+    <Grid >
         <ContentControl x:Name="ActiveItem" />
     </Grid>
 </Controls:MetroWindow>
