@@ -139,6 +139,9 @@
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ModuleListViewModel.cs" />
     <Compile Include="ViewModels\UpdaterViewModel.cs" />
+    <Compile Include="Views\HorizontalElementListBox.xaml.cs">
+      <DependentUpon>HorizontalElementListBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LauncherView.xaml.cs">
       <DependentUpon>LauncherView.xaml</DependentUpon>
     </Compile>
@@ -167,6 +170,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="Views\HorizontalElementListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\LauncherView.xaml">
       <SubType>Designer</SubType>
