@@ -8,8 +8,6 @@ namespace Launcher
     /// </summary>
     public partial class App : Application
     {
-        public static readonly string ResourcePath = Path.GetFullPath(@"../../Resources");
-        public static readonly string ModulesPath = Path.GetFullPath(@"../../Modules");
-        public static readonly string DocPath = Path.GetFullPath(@"../../Documents/GOST");
+
     }
 }

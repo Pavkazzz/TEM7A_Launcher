@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:Launcher="clr-namespace:Launcher">
     <Application.Resources>
+
+
         <ResourceDictionary>
+
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
                     <!-- ReSharper disable once InconsistentNaming -->
@@ -17,6 +20,9 @@
                 <ResourceDictionary Source="/Launcher.Core.Gui;component/Style/ListBox.xaml" />
                 <ResourceDictionary Source="/Launcher.Core.Gui;component/Style/Label.xaml"/>
                 <ResourceDictionary Source="/Launcher.Core.Gui;component/Style/TextBox.xaml"/>
+
+
+
                 <!--<ResourceDictionary Source="/Launcher.Core/UserControls/SquareButtonWithRoundedBorders.xaml"/>-->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
