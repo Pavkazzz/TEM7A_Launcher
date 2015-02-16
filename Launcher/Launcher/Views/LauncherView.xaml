@@ -20,7 +20,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
+            <ColumnDefinition MaxWidth="150"/>
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />

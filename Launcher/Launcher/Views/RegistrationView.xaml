@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d"
-             d:DesignHeight="1080" d:DesignWidth="1920">
+             d:DesignHeight="1280" d:DesignWidth="800">
 
     <Grid Background="{StaticResource Background}">
         <Grid.RowDefinitions>
@@ -17,7 +17,7 @@
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="1.001*" MinWidth="300"/>
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
@@ -25,7 +25,7 @@
         <Border Background="White" CornerRadius="10" Grid.Column="3" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
+                    <RowDefinition  Height="20"/>
                     <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />

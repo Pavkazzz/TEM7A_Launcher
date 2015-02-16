@@ -41,6 +41,10 @@ namespace Launcher.ViewModels
 
         public void Handle(string message)
         {
+            if (message == "LoginViewModel")
+            {
+                ActivateItem(IoC.Get<LoginViewModel>());
+            }
             if (message == "LauncherViewModel")
             {
                 ActivateItem(IoC.Get<LauncherViewModel>());

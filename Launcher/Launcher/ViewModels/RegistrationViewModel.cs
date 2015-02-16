@@ -92,6 +92,8 @@ namespace Launcher.ViewModels
                 _user.Password = Password;
                 _user.Registration(_user);
             }
+
+            _eventAggregator.PublishOnBackgroundThread("LoginViewModel");
         }
     }
 }
