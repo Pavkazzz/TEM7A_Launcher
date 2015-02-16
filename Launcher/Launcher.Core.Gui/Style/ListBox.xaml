@@ -118,7 +118,7 @@
         
     </Style>
     <ControlTemplate x:Key="ListBoxModuleTemplate" TargetType="{x:Type ListBoxItem}">
-    	<Grid HorizontalAlignment="Left" Height="24.5" Margin="0,0,-80,0" VerticalAlignment="Top" Width="auto" Background="#FFC5C2C2">
+    	<Grid HorizontalAlignment="Left" Height="190" Margin="0,0,-80,0" VerticalAlignment="Top" Width="auto" Background="#FFC5C2C2">
     		<Grid.RowDefinitions>
     			<RowDefinition/>
     			<RowDefinition Height="3*"/>
@@ -126,14 +126,14 @@
     		</Grid.RowDefinitions>
     		<Grid.ColumnDefinitions>
     			<ColumnDefinition Width="4*"/>
+    			<ColumnDefinition Width="1"/>
     			<ColumnDefinition Width="*"/>
-    			<ColumnDefinition Width="15*"/>
     		</Grid.ColumnDefinitions>
-    		<Rectangle Fill="#FF087808" HorizontalAlignment="Left" Height="24.5" Grid.RowSpan="3" Stroke="Black" VerticalAlignment="Top" Width="20" StrokeThickness="0.3"/>
-    		<Rectangle Grid.Column="1" Fill="#FF087808" HorizontalAlignment="Left" Height="14.7" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="5" StrokeThickness="0.3"/>
-    		<Rectangle Grid.Column="2" Fill="#FF087808" HorizontalAlignment="Left" Height="24.5" Grid.RowSpan="3" Stroke="Black" VerticalAlignment="Top" Width="75" StrokeThickness="0.3"/>
-    		<ContentPresenter x:Name="FirstContent" HorizontalAlignment="Left" Height="24.5" Margin="0" Grid.Row="0" Grid.RowSpan="3" VerticalAlignment="Top" Width="20"/>
-    		<ContentPresenter x:Name="SecondContent" Grid.ColumnSpan="1" Grid.Column="2" HorizontalAlignment="Left" Height="24.5" Grid.Row="0" Grid.RowSpan="3" VerticalAlignment="Top" Width="75"/>
+    		<Rectangle Fill="#FF087808" HorizontalAlignment="Left" Height="190" Grid.RowSpan="3" Stroke="Black" VerticalAlignment="Top" Width="300" StrokeThickness="0.3"/>
+    		<Rectangle Grid.Column="1" Fill="#FF087808" HorizontalAlignment="Left" Height="300" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="30" StrokeThickness="0.3"/>
+    		<Rectangle Grid.Column="2" Fill="#FF087808" HorizontalAlignment="Left" Height="300" Grid.RowSpan="3" Stroke="Black" VerticalAlignment="Top" Width="auto" StrokeThickness="0.3"/>
+    		<ContentPresenter x:Name="FirstContent" HorizontalAlignment="Center" Height="300" Margin="0" Grid.Row="0" Grid.RowSpan="3" VerticalAlignment="Center" Width="auto"/>
+    		<ContentPresenter x:Name="SecondContent" Grid.ColumnSpan="1" Grid.Column="2" HorizontalAlignment="Left" Height="300" Grid.Row="0" Grid.RowSpan="3" VerticalAlignment="Top" Width="auto"/>
     	</Grid>
     </ControlTemplate>
 </ResourceDictionary>
