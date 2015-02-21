@@ -52,7 +52,7 @@ namespace Launcher.Core
                     foreach (var column in columnName)
                     {
                         temp.Add(column, record[column].ToString());
-                    }
+                    }   
                     result.Add(temp);
                 }
             }

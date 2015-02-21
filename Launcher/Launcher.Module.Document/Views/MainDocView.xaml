@@ -14,7 +14,7 @@
                  cal:Message.Attach="[Event SelectionChanged] = [Action Show]" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Name}"></TextBlock>
+                    <TextBlock Text="{Binding Name}" TextWrapping="WrapWithOverflow"></TextBlock>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

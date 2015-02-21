@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Launcher.Core
 {
-    internal class Security
+    public class Security
     {
         private static readonly string _salt = "!@#ф$ы%в^а&чQяWERasdfg789456";
         // ReSharper disable once InconsistentNaming

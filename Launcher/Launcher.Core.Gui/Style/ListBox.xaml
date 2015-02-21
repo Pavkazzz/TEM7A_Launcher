@@ -6,7 +6,7 @@
         <Setter Property="FontSize" Value="22" />
         <Setter Property="Width" Value="130" />
         <Setter Property="Height" Value="130" />
-        <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+        <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
@@ -25,7 +25,7 @@
                             <Border x:Name="FirstBorder" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"
                                     Grid.RowSpan="3" BorderBrush="Green" BorderThickness="3"
                                     HorizontalAlignment="Stretch" Margin="1" VerticalAlignment="Stretch"
-                                    CornerRadius="11" >
+                                    CornerRadius="11">
 
                                 <Border x:Name="SecondBorder" BorderBrush="Yellow" BorderThickness="3" Margin="1"
                                         CornerRadius="3" Background="DarkGreen">
@@ -48,7 +48,7 @@
                                                 </Style.Triggers>
                                             </Style>
                                         </Grid.Style>
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                     </Grid>
                                 </Border>
                             </Border>
@@ -64,7 +64,7 @@
         <Setter Property="FontSize" Value="22" />
         <Setter Property="Width" Value="150" />
         <Setter Property="Height" Value="150" />
-        <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+        <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
@@ -83,7 +83,7 @@
                             <Border x:Name="FirstBorder" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"
                                     Grid.RowSpan="3" BorderBrush="Green" BorderThickness="3"
                                     HorizontalAlignment="Stretch" Margin="1" VerticalAlignment="Stretch"
-                                    CornerRadius="11" >
+                                    CornerRadius="11">
                                 <Border.Style>
                                     <Style TargetType="{x:Type Border}">
                                         <Style.Triggers>
@@ -115,7 +115,7 @@
                                                 </Style.Triggers>
                                             </Style>
                                         </Grid.Style>
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                     </Grid>
                                 </Border>
                             </Border>
@@ -129,18 +129,18 @@
     <Style x:Key="DocumentListBoxStyle" TargetType="ListBoxItem">
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="Red"/>
+                <Setter Property="Background" Value="Red" />
             </Trigger>
         </Style.Triggers>
-        <Setter Property="FontSize" Value="22"/>
-        <Setter Property="Foreground" Value="Black"/>
-        <Setter Property="Background" Value="DarkGreen"/>
-        <Setter Property="Height" Value="60"/>
-        <Setter Property="SnapsToDevicePixels" Value="True"/>
-      <Setter Property="Template">
-        <Setter.Value>
-          <ControlTemplate TargetType="{x:Type ListBoxItem}">
-            <Border BorderBrush="DarkGreen" CornerRadius="2" BorderThickness="2" Margin="3">
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Background" Value="DarkGreen" />
+        <Setter Property="Height" Value="60" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Border BorderBrush="DarkGreen" CornerRadius="2" BorderThickness="2" Margin="3">
                         <!--<Border.Style>
                             <Style TargetType="{x:Type Border}">
                                 <Style.Triggers>
@@ -159,8 +159,8 @@
                                 <Style TargetType="StackPanel">
                                     <Style.Triggers>
                                         <Trigger Property="StackPanel.IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="DarkGreen"/>
-                                            <Setter Property="TextElement.Foreground" Value="White"/>
+                                            <Setter Property="Background" Value="DarkGreen" />
+                                            <Setter Property="TextElement.Foreground" Value="White" />
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
@@ -179,29 +179,75 @@
                                 </ContentPresenter.Style>-->
                             </ContentPresenter>
                         </StackPanel>
-                    </Border> 
-          </ControlTemplate>
-        </Setter.Value>
-      </Setter>
-        
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
     </Style>
     <ControlTemplate x:Key="ListBoxModuleTemplate" TargetType="{x:Type ListBoxItem}">
-    	<Grid HorizontalAlignment="Left" Height="190" Margin="0,0,-80,0" VerticalAlignment="Top" Width="auto" Background="#FFC5C2C2">
-    		<Grid.RowDefinitions>
-    			<RowDefinition/>
-    			<RowDefinition Height="3*"/>
-    			<RowDefinition/>
-    		</Grid.RowDefinitions>
-    		<Grid.ColumnDefinitions>
-    			<ColumnDefinition Width="4*"/>
-    			<ColumnDefinition Width="1"/>
-    			<ColumnDefinition Width="*"/>
-    		</Grid.ColumnDefinitions>
-    		<Rectangle Fill="#FF087808" HorizontalAlignment="Left" Height="190" Grid.RowSpan="3" Stroke="Black" VerticalAlignment="Top" Width="300" StrokeThickness="0.3"/>
-    		<Rectangle Grid.Column="1" Fill="#FF087808" HorizontalAlignment="Left" Height="300" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="30" StrokeThickness="0.3"/>
-    		<Rectangle Grid.Column="2" Fill="#FF087808" HorizontalAlignment="Left" Height="300" Grid.RowSpan="3" Stroke="Black" VerticalAlignment="Top" Width="auto" StrokeThickness="0.3"/>
-    		<ContentPresenter x:Name="FirstContent" HorizontalAlignment="Center" Height="300" Margin="0" Grid.Row="0" Grid.RowSpan="3" VerticalAlignment="Center" Width="auto"/>
-    		<ContentPresenter x:Name="SecondContent" Grid.ColumnSpan="1" Grid.Column="2" HorizontalAlignment="Left" Height="300" Grid.Row="0" Grid.RowSpan="3" VerticalAlignment="Top" Width="auto"/>
-    	</Grid>
+        <Grid HorizontalAlignment="Left" Height="190" Margin="0,0,-80,0" VerticalAlignment="Top" Width="auto"
+              Background="#FFC5C2C2">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="3*" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="1" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Rectangle Fill="#FF087808" HorizontalAlignment="Left" Height="190" Grid.RowSpan="3" Stroke="Black"
+                       VerticalAlignment="Top" Width="300" StrokeThickness="0.3" />
+            <Rectangle Grid.Column="1" Fill="#FF087808" HorizontalAlignment="Left" Height="300" Grid.Row="1"
+                       Stroke="Black" VerticalAlignment="Top" Width="30" StrokeThickness="0.3" />
+            <Rectangle Grid.Column="2" Fill="#FF087808" HorizontalAlignment="Left" Height="300" Grid.RowSpan="3"
+                       Stroke="Black" VerticalAlignment="Top" Width="auto" StrokeThickness="0.3" />
+            <ContentPresenter x:Name="FirstContent" HorizontalAlignment="Center" Height="300" Margin="0" Grid.Row="0"
+                              Grid.RowSpan="3" VerticalAlignment="Center" Width="auto" />
+            <ContentPresenter x:Name="SecondContent" Grid.ColumnSpan="1" Grid.Column="2" HorizontalAlignment="Left"
+                              Height="300" Grid.Row="0" Grid.RowSpan="3" VerticalAlignment="Top" Width="auto" />
+        </Grid>
     </ControlTemplate>
+
+
+    <Style x:Key="HistoryDocumentWrapPanel" TargetType="ListBoxItem">
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Background" Value="DarkGreen" />
+        <Setter Property="Height" Value="60" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <WrapPanel>
+                        <WrapPanel.Style>
+                            <Style TargetType="StackPanel">
+                                <Style.Triggers>
+                                    <Trigger Property="StackPanel.IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="DarkGreen" />
+                                        <Setter Property="TextElement.Foreground" Value="White" />
+                                    </Trigger>
+                                </Style.Triggers>
+                                <Setter Property="Width" Value="50"></Setter>
+                                <Setter Property="MinWidth" Value="50"></Setter>
+                                <Setter Property="Height" Value="50"></Setter>
+                            </Style>
+                            <!--<WrapPanel Width="{Binding (FrameworkElement.ActualWidth), 
+            RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}"
+            ItemWidth="{Binding (ListView.View).ItemWidth, 
+            RelativeSource={RelativeSource AncestorType=ListView}}"
+            MinWidth="{Binding ItemWidth, RelativeSource={RelativeSource Self}}"
+            ItemHeight="{Binding (ListView.View).ItemHeight, 
+            RelativeSource={RelativeSource AncestorType=ListView}}" />-->
+                        </WrapPanel.Style>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </WrapPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
 </ResourceDictionary>
