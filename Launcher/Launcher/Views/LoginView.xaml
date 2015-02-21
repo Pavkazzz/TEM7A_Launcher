@@ -17,7 +17,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="1.0001*" MinWidth="250"/>
+            <ColumnDefinition Width="1.0001*" MinWidth="300"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -41,9 +41,9 @@
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="1" Grid.Column="1" Content="ВХОД" HorizontalAlignment="Center" Foreground="#66CC66" FontSize="24" VerticalContentAlignment="Center"/>
                 <TextBlock Grid.Column="1" Grid.Row="2" Text="1ый раз? Тогда " VerticalAlignment="Top" FontSize="20" HorizontalAlignment="Center"/>
-                <Button x:Name="Register"  Grid.Column="1" Grid.Row="2" Margin="0, 30, 0, 10" Content="Зарегистрируйся!" FontSize="20"></Button>
+                <Button x:Name="Register" Grid.Column="1" Grid.Row="2" Margin="0, 30, 0, 10" Content="Зарегистрируйся!" FontSize="20"></Button>
                 <Separator Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Bottom"/>
-                <TextBox x:Name="PersonalNumber" Margin="0,10" Grid.Row="3" Grid.Column="1" controls:TextboxHelper.Watermark="Табелный номер" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="PersonalNumber" Margin="0,10" Grid.Row="3" Grid.Column="1" controls:TextboxHelper.Watermark="Табельный номер" VerticalContentAlignment="Center"/>
                 <!--TODO PasswordBox -->
                 <TextBox x:Name="Password" Margin="0,10" Grid.Row="4" Grid.Column="1" controls:TextboxHelper.Watermark="Пароль" VerticalContentAlignment="Center"/>
                 <CheckBox x:Name="RememberMe" Grid.Row="5" Grid.Column="1" Content="Запомнить?" VerticalContentAlignment="Center" FontSize="20" Foreground="#66CC66" HorizontalAlignment="Left"></CheckBox>

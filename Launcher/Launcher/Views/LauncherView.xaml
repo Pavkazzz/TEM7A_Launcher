@@ -72,13 +72,12 @@
                  Background="{DynamicResource AccentColorBrush}" />
         <ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7" x:Name="ActiveItem" />
 
-        <!--TODO поменять selectionchange на что-то нормальное-->
         <ListBox x:Name="ModulesListBox" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0" ItemContainerStyle="{StaticResource ListBoxItemCategoryLong}" 
                  Background="{DynamicResource AccentColorBrush}"
-                  cal:Message.Attach="[Event SelectionChanged] = [Action OpenModule]" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                   ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
+                    <StackPanel  cal:Message.Attach="[Event MouseDown] = [Action OpenModule($this)]">
                         <TextBlock x:Name="NameModule" Text="{Binding Name}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </StackPanel>
                 </DataTemplate>
