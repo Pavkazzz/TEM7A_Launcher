@@ -34,9 +34,9 @@
                                 <RowDefinition Height="5" />
                             </Grid.RowDefinitions>
                             <Label Grid.Row="0" Content="{Binding Name}" FontSize="20" FontFamily="Calibri Light"
-                                   HorizontalAlignment="Center" />
+                                   HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                             <TextBlock Grid.Row="1" Text="{Binding Description}" FontSize="15" FontFamily="Calibri"
-                                       HorizontalAlignment="Center" />
+                                       HorizontalAlignment="Center" TextWrapping="Wrap" />
                             
                         </Grid>
                     </Border>
