@@ -6,12 +6,12 @@
                       xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
                       mc:Ignorable="d"
                       Height="1280" Width="800"
-                      d:DesignHeight="300" d:DesignWidth="300" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowTransitionsEnabled="false">
+                      d:DesignHeight="300" d:DesignWidth="300" WindowStyle="None" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowTransitionsEnabled="false" ResizeMode="CanResizeWithGrip" MinHeight="{DynamicResource {x:Static SystemParameters.WorkArea}}" MinWidth="{DynamicResource {x:Static SystemParameters.WorkArea}}">
     <Controls:MetroWindow.Style>
         <Style>
             <Setter Property="WindowChrome.WindowChrome">
                 <Setter.Value>
-                    <WindowChrome NonClientFrameEdges="None"/>
+                    <WindowChrome NonClientFrameEdges="None" ResizeBorderThickness="0"/>
                 </Setter.Value>
             </Setter>
         </Style>
