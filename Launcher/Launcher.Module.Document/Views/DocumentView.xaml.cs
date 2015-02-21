@@ -47,49 +47,46 @@ namespace Launcher.Module.Document.Views
             }));
 
         }
-
+        //Начирикал тут в чём то подвох должен ьбыть ..
         private void Window_ManipulationStarting(object sender, ManipulationStartingEventArgs e)
         {
-            //e.ManipulationContainer = this;
-            //e.Handled = true;
+            e.ManipulationContainer = this;
+            e.Handled = true;
         }
 
         private void Window_ManipulationDelta(object sender, ManipulationDeltaEventArgs e)
         {
-            //MoonPdfPanel rectToMove = e.OriginalSource as MoonPdfPanel;
-            //Matrix rectsMatrix = ((MatrixTransform)rectToMove.RenderTransform).Matrix;
-            //rectsMatrix.ScaleAt(e.DeltaManipulation.Scale.X,
-            //            e.DeltaManipulation.Scale.X,
-            //            e.ManipulationOrigin.X,
-            //            e.ManipulationOrigin.Y);
-            //rectToMove.RenderTransform = new MatrixTransform(rectsMatrix);
-            //Rect containingRect = new Rect(((FrameworkElement)e.ManipulationContainer).RenderSize);
-            //Rect shapeBounds = rectToMove.RenderTransform.TransformBounds(new Rect(rectToMove.RenderSize));
-            //if (e.IsInertial && !containingRect.Contains(shapeBounds))
-            //{
-            //    e.Complete();
-            //}
+            MoonPdfPanel rectToMove = e.OriginalSource as MoonPdfPanel;
+            Matrix rectsMatrix = ((MatrixTransform)rectToMove.RenderTransform).Matrix;
+            rectsMatrix.ScaleAt(e.DeltaManipulation.Scale.X,e.DeltaManipulation.Scale.X,e.ManipulationOrigin.X,e.ManipulationOrigin.Y);
+            rectToMove.RenderTransform = new MatrixTransform(rectsMatrix);
+            Rect containingRect = new Rect(((FrameworkElement)e.ManipulationContainer).RenderSize);
+            Rect shapeBounds = rectToMove.RenderTransform.TransformBounds(new Rect(rectToMove.RenderSize));
+            if (e.IsInertial && !containingRect.Contains(shapeBounds))
+            {
+                e.Complete();
+            }
 
 
-            //e.Handled = true;
+            e.Handled = true;
 
         }
 
         private void Window_InertiaStarting(object sender, ManipulationInertiaStartingEventArgs e)
         {
-            //e.TranslationBehavior.DesiredDeceleration = 10.0 * 96.0 / (1000.0 * 1000.0);
+            e.TranslationBehavior.DesiredDeceleration = 10.0 * 96.0 / (1000.0 * 1000.0);
 
-            //// Decrease the velocity of the Rectangle's resizing by 
-            //// 0.1 inches per second every second.
-            //// (0.1 inches * 96 pixels per inch / (1000ms^2)
-            //e.ExpansionBehavior.DesiredDeceleration = 0.1 * 96 / (1000.0 * 1000.0);
+            // Decrease the velocity of the Rectangle's resizing by 
+            // 0.1 inches per second every second.
+            // (0.1 inches * 96 pixels per inch / (1000ms^2)
+            e.ExpansionBehavior.DesiredDeceleration = 0.1 * 96 / (1000.0 * 1000.0);
 
-            //// Decrease the velocity of the Rectangle's rotation rate by 
-            //// 2 rotations per second every second.
-            //// (2 * 360 degrees / (1000ms^2)
-            //e.RotationBehavior.DesiredDeceleration = 720 / (1000.0 * 1000.0);
+            // Decrease the velocity of the Rectangle's rotation rate by 
+            // 2 rotations per second every second.
+            // (2 * 360 degrees / (1000ms^2)
+            e.RotationBehavior.DesiredDeceleration = 720 / (1000.0 * 1000.0);
 
-            //e.Handled = true;
+            e.Handled = true;
         }
     }
 
