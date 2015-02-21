@@ -85,7 +85,7 @@
                                     HorizontalAlignment="Stretch" Margin="1" VerticalAlignment="Stretch"
                                     CornerRadius="11" >
                                 <Border.Style>
-                                    <Style TargetType="{DynamicResource ResourceKey=}">
+                                    <Style TargetType="{x:Type Border}">
                                         <Style.Triggers>
                                             <Trigger Property="IsMouseOver" Value="True">
                                                 <Setter Property="Background" Value="DarkGoldenrod" />
