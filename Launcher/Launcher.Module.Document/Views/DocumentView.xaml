@@ -37,8 +37,6 @@
         </StackPanel>
 
         <!--Сюда в старом образе у нас отображались данные -->
-        <moonPdfLib:MoonPdfPanel Grid.Row="1" Grid.Column="1" x:Name="PdfPanel" ManipulationStarting="Window_ManipulationStarting"
-             ManipulationDelta="Window_ManipulationDelta"
-             ManipulationInertiaStarting="Window_InertiaStarting" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.IsDeferredScrollingEnabled="False"/>
+        <moonPdfLib:MoonPdfPanel Grid.Row="1" Grid.Column="1" x:Name="PdfPanel" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.IsDeferredScrollingEnabled="False"/>
     </Grid>
 </Window>
