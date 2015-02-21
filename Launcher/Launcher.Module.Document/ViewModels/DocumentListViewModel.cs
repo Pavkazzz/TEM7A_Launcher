@@ -27,7 +27,6 @@ namespace Launcher.Module.Document.ViewModels
             }
         }
 
-        [Export(typeof(DocFile))]
         public DocFile SelectedFileNameList
         {
             get { return _selectedfile; }
@@ -52,7 +51,8 @@ namespace Launcher.Module.Document.ViewModels
         {
             //view для документа.
             //_eventAggregator.PublishOnBackgroundThread(IoC.Get<DocumentViewModel>());
-            _windowManager.ShowDialog(IoC.Get<DocumentViewModel>());
+            if (SelectedFileNameList != null) 
+            _windowManager.ShowDialog(new DocumentViewModel(SelectedFileNameList));
         }
 
         public void Handle(Category message)

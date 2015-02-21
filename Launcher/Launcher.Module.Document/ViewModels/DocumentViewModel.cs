@@ -22,10 +22,10 @@ namespace Launcher.Module.Document.ViewModels
         private IWindowManager _windowsManager;
 
         [ImportingConstructor]
-        public DocumentViewModel(IEventAggregator eventAggregator, IWindowManager windowManager, DocFile message)
+        public DocumentViewModel( DocFile message)
         {
-            _eventAggregator = eventAggregator;
-            _windowsManager = windowManager;
+            _eventAggregator = IoC.Get<IEventAggregator>();
+            _windowsManager = IoC.Get<IWindowManager>();
 
             _eventAggregator.Subscribe(this);
             _message = message;

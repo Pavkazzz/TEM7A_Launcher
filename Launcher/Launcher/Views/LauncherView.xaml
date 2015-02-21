@@ -6,7 +6,7 @@
              xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
              xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="1080" d:DesignWidth="800">
     <Grid x:Name="MainGrid" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
           ScrollViewer.VerticalScrollBarVisibility="Hidden">
         <Grid.RowDefinitions>
@@ -20,7 +20,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition MaxWidth="150"/>
+            <ColumnDefinition Width="150"/>
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
@@ -49,12 +49,12 @@
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Label Content="ТЧ-1" Foreground="Yellow" FontSize="28" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
-                   HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" FontWeight="Bold" />
+            <Label Content="КАЛУГАПУТЬМАШ" Foreground="Black" FontSize="24" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="2"
+                   HorizontalAlignment="Left" VerticalAlignment="Top" FontStyle="Italic" FontWeight="Bold" />
             <Label x:Name="DateTimeLabel" HorizontalAlignment="Right" Grid.Column="6" Grid.Row="0" Grid.RowSpan="2"
-                   HorizontalContentAlignment="Right" Foreground="White" FontSize="17" VerticalAlignment="Bottom" />
-            <Label HorizontalAlignment="Right" Content="Виктор Викторович" Grid.Column="6" Grid.Row="0"
-                   Foreground="White" HorizontalContentAlignment="Right" FontSize="15" />
+                   HorizontalContentAlignment="Right" Foreground="Black" FontSize="17" VerticalAlignment="Bottom" />
+            <Label x:Name="FIO" Content="СИНАРА" Grid.Column="5" Grid.ColumnSpan="3" Grid.Row="0"
+                   Foreground="Black" HorizontalContentAlignment="Right" FontSize="24" FontStyle="Italic" FontWeight="Bold" />
             <TextBlock x:Name="TextBlockAny" Grid.Column="7" Grid.RowSpan="2" TextWrapping="WrapWithOverflow"
                        Foreground="White" FontSize="15" HorizontalAlignment="Right" />
 
@@ -73,9 +73,9 @@
         <ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7" x:Name="ActiveItem" />
 
         <!--TODO поменять selectionchange на что-то нормальное-->
-        <ListBox x:Name="ModulesListBox" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0" ItemContainerStyle="{StaticResource ListBoxItemCategoryLong}"
+        <ListBox x:Name="ModulesListBox" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0" ItemContainerStyle="{StaticResource ListBoxItemCategoryLong}" 
                  Background="{DynamicResource AccentColorBrush}"
-                  cal:Message.Attach="[Event SelectionChanged] = [Action OpenModule]">
+                  cal:Message.Attach="[Event SelectionChanged] = [Action OpenModule]" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
