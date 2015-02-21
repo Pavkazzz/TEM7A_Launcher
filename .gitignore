@@ -5,6 +5,8 @@
 *.suo
 *.user
 *.sln.docstates
+*.dll
+*.exe
 
 # Build results
 [Dd]ebug/
@@ -187,18 +189,4 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
-/Launcher/packages/MahApps.Metro.1.0.0.0/lib/net40/MahApps.Metro.dll
-/Launcher/packages/MahApps.Metro.1.0.0.0/lib/net40/MahApps.Metro.XML
-/Launcher/packages/MahApps.Metro.1.0.0.0/lib/net40/System.Windows.Interactivity.dll
-/Launcher/packages/MahApps.Metro.1.0.0.0/lib/net45/MahApps.Metro.dll
-/Launcher/packages/MahApps.Metro.1.0.0.0/lib/net45/MahApps.Metro.XML
-/Launcher/packages/MahApps.Metro.1.0.0.0/lib/net45/System.Windows.Interactivity.dll
-/Launcher/packages/MahApps.Metro.1.0.0.0/MahApps.Metro.1.0.0.0.nupkg
-/Launcher/packages/MahApps.Metro.1.0.0.0/tools/install.ps1
-/Launcher/packages/Moq.4.2.1502.0911/lib/net35/Moq.dll
-/Launcher/packages/Moq.4.2.1502.0911/lib/net35/Moq.xml
-/Launcher/packages/Moq.4.2.1502.0911/lib/net40/Moq.dll
-/Launcher/packages/Moq.4.2.1502.0911/lib/net40/Moq.xml
-/Launcher/packages/Moq.4.2.1502.0911/lib/sl4/Moq.Silverlight.dll
-/Launcher/packages/Moq.4.2.1502.0911/lib/sl4/Moq.Silverlight.xml
-/Launcher/packages/Moq.4.2.1502.0911/Moq.4.2.1502.0911.nupkg
+/Launcher/packages/*
