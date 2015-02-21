@@ -9,6 +9,7 @@ namespace Launcher.Module.Document.ViewModels
     {
         private IEventAggregator _eventAggregator;
 
+
         #region HistoryListView
 
         private BindableCollection<History> _historyWrapPanel = new BindableCollection<History>();
