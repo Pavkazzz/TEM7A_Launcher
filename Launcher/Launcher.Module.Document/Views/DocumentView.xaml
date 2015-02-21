@@ -9,7 +9,18 @@
              mc:Ignorable="d"      
              x:Class="Launcher.Module.Document.Views.DocumentView"
              ResizeMode="NoResize" WindowStyle="None" WindowState="Maximized"
-             d:DesignWidth="470" d:DesignHeight="303">
+             d:DesignWidth="470" d:DesignHeight="303"
+             ManipulationStarting="Window_ManipulationStarting"
+             ManipulationDelta="Window_ManipulationDelta"
+             ManipulationInertiaStarting="Window_InertiaStarting">
+    
+    <Window.Resources>
+        <MatrixTransform x:Key="InitialMatrixTransform">
+            <MatrixTransform.Matrix>
+                <Matrix OffsetX="900" OffsetY="900"/>
+            </MatrixTransform.Matrix>
+        </MatrixTransform>
+    </Window.Resources>
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -28,6 +39,8 @@
         </StackPanel>
 
         <!--Сюда в старом образе у нас отображались данные -->
-        <moonPdfLib:MoonPdfPanel x:Name="PdfPanel" Grid.Row="1" Grid.Column="1" />
+        <!--<Canvas x:Name="CanvasContent"  >-->
+            <moonPdfLib:MoonPdfPanel Grid.Row="1" Grid.Column="1" x:Name="PdfPanel" IsManipulationEnabled="true"  />
+        <!--</Canvas>-->
     </Grid>
 </Window>
