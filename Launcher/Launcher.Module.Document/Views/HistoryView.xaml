@@ -27,8 +27,8 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate >
-                    <controls:Tile  MinWidth="250" cal:Message.Attach="[Event Click] = [Action OpenDoc($this)]">
-                        <TextBlock Text="{Binding Name}" TextWrapping="WrapWithOverflow" FontSize="20"></TextBlock>
+                    <controls:Tile TiltFactor="1" Title="{Binding Name}" MinWidth="250" cal:Message.Attach="[Event Click] = [Action OpenDoc($this)]">
+
                     </controls:Tile>
                 </DataTemplate>
             </ListBox.ItemTemplate>
