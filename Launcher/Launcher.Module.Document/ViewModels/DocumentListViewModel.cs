@@ -51,8 +51,23 @@ namespace Launcher.Module.Document.ViewModels
         {
             //view для документа.
             //_eventAggregator.PublishOnBackgroundThread(IoC.Get<DocumentViewModel>());
-            if (SelectedFileNameList != null) 
-            _windowManager.ShowDialog(new DocumentViewModel(SelectedFileNameList));
+            if (SelectedFileNameList != null)
+            {
+                var db = new Launcher.Core.DataBase(Path.GetFullPath(new AboutDoc().DbPath));
+
+                var index = db.SqlSelect("Select id from History order by id desc", new List<string>() {"id"});
+
+                if (index.Count > 0)
+                {
+                    db.SqlInsert(string.Format("INSERT INTO \"main\".\"History\" (\"DocumentName\",\"DocumentIndex\",\"Path\") VALUES ('{0}','{1}','{2}')", SelectedFileNameList.Name, index[0]["id"], SelectedFileNameList.Path));
+                }
+                else
+                {
+                    db.SqlInsert(string.Format("INSERT INTO \"main\".\"History\" (\"DocumentName\",\"DocumentIndex\",\"Path\") VALUES ('{0}','{1}','{2}')", SelectedFileNameList.Name, '1', SelectedFileNameList.Path));
+                }
+
+                _windowManager.ShowDialog(new DocumentViewModel(SelectedFileNameList));
+            }
         }
 
         public void Handle(Category message)
