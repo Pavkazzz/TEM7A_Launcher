@@ -21,7 +21,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" Grid.Row="0" cal:Message.Attach="[Event MouseDown] = [Action CloseWindow()]">
+        <StackPanel Grid.Column="0" Grid.Row="0" cal:Message.Attach="[Event MouseDown] = [Action CloseWindow()]" Background="White">
             <Canvas>
                 <ContentControl Content="{StaticResource appbar_chevron_left}" Canvas.Top="0" Canvas.Left="0" />
             </Canvas>

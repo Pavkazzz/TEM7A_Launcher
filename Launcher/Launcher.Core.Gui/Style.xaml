@@ -11,7 +11,7 @@
 
     <Color x:Key="HighlightColor">#249938</Color>
 
-    <Color x:Key="AccentColor">#4ADF62</Color>
+    <Color x:Key="AccentColor">#FC842C</Color>
     <!--60% Выделение-->
     <Color x:Key="AccentColor2">#60E861</Color>
     <!--40%-->

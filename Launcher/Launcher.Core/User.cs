@@ -57,7 +57,7 @@ namespace Launcher.Core
             var db = new DataBase();
             
             var hashPass = Security.GetSHA512(user.Password);
-            db.SqlInsert(string.Format("Insert Into Accounts Values ('{0}', '{1}', '{2}', '{3}', '{4}')", user.PersonalNumber, user.Password, user.Name, user.Lastname, user.Patronymic));
+            db.SqlInsert(string.Format("Insert Into Accounts Values ('{0}', '{1}', '{2}', '{3}', '{4}')", user.PersonalNumber, hashPass, user.Name, user.Lastname, user.Patronymic));
         }
     }
 }

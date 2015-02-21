@@ -15,7 +15,9 @@ namespace Launcher.ViewModels
         {
             _eventAggregator = eventAggregator;
             _eventAggregator.Subscribe(this);
-            
+
+            DisplayName = "ИС Помошник машиниста";
+
             ActivateItem(IoC.Get<LoginViewModel>());
         }
 
