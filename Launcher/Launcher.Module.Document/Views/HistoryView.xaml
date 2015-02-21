@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Background="{DynamicResource AccentColorBrush}">
@@ -17,19 +18,20 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView x:Name="HisoryWrapPanel" Grid.ColumnSpan="3" Grid.RowSpan="3" >
-            <ListView.ItemsPanel>
+        <ListBox x:Name="HistoryWrapPanels" Grid.ColumnSpan="3" Grid.RowSpan="3">
+
+            <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel/>
+                    <WrapPanel />
                 </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <controls:Tile MinWidth="250">
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate >
+                    <controls:Tile  MinWidth="250" cal:Message.Attach="[Event Click] = [Action OpenDoc($this)]">
                         <TextBlock Text="{Binding Name}" TextWrapping="WrapWithOverflow" FontSize="20"></TextBlock>
                     </controls:Tile>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </UserControl>
