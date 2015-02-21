@@ -28,7 +28,6 @@
             <ListBox.ItemTemplate>
                 <DataTemplate >
                     <controls:Tile TiltFactor="1" Title="{Binding Name}" MinWidth="250" cal:Message.Attach="[Event Click] = [Action OpenDoc($this)]">
-
                     </controls:Tile>
                 </DataTemplate>
             </ListBox.ItemTemplate>
