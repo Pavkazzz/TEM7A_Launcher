@@ -66,8 +66,6 @@ namespace Launcher.Module.Document.Views
             {
                 e.Complete();
             }
-
-
             e.Handled = true;
 
         }
