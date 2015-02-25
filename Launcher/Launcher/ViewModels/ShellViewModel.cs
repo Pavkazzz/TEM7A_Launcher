@@ -1,19 +1,25 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Dynamic;
+using System.Linq;
+using System.Windows;
 using Caliburn.Micro;
 using Launcher.Core;
 
 namespace Launcher.ViewModels
 {
-    [Export(typeof (IShell))]
-    public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<string>
+    [Export(typeof(IShell))]
+    public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<string>, IHandle<FlyoutBaseViewModel>
     {
         private readonly IEventAggregator _eventAggregator;
+        private readonly IWindowManager _windowManager;
 
         [ImportingConstructor]
-        public ShellViewModel(IEventAggregator eventAggregator)
+        public ShellViewModel(IEventAggregator eventAggregator, IWindowManager windowManager)
         {
             _eventAggregator = eventAggregator;
+            _windowManager = windowManager;
+
             _eventAggregator.Subscribe(this);
 
             DisplayName = "ИС Помошник машиниста";
@@ -21,6 +27,8 @@ namespace Launcher.ViewModels
             ActivateItem(IoC.Get<LoginViewModel>());
         }
 
+
+        //TODO переделать на typeof вместо string
         //public void Handle(string message)
         //{
         //    //var model = IoC.Get<Model>();
@@ -44,18 +52,48 @@ namespace Launcher.ViewModels
 
         public void Handle(string message)
         {
-            if (message == "LoginViewModel")
+            switch (message)
             {
-                ActivateItem(IoC.Get<LoginViewModel>());
+                case "LoginViewModel":
+                    ActivateItem(IoC.Get<LoginViewModel>());
+                    break;
+  
+                case "LauncherViewModel":
+                    ActivateItem(IoC.Get<LauncherViewModel>());
+                    break;
+            
+                case "RegistrationViewModel":
+                    ActivateItem(IoC.Get<RegistrationViewModel>());
+                    break;
             }
-            if (message == "LauncherViewModel")
+        }
+
+
+        private readonly IObservableCollection<FlyoutBaseViewModel> flyouts =
+    new BindableCollection<FlyoutBaseViewModel>();
+
+        public IObservableCollection<FlyoutBaseViewModel> Flyouts
+        {
+            get
             {
-                ActivateItem(IoC.Get<LauncherViewModel>());
+                return this.flyouts;
             }
-            if (message == "RegistrationViewModel")
+        }
+
+
+        public void Open()
+        {
+            _eventAggregator.PublishOnBackgroundThread(new FlyoutSearchViewModel());
+        }
+
+        public void Handle(FlyoutBaseViewModel message)
+        {
+            if (flyouts.Count(x => x.Header == message.Header) == 0)
             {
-                ActivateItem(IoC.Get<RegistrationViewModel>());
+                this.flyouts.Insert(0, message);
             }
+            var flyout = Flyouts[0];
+            flyout.IsOpen = !flyout.IsOpen;
         }
     }
 }
