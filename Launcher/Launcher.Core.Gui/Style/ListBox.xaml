@@ -290,6 +290,12 @@
                                 <ListBoxItem Template="{DynamicResource TwoLevel}" FontFamily="22" Foreground="White" >
                                     <ContentPresenter />
                                 </ListBoxItem>
+                                <ListBoxItem Template="{DynamicResource TwoLevel}" FontFamily="22" Foreground="White" >
+                                    <ContentPresenter />
+                                </ListBoxItem>
+                                <ListBoxItem Template="{DynamicResource TwoLevel}" FontFamily="22" Foreground="White" >
+                                    <ContentPresenter />
+                                </ListBoxItem>
                             </ListBox>
                         </Border>
                     </Grid>
