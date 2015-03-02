@@ -47,7 +47,7 @@ namespace Launcher.Module.Document.ViewModels
 
         }
 
-        public void ShowDoc()
+        public void ShowDoc(object o)
         {
             //view для документа.
             //_eventAggregator.PublishOnBackgroundThread(IoC.Get<DocumentViewModel>());
