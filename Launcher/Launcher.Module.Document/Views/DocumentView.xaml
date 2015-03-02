@@ -9,8 +9,7 @@
              mc:Ignorable="d"      
              x:Class="Launcher.Module.Document.Views.DocumentView"
              ResizeMode="NoResize" WindowStyle="None" WindowState="Maximized"
-             d:DesignWidth="470" d:DesignHeight="303"
-             >
+             d:DesignWidth="470" d:DesignHeight="303">
     
     <Window.Resources>
         <MatrixTransform x:Key="InitialMatrixTransform">
@@ -37,6 +36,9 @@
         </StackPanel>
 
         <!--Сюда в старом образе у нас отображались данные -->
-        <moonPdfLib:MoonPdfPanel Grid.Row="1" Grid.Column="1" x:Name="PdfPanel" RenderTransform="{StaticResource InitialMatrixTransform}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <!-- TODO в IoC засунуть-->
+            <moonPdfLib:MoonPdfPanel  x:Name="PdfPanel" RenderTransform="{StaticResource InitialMatrixTransform}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+        </Grid>
     </Grid>
 </Window>

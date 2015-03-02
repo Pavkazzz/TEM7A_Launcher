@@ -51,7 +51,8 @@ namespace Launcher.Module.Document.ViewModels
         {
             //view для документа.
             //_eventAggregator.PublishOnBackgroundThread(IoC.Get<DocumentViewModel>());
-            if (SelectedFileNameList != null)
+            var doc = o as DocFile;
+            if (doc != null)
             {
                 var db = new Launcher.Core.DataBase(Path.GetFullPath(new AboutDoc().DbPath));
 
@@ -59,14 +60,14 @@ namespace Launcher.Module.Document.ViewModels
 
                 if (index.Count > 0)
                 {
-                    db.SqlInsert(string.Format("INSERT INTO \"main\".\"History\" (\"DocumentName\",\"DocumentIndex\",\"Path\") VALUES ('{0}','{1}','{2}')", SelectedFileNameList.Name, index[0]["id"], SelectedFileNameList.Path));
+                    db.SqlInsert(string.Format("INSERT INTO \"main\".\"History\" (\"DocumentName\",\"DocumentIndex\",\"Path\") VALUES ('{0}','{1}','{2}')", doc.Name, index[0]["id"], doc.Path));
                 }
                 else
                 {
-                    db.SqlInsert(string.Format("INSERT INTO \"main\".\"History\" (\"DocumentName\",\"DocumentIndex\",\"Path\") VALUES ('{0}','{1}','{2}')", SelectedFileNameList.Name, '1', SelectedFileNameList.Path));
+                    db.SqlInsert(string.Format("INSERT INTO \"main\".\"History\" (\"DocumentName\",\"DocumentIndex\",\"Path\") VALUES ('{0}','{1}','{2}')", doc.Name, '1', doc.Path));
                 }
 
-                _windowManager.ShowDialog(new DocumentViewModel(SelectedFileNameList));
+                _windowManager.ShowDialog(new DocumentViewModel(doc));
             }
         }
 

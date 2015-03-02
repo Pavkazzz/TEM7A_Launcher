@@ -152,7 +152,8 @@
                                     </Style.Triggers>
                                 </Style>
                             </StackPanel.Style>
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <ContentPresenter>
+
                             </ContentPresenter>
                         </StackPanel>
                     </Border>
