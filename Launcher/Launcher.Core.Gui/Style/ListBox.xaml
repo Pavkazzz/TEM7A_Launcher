@@ -256,7 +256,11 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Border BorderBrush="#FF169516" Grid.Column="0" Grid.Row="0" Grid.RowSpan="1" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="120" Margin="2,4.7,3,2"  Width="Auto">
-                            <Button x:Name="FirstContentButton" Content="Модуль 1" FontSize="20" BorderBrush="#FF167423" Background="#FF167423" Foreground="#FFF7F3F3" Margin="0,0,0,0" />
+                            <Button x:Name="FirstContentButton" FontSize="20" BorderBrush="#FF167423" Background="#FF167423" Foreground="#FFF7F3F3" Margin="0,0,0,0">
+                                <WrapPanel Width="auto" Height="auto" >
+                                <ContentPresenter/>
+                                </WrapPanel>
+                            </Button>
                         </Border>
                         <Border BorderBrush="#FF167423" BorderThickness="0,0,0,2" Grid.Column="1" HorizontalAlignment="Stretch" Height="124.7" Margin="2,0,0,0" VerticalAlignment="Top" Width="auto" Grid.ColumnSpan="1">
                             <ListBox x:Name="MainListBoxInWindowShell"  ScrollViewer.PanningMode="HorizontalOnly" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,-10.3" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="White">
@@ -268,14 +272,24 @@
                                 <ListBox.ItemContainerStyle>
                                     <Style/>
                                 </ListBox.ItemContainerStyle>
-                                <ListBoxItem Content="ListBoxItem 1" Template="{DynamicResource TwoLevel}" />
-                                <ListBoxItem Content="ListBoxItem 2" Template="{DynamicResource TwoLevel}"/>
-                                <ListBoxItem Content="ListBoxItem 3" Template="{DynamicResource TwoLevel}"/>
-                                <ListBoxItem Content="ListBoxItem 4" Template="{DynamicResource TwoLevel}"/>
-                                <ListBoxItem Content="ListBoxItem 5" Template="{DynamicResource TwoLevel}"/>
-                                <ListBoxItem Content="ListBoxItem 6" Template="{DynamicResource TwoLevel}"/>
-                                <ListBoxItem Content="ListBoxItem 7" Template="{DynamicResource TwoLevel}"/>
-                                <ListBoxItem Content="ListBoxItem 8" Template="{DynamicResource TwoLevel}"/>
+                                <ListBoxItem Template="{DynamicResource TwoLevel}" FontFamily="22" Foreground="White" >
+                                    <ContentPresenter />
+                                </ListBoxItem>
+                                <ListBoxItem Template="{DynamicResource TwoLevel}" FontFamily="22" Foreground="White" >
+                                    <ContentPresenter />
+                                </ListBoxItem>
+                                <ListBoxItem Template="{DynamicResource TwoLevel}" FontFamily="22" Foreground="White" >
+                                    <ContentPresenter />
+                                </ListBoxItem>
+                                <ListBoxItem Template="{DynamicResource TwoLevel}" FontFamily="22" Foreground="White" >
+                                    <ContentPresenter />
+                                </ListBoxItem>
+                                <ListBoxItem Template="{DynamicResource TwoLevel}" FontFamily="22" Foreground="White" >
+                                    <ContentPresenter />
+                                </ListBoxItem>
+                                <ListBoxItem Template="{DynamicResource TwoLevel}" FontFamily="22" Foreground="White" >
+                                    <ContentPresenter />
+                                </ListBoxItem>
                             </ListBox>
                         </Border>
                     </Grid>
@@ -365,5 +379,23 @@
             </Button>
         </Grid>
     </ControlTemplate>
+    
+    <DataTemplate x:Key="MainViewsOfTwoLevelItems">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.ColumnSpan="2" Grid.RowSpan="3"  Width="170" Height="Auto" Margin="5,0,0,5" Background="#FF167423" Foreground="White">
+                <ContentPresenter x:Name="ContentTwoLevel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </Button>
+        </Grid>
+    </DataTemplate>
 
 </ResourceDictionary>

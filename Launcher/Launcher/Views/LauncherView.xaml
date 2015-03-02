@@ -69,9 +69,11 @@
                 </TextBox.Style>
             </TextBox>
         </Grid>
-        <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Stretch" Margin="0,0,0,2.05" >
+        <ListBox  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Stretch" Margin="0,0,0,0" >
             <ListBoxItem Style="{StaticResource MainWindowListBoxTemplate}"/>
-            <ListBoxItem Style="{StaticResource MainWindowListBoxTemplate}"/>
+            <ListBoxItem Style="{StaticResource MainWindowListBoxTemplate}" Content="Модуль 2"/>
+            <ListBoxItem Style="{StaticResource MainWindowListBoxTemplate}" Content="Модуль 3"/>
+            <ListBoxItem Style="{StaticResource MainWindowListBoxTemplate}" Content="Модуль 4"/>
         </ListBox>
 
         <!--<ListBox x:Name="CurrentModuleState" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0"
