@@ -140,7 +140,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                    <Border BorderBrush="DarkGreen" CornerRadius="2" BorderThickness="2" Margin="3">
+                    <Border BorderBrush="DarkGreen" CornerRadius="2" BorderThickness="2" Margin="3" >
+                        
                         <!--<Border.Style>
                             <Style TargetType="{x:Type Border}">
                                 <Style.Triggers>
@@ -165,14 +166,12 @@
                                     </Style.Triggers>
                                 </Style>
                             </StackPanel.Style>
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <ContentPresenter>
                                 <!--<ContentPresenter.Style>
                                     <Style TargetType="ContentPresenter">
                                         <Style.Triggers>
                                             <Trigger Property="Border.IsMouseOver" Value="True">
                                                 <Setter Property="" Value="True"/>
-                                           
-                                            
                                             </Trigger>
                                         </Style.Triggers>
                                     </Style>
