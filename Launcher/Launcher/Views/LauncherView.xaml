@@ -69,12 +69,16 @@
                 </TextBox.Style>
             </TextBox>
         </Grid>
+        <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Stretch" Margin="0,0,0,2.05" >
+            <ListBoxItem Style="{StaticResource MainWindowListBoxTemplate}"/>
+            <ListBoxItem Style="{StaticResource MainWindowListBoxTemplate}"/>
+        </ListBox>
 
-        <ListBox x:Name="CurrentModuleState" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0"
-                 Background="{DynamicResource AccentColorBrush}" />
-        <ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7" x:Name="ActiveItem" />
+        <!--<ListBox x:Name="CurrentModuleState" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0"
+                 Background="{DynamicResource AccentColorBrush}" />-->
+        <!--<ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7" x:Name="ActiveItem" />-->
 
-        <ListBox x:Name="ModulesListBox" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0" ItemContainerStyle="{StaticResource ListBoxItemCategoryLong}" 
+        <!--<ListBox x:Name="ModulesListBox" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0" ItemContainerStyle="{StaticResource ListBoxItemCategoryLong}" 
                  Background="{DynamicResource AccentColorBrush}"
                    ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemTemplate>
@@ -84,7 +88,7 @@
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-        </ListBox>
+        </ListBox>-->
 
     </Grid>
 </UserControl>
