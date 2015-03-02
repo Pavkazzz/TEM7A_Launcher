@@ -83,7 +83,7 @@ namespace Launcher.ViewModels
 
         public void Open()
         {
-            _eventAggregator.PublishOnBackgroundThread(new FlyoutSearchViewModel());
+            _eventAggregator.PublishOnBackgroundThread(IoC.Get<FlyoutSearchViewModel>());
         }
 
         public void Handle(FlyoutBaseViewModel message)

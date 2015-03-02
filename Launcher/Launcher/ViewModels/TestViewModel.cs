@@ -32,7 +32,7 @@ namespace Launcher.ViewModels
         {
             base.OnInitialize();
             this.DisplayName = "Caliburn.Metro.Demo";
-            this.flyouts.Add(new FlyoutSearchViewModel());
+            this.flyouts.Add(IoC.Get<FlyoutSearchViewModel>());
         }
     }
 }

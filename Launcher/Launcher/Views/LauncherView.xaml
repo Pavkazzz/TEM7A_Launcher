@@ -56,18 +56,23 @@
                    HorizontalAlignment="Left" VerticalAlignment="Top" FontStyle="Italic" FontWeight="Bold" />
             <Label x:Name="DateTimeLabel" HorizontalAlignment="Right" Grid.Column="6" Grid.Row="0" Grid.RowSpan="2"
                    HorizontalContentAlignment="Right" Foreground="Black" FontSize="17" VerticalAlignment="Bottom" />
-            <Label x:Name="FIO" Content="СИНАРА" Grid.Column="5" Grid.ColumnSpan="3" Grid.Row="0"
-                   Foreground="Black" HorizontalContentAlignment="Right" FontSize="24" FontStyle="Italic" FontWeight="Bold" />
+            <Label x:Name="FIO" Content="СИНАРА" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="0"
+                   Foreground="Black" HorizontalContentAlignment="Left" FontSize="24" FontStyle="Italic" FontWeight="Bold" />
             <TextBlock x:Name="TextBlockAny" Grid.Column="7" Grid.RowSpan="2" TextWrapping="WrapWithOverflow"
                        Foreground="White" FontSize="15" HorizontalAlignment="Right" />
 
-            <TextBox x:Name="TextBoxSearch" controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="6"
-                     Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalAlignment="Center" FontSize="17"
-                     cal:Message.Attach="[Event GotFocus] = [Action Search]; [Event TextChanged] = [Action Search(TextBoxSearch.Text)]">
-                <TextBox.Style>
-                    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource SearchMetroTextBox}" />
-                </TextBox.Style>
-            </TextBox>
+
+
+            <Rectangle Fill="Black" Grid.Row="0"  Grid.RowSpan="2" Grid.Column="7" cal:Message.Attach="[Event MouseDown] = [Action Search($view)]" Margin="5">
+                <Rectangle.OpacityMask>
+                    <VisualBrush Visual="{StaticResource appbar_page_search}" Stretch="Uniform" />
+                </Rectangle.OpacityMask>
+            </Rectangle>
+            
+            <!--<TextBox x:Name="TextBoxSearch" controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="6"
+                     Grid.ColumnSpan="2" VerticalAlignment="Top" FontSize="17"
+                     cal:Message.Attach="[Event GotFocus] = [Action Search($view)]; [Event TextChanged] = [Action Search(TextBoxSearch.Text)]">
+            </TextBox>-->
         </Grid>
 
         <ListBox x:Name="CurrentModuleState" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0"
