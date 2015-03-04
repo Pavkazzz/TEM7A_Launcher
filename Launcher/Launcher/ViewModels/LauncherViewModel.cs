@@ -40,6 +40,15 @@ namespace Launcher.ViewModels
             ActivateItem(IoC.Get<ModuleListViewModel>());
         }
 
+        public void OpenModule()
+        {
+            //foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == (o as ModuleItem).ViewModel))
+            //{
+            //    _eventAggregator.PublishOnBackgroundThread(name);
+            //}
+            var qwe = "qweqweqwe";
+        }
+
         public void OpenModule(ModuleItem o)
         {
             foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == o.ViewModel))
@@ -70,7 +79,7 @@ namespace Launcher.ViewModels
 
         
 
-        public void Search(object o)
+        public void Search()
         {
             _eventAggregator.PublishOnBackgroundThread(IoC.Get<FlyoutSearchViewModel>());
             //History
