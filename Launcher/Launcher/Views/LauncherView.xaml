@@ -73,7 +73,7 @@
                  HorizontalAlignment="Stretch" Margin="0,0,0,0" ItemContainerStyle="{StaticResource MainWindowListBoxTemplate}" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel cal:Message.Attach="[Event MouseDown] = [Action OpenModule]">
+                    <Button cal:Message.Attach="[Event Click] = [Action OpenModule($this)]">
                         <TextBlock Text="{Binding Name}" />
                         
                         <!--<ListBox x:Name="Category">
@@ -85,7 +85,7 @@
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>-->
-                    </StackPanel>
+                    </Button>
                     
 
                 </DataTemplate>

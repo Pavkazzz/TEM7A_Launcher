@@ -2,6 +2,7 @@
 using System.ComponentModel.Composition;
 using System.Dynamic;
 using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using Caliburn.Micro;
@@ -37,6 +38,8 @@ namespace Launcher.ViewModels
 
             ListBoxModules = _model.Modules;
 
+            
+
             ActivateItem(IoC.Get<ModuleListViewModel>());
         }
 
@@ -53,7 +56,10 @@ namespace Launcher.ViewModels
         {
             foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == o.ViewModel))
             {
-                _eventAggregator.PublishOnBackgroundThread(name);
+                //TODO Dialog window
+                //::SEM
+                //_eventAggregator.PublishOnBackgroundThread(name);
+                _windowManager.ShowDialog(o.ViewModel);
             }
         }
 
@@ -117,6 +123,8 @@ namespace Launcher.ViewModels
                 NotifyOfPropertyChange(() => ListBoxModules);
             }
         }
+
+        
 
         
         #endregion

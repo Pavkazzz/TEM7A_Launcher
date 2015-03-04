@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using Caliburn.Micro;
 using Launcher.Core;
 using Launcher.Module.Inspection.ViewModels;
 
@@ -15,6 +16,8 @@ namespace Launcher.Module.Inspection
             Description = @"Приемка лааллалал";
             ViewModel = typeof (MainInspectionViewModel);
             DbPath = String.Empty;
+
+            //TODO Category
         }
 
         public string Name { get; set; }

@@ -31,6 +31,7 @@ namespace Launcher.ViewModels
 
         private void CheckModules()
         {
+            //TODO Для всех
             foreach (var check in IoC.GetAll<IModuleName>().Where(desc => desc.Description == @"Супер модуль"))
             {
                 check.PrimaryCheck();
