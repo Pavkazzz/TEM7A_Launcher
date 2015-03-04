@@ -48,7 +48,6 @@ namespace Launcher.ViewModels
         {
             foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == SelectedModule.ViewModel))
             {
-                
                 _eventAggregator.PublishOnBackgroundThread(name);
             }
         }

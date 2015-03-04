@@ -54,7 +54,7 @@ namespace Launcher.Module.Document.ViewModels
             var doc = o as DocFile;
             if (doc != null)
             {
-                var db = new Launcher.Core.DataBase(Path.GetFullPath(new AboutDoc().DbPath));
+                var db = new Launcher.Core.DataBase(Path.GetFullPath(new DocAbout().DbPath));
 
                 var index = db.SqlSelect("Select id from History order by id desc", new List<string>() {"id"});
 
@@ -74,7 +74,7 @@ namespace Launcher.Module.Document.ViewModels
         public void Handle(Category message)
         {
             FileNameList.Clear();
-            var db = new DataBase(Path.GetFullPath(new AboutDoc().DbPath));
+            var db = new DataBase(Path.GetFullPath(new DocAbout().DbPath));
             var category = db.SqlSelect(string.Format(@"Select Category.Path, Document.PathName, Document.Name from  Document
                                                         left outer join Category on Category.id == Document.category Where Category.Name = ""{0}""",
                                                         message.Name), new List<string>() { "Name", "PathName", "Path" });

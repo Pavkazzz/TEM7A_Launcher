@@ -24,7 +24,17 @@ namespace Launcher.ViewModels
 
             DisplayName = "ИС Помошник машиниста";
 
+            CheckModules();
+
             ActivateItem(IoC.Get<LoginViewModel>());
+        }
+
+        private void CheckModules()
+        {
+            foreach (var check in IoC.GetAll<IModuleName>().Where(desc => desc.Description == @"Супер модуль"))
+            {
+                check.PrimaryCheck();
+            }
         }
 
 
@@ -83,7 +93,7 @@ namespace Launcher.ViewModels
 
         public void Open()
         {
-            _eventAggregator.PublishOnBackgroundThread(new FlyoutSearchViewModel());
+            _eventAggregator.PublishOnBackgroundThread(IoC.Get<FlyoutSearchViewModel>());
         }
 
         public void Handle(FlyoutBaseViewModel message)

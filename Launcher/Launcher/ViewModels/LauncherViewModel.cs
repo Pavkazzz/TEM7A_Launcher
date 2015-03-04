@@ -30,10 +30,12 @@ namespace Launcher.ViewModels
             foreach (var moduleName in aboutModule)
             {
                 if (moduleName != null)
-                model.Modules.Add(new ModuleItem(moduleName));
+                {
+                    model.Modules.Add(new ModuleItem(moduleName));
+                }   
             }
 
-            
+            ListBoxModules = _model.Modules;
 
             ActivateItem(IoC.Get<ModuleListViewModel>());
         }
@@ -49,29 +51,28 @@ namespace Launcher.ViewModels
         public void OpenFlyout()
         {
 
-            var flyout = this.flyouts[0];
+            var flyout = this._flyouts[0];
             flyout.IsOpen = !flyout.IsOpen;
         }
 
         #region Search
 
-        private readonly IObservableCollection<FlyoutBaseViewModel> flyouts =
-    new BindableCollection<FlyoutBaseViewModel>();
+        private readonly IObservableCollection<FlyoutBaseViewModel> _flyouts = new BindableCollection<FlyoutBaseViewModel>();
 
         public IObservableCollection<FlyoutBaseViewModel> Flyouts
         {
             get
             {
-                return this.flyouts;
+                return this._flyouts;
             }
         }
 
 
         
 
-        public void Search()
+        public void Search(object o)
         {
-            _eventAggregator.PublishOnBackgroundThread(new FlyoutSearchViewModel());
+            _eventAggregator.PublishOnBackgroundThread(IoC.Get<FlyoutSearchViewModel>());
             //History
         }
 
@@ -83,39 +84,28 @@ namespace Launcher.ViewModels
         #endregion
 
         #region Property
-        string _searchString;
         private IWindowManager _windowManager;
         private MainModel _model;
         private BindableCollection<ModuleItem> _myModules;
         private ModuleItem _selectedModule;
 
-        public string TextBoxSearch
-        {
-            get { return _searchString; }
-            set
-            {
-                _searchString = value;
-                NotifyOfPropertyChange(() => TextBoxSearch);
-            }
-        }
-
-        public BindableCollection<ModuleItem> ModulesListBox
+        public BindableCollection<ModuleItem> ListBoxModules
         {
             get { return _myModules; }
             set
             {
                 _myModules = value;
-                NotifyOfPropertyChange(() => ModulesListBox);
+                NotifyOfPropertyChange(() => ListBoxModules);
             }
         }
 
-        public ModuleItem SelectedModulesListBox
+        public ModuleItem SelectedListBoxModules
         {
             get { return _selectedModule; }
             set
             {
                 _selectedModule = value;
-                NotifyOfPropertyChange(() => ModulesListBox);
+                NotifyOfPropertyChange(() => ListBoxModules);
             }
         }
 
@@ -129,7 +119,7 @@ namespace Launcher.ViewModels
         {
             //TODO список модулей
 
-            ModulesListBox = _model.Modules;
+            
 
             ActivateItem((IScreen)viewModel);
         }
@@ -145,7 +135,7 @@ namespace Launcher.ViewModels
         {
             base.OnInitialize();
             this.DisplayName = "Caliburn.Metro.Demo";
-            this.flyouts.Add(new FlyoutSearchViewModel());
+            this._flyouts.Add(IoC.Get<FlyoutSearchViewModel>());
         }
     }
 
