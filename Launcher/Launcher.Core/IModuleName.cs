@@ -17,16 +17,16 @@ namespace Launcher.Core
 
     public class About
     {
-        public string Name { get; set; }
+        public string AboutName { get; set; }
 
         About()
         {
-            Name = String.Empty;
+            AboutName = String.Empty;
         }
 
-        About(string name)
+        About(string aboutName)
         {
-            Name = name;
+            AboutName = aboutName;
         }
     }
 }
