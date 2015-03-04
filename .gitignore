@@ -5,6 +5,8 @@
 *.suo
 *.user
 *.sln.docstates
+*.dll
+*.exe
 
 # Build results
 [Dd]ebug/
@@ -187,3 +189,4 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+/Launcher/packages/*

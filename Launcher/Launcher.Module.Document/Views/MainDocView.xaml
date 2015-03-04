@@ -5,16 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="600">
-    <Grid Background="Green">
+    <Grid Background="{DynamicResource AccentColorBrush}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="129"></ColumnDefinition>
+            <ColumnDefinition Width="130"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="CategoryList" ItemContainerStyle="{StaticResource ListBoxItemCategory}"
-                 cal:Message.Attach="[Event SelectionChanged] = [Action Show]">
+        <ListBox Background="{DynamicResource AccentColorBrush}" x:Name="CategoryList" ItemContainerStyle="{StaticResource ListBoxItemCategory}" 
+                 cal:Message.Attach="[Event SelectionChanged] = [Action Show]" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Name}"></TextBlock>
+                    <TextBlock Text="{Binding Name}" TextWrapping="WrapWithOverflow"></TextBlock>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

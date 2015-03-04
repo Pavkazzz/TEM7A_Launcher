@@ -8,11 +8,12 @@
              d:DesignHeight="300" d:DesignWidth="300">
     
     <Grid>
-        <!-- Поменять SelectionChanged на что-то вменяе-->
-        <ListBox x:Name="FileNameList" cal:Message.Attach="[Event SelectionChanged] = [Action ShowDoc]" ItemContainerStyle="{StaticResource DocumentListBoxStyle}">
+        <ListBox x:Name="FileNameList" ItemContainerStyle="{StaticResource DocumentListBoxStyle}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Name}"></TextBlock>
+                    <StackPanel cal:Message.Attach="[Event MouseDown] = [Action ShowDoc($this)]"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <TextBlock Text="{Binding Name}"/>
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

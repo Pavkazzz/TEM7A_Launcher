@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
+using System.ComponentModel.Composition.Primitives;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
 using Caliburn.Micro;
+using Launcher.Controls;
 using Launcher.Core;
 using Launcher.Model;
 
@@ -88,6 +90,13 @@ namespace Launcher
 
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
+            var startupTasks =
+                GetAllInstances(typeof(StartupTask))
+                .Cast<ExportedDelegate>()
+                .Select(exportedDelegate => (StartupTask)exportedDelegate.CreateDelegate(typeof(StartupTask)));
+
+            startupTasks.Apply(s => s());
+
             DisplayRootViewFor<IShell>();
         }
     }

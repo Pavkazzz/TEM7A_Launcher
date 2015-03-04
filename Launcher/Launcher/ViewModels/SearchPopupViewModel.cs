@@ -28,18 +28,18 @@ namespace Launcher.ViewModels
 	        
 
             List<ISearch> searches = new List<ISearch>();
-            foreach (ISearch singleSearch in _search)
-            {
-                searches.Add(singleSearch);
-            }
-            foreach (var singleSearch in searches)
-            {
-                foreach (var searchResult in singleSearch.DoSearch(IoC.Get<MainModel>().TextBoxSearchString.Name))
-                {
-                    SearchResult.Add(new SearchName(searchResult));
-                }
-            }
-	    }
+        //    foreach (ISearch singleSearch in _search)
+        //    {
+        //        searches.Add(singleSearch);
+        //    }
+        //    foreach (var singleSearch in searches)
+        //    {
+        //        foreach (var searchResult in singleSearch.DoSearch(IoC.Get<MainModel>().TextBoxSearchString.Name))
+        //        {
+        //            //SearchResult.Add(new SearchName(searchResult));
+        //        }
+        //    }
+        }
 
         //К выбранному итему выполняем закрываем
 	    public void SelectedField()
@@ -53,24 +53,6 @@ namespace Launcher.ViewModels
 	        throw new NotImplementedException();
 	    }
 
-	    public BindableCollection<SearchName> SearchResult
-        {
-            get { return _searchResult; }
-            set
-            {
-                _searchResult = value;
-                NotifyOfPropertyChange(() => SearchResult);
-            }
-        }
 
-	    public SearchName SelectedListBoxSearch
-	    {
-	        get { return _selectedListBoxSearch; }
-	        set
-	        {
-	            _selectedListBoxSearch = value;
-	            NotifyOfPropertyChange(() => SelectedListBoxSearch);
-	        }
-	    }
     }
 }

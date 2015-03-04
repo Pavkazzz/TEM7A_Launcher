@@ -5,8 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
              xmlns:cal="http://www.caliburnproject.org"
-             mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="800">
+
     <Grid x:Name="MainGrid" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
           ScrollViewer.VerticalScrollBarVisibility="Hidden">
         <Grid.RowDefinitions>
@@ -20,7 +21,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
+            <ColumnDefinition Width="150"/>
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
@@ -28,6 +29,7 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+
         <Grid x:Name="grid" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="7">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -49,41 +51,62 @@
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Label Content="ТЧ-1" Foreground="Yellow" FontSize="28" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
-                   HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" FontWeight="Bold" />
+
+            <Label Content="КАЛУГАПУТЬМАШ" Foreground="Black" FontSize="24" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="2"
+                   HorizontalAlignment="Left" VerticalAlignment="Top" FontStyle="Italic" FontWeight="Bold" />
             <Label x:Name="DateTimeLabel" HorizontalAlignment="Right" Grid.Column="6" Grid.Row="0" Grid.RowSpan="2"
-                   HorizontalContentAlignment="Right" Foreground="White" FontSize="17" VerticalAlignment="Bottom" />
-            <Label HorizontalAlignment="Right" Content="Виктор Викторович" Grid.Column="6" Grid.Row="0"
-                   Foreground="White" HorizontalContentAlignment="Right" FontSize="15" />
+                   HorizontalContentAlignment="Right" Foreground="Black" FontSize="17" VerticalAlignment="Bottom" />
+            <Label x:Name="FIO" Content="СИНАРА" Grid.Column="5" Grid.ColumnSpan="3" Grid.Row="0"
+                   Foreground="Black" HorizontalContentAlignment="Right" FontSize="24" FontStyle="Italic" FontWeight="Bold" />
             <TextBlock x:Name="TextBlockAny" Grid.Column="7" Grid.RowSpan="2" TextWrapping="WrapWithOverflow"
                        Foreground="White" FontSize="15" HorizontalAlignment="Right" />
 
-            <TextBox x:Name="TextBoxSearch" controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="1"
-                     Grid.ColumnSpan="5" Grid.RowSpan="2" VerticalAlignment="Center"
-                     FontSize="17" 
+            <TextBox x:Name="TextBoxSearch" controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="6"
+                     Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalAlignment="Center" FontSize="17"
                      cal:Message.Attach="[Event GotFocus] = [Action Search]; [Event TextChanged] = [Action Search(TextBoxSearch.Text)]">
                 <TextBox.Style>
                     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource SearchMetroTextBox}" />
                 </TextBox.Style>
             </TextBox>
         </Grid>
-
-        <ListBox x:Name="CurrentModuleState" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0"
-                 Background="{DynamicResource AccentColorBrush}" />
-        <ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7" x:Name="ActiveItem" />
-
-        <!--TODO поменять selectionchange на что-то нормальное-->
-        <ListBox x:Name="ModulesListBox" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0" ItemContainerStyle="{StaticResource ListBoxItemCategory}"
-                 Background="{DynamicResource AccentColorBrush}"
-                  cal:Message.Attach="[Event SelectionChanged] = [Action OpenModule]">
+        <ListBox x:Name="ListBoxModules" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 HorizontalAlignment="Stretch" Margin="0,0,0,0" ItemContainerStyle="{StaticResource MainWindowListBoxTemplate}" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock x:Name="NameModule" Text="{Binding Name}" />
+                    <StackPanel cal:Message.Attach="[Event MouseDown] = [Action OpenModule]">
+                        <TextBlock Text="{Binding Name}" />
+                        
+                        <!--<ListBox x:Name="Category">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" >
+                                        <TextBlock Text="{Binding Description}"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>-->
                     </StackPanel>
+                    
+
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
+        <!--<ListBox x:Name="CurrentModuleState" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0"
+                 Background="{DynamicResource AccentColorBrush}" />-->
+        <!--<ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="7" x:Name="ActiveItem" />-->
+
+        <!--<ListBox x:Name="ModulesListBox" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0" ItemContainerStyle="{StaticResource ListBoxItemCategoryLong}" 
+                 Background="{DynamicResource AccentColorBrush}"
+                   ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel  cal:Message.Attach="[Event MouseDown] = [Action OpenModule($this)]">
+                        <TextBlock x:Name="NameModule" Text="{Binding Name}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>-->
 
     </Grid>
 </UserControl>

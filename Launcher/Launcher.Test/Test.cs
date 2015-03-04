@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Caliburn.Micro;
 using Launcher.Core;
 using Xunit;
+using Moq;
 
 namespace Launcher.Test
 {
@@ -24,26 +25,48 @@ namespace Launcher.Test
         }
     }
 
-    public class Bootstrapper
+    public class TestBootstrapper
     {
         [Fact]
-        public void TestBootstrapper()
+        public void testBootstrapper()
         {
-            var boot = new AppBootstrapper(Path.GetFullPath(@"../../../Modules"));
+            var boot = new AppBootstrapper(Path.GetFullPath(@"..\..\..\..\Modules"));
             Assert.NotNull(boot);
         }
     }
-
-    public class Sql
+    
+    public class TestSql
     {
         [Fact]
-        public void TestSqlSelect()
+        public void testSqlSelect()
         {
-            var db = new DataBase(Path.GetFullPath(@"../../../Launcher.Core/Db/db.db"));
+            var db = new DataBase(Path.GetFullPath(@"..\..\..\..\Launcher.Core/Db/db.db"));
             var query = @"Select Name, Lastname from Accounts LIMIT 10";
             var column = new List<string> {"Name", "Lastname"};
             var select = db.SqlSelect(query, column);
             Assert.InRange(select.Count, 1, 10);
+        }
+    }
+
+    public class TestUser
+    {
+        [Fact]
+        public void testRegistrationAndLogin()
+        {
+
+
+        }
+    }
+
+    public class TestSecurity
+    {
+        [Fact]
+        public void TestSha512()
+        {
+            var firstSha512 = Security.GetSHA512("admin");
+            var secondSha512 = Security.GetSHA512("admin");
+            Assert.NotNull(firstSha512);
+            Assert.Equal(firstSha512, secondSha512);
         }
     }
 }

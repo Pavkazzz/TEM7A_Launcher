@@ -4,14 +4,42 @@
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:cal="http://www.caliburnproject.org"
+                      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                      xmlns:Behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
                       mc:Ignorable="d"
-                      
-                      d:DesignHeight="300" d:DesignWidth="300" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+                      Height="1280" Width="800"
+                      d:DesignHeight="300" d:DesignWidth="300" WindowStyle="None" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowTransitionsEnabled="false" ResizeMode="CanResizeWithGrip" MinHeight="{DynamicResource {x:Static SystemParameters.WorkArea}}" MinWidth="{DynamicResource {x:Static SystemParameters.WorkArea}}">
+    <Controls:MetroWindow.Style>
+        <Style>
+            <Setter Property="WindowChrome.WindowChrome">
+                <Setter.Value>
+                    <WindowChrome NonClientFrameEdges="None" ResizeBorderThickness="0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Controls:MetroWindow.Style>
+    <i:Interaction.Behaviors>
+        <Behaviours:BorderlessWindowBehavior/>
+    </i:Interaction.Behaviors>
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
             <Button Content="About" />
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
+    <Controls:MetroWindow.Flyouts>
+        <Controls:FlyoutsControl x:Name="Flyouts">
+            <Controls:FlyoutsControl.ItemContainerStyle>
+                <Style BasedOn="{StaticResource {x:Type Controls:Flyout}}" TargetType="{x:Type Controls:Flyout}">
+                    <Setter Property="IsPinned" Value="False"/>
+                    <Setter Property="Header" Value="{Binding Header}" />
+                    <Setter Property="IsOpen" Value="{Binding IsOpen}" />
+                    <Setter Property="Position" Value="{Binding Position}" />
+                    <Setter Property="Width" Value="{Binding FlyoutWidth}" />
+                </Style>
+            </Controls:FlyoutsControl.ItemContainerStyle>
+        </Controls:FlyoutsControl>
+    </Controls:MetroWindow.Flyouts>
     <Grid>
         <ContentControl x:Name="ActiveItem" />
     </Grid>

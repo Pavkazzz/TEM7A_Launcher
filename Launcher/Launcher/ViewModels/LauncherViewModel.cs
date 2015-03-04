@@ -10,7 +10,7 @@ using Launcher.Model;
 
 namespace Launcher.ViewModels
 {
-    [Export(typeof (LauncherViewModel))]
+    [Export(typeof(LauncherViewModel))]
     public class LauncherViewModel : Conductor<IScreen>.Collection.OneActive, IHandle<IModule>, IHandle<IScreen>
     {
         private IEventAggregator _eventAggregator;
@@ -26,96 +26,95 @@ namespace Launcher.ViewModels
             _model = model;
 
             _eventAggregator.Subscribe(this);
+
             foreach (var moduleName in aboutModule)
             {
                 if (moduleName != null)
-                model.Modules.Add(new ModuleItem(moduleName));
+                {
+                    model.Modules.Add(new ModuleItem(moduleName));
+                }   
             }
 
-            
+            ListBoxModules = _model.Modules;
 
             ActivateItem(IoC.Get<ModuleListViewModel>());
         }
 
         public void OpenModule()
         {
-            foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == SelectedModulesListBox.ViewModel))
-            {
+            //foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == (o as ModuleItem).ViewModel))
+            //{
+            //    _eventAggregator.PublishOnBackgroundThread(name);
+            //}
+            var qwe = "qweqweqwe";
+        }
 
+        public void OpenModule(ModuleItem o)
+        {
+            foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == o.ViewModel))
+            {
                 _eventAggregator.PublishOnBackgroundThread(name);
             }
         }
 
+        public void OpenFlyout()
+        {
+
+            var flyout = this._flyouts[0];
+            flyout.IsOpen = !flyout.IsOpen;
+        }
 
         #region Search
 
-        //http://stackoverflow.com/questions/13609669/caliburn-micro-screen-transition-via-conductor
-        //
+        private readonly IObservableCollection<FlyoutBaseViewModel> _flyouts = new BindableCollection<FlyoutBaseViewModel>();
+
+        public IObservableCollection<FlyoutBaseViewModel> Flyouts
+        {
+            get
+            {
+                return this._flyouts;
+            }
+        }
+
+
+        
+
         public void Search()
         {
-            _model.TextBoxSearchString.Name = TextBoxSearch;
-            var view = GetView();
-            dynamic settings = new ExpandoObject();
-            settings.Placement = PlacementMode.Bottom;
-            settings.PlacementTarget = GetView() as TextBox;
-            settings.HorizontalOffset = 0;
-            settings.VerticalOffset = 0;
-
-
-            _windowManager.ShowPopup(IoC.Get<SearchPopupViewModel>(), null, settings);
+            _eventAggregator.PublishOnBackgroundThread(IoC.Get<FlyoutSearchViewModel>());
+            //History
         }
 
         public void Search(string text)
         {
-            _model.TextBoxSearchString.Name = TextBoxSearch;
-
-            dynamic settings = new ExpandoObject();
-            settings.Placement = PlacementMode.Relative;
-            settings.PlacementTarget = GetView();
-
-            settings.HorizontalOffset = 200;
-            settings.VerticalOffset = 100;
-
-
-            _windowManager.ShowPopup(IoC.Get<SearchPopupViewModel>(), null, settings);
+            
+        
         } 
         #endregion
 
-
         #region Property
-        string _searchString;
         private IWindowManager _windowManager;
         private MainModel _model;
         private BindableCollection<ModuleItem> _myModules;
         private ModuleItem _selectedModule;
 
-        public string TextBoxSearch
-        {
-            get { return _searchString; }
-            set
-            {
-                _searchString = value;
-                NotifyOfPropertyChange(() => TextBoxSearch);
-            }
-        }
-
-        public BindableCollection<ModuleItem> ModulesListBox
+        public BindableCollection<ModuleItem> ListBoxModules
         {
             get { return _myModules; }
             set
             {
                 _myModules = value;
-                NotifyOfPropertyChange(() => ModulesListBox);
+                NotifyOfPropertyChange(() => ListBoxModules);
             }
         }
 
-        public ModuleItem SelectedModulesListBox
+        public ModuleItem SelectedListBoxModules
         {
             get { return _selectedModule; }
             set
             {
                 _selectedModule = value;
-                NotifyOfPropertyChange(() => ModulesListBox);
+                NotifyOfPropertyChange(() => ListBoxModules);
             }
         }
 
@@ -129,7 +128,7 @@ namespace Launcher.ViewModels
         {
             //TODO список модулей
 
-            ModulesListBox = _model.Modules;
+            
 
             ActivateItem((IScreen)viewModel);
         }
@@ -139,6 +138,14 @@ namespace Launcher.ViewModels
             ActivateItem(message);
         } 
         #endregion
+
+
+        protected override void OnInitialize()
+        {
+            base.OnInitialize();
+            this.DisplayName = "Caliburn.Metro.Demo";
+            this._flyouts.Add(IoC.Get<FlyoutSearchViewModel>());
+        }
     }
 
     public class SearchName

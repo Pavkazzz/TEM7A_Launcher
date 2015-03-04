@@ -12,7 +12,7 @@ namespace Launcher.Module.Document
         public List<string> DoSearch(string name)
         {
             var result = new List<string>();
-            result.Add("Поиск по модулю нормативные документы: " + name);
+            result.Add("Поиск по н.д." + name);
             return result;
         }
     }

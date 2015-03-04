@@ -41,9 +41,9 @@ namespace Launcher.Module.Document.ViewModels
         public MainDocViewModel(IEventAggregator eventAggregator)
         {
             CategoryList = new BindableCollection<Category>();
-            if (File.Exists(Path.GetFullPath(new AboutDoc().DbPath)))
+            if (File.Exists(Path.GetFullPath(new DocAbout().DbPath)))
             {
-                var db = new DataBase(Path.GetFullPath(new AboutDoc().DbPath));
+                var db = new DataBase(Path.GetFullPath(new DocAbout().DbPath));
                 var category = db.SqlSelect("SELECT Name FROM Category", new List<string>() { "Name" });
                 foreach (var singlecategory in category)
                 {
