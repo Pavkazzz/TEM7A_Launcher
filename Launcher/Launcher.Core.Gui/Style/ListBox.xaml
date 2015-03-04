@@ -305,8 +305,9 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
+             
             --><!-- Сюда будут добавляться Item'ы --><!--
-            <ListBoxItem Template="{DynamicResource TwoLevel}" FontFamily="22" Foreground="White" >
+            <ListBoxItem  FontFamily="22" Foreground="White" >
                 <ContentPresenter />
             </ListBoxItem>
             <ListBoxItem Template="{DynamicResource TwoLevel}" FontFamily="22" Foreground="White" >
