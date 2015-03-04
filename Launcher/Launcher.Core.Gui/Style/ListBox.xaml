@@ -246,7 +246,7 @@
         <Setter Property="Background" Value="#FF167423"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <!--<Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>-->
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
@@ -269,9 +269,6 @@
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                                     </ItemsPanelTemplate>
                                 </ListBox.ItemsPanel>
-                                <ListBox.ItemContainerStyle>
-                                    <Style/>
-                                </ListBox.ItemContainerStyle>
                                 <ListBoxItem Template="{DynamicResource TwoLevel}" FontFamily="22" Foreground="White" >
                                     <ContentPresenter />
                                 </ListBoxItem>
@@ -373,7 +370,7 @@
             </Setter.Value>
         </Setter>   
     </Style>-->
-    <ControlTemplate x:Key="TwoLevel" TargetType="{x:Type ListBoxItem}">
+    <ControlTemplate x:Key="TwoLevel" TargetType="{x:Type ListBoxItem}">   
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -386,6 +383,15 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Button Grid.ColumnSpan="2" Grid.RowSpan="3"  Width="170" Height="Auto" Margin="5,0,0,5" FontSize="22" Background="#FF167423" Foreground="White">
+                <!--<Button.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <Trigger Property="Control.IsEnabled" Value="True">
+                                <Setter Property="Control.Background" Value="{StaticResource AccentColorBrush}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>-->
                 <ContentPresenter x:Name="ContentTwoLevel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </Button>
         </Grid>
