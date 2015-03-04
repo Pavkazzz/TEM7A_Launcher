@@ -260,7 +260,7 @@
                                 Height="120" Margin="2,6.7,3,2"  Width="auto">
                             <Button x:Name="FirstContentButton" FontSize="12" BorderBrush="#FF167423" Background="#FF167423" Foreground="#FFF7F3F3" Margin="0,0,0,0">
                                 <WrapPanel Width="auto" Height="auto" >
-                                    <ContentPresenter/>
+                                    <ContentPresenter Content="{Binding Name}"/>
                                 </WrapPanel>
                             </Button>
                         </Border>
@@ -305,8 +305,9 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
+             
             --><!-- Сюда будут добавляться Item'ы --><!--
-            <ListBoxItem Template="{DynamicResource TwoLevel}" FontFamily="22" Foreground="White" >
+            <ListBoxItem  FontFamily="22" Foreground="White" >
                 <ContentPresenter />
             </ListBoxItem>
             <ListBoxItem Template="{DynamicResource TwoLevel}" FontFamily="22" Foreground="White" >
@@ -415,7 +416,11 @@
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
                         <Button Grid.ColumnSpan="2" Grid.RowSpan="3"  Width="170" Height="Auto" Margin="5,0,0,5" FontSize="22" Background="#FF167423" Foreground="White" 
+<<<<<<< HEAD
                                >
+=======
+                                Content="{Binding AboutName}">
+>>>>>>> 033827587099f594558257c2d293c44a0d9d6e1b
                             <!--<Button.Style>
                     <Style>
                         <Style.Triggers>
