@@ -260,7 +260,7 @@
                                 Height="120" Margin="2,6.7,3,2"  Width="auto">
                             <Button x:Name="FirstContentButton" FontSize="12" BorderBrush="#FF167423" Background="#FF167423" Foreground="#FFF7F3F3" Margin="0,0,0,0">
                                 <WrapPanel Width="auto" Height="auto" >
-                                    <ContentPresenter/>
+                                    <ContentPresenter Content="{Binding Name}"/>
                                 </WrapPanel>
                             </Button>
                         </Border>
@@ -276,7 +276,7 @@
                                 </ListBox.ItemsPanel>
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
-                                        <TextB></TextB>
+                                        <ContentPresenter/>
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>
                                 
@@ -414,7 +414,8 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Button Grid.ColumnSpan="2" Grid.RowSpan="3"  Width="170" Height="Auto" Margin="5,0,0,5" FontSize="22" Background="#FF167423" Foreground="White">
+                        <Button Grid.ColumnSpan="2" Grid.RowSpan="3"  Width="170" Height="Auto" Margin="5,0,0,5" FontSize="22" Background="#FF167423" Foreground="White" 
+                                Content="{Binding AboutName}">
                             <!--<Button.Style>
                     <Style>
                         <Style.Triggers>
@@ -424,7 +425,7 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Style>-->
-                            <ContentPresenter x:Name="ContentTwoLevel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                           <!--<ContentPresenter x:Name="ContentTwoLevel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>-->
                         </Button>
                     </Grid>
                 </ControlTemplate>
