@@ -260,7 +260,7 @@
                                 Height="120" Margin="2,6.7,3,2"  Width="Auto">
                             <Button x:Name="FirstContentButton" FontSize="20" BorderBrush="#FF167423" Background="#FF167423" Foreground="#FFF7F3F3" Margin="0,0,0,0">
                                 <WrapPanel Width="auto" Height="auto" >
-                                    <ContentPresenter Content="{Binding Name}"/>
+                                    <ContentPresenter/>
                                 </WrapPanel>
                             </Button>
                         </Border>
@@ -268,7 +268,7 @@
                                 VerticalAlignment="Top" Width="auto" Grid.ColumnSpan="1">
                             <ListBox x:Name="Category"  ScrollViewer.PanningMode="HorizontalOnly" ScrollViewer.VerticalScrollBarVisibility="Hidden" 
                                      ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
-                                     Background="{DynamicResource AccentColorBrush}">
+                                     Background="{DynamicResource AccentColorBrush}" ItemContainerStyle="{DynamicResource TwoLevel}">
                                 <ListBox.ItemsPanel>
                                     <ItemsPanelTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
@@ -395,20 +395,23 @@
             </Setter.Value>
         </Setter>   
     </Style>-->
-    <ControlTemplate x:Key="TwoLevel" TargetType="{x:Type ListBoxItem}">   
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <Button Grid.ColumnSpan="2" Grid.RowSpan="3"  Width="170" Height="Auto" Margin="5,0,0,5" FontSize="22" Background="#FF167423" Foreground="White">
-                <!--<Button.Style>
+    <Style x:Key="TwoLevel" TargetType="{x:Type ListBoxItem}">   
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Button Grid.ColumnSpan="2" Grid.RowSpan="3"  Width="170" Height="Auto" Margin="5,0,0,5" FontSize="22" Background="#FF167423" Foreground="White">
+                            <!--<Button.Style>
                     <Style>
                         <Style.Triggers>
                             <Trigger Property="Control.IsEnabled" Value="True">
@@ -417,10 +420,13 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Style>-->
-                <ContentPresenter x:Name="ContentTwoLevel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-            </Button>
-        </Grid>
-    </ControlTemplate>
+                            <ContentPresenter x:Name="ContentTwoLevel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        </Button>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     
     <DataTemplate x:Key="MainViewsOfTwoLevelItems">
         <Grid>
