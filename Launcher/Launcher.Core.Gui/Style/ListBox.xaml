@@ -415,12 +415,7 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Button Grid.ColumnSpan="2" Grid.RowSpan="3"  Width="170" Height="Auto" Margin="5,0,0,5" FontSize="22" Background="#FF167423" Foreground="White" 
-<<<<<<< HEAD
-                               >
-=======
-                                Content="{Binding AboutName}">
->>>>>>> 033827587099f594558257c2d293c44a0d9d6e1b
+                        <Button Grid.ColumnSpan="2" Grid.RowSpan="3"  Width="170" Height="Auto" Margin="5,0,0,5" FontSize="22" Background="#FF167423" Foreground="White" >
                             <!--<Button.Style>
                     <Style>
                         <Style.Triggers>
