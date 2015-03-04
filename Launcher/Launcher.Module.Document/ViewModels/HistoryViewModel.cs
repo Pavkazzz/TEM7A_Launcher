@@ -45,7 +45,7 @@ namespace Launcher.Module.Document.ViewModels
         {
             _eventAggregator = eventAggregator;
             _windowManager = windowManager;
-            var db = new DataBase(Path.GetFullPath(new AboutDoc().DbPath));
+            var db = new DataBase(Path.GetFullPath(new DocAbout().DbPath));
             var select = db.SqlSelect("Select id, DocumentName, DocumentIndex, Path from History order by documentIndex", new List<string>() { "id", "DocumentName", "DocumentIndex", "Path" });
             foreach (var row in select)
             {

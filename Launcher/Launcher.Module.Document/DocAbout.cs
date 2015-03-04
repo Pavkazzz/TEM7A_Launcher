@@ -5,9 +5,9 @@ using Launcher.Module.Document.ViewModels;
 
 namespace Launcher.Module.Document
 {
-    internal class AboutDoc : IModuleName
+    internal class DocAbout : IModuleName
     {
-        public AboutDoc()
+        public DocAbout()
         {
             Name = @"Модуль норматив. документы";
             Description = @"Супер модуль";
@@ -19,6 +19,13 @@ namespace Launcher.Module.Document
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
+        public bool PrimaryCheck()
+        {
+
+            return DocCheck.DocumentCheck();
+        }
+
+
     }
 
 
@@ -38,6 +45,10 @@ namespace Launcher.Module.Document
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
+        public bool PrimaryCheck()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     class About2 : IModuleName
@@ -56,6 +67,10 @@ namespace Launcher.Module.Document
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
+        public bool PrimaryCheck()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     class About3 : IModuleName
@@ -74,6 +89,10 @@ namespace Launcher.Module.Document
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
+        public bool PrimaryCheck()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     class About4 : IModuleName
@@ -92,6 +111,10 @@ namespace Launcher.Module.Document
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
+        public bool PrimaryCheck()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     class About5 : IModuleName
@@ -110,6 +133,10 @@ namespace Launcher.Module.Document
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
+        public bool PrimaryCheck()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

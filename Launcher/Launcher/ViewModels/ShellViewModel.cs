@@ -24,7 +24,17 @@ namespace Launcher.ViewModels
 
             DisplayName = "ИС Помошник машиниста";
 
+            CheckModules();
+
             ActivateItem(IoC.Get<LoginViewModel>());
+        }
+
+        private void CheckModules()
+        {
+            foreach (var check in IoC.GetAll<IModuleName>().Where(desc => desc.Description == @"Супер модуль"))
+            {
+                check.PrimaryCheck();
+            }
         }
 
 

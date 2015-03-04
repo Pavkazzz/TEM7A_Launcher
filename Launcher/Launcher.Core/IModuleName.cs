@@ -10,5 +10,6 @@ namespace Launcher.Core
         string Description { get; set; }
         Type ViewModel { get; set; }
         string DbPath { get; set; }
+        bool PrimaryCheck();
     }
 }

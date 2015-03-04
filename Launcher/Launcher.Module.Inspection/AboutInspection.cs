@@ -20,5 +20,9 @@ namespace Launcher.Module.Inspection
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
+        public bool PrimaryCheck()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
