@@ -291,7 +291,7 @@
     </Style>
     
     
-    <Style x:Key="SecondListBox" TargetType="ListBox">
+    <!--<Style x:Key="SecondListBox" TargetType="ListBox">
         <Setter Property="ScrollViewer.PanningMode" Value="HorizontalOnly" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
@@ -300,7 +300,7 @@
         <Setter Property="VerticalContentAlignment" Value="Stretch"/>
         <Setter Property="Background" Value="{DynamicResource AccentColorBrush}"/>
         <Setter Property="Template">
-            <Setter.Value>
+            
         <ListBox x:Name="MainListBoxInWindowShell">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -308,10 +308,8 @@
                 </ItemsPanelTemplate>
                      
             </ListBox.ItemsPanel>
-                    <ListBox.ItemTemplate>
-                        <DataTemplate Template="{DynamicResource TwoLevel}"/>
-                    </ListBox.ItemTemplate>
-            <!-- Сюда будут добавляться Item'ы -->
+             
+            --><!-- Сюда будут добавляться Item'ы --><!--
             <ListBoxItem  FontFamily="22" Foreground="White" >
                 <ContentPresenter />
             </ListBoxItem>
@@ -339,7 +337,7 @@
         </ListBox>
             </Setter.Value>
         </Setter>
-    </Style>
+    </Style>-->
 
     <!-- ХЗ что снизу серьёзно ..-->
 
