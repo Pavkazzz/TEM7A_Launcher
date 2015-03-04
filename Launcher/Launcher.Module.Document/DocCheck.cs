@@ -20,15 +20,15 @@ namespace Launcher.Module.Document
 
             //Chech Search
             //TODO Parallel
-            var dbDocSearch = db.SqlSelect(@"Select * from  Search 
-                                             left outer join Document on Search.Document_id == Document.id", new List<string>(){"Search.id"});
+            var dbDocSearch = db.SqlSelect(@"Select * from Search", new List<string>(){"Search.id"});
 
             var dbDocument = db.SqlSelect(@"Select * from Document
                                             ", new List<string>() {"id"});
 
             var dbDocCategory = db.SqlSelect(@"Select Path from Category", new List<string>() {"Path"});
 
-            if (dbDocSearch.Count != dbDocument.Count)
+            //TODO if
+            if (dbDocSearch.Count > 0)//== dbDocument.Count)
             {
                 foreach (var dbpath in dbDocCategory)
                 {

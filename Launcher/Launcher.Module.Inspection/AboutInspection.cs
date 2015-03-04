@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using Launcher.Core;
 using Launcher.Module.Inspection.ViewModels;
@@ -20,9 +21,11 @@ namespace Launcher.Module.Inspection
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
+        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
-            throw new NotImplementedException();
+            return true;
+            //throw new NotImplementedException();
         }
     }
 }

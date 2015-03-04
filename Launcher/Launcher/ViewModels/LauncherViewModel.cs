@@ -30,10 +30,12 @@ namespace Launcher.ViewModels
             foreach (var moduleName in aboutModule)
             {
                 if (moduleName != null)
-                model.Modules.Add(new ModuleItem(moduleName));
+                {
+                    model.Modules.Add(new ModuleItem(moduleName));
+                }   
             }
 
-            
+            ListBoxModules = _model.Modules;
 
             ActivateItem(IoC.Get<ModuleListViewModel>());
         }
@@ -87,23 +89,23 @@ namespace Launcher.ViewModels
         private BindableCollection<ModuleItem> _myModules;
         private ModuleItem _selectedModule;
 
-        public BindableCollection<ModuleItem> ModulesListBox
+        public BindableCollection<ModuleItem> ListBoxModules
         {
             get { return _myModules; }
             set
             {
                 _myModules = value;
-                NotifyOfPropertyChange(() => ModulesListBox);
+                NotifyOfPropertyChange(() => ListBoxModules);
             }
         }
 
-        public ModuleItem SelectedModulesListBox
+        public ModuleItem SelectedListBoxModules
         {
             get { return _selectedModule; }
             set
             {
                 _selectedModule = value;
-                NotifyOfPropertyChange(() => ModulesListBox);
+                NotifyOfPropertyChange(() => ListBoxModules);
             }
         }
 
@@ -117,7 +119,7 @@ namespace Launcher.ViewModels
         {
             //TODO список модулей
 
-            ModulesListBox = _model.Modules;
+            
 
             ActivateItem((IScreen)viewModel);
         }

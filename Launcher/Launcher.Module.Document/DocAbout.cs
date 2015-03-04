@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using Launcher.Core;
 using Launcher.Module.Document.ViewModels;
@@ -19,6 +20,10 @@ namespace Launcher.Module.Document
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
+
+        public List<About> Category { get; set; }
+
+
         public bool PrimaryCheck()
         {
 
@@ -45,6 +50,7 @@ namespace Launcher.Module.Document
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
+        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -67,6 +73,7 @@ namespace Launcher.Module.Document
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
+        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -89,6 +96,7 @@ namespace Launcher.Module.Document
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
+        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -111,6 +119,7 @@ namespace Launcher.Module.Document
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
+        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -133,6 +142,7 @@ namespace Launcher.Module.Document
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
+        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
