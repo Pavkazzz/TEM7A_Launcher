@@ -411,7 +411,11 @@
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
+<<<<<<< HEAD
                         <Button Grid.ColumnSpan="2" Grid.RowSpan="3"  Width="170" Height="Auto" Margin="5,0,0,5" FontSize="22" Background="#FF167423" Foreground="White">
+=======
+                        <Button Grid.ColumnSpan="2" Grid.RowSpan="3"  Width="170" Height="Auto" Margin="5,0,0,5" FontSize="22" Background="#FF167423" Foreground="White" >
+>>>>>>> 3b37fd861b5a3a9b22f81dc2f72b6f229889a625
                             <!--<Button.Style>
                     <Style>
                         <Style.Triggers>
