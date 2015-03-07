@@ -3,6 +3,8 @@ using System.ComponentModel.Composition;
 using System.IO;
 using Caliburn.Micro;
 using Launcher.Core;
+using Launcher.Core.Components;
+using Launcher.Core.HelperClass;
 using Launcher.ViewModels;
 
 namespace Launcher.Module.Document.ViewModels
@@ -85,21 +87,5 @@ namespace Launcher.Module.Document.ViewModels
         }
     }
 
-    public class DocFile
-    {
-        public DocFile(string name)
-        {
-            Name = name;
-            Path = string.Empty;
-        }
-        
-        public DocFile(string name, string path)
-        {
-            Name = name;
-            Path = path;
-        }
 
-        public string Name { get; set; }
-        public string Path { get; private set; }
-    }
 }

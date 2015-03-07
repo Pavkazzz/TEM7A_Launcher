@@ -4,6 +4,8 @@ using System.IO;
 using System.Windows;
 using Caliburn.Micro;
 using Launcher.Core;
+using Launcher.Core.Components;
+using Launcher.Core.HelperClass;
 
 namespace Launcher.Module.Document.ViewModels
 {

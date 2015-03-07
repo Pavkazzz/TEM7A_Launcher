@@ -28,7 +28,9 @@
             
         <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Name}" />
+                    <StackPanel Background="#404040" cal:Message.Attach="[Event MouseDown] = [Action OpenSearch($this)]">
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         

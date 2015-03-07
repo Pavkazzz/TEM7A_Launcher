@@ -17,7 +17,7 @@
         <!-- Название модуля в котором мы находимся сюда выводится будет тип -->
         <TextBlock x:Name="NameOfModuleTextBlock"  Grid.Column="1" Grid.Row="0" Background="DarkGray" Foreground="White" FontSize="22"/>
         <!-- Стрелка на возворат.   cal:Message.Attach="[Event MouseDown] = [Action CloseWindow()]">-->
-        <StackPanel Grid.Column="0" Grid.Row="0" cal:Message.Attach="[Event MouseDown] = [Action CloseWindow()]">
+        <StackPanel Grid.Column="0" Grid.Row="0" cal:Message.Attach="[Event MouseDown] = [Action CloseWindow()]" Background="DarkGray">
             <Canvas>
                 <ContentControl Content="{StaticResource appbar_chevron_left}" Canvas.Top="0" Canvas.Left="0"/>
             </Canvas>

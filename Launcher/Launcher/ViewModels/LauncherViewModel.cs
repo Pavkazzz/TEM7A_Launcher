@@ -56,7 +56,6 @@ namespace Launcher.ViewModels
             {
                 //TODO Dialog window
                 //::SEM
-                //_windowManager.ShowDialog(name);
                 _eventAggregator.PublishOnBackgroundThread(name);
             }
         }
@@ -150,18 +149,5 @@ namespace Launcher.ViewModels
         }
     }
 
-    public class SearchName
-    {
-        public SearchName()
-        {
-            
-        }
 
-        public SearchName(string name)
-        {
-            Name = name;
-        }
-
-        public string Name { get; set; }
-    }
 }

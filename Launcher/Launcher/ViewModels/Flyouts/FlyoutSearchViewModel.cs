@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,14 +23,14 @@ namespace Launcher.ViewModels
         [ImportingConstructor]
         public FlyoutSearchViewModel([ImportMany(typeof(ISearch))] IEnumerable<ISearch> search)
         {
-            this.Header = "Search";
+            this.Header = "Поиск";
             this.Position = Position.Right;
             this.FlyoutWidth = 400;
 
 
             _searches = search.ToList();
 
-
+            //TODO TreeView
             foreach (var singlesearch in _searches)
             {
                 Module.Add(new ModuleSearchName(singlesearch.ModuleName));
@@ -48,6 +49,14 @@ namespace Launcher.ViewModels
             {
                 SearchResultList.Add(new SearchName(searchResult));
             }
+        }
+
+        public void OpenSearch(SearchName o)
+        {
+
+            //WorkAround Search OpenSearch
+            //TODO переделать
+            
         }
 
         public string SearchString
@@ -89,7 +98,22 @@ namespace Launcher.ViewModels
         {
             ModuleName = module;
         }
+    }
 
+    public class SearchName
+    {
+        public SearchName()
+        {
 
+        }
+
+        public SearchName(string name, string path)
+        {
+            Name = name;
+            FilePath = path;
+        }
+
+        public string FilePath { get; set; }
+        public string Name { get; set; }
     }
 }
