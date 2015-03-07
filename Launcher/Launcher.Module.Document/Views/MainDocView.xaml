@@ -19,7 +19,7 @@
         <!-- Стрелка на возворат.   cal:Message.Attach="[Event MouseDown] = [Action CloseWindow()]">-->
         <StackPanel Grid.Column="0" Grid.Row="0" cal:Message.Attach="[Event MouseDown] = [Action CloseWindow()]" Background="DarkGray">
             <Canvas>
-                <ContentControl Content="{StaticResource appbar_chevron_left}" Canvas.Top="0" Canvas.Left="0"/>
+                <ContentControl Content="{StaticResource appbar_chevron_left}" Canvas.Top="0" Canvas.Left="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,-10,0,0"/>
             </Canvas>
         </StackPanel>
         <!-- ContentGrid -->
@@ -43,7 +43,7 @@
             <ListBoxItem Content="Модуль 7"/>
         </ListBox>
         <!-- Listbox с отображением гостов(документов) -->
-        <ListBox Grid.Row="1" Grid.Column="1" ItemContainerStyle="{StaticResource DocumentListBoxStyle}" Visibility="Collapsed">
+        <ListBox Grid.Row="1" Grid.Column="1" ItemContainerStyle="{StaticResource DocumentListBoxStyle}" >
             <ListBoxItem Content="ГОСТ 1"/>
             <ListBoxItem Content="ГОСТ 2"/>
             <ListBoxItem Content="ГОСТ 3"/>
@@ -53,7 +53,7 @@
             <ListBoxItem Content="ГОСТ 7"/>
         </ListBox>
         <!-- ListBox С историей  -->
-        <ListBox x:Name="HistoryModuleListBox" Grid.Row="1" Grid.Column="1" ItemContainerStyle="{StaticResource HistoryDocumentWrapPanel}">
+        <ListBox x:Name="HistoryModuleListBox" Grid.Row="1" Grid.Column="1" ItemContainerStyle="{StaticResource HistoryDocumentWrapPanel}" Visibility="Collapsed">
             <ListBoxItem Content="History 1"/>
             <ListBoxItem Content="History 1"/>
             <ListBoxItem Content="History 1"/>
