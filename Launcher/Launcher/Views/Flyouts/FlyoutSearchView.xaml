@@ -47,17 +47,17 @@
                 </Style>
             </TreeView.ItemContainerStyle>
 
-            <!--<TreeView.ItemTemplate>
-                <HierarchicalDataTemplate ItemsSource="{Binding Path=ModuleName}">
-                    <TextBlock Text="{Binding Path=ModuleName}"/>
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate>
+                    <TextBlock Text="{Binding Path=SearchModuleName}"/>
                     <HierarchicalDataTemplate.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Path=Result}"/>
+                            <TextBlock Text="{Binding Path=Name}"/>
                         </DataTemplate>
                     </HierarchicalDataTemplate.ItemTemplate>
                 </HierarchicalDataTemplate>
-            </TreeView.ItemTemplate>-->
-            <!--<TreeView.Resources>
+                </TreeView.ItemTemplate>
+                <!--<TreeView.Resources>
                 <DataTemplate DataType="TreeViewItem">
                     <Border Width="150" BorderBrush="RoyalBlue" Background="Transparent" BorderThickness="1" CornerRadius="2" Margin="2" Padding="2">
                         <StackPanel Orientation="Horizontal">
@@ -66,12 +66,7 @@
                     </Border>
                 </DataTemplate>
             </TreeView.Resources>-->
-            <TreeViewItem Header="Нормативные документы" IsExpanded="True" >
-                <TreeViewItem Header="результат 1"/>
-            </TreeViewItem>
-            <TreeViewItem Header="Аварийные карточки" IsExpanded="True">
-                <TreeViewItem Header="Результат 1"/>
-            </TreeViewItem>
+            
         </TreeView>
     </Grid>
 </UserControl>

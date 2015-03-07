@@ -106,5 +106,6 @@ namespace Launcher.ViewModels
             var flyout = Flyouts[0];
             flyout.IsOpen = !flyout.IsOpen;
         }
+
     }
 }

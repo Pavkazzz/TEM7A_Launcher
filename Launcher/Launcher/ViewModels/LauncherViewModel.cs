@@ -59,9 +59,7 @@ namespace Launcher.ViewModels
             {
                 //TODO Dialog window
                 //::SEM
-                //_eventAggregator.PublishOnBackgroundThread(name);
-                var obj = o.ViewModel;
-                _windowManager.ShowDialog(Activator.CreateInstance(obj));
+                _eventAggregator.PublishOnBackgroundThread(name);
             }
         }
 
