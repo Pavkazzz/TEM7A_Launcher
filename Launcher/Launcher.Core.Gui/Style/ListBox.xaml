@@ -318,6 +318,7 @@
         <Setter Property="ItemContainerStyle" Value="{DynamicResource StyleTwoLevelListboxItem}"/>
         <Setter Property="Template">
             <Setter.Value>
+                <ControlTemplate>
         <ListBox x:Name="MainListBoxInWindowShell" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="{DynamicResource AccentColorBrush}">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -325,8 +326,9 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
             </ListBox>
-             
-            <!-- Сюда будут добавляться Item'ы --><!--
+                </ControlTemplate>
+
+                <!-- Сюда будут добавляться Item'ы --><!--
             <ListBoxItem  FontFamily="22" Foreground="White" >
                 <ContentPresenter />
             </ListBoxItem>
@@ -438,17 +440,6 @@
                         </Grid.RowDefinitions>
                         <Button Grid.ColumnSpan="2" Grid.RowSpan="3"  Width="170" Height="Auto" Margin="5,0,0,5" FontSize="22" Background="#FF167423" Foreground="White">
                             <ContentPresenter/>
-
-                            <!--<Button.Style>
-                    <Style>
-                        <Style.Triggers>
-                            <Trigger Property="Control.IsEnabled" Value="True">
-                                <Setter Property="Control.Background" Value="{StaticResource AccentColorBrush}"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>-->
-                           <!--<ContentPresenter x:Name="ContentTwoLevel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>-->
                         </Button>
                     </Grid>
                 </ControlTemplate>
@@ -456,21 +447,6 @@
         </Setter>
     </Style>
     
-    <DataTemplate x:Key="MainViewsOfTwoLevelItems">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <Button Grid.ColumnSpan="2" Grid.RowSpan="3"  Width="170" Height="Auto" Margin="5,0,0,0" Background="#FF167423" Foreground="White">
-            </Button>
-        </Grid>
-    </DataTemplate>
+   
 
 </ResourceDictionary>
