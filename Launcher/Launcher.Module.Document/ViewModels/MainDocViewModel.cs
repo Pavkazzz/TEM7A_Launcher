@@ -55,6 +55,10 @@ namespace Launcher.Module.Document.ViewModels
 
             ActivateItem(IoC.Get<HistoryViewModel>());
         }
+        public void CloseWindow()
+        {
+            TryClose();
+        }
 
         public void Show()
         {

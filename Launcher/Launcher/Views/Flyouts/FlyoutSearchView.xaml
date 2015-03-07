@@ -66,10 +66,10 @@
                     </Border>
                 </DataTemplate>
             </TreeView.Resources>-->
-            <TreeViewItem Header="Нормативные документы" >
+            <TreeViewItem Header="Нормативные документы" IsExpanded="True" >
                 <TreeViewItem Header="результат 1"/>
             </TreeViewItem>
-            <TreeViewItem Header="Аварийные карточки">
+            <TreeViewItem Header="Аварийные карточки" IsExpanded="True">
                 <TreeViewItem Header="Результат 1"/>
             </TreeViewItem>
         </TreeView>
