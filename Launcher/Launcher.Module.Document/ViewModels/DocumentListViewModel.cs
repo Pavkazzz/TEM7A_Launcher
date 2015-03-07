@@ -102,4 +102,18 @@ namespace Launcher.Module.Document.ViewModels
         public string Name { get; set; }
         public string Path { get; private set; }
     }
+    public class Category
+    {
+        public Category()
+        {
+
+        }
+
+        public Category(string name)
+        {
+            Name = name;
+        }
+
+        public string Name { get; private set; }
+    }
 }

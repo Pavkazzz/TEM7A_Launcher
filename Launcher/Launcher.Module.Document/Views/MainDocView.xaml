@@ -15,7 +15,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <!-- Название модуля в котором мы находимся сюда выводится будет тип -->
-        <TextBlock x:Name="NameOfModuleTextBlock"  Grid.Column="1" Grid.Row="0" Background="DarkGray" Foreground="White" FontSize="22"/>
+        <TextBlock x:Name="NameOfModuleTextBlock"  Grid.Column="1" Grid.Row="0" Background="DarkGray" Foreground="White" FontSize="22" Text="Тут выводится название модуля" />
         <!-- Стрелка на возворат.   cal:Message.Attach="[Event MouseDown] = [Action CloseWindow()]">-->
         <StackPanel Grid.Column="0" Grid.Row="0" cal:Message.Attach="[Event MouseDown] = [Action CloseWindow()]">
             <Canvas>
@@ -23,11 +23,13 @@
             </Canvas>
         </StackPanel>
         <!-- ContentGrid -->
-        <Grid  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+        <!--<Grid x:Name="ContentGrid"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
             
-        </Grid>
 
+        </Grid>-->
+        <ListBox  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
 
+<!-- Тут должно быть список из модулей ГОСт или ОСТ Документы в общем говоря.-->
         <!--<ListBox Background="{DynamicResource AccentColorBrush}" x:Name="CategoryList" ItemContainerStyle="{StaticResource ListBoxItemCategory}" 
                  cal:Message.Attach="[Event SelectionChanged] = [Action Show]" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemTemplate>
