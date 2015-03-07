@@ -9,7 +9,7 @@ namespace Launcher.Module.Document.Views
     ///     Interaction logic for MainDocView.xaml
     /// </summary>
     [Export(typeof (MainDocView))]
-    public partial class MainDocView : Window
+    public partial class MainDocView : UserControl
     {
         public MainDocView()
         {

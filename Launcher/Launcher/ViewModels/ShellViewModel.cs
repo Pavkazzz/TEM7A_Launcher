@@ -9,7 +9,7 @@ using Launcher.Core;
 namespace Launcher.ViewModels
 {
     [Export(typeof(IShell))]
-    public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<string>, IHandle<FlyoutBaseViewModel>
+    public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<string>, IHandle<FlyoutBaseViewModel>, IHandle<IModule>
     {
         private readonly IEventAggregator _eventAggregator;
         private readonly IWindowManager _windowManager;
@@ -107,5 +107,9 @@ namespace Launcher.ViewModels
             flyout.IsOpen = !flyout.IsOpen;
         }
 
+        public void Handle(IModule message)
+        {
+            ActivateItem((IScreen) message);
+        }
     }
 }
