@@ -17,6 +17,7 @@ namespace Launcher.ViewModels
         private string _searchString;
         private BindableCollection<SearchName> _searchResult = new BindableCollection<SearchName>();
         private List<ISearch> _searches;
+        private BindableCollection<ModuleSearchName> _module = new BindableCollection<ModuleSearchName>();
 
         [ImportingConstructor]
         public FlyoutSearchViewModel([ImportMany(typeof(ISearch))] IEnumerable<ISearch> search)
@@ -28,6 +29,11 @@ namespace Launcher.ViewModels
 
             _searches = search.ToList();
 
+
+            foreach (var singlesearch in _searches)
+            {
+                Module.Add(new ModuleSearchName(singlesearch.ModuleName));
+            }
 
             foreach (var searchResult in _searches.SelectMany(singleSearch => singleSearch.DoSearch("")))
             {
@@ -54,6 +60,16 @@ namespace Launcher.ViewModels
             }
         }
 
+        public BindableCollection<ModuleSearchName> Module
+        {
+            get { return _module; }
+            set
+            {
+                _module = value;
+                NotifyOfPropertyChange(() => Module);
+            }
+        }
+
         public BindableCollection<SearchName> SearchResultList
         {
             get { return _searchResult; }
@@ -63,5 +79,17 @@ namespace Launcher.ViewModels
                 NotifyOfPropertyChange(() => SearchResultList);
             }
         }
+    }
+
+    public class ModuleSearchName
+    {
+        public string ModuleName {get; set; }
+
+        public ModuleSearchName(string module)
+        {
+            ModuleName = module;
+        }
+
+
     }
 }

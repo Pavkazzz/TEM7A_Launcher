@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Launcher.Core;
+using Launcher.ViewModels;
 
 namespace Launcher.Module.Document
 {
