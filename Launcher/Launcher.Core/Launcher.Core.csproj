@@ -88,10 +88,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\DocumentView.xaml.cs">
+    <Compile Include="Components\Document\DocumentView.xaml.cs">
       <DependentUpon>DocumentView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Components\DocumentViewModel.cs" />
+    <Compile Include="Components\Document\DocumentViewModel.cs" />
+    <Compile Include="Components\Document\OpenDocument.cs" />
     <Compile Include="Db\DataBase.cs" />
     <Compile Include="HelperClass\DocFile.cs" />
     <Compile Include="IModule.cs" />
@@ -126,7 +127,7 @@
     <Resource Include="Resources\WindowsIcons-license.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Components\DocumentView.xaml">
+    <Page Include="Components\Document\DocumentView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

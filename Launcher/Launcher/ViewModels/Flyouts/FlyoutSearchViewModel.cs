@@ -7,6 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
 using Launcher.Core;
+using Launcher.Core.Components;
+using Launcher.Core.Components.Document;
+using Launcher.Core.HelperClass;
 using Launcher.Model;
 using MahApps.Metro.Controls;
 
@@ -38,7 +41,7 @@ namespace Launcher.ViewModels
 
             foreach (var searchResult in _searches.SelectMany(singleSearch => singleSearch.DoSearch("")))
             {
-                SearchResultList.Add(new SearchName(searchResult));
+                SearchResultList.Add(new SearchName(searchResult, ""));
             }
         }
 
@@ -47,7 +50,7 @@ namespace Launcher.ViewModels
             SearchResultList.Clear();
             foreach (var searchResult in _searches.SelectMany(singleSearch => singleSearch.DoSearch(searchstring)))
             {
-                SearchResultList.Add(new SearchName(searchResult));
+                SearchResultList.Add(new SearchName(searchResult, ""));
             }
         }
 
@@ -56,7 +59,8 @@ namespace Launcher.ViewModels
 
             //WorkAround Search OpenSearch
             //TODO переделать
-            
+            var doc = new OpenDocument();
+            doc.ShowPdf(new DocFile(o.Name, o.FilePath), "");
         }
 
         public string SearchString

@@ -88,11 +88,7 @@ namespace Launcher.Module.Document.ViewModels
     }
 
 
-<<<<<<< HEAD
-=======
-        public string Name { get; set; }
-        public string Path { get; private set; }
-    }
+
     public class Category
     {
         public Category()
@@ -107,5 +103,4 @@ namespace Launcher.Module.Document.ViewModels
 
         public string Name { get; private set; }
     }
->>>>>>> 8995dc40be0bf9e987ee90d5c84b3d0f0a01f1fa
 }
