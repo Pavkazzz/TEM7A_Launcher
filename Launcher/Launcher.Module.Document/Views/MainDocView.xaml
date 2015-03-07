@@ -27,7 +27,13 @@
             
 
         </Grid>-->
-        <ListBox  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="LbBoxWithModules" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemContainerStyle="{StaticResource ListBoxItemCategory}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" TextWrapping="WrapWithOverflow"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            </ListBox>
 
 <!-- Тут должно быть список из модулей ГОСт или ОСТ Документы в общем говоря.-->
         <!--<ListBox Background="{DynamicResource AccentColorBrush}" x:Name="CategoryList" ItemContainerStyle="{StaticResource ListBoxItemCategory}" 
