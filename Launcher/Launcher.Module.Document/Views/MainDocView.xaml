@@ -7,7 +7,7 @@
              mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="600">
     <Grid Background="{DynamicResource AccentColorBrush}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="67"></ColumnDefinition>
+            <ColumnDefinition Width="133"></ColumnDefinition>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -27,13 +27,40 @@
             
 
         </Grid>-->
-        <ListBox x:Name="LbBoxWithModules" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemContainerStyle="{StaticResource ListBoxItemCategory}">
+        <!-- ListBox C отображением левого меню навигации гОСТ Ост -->
+        <ListBox x:Name="LbBoxWithModules" Grid.Row="1" Grid.Column="0"  ItemContainerStyle="{StaticResource ListBoxItemCategory}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}" TextWrapping="WrapWithOverflow"></TextBlock>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-            </ListBox>
+            <ListBoxItem Content="ГОСТ"/>
+            <ListBoxItem Content="ГОСТ Р"/>
+            <ListBoxItem Content="Нормат. Документы"/>
+            <ListBoxItem Content="Модуль 4"/>
+            <ListBoxItem Content="Модуль 5"/>
+            <ListBoxItem Content="Модуль 6"/>
+            <ListBoxItem Content="Модуль 7"/>
+        </ListBox>
+        <!-- Listbox с отображением гостов(документов) -->
+        <ListBox Grid.Row="1" Grid.Column="1" ItemContainerStyle="{StaticResource DocumentListBoxStyle}" Visibility="Collapsed">
+            <ListBoxItem Content="ГОСТ 1"/>
+            <ListBoxItem Content="ГОСТ 2"/>
+            <ListBoxItem Content="ГОСТ 3"/>
+            <ListBoxItem Content="ГОСТ 4"/>
+            <ListBoxItem Content="ГОСТ 5"/>
+            <ListBoxItem Content="ГОСТ 6"/>
+            <ListBoxItem Content="ГОСТ 7"/>
+        </ListBox>
+        <!-- ListBox С историей  -->
+        <ListBox x:Name="HistoryModuleListBox" Grid.Row="1" Grid.Column="1" ItemContainerStyle="{StaticResource HistoryDocumentWrapPanel}">
+            <ListBoxItem Content="History 1"/>
+            <ListBoxItem Content="History 1"/>
+            <ListBoxItem Content="History 1"/>
+            <ListBoxItem Content="History 1"/>
+            <ListBoxItem Content="History 1"/>
+            <ListBoxItem Content="History 1"/>
+        </ListBox>
 
 <!-- Тут должно быть список из модулей ГОСт или ОСТ Документы в общем говоря.-->
         <!--<ListBox Background="{DynamicResource AccentColorBrush}" x:Name="CategoryList" ItemContainerStyle="{StaticResource ListBoxItemCategory}" 
