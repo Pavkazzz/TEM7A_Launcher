@@ -15,7 +15,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <!-- Название модуля в котором мы находимся сюда выводится будет тип -->
-        <TextBlock x:Name="NameOfModuleTextBlock"  Grid.Column="1" Grid.Row="0" Background="DarkGray" Foreground="White" FontSize="22" Text="Тут выводится название модуля" />
+        <TextBlock x:Name="NameOfModuleTextBlock"  Grid.Column="1" Grid.Row="0" Background="DarkGray" Foreground="White" FontSize="22" Text="Модуль Нормативная Документация" />
         <!-- Стрелка на возворат.   cal:Message.Attach="[Event MouseDown] = [Action CloseWindow()]">-->
         <StackPanel Grid.Column="0" Grid.Row="0" cal:Message.Attach="[Event MouseDown] = [Action CloseWindow()]">
             <Canvas>
