@@ -4,11 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Launcher.Core;
+using Launcher.ViewModels;
 
 namespace Launcher.Module.Document
 {
     class Search : ISearch
     {
+        public string ModuleName
+        {
+            get { return new DocAbout().Name; }
+        }
+
         public List<string> DoSearch(string name)
         {
             name = name.ToLower();

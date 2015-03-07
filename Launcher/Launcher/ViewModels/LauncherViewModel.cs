@@ -13,7 +13,7 @@ using Launcher.Model;
 namespace Launcher.ViewModels
 {
     [Export(typeof(LauncherViewModel))]
-    public class LauncherViewModel : Conductor<IScreen>.Collection.OneActive
+    public class LauncherViewModel : Screen
     {
         private IEventAggregator _eventAggregator;
 
@@ -39,9 +39,6 @@ namespace Launcher.ViewModels
 
             ListBoxModules = _model.Modules;
 
-            
-
-            ActivateItem(IoC.Get<ModuleListViewModel>());
         }
 
         public void OpenModule()
@@ -59,9 +56,8 @@ namespace Launcher.ViewModels
             {
                 //TODO Dialog window
                 //::SEM
-                //_eventAggregator.PublishOnBackgroundThread(name);
-                var obj = o.ViewModel;
-                _windowManager.ShowDialog(Activator.CreateInstance(obj));
+                //_windowManager.ShowDialog(name);
+                _eventAggregator.PublishOnBackgroundThread(name);
             }
         }
 
@@ -84,9 +80,6 @@ namespace Launcher.ViewModels
             }
         }
 
-
-        
-
         public void Search()
         {
             _eventAggregator.PublishOnBackgroundThread(IoC.Get<FlyoutSearchViewModel>());
@@ -96,7 +89,6 @@ namespace Launcher.ViewModels
         public void Search(string text)
         {
             
-        
         } 
         #endregion
 

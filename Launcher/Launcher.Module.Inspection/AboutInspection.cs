@@ -10,7 +10,7 @@ namespace Launcher.Module.Inspection
     
     internal class AboutInspection : IModuleName
     {
-        private AboutInspection()
+        public AboutInspection()
         {
             Name = @"Модуль приемки локоматива";
             Description = @"Приемка лааллалал";
