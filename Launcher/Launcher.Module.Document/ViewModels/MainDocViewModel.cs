@@ -38,7 +38,7 @@ namespace Launcher.Module.Document.ViewModels
         #endregion
 
         [ImportingConstructor]
-        public MainDocViewModel(IEventAggregator eventAggregator)
+        public MainDocViewModel()
         {
             CategoryList = new BindableCollection<Category>();
             if (File.Exists(Path.GetFullPath(new DocAbout().DbPath)))
@@ -51,7 +51,7 @@ namespace Launcher.Module.Document.ViewModels
                 }
             }
 
-            _eventAggregator = eventAggregator;
+            _eventAggregator = IoC.Get<IEventAggregator>();
 
             ActivateItem(IoC.Get<HistoryViewModel>());
         }

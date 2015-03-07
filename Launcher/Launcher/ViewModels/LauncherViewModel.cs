@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Dynamic;
 using System.Linq;
@@ -12,7 +13,7 @@ using Launcher.Model;
 namespace Launcher.ViewModels
 {
     [Export(typeof(LauncherViewModel))]
-    public class LauncherViewModel : Conductor<IScreen>.Collection.OneActive, IHandle<IModule>, IHandle<IScreen>
+    public class LauncherViewModel : Conductor<IScreen>.Collection.OneActive
     {
         private IEventAggregator _eventAggregator;
 
@@ -59,7 +60,8 @@ namespace Launcher.ViewModels
                 //TODO Dialog window
                 //::SEM
                 //_eventAggregator.PublishOnBackgroundThread(name);
-                _windowManager.ShowDialog(o.ViewModel);
+                var obj = o.ViewModel;
+                _windowManager.ShowDialog(Activator.CreateInstance(obj));
             }
         }
 
@@ -132,19 +134,19 @@ namespace Launcher.ViewModels
         #region Handle
 
         //После выбора модулей
-        public void Handle(IModule viewModel)
-        {
-            //TODO список модулей
+        //public void Handle(IModule viewModel)
+        //{
+        //    //TODO список модулей
 
             
 
-            ActivateItem((IScreen)viewModel);
-        }
+        //    ActivateItem((IScreen)viewModel);
+        //}
 
-        public void Handle(IScreen message)
-        {
-            ActivateItem(message);
-        } 
+        //public void Handle(IScreen message)
+        //{
+        //    ActivateItem(message);
+        //} 
         #endregion
 
 
