@@ -5,6 +5,7 @@ using System.Windows;
 using Caliburn.Micro;
 using Launcher.Core;
 using Launcher.Core.Components;
+using Launcher.Core.Components.Document;
 using Launcher.Core.HelperClass;
 
 namespace Launcher.Module.Document.ViewModels

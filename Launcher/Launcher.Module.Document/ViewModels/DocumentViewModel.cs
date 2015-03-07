@@ -3,7 +3,7 @@ using Caliburn.Micro;
 using Launcher.Core.HelperClass;
 using MoonPdfLib;
 
-namespace Launcher.Core.Components
+namespace Launcher.Module.Document.ViewModels
 {
     [Export(typeof(DocumentViewModel))]
     public class DocumentViewModel : Screen

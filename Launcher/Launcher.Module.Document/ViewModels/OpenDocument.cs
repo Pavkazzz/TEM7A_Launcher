@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Caliburn.Micro;
 using Launcher.Core.HelperClass;
 
-namespace Launcher.Core.Components.Document
+namespace Launcher.Module.Document.ViewModels
 {
     public class OpenDocument
     {
@@ -31,8 +27,7 @@ namespace Launcher.Core.Components.Document
                     db.SqlInsert(string.Format("INSERT INTO \"main\".\"History\" (\"DocumentName\",\"DocumentIndex\",\"Path\") VALUES ('{0}','{1}','{2}')", doc.Name, '1', doc.Path));
                 }
                 _windowManager = IoC.Get<IWindowManager>();
-                //TODO в CORE запихнуть
-                //_windowManager.ShowDialog(new DocumentViewModel(doc));
+                _windowManager.ShowDialog(new DocumentViewModel(doc));
             }
         }
 

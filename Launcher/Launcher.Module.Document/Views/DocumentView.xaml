@@ -7,7 +7,7 @@
              xmlns:cal="http://www.caliburnproject.org"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d"      
-             x:Class="Launcher.Core.Components.DocumentView"
+             x:Class="Launcher.Module.Document.Views.DocumentView"
              ResizeMode="NoResize" WindowStyle="None" WindowState="Maximized"
              d:DesignWidth="470" d:DesignHeight="303">
     

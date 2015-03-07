@@ -88,6 +88,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MahApps.Metro.1.0.0.0\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
+    <Reference Include="MoonPdfLib, Version=0.3.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Launcher.Core\Lib\MoonPdfLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MouseKeyboardActivityMonitor, Version=3.0.1.29653, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Launcher.Core\Lib\MouseKeyboardActivityMonitor.dll</HintPath>
+    </Reference>
     <Reference Include="pdfbox-1.8.7">
       <HintPath>..\Launcher.Core\Lib\pdfbox-1.8.7.dll</HintPath>
     </Reference>
@@ -114,10 +122,15 @@
     <Compile Include="DocCheck.cs" />
     <Compile Include="Search.cs" />
     <Compile Include="ViewModels\DocumentListViewModel.cs" />
+    <Compile Include="ViewModels\DocumentViewModel.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="ViewModels\MainDocViewModel.cs" />
+    <Compile Include="ViewModels\OpenDocument.cs" />
     <Compile Include="Views\DocumentListView.xaml.cs">
       <DependentUpon>DocumentListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DocumentView.xaml.cs">
+      <DependentUpon>DocumentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HistoryView.xaml.cs">
       <DependentUpon>HistoryView.xaml</DependentUpon>
@@ -135,6 +148,10 @@
     <Page Include="Views\DocumentListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DocumentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\HistoryView.xaml">
       <SubType>Designer</SubType>
