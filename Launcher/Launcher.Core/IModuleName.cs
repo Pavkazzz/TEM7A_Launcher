@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using Caliburn.Micro;
 
 namespace Launcher.Core
 {
@@ -19,12 +20,12 @@ namespace Launcher.Core
     {
         public string AboutName { get; set; }
 
-        About()
+        public About()
         {
             AboutName = String.Empty;
         }
 
-        About(string aboutName)
+        public About(string aboutName)
         {
             AboutName = aboutName;
         }

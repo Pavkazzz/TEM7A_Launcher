@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace Launcher.Views
 {
     /// <summary>
-    /// Interaction logic for FlyoutSearchView.xaml
+    /// Логика взаимодействия для FullSizeWindowModule.xaml
     /// </summary>
-    public partial class FlyoutSearchView : UserControl
+    public partial class FullSizeWindowModule : UserControl
     {
-        public FlyoutSearchView()
+        public FullSizeWindowModule()
         {
             InitializeComponent();
         }
-
     }
 }

@@ -13,8 +13,6 @@
                  Background="{DynamicResource AccentColorBrush}" BorderThickness="0"
                  HorizontalContentAlignment="Stretch"
                  cal:Message.Attach="[Event SelectionChanged] = [Action OpenModule]">
-                 
-
             <ListBox.Resources>
                 <Style TargetType="ListBoxItem">
                     <Style.Resources>

@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Dynamic;
 using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using Caliburn.Micro;
@@ -11,7 +13,7 @@ using Launcher.Model;
 namespace Launcher.ViewModels
 {
     [Export(typeof(LauncherViewModel))]
-    public class LauncherViewModel : Conductor<IScreen>.Collection.OneActive, IHandle<IModule>, IHandle<IScreen>
+    public class LauncherViewModel : Screen
     {
         private IEventAggregator _eventAggregator;
 
@@ -37,13 +39,23 @@ namespace Launcher.ViewModels
 
             ListBoxModules = _model.Modules;
 
-            ActivateItem(IoC.Get<ModuleListViewModel>());
+        }
+
+        public void OpenModule()
+        {
+            //foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == (o as ModuleItem).ViewModel))
+            //{
+            //    _eventAggregator.PublishOnBackgroundThread(name);
+            //}
+            var qwe = "qweqweqwe";
         }
 
         public void OpenModule(ModuleItem o)
         {
             foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == o.ViewModel))
             {
+                //TODO Dialog window
+                //::SEM
                 _eventAggregator.PublishOnBackgroundThread(name);
             }
         }
@@ -67,10 +79,7 @@ namespace Launcher.ViewModels
             }
         }
 
-
-        
-
-        public void Search(object o)
+        public void Search()
         {
             _eventAggregator.PublishOnBackgroundThread(IoC.Get<FlyoutSearchViewModel>());
             //History
@@ -79,7 +88,6 @@ namespace Launcher.ViewModels
         public void Search(string text)
         {
             
-        
         } 
         #endregion
 
@@ -110,24 +118,26 @@ namespace Launcher.ViewModels
         }
 
         
+
+        
         #endregion
 
         #region Handle
 
         //После выбора модулей
-        public void Handle(IModule viewModel)
-        {
-            //TODO список модулей
+        //public void Handle(IModule viewModel)
+        //{
+        //    //TODO список модулей
 
             
 
-            ActivateItem((IScreen)viewModel);
-        }
+        //    ActivateItem((IScreen)viewModel);
+        //}
 
-        public void Handle(IScreen message)
-        {
-            ActivateItem(message);
-        } 
+        //public void Handle(IScreen message)
+        //{
+        //    ActivateItem(message);
+        //} 
         #endregion
 
 
@@ -139,18 +149,5 @@ namespace Launcher.ViewModels
         }
     }
 
-    public class SearchName
-    {
-        public SearchName()
-        {
-            
-        }
 
-        public SearchName(string name)
-        {
-            Name = name;
-        }
-
-        public string Name { get; set; }
-    }
 }

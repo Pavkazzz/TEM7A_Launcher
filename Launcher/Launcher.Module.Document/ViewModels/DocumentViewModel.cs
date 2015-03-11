@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.ComponentModel.Composition;
 using Caliburn.Micro;
-using Launcher.Module.Document.Views;
+using Launcher.Core.HelperClass;
 using MoonPdfLib;
 
 namespace Launcher.Module.Document.ViewModels
@@ -29,7 +21,6 @@ namespace Launcher.Module.Document.ViewModels
 
             _eventAggregator.Subscribe(this);
             _message = message;
-
         }
 
         public void PdfPanel()

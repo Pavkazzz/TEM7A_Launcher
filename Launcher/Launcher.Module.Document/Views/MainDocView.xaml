@@ -7,10 +7,41 @@
              mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="600">
     <Grid Background="{DynamicResource AccentColorBrush}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="130"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="133"></ColumnDefinition>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ListBox Background="{DynamicResource AccentColorBrush}" x:Name="CategoryList" ItemContainerStyle="{StaticResource ListBoxItemCategory}" 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55"></RowDefinition>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!-- Название модуля в котором мы находимся сюда выводится будет тип -->
+        <TextBlock x:Name="NameOfModuleTextBlock"  Grid.Column="1" Grid.Row="0" Background="DarkGray" Foreground="White" FontSize="22" Text="Модуль Нормативная Документация" />
+        <!-- Стрелка на возворат.   cal:Message.Attach="[Event MouseDown] = [Action CloseWindow()]">-->
+        <StackPanel Grid.Column="0" Grid.Row="0" cal:Message.Attach="[Event MouseDown] = [Action CloseWindow()]" Background="DarkGray">
+            <Canvas>
+                <ContentControl Content="{StaticResource appbar_chevron_left}" Canvas.Top="0" Canvas.Left="0" Margin="0,-10,0,0"/>
+            </Canvas>
+        </StackPanel>
+        <!-- ContentGrid -->
+        <!--<Grid x:Name="ContentGrid"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            
+
+        </Grid>-->
+        <!-- ListBox C отображением левого меню навигации гОСТ Ост -->
+        <ListBox x:Name="CategoryList" Grid.Row="1" Grid.Column="0" ItemContainerStyle="{StaticResource ListBoxItemCategory}" 
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                 cal:Message.Attach="[Event SelectionChanged] = [Action Show]">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" TextWrapping="WrapWithOverflow"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <ContentControl x:Name="ActiveItem" Grid.Row="1" Grid.Column="1"></ContentControl>
+
+<!-- Тут должно быть список из модулей ГОСт или ОСТ Документы в общем говоря.-->
+        <!--<ListBox Background="{DynamicResource AccentColorBrush}" x:Name="CategoryList" ItemContainerStyle="{StaticResource ListBoxItemCategory}" 
                  cal:Message.Attach="[Event SelectionChanged] = [Action Show]" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -18,6 +49,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ContentControl Grid.Column="1" x:Name="ActiveItem"></ContentControl>
+        <ContentControl Grid.Column="1" x:Name="ActiveItem"></ContentControl>-->
     </Grid>
 </UserControl>

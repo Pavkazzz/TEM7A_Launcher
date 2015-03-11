@@ -3,6 +3,9 @@ using System.ComponentModel.Composition;
 using System.IO;
 using Caliburn.Micro;
 using Launcher.Core;
+using Launcher.Core.Components;
+using Launcher.Core.Components.Document;
+using Launcher.Core.HelperClass;
 using Launcher.ViewModels;
 
 namespace Launcher.Module.Document.ViewModels
@@ -47,28 +50,13 @@ namespace Launcher.Module.Document.ViewModels
 
         }
 
-        public void ShowDoc(object o)
+        public void ShowDoc(DocFile doc)
         {
             //view для документа.
             //_eventAggregator.PublishOnBackgroundThread(IoC.Get<DocumentViewModel>());
-            var doc = o as DocFile;
-            if (doc != null)
-            {
-                var db = new Launcher.Core.DataBase(Path.GetFullPath(new DocAbout().DbPath));
 
-                var index = db.SqlSelect("Select id from History order by id desc", new List<string>() {"id"});
+            new OpenDocument().ShowPdf(doc, new DocAbout().DbPath);
 
-                if (index.Count > 0)
-                {
-                    db.SqlInsert(string.Format("INSERT INTO \"main\".\"History\" (\"DocumentName\",\"DocumentIndex\",\"Path\") VALUES ('{0}','{1}','{2}')", doc.Name, index[0]["id"], doc.Path));
-                }
-                else
-                {
-                    db.SqlInsert(string.Format("INSERT INTO \"main\".\"History\" (\"DocumentName\",\"DocumentIndex\",\"Path\") VALUES ('{0}','{1}','{2}')", doc.Name, '1', doc.Path));
-                }
-
-                _windowManager.ShowDialog(new DocumentViewModel(doc));
-            }
         }
 
         public void Handle(Category message)
@@ -85,21 +73,20 @@ namespace Launcher.Module.Document.ViewModels
         }
     }
 
-    public class DocFile
+
+
+    public class Category
     {
-        public DocFile(string name)
+        public Category()
         {
-            Name = name;
-            Path = string.Empty;
-        }
-        
-        public DocFile(string name, string path)
-        {
-            Name = name;
-            Path = path;
+
         }
 
-        public string Name { get; set; }
-        public string Path { get; private set; }
+        public Category(string name)
+        {
+            Name = name;
+        }
+
+        public string Name { get; private set; }
     }
 }

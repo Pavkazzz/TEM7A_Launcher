@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using Caliburn.Micro;
 using Launcher.Core;
 using Launcher.Module.Document.ViewModels;
 
@@ -8,12 +9,18 @@ namespace Launcher.Module.Document
 {
     internal class DocAbout : IModuleName
     {
+        private List<About> _category = new List<About>();
+
         public DocAbout()
         {
             Name = @"Модуль норматив. документы";
             Description = @"Супер модуль";
             ViewModel = typeof (MainDocViewModel);
             DbPath = "../../../../Launcher.Module.Document/document.sqlite";
+
+            Category.Add(new About("qwe"));
+            Category.Add(new About("asd"));
+            Category.Add(new About("zcx"));
         }
 
         public string Name { get; set; }
@@ -21,12 +28,18 @@ namespace Launcher.Module.Document
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
 
-        public List<About> Category { get; set; }
+        public List<About> Category
+        {
+            get { return _category; }
+            set
+            {
+                _category = value;
+            }
+        }
 
 
         public bool PrimaryCheck()
         {
-
             return DocCheck.DocumentCheck();
         }
 
