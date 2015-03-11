@@ -36,9 +36,18 @@
         </StackPanel>
 
         <!--Сюда в старом образе у нас отображались данные -->
-        <Grid Grid.Row="1" Grid.Column="1">
+        <Grid Grid.Row="1" Grid.Column="1" ManipulationStarting="UIElement_OnManipulationStarting" ManipulationDelta="UIElement_OnManipulationDelta">
+           <Grid.RenderTransform>
+               <MatrixTransform></MatrixTransform>
+           </Grid.RenderTransform>
             <!-- TODO в IoC засунуть-->
-            <moonPdfLib:MoonPdfPanel  x:Name="PdfPanel" RenderTransform="{StaticResource InitialMatrixTransform}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsManipulationEnabled="true"/>
+            <!--<Canvas ManipulationStarting="UIElement_OnManipulationStarting" ManipulationDelta="UIElement_OnManipulationDelta">
+                <Canvas.RenderTransform>
+                    <MatrixTransform></MatrixTransform>
+                </Canvas.RenderTransform>-->
+            <moonPdfLib:MoonPdfPanel  x:Name="PdfPanel" />
+                    <!--RenderTransform="{StaticResource InitialMatrixTransform}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsManipulationEnabled="true"-->
+            <!--</Canvas>-->
         </Grid>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Linq;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -32,6 +33,7 @@ namespace Launcher.Module.Document.Views
                 this.PdfPanel.OpenFile(message.FileName);
                 this.PdfPanel.ViewType = ViewType.SinglePage;
                 this.PdfPanel.Zoom(2.0);
+                //this.PdfPanel.Touche
                 this.PdfPanel.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
             }));
 
@@ -45,7 +47,7 @@ namespace Launcher.Module.Document.Views
 
         private void Window_ManipulationDelta(object sender, ManipulationDeltaEventArgs e)
         {
-            DockPanel rectToMove = e.OriginalSource as DockPanel;
+            MoonPdfPanel rectToMove = e.OriginalSource as MoonPdfPanel;
             Matrix rectsMatrix = ((MatrixTransform)rectToMove.RenderTransform).Matrix;
             rectsMatrix.ScaleAt(e.DeltaManipulation.Scale.X, e.DeltaManipulation.Scale.X, e.ManipulationOrigin.X, e.ManipulationOrigin.Y);
             rectToMove.RenderTransform = new MatrixTransform(rectsMatrix);
@@ -74,6 +76,21 @@ namespace Launcher.Module.Document.Views
             e.RotationBehavior.DesiredDeceleration = 720 / (1000.0 * 1000.0);
 
             e.Handled = true;
+        }
+
+        private void UIElement_OnManipulationStarting(object sender, ManipulationStartingEventArgs e)
+        {
+            e.ManipulationContainer = PdfPanel;
+            e.Mode = ManipulationModes.All;
+            throw new System.NotImplementedException();
+        }
+
+        private void UIElement_OnManipulationDelta(object sender, ManipulationDeltaEventArgs e)
+        {
+            UIElement element = (UIElement) e.Source;
+            Matrix matrix = ((MatrixTransform) element.RenderTransform).Matrix;
+            ManipulationDelta md = e.DeltaManipulation;
+            throw new System.NotImplementedException();
         }
     }
 
