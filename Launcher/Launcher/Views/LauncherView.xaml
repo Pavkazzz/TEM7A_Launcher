@@ -71,9 +71,16 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <Button cal:Message.Attach="[Event Click] = [Action OpenModule($this)]">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                       
+                        <Button Grid.Column="0" cal:Message.Attach="[Event Click] = [Action OpenModule($this)]">
                             <TextBlock Text="{Binding Name}" />
                         </Button>
+                        
+                        <TextBlock Grid.Column="1" Text="{Binding Description}"></TextBlock>
                         <!--<ListBox x:Name="Category">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>

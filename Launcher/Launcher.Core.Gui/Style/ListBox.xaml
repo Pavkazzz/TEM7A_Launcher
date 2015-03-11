@@ -275,30 +275,9 @@
                                 </WrapPanel>
                             </Button>
                         </Border>
-                        <!--<Border BorderBrush="#FF167423" BorderThickness="0,0,0,2" Background="WhiteSmoke" Grid.Column="1" HorizontalAlignment="Stretch" Height="124.7" Margin="2,0,0,0" 
-                                VerticalAlignment="Top" Width="auto" Grid.ColumnSpan="1">
-                            <ListBox x:Name="Category"  ScrollViewer.PanningMode="HorizontalOnly" ScrollViewer.VerticalScrollBarVisibility="Hidden" 
-                                     ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
-                                     Background="{DynamicResource AccentColorBrush}" ItemContainerStyle="{DynamicResource TwoLevel}">
-                                <ListBox.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-                                    </ItemsPanelTemplate>
-                                </ListBox.ItemsPanel>
-                                <ListBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <ContentPresenter/>
-                                    </DataTemplate>
-                                </ListBox.ItemTemplate>-->
-                                
-                                
-                                <!-- Надо их динамически генерить как-то -->
-                                <!--<ListBoxItem Template="{DynamicResource TwoLevel}" FontFamily="22" Foreground="White" >
-                                    <ContentPresenter />
-                                </ListBoxItem>-->
- 
-                            <!--</ListBox>
-                        </Border>-->
+                       <TextBlock Foreground="White" FontSize="22" Grid.Column="1">
+                       <ContentPresenter Content="{Binding Description}"></ContentPresenter>    
+                       </TextBlock>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
