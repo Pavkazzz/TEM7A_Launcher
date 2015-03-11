@@ -70,10 +70,8 @@
                  HorizontalAlignment="Stretch" Margin="0,0,0,0" ItemContainerStyle="{StaticResource MainWindowListBoxTemplate}" ItemsSource="{Binding ListBoxModules}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
-                       
                         <Button cal:Message.Attach="[Event Click] = [Action OpenModule($this)]">
-                            <TextBlock FontSize="15" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock FontSize="15" Text="{Binding Name}" HorizontalAlignment="Left" TextAlignment="Left" TextWrapping="Wrap" Margin="-5"/>
                         </Button>
                         
                         <!--<TextBlock Grid.Column="1" Text="{Binding Description}"></TextBlock>-->
@@ -86,8 +84,6 @@
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>-->
-                    </Grid>
-
         
                 </DataTemplate>
             </ListBox.ItemTemplate>
