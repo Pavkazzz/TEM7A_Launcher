@@ -74,6 +74,7 @@
                         <Button cal:Message.Attach="[Event Click] = [Action OpenModule($this)]">
                             <TextBlock Text="{Binding Name}" />
                         </Button>
+                        <!-- НЕ РАБОТАЕТ -->
                         <!--<ListBox x:Name="Category">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
