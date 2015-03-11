@@ -60,7 +60,7 @@ namespace Launcher.Module.Document.ViewModels
         {
             var name = e.Name;
             var path = e.Path;
-            _windowManager.ShowDialog(new DocumentViewModel(e));
+            new OpenDocument().ShowPdf(e, new DocAbout().DbPath);
         }
     }
 }

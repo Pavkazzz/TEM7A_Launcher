@@ -48,16 +48,24 @@ namespace Launcher.ViewModels
             //    _eventAggregator.PublishOnBackgroundThread(name);
             //}
             var qwe = "qweqweqwe";
+            //MessageBox.Show("AXAXAX");
         }
 
         public void OpenModule(ModuleItem o)
         {
-            foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == o.ViewModel))
-            {
-                //TODO Dialog window
-                //::SEM
-                _eventAggregator.PublishOnBackgroundThread(name);
-            }
+            //if (o != null)
+            //{
+                foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == o.ViewModel))
+                {
+                    //TODO Dialog window
+                    //::SEM
+                    _eventAggregator.PublishOnBackgroundThread(name);
+                }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Модуль не пришёл");
+            //}
         }
 
         public void OpenFlyout()
@@ -147,7 +155,7 @@ namespace Launcher.ViewModels
             this.DisplayName = "Caliburn.Metro.Demo";
             this._flyouts.Add(IoC.Get<FlyoutSearchViewModel>());
         }
-    }
+        }
 
 
 }

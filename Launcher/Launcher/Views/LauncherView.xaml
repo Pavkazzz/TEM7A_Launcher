@@ -71,12 +71,24 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
+                       
                         <Button cal:Message.Attach="[Event Click] = [Action OpenModule($this)]">
                             <TextBlock Text="{Binding Name}" />
                         </Button>
+                        
+                        <!--<TextBlock Grid.Column="1" Text="{Binding Description}"></TextBlock>-->
+                        <!--<ListBox x:Name="Category">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" >
+                                        <TextBlock Text="{Binding Description}"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>-->
                     </Grid>
 
-
+        
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
