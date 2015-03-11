@@ -282,7 +282,7 @@
                             </ContentPresenter>
                             <!--</Label>-->
                         </Border>
-                        <TextBlock Grid.Column="1" Margin="40,35,0,0" FontSize="15" Foreground="White" >
+                        <TextBlock Grid.Column="1" Margin="40,35,20,0" FontSize="15" Foreground="White" >
                             <ContentPresenter Content="{Binding Description}" >
                              <ContentPresenter.Resources>
                                     <Style TargetType="{x:Type TextBlock}">

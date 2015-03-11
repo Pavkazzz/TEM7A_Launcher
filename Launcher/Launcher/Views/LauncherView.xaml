@@ -51,18 +51,20 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Label Content="КАЛУГАПУТЬМАШ" Foreground="Black" FontSize="24" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="2"
-                   HorizontalAlignment="Left" VerticalAlignment="Top" FontStyle="Italic" FontWeight="Bold" />
+            <TextBlock Text="Проектно-конструкторское бюро железнодорожной техники" Foreground="Black" FontSize="24" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" FontWeight="Bold" Width="auto" Height="auto" TextWrapping="Wrap" Margin="5,0,0,10" Grid.RowSpan="2" />
+            <!--<Label Content="Проектно конструкторское бюро Железнодорожной техники" Foreground="Black" FontSize="24" Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="0"
+                   HorizontalAlignment="Left" VerticalAlignment="Top" FontStyle="Italic" FontWeight="Bold" Width="690" Height="68"/>-->
             <Label x:Name="DateTimeLabel" HorizontalAlignment="Right" Grid.Column="6" Grid.Row="0" Grid.RowSpan="2"
                    HorizontalContentAlignment="Right" Foreground="Black" FontSize="17" VerticalAlignment="Bottom" />
-            <Label x:Name="FIO" Content="СИНАРА" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="0"
-                   Foreground="Black" HorizontalContentAlignment="Center" FontSize="24" FontStyle="Italic" FontWeight="Bold" />
+            <!--<Label x:Name="FIO" Content="СИНАРА" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="0"
+                   Foreground="Black" HorizontalContentAlignment="Center" FontSize="24" FontStyle="Italic" FontWeight="Bold" />-->
             <TextBlock x:Name="TextBlockAny" Grid.Column="7" Grid.RowSpan="2" TextWrapping="WrapWithOverflow"
                        Foreground="White" FontSize="15" HorizontalAlignment="Right" />
 
-            <Rectangle Fill="Black" Grid.Row="0"  Grid.RowSpan="2" Grid.Column="7" cal:Message.Attach="[Event MouseDown] = [Action Search]" Margin="30,5" HorizontalAlignment="Stretch">
+            <Rectangle Fill="Black" Grid.Row="0"  Grid.RowSpan="2" Grid.Column="7" cal:Message.Attach="[Event MouseDown] = [Action Search]"  HorizontalAlignment="Stretch">
                 <Rectangle.OpacityMask>
-                    <VisualBrush Visual="{StaticResource appbar_page_search}" Stretch="Uniform" />
+                    <VisualBrush Visual="{StaticResource appbar_page_search}" Stretch="None" />
                 </Rectangle.OpacityMask>
             </Rectangle>
         </Grid>
@@ -71,11 +73,11 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                       
+
                         <Button cal:Message.Attach="[Event Click] = [Action OpenModule($this)]">
                             <TextBlock FontSize="15" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Button>
-                        
+
                         <!--<TextBlock Grid.Column="1" Text="{Binding Description}"></TextBlock>-->
                         <!--<ListBox x:Name="Category">
                             <ListBox.ItemTemplate>
@@ -88,7 +90,7 @@
                         </ListBox>-->
                     </Grid>
 
-        
+
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
