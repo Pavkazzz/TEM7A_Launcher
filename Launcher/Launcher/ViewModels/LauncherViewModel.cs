@@ -147,7 +147,7 @@ namespace Launcher.ViewModels
             this.DisplayName = "Caliburn.Metro.Demo";
             this._flyouts.Add(IoC.Get<FlyoutSearchViewModel>());
         }
-    }
+        }
 
 
 }
