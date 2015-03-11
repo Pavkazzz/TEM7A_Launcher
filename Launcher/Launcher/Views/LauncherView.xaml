@@ -73,7 +73,7 @@
                     <Grid>
                        
                         <Button cal:Message.Attach="[Event Click] = [Action OpenModule($this)]">
-                            <TextBlock Text="{Binding Name}" />
+                            <TextBlock FontSize="15" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Button>
                         
                         <!--<TextBlock Grid.Column="1" Text="{Binding Description}"></TextBlock>-->

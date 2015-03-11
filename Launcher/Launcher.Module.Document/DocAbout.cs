@@ -13,8 +13,8 @@ namespace Launcher.Module.Document
 
         public DocAbout()
         {
-            Name = @"Модуль норматив. документы";
-            Description = @"Супер модуль";
+            Name = @"Модуль нормативные документы";
+            Description = @"Модуль «Нормативные документы» предназначен для предоставления в интерактивном виде межгосударственных, национальных и отраслевых стандартов,нормативно технической документации, определяющих требования к техническим системам и его компонентам.";
             ViewModel = typeof (MainDocViewModel);
             DbPath = "../../../../Launcher.Module.Document/document.sqlite";
 
@@ -52,8 +52,8 @@ namespace Launcher.Module.Document
 
         public About1()
         {
-            Name = @"Модуль 1";
-            Description = @"Описание модуля";
+            Name = @"Руководство по эксплуатации";
+            Description = @"Модуль «РУКОВОДСТВО ПО ЭКСПЛУАТАЦИИ» предоставляет в интерактивном виде техническое описание конструкции, узлов и деталей локомотива, технические характеристики и показатели, правила эксплуатации, технического обслуживания, хранения и утилизации локомотива и его компонентов ";
             ViewModel = typeof (MainDocViewModel);
             DbPath = "../../../../Launcher.Module.Document/document.sqlite";
         }
@@ -75,8 +75,8 @@ namespace Launcher.Module.Document
 
         public About2()
         {
-            Name = @"Модуль 2";
-            Description = @"Описание модуля";
+            Name = @"Каталог деталей";
+            Description = @"Модуль «КАТАЛОГ ДЕТАЛЕЙ» предназначен для предоставления в интерактивном виде справочной и иллюстрационной информации по деталям, сборочным единицам, комплексам и комплектам, входящим в состав локомотива ";
             ViewModel = typeof(MainDocViewModel);
             DbPath = "../../../../Launcher.Module.Document/document.sqlite";
         }
@@ -98,8 +98,8 @@ namespace Launcher.Module.Document
 
         public About3()
         {
-            Name = @"Модуль 3";
-            Description = @"Описание модуля";
+            Name = @"Приемка локомотива";
+            Description = @"Модуль «ПРИЕМКА ЛОКОМОТИВА» предназначен для проведения приемки и сдачи локомотива, проведения технического обслуживания ТО-1, контроля над последовательностью и выполнением регламентных работ, формирования электронных отчетов по выполнению работ";
             ViewModel = typeof(MainDocViewModel);
             DbPath = "../../../../Launcher.Module.Document/document.sqlite";
         }
@@ -121,8 +121,8 @@ namespace Launcher.Module.Document
 
         public About4()
         {
-            Name = @"Модуль 4";
-            Description = @"Описание модуля";
+            Name = @"Аварийные карточки";
+            Description = @"Модуль «Аварийные карточки» предоставляет в интерактивном виде графическое изображение возможных неисправностей локомотива и порядок действий локомотивной бригады для устранения причин, вызвавших аварию";
             ViewModel = typeof(MainDocViewModel);
             DbPath = "../../../../Launcher.Module.Document/document.sqlite";
         }
@@ -144,8 +144,8 @@ namespace Launcher.Module.Document
 
         public About5()
         {
-            Name = @"Модуль 5";
-            Description = @"Описание модуля";
+            Name = @"Тяговые расчёты";
+            Description = @"Модуль «ТЯГОВЫЕ РАСЧЕТЫ» обеспечивает выполнение тяговых расчетов локомотива в соответствии с «Правилами тяговых расчетов для поездной работы» и представление результатов расчетов в графическом и табличном видах";
             ViewModel = typeof(MainDocViewModel);
             DbPath = "../../../../Launcher.Module.Document/document.sqlite";
         }

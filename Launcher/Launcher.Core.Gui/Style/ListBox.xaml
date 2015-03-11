@@ -262,66 +262,43 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                    <Grid Margin="0,5,5,0" Width="auto" Height="auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF167423">
+                    <Grid Margin="1" Width="auto" Height="auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="#FF167423">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="135"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Border BorderBrush="#FF169516" Grid.Column="0" Grid.Row="0" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" 
-                                Height="120" Margin="2,6.7,3,2">
+                        <Border BorderBrush="#FF169516" Grid.Column="0" Grid.Row="0" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" 
+                                Height="120" Margin="0" >
+                            <!--<Label HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="" >-->
                             <ContentPresenter>
                                 <ContentPresenter.Resources>
                                     <Style TargetType="{x:Type TextBlock}">
-                                        <Setter Property="TextWrapping" Value="Wrap"/>
+                                        <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+                                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                                        <Setter Property="VerticalAlignment" Value="Center"/>
+                                        
                                     </Style>
                                 </ContentPresenter.Resources>
                             </ContentPresenter>
+                            <!--</Label>-->
                         </Border>
-                        <TextBlock Grid.Column="1" FontSize="22" Foreground="White" >
-                            <ContentPresenter Content="{Binding Description}"></ContentPresenter>
+                        <TextBlock Grid.Column="1" Margin="40,35,0,0" FontSize="15" Foreground="White" >
+                            <ContentPresenter Content="{Binding Description}" >
+                             <ContentPresenter.Resources>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+                                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                                        <Setter Property="VerticalAlignment" Value="Center"/>
+                                    </Style>
+                                </ContentPresenter.Resources>    
+                            </ContentPresenter>
                         </TextBlock>
-                        <!--<Border BorderBrush="#FF167423" BorderThickness="0,0,0,2" Background="WhiteSmoke" Grid.Column="1" HorizontalAlignment="Stretch" Height="124.7" Margin="2,0,0,0" 
-                                VerticalAlignment="Top" Width="auto" Grid.ColumnSpan="1">
-                            <ListBox x:Name="Category"  ScrollViewer.PanningMode="HorizontalOnly" ScrollViewer.VerticalScrollBarVisibility="Hidden" 
-                                     ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
-                                     Background="{DynamicResource AccentColorBrush}" ItemContainerStyle="{DynamicResource TwoLevel}">
-                                <ListBox.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-                                    </ItemsPanelTemplate>
-                                </ListBox.ItemsPanel>
-                                <ListBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <ContentPresenter/>
-                                    </DataTemplate>
-                                </ListBox.ItemTemplate>-->
 
-
-                        <!-- Надо их динамически генерить как-то -->
-                        <!--<ListBoxItem Template="{DynamicResource TwoLevel}" FontFamily="22" Foreground="White" >
-                                    <ContentPresenter />
-                                </ListBoxItem>-->
-
-                        <!--</ListBox>
-                        </Border>-->
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-
-    <!--<ListBox x:Name="Category"    Margin="0,0,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
-                                     Background="{DynamicResource AccentColorBrush}" ItemContainerStyle="{DynamicResource TwoLevel}">
-        <ListBox.ItemsPanel>sss
-            <ItemsPanelTemplate>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-            </ItemsPanelTemplate>
-        </ListBox.ItemsPanel>
-        <ListBox.ItemTemplate>
-            <DataTemplate>
-                <ContentPresenter/>
-            </DataTemplate>
-        </ListBox.ItemTemplate>-->
 
     <Style x:Key="SecondListBox" TargetType="ListBox">
         <Setter Property="ScrollViewer.PanningMode" Value="HorizontalOnly" />
