@@ -4,6 +4,9 @@ using System.IO;
 using System.Windows;
 using Caliburn.Micro;
 using Launcher.Core;
+using Launcher.Core.Components;
+using Launcher.Core.Components.Document;
+using Launcher.Core.HelperClass;
 
 namespace Launcher.Module.Document.ViewModels
 {
@@ -57,7 +60,7 @@ namespace Launcher.Module.Document.ViewModels
         {
             var name = e.Name;
             var path = e.Path;
-            _windowManager.ShowDialog(new DocumentViewModel(e));
+            new OpenDocument().ShowPdf(e, new DocAbout().DbPath);
         }
     }
 }
