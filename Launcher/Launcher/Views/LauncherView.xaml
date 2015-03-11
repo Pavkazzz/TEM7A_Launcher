@@ -74,16 +74,6 @@
                         <Button cal:Message.Attach="[Event Click] = [Action OpenModule($this)]">
                             <TextBlock Text="{Binding Name}" />
                         </Button>
-                        <!-- НЕ РАБОТАЕТ -->
-                        <!--<ListBox x:Name="Category">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal" >
-                                        <TextBlock Text="{Binding Description}"></TextBlock>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>-->
                     </Grid>
 
 
