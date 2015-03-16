@@ -268,7 +268,7 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Border BorderBrush="#FF169516" Grid.Column="0" Grid.Row="0" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" 
-                                Height="120" Margin="0" >
+                                Height="150" Margin="0" >
                             <!--<Label HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="" >-->
                             <ContentPresenter>
                                 <ContentPresenter.Resources>
@@ -282,7 +282,7 @@
                             </ContentPresenter>
                             <!--</Label>-->
                         </Border>
-                        <TextBlock Grid.Column="1" Margin="40,35,20,0" FontSize="15" Foreground="White" >
+                        <TextBlock Grid.Column="1" Margin="40,25,20,0" FontSize="15" Foreground="White" >
                             <ContentPresenter Content="{Binding Description}" >
                              <ContentPresenter.Resources>
                                     <Style TargetType="{x:Type TextBlock}">
