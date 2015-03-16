@@ -134,11 +134,6 @@
     </Style>
 
     <Style x:Key="DocumentListBoxStyle" TargetType="ListBoxItem">
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="Red" />
-            </Trigger>
-        </Style.Triggers>
         <Setter Property="FontSize" Value="22" />
         <Setter Property="Foreground" Value="Black" />
         <Setter Property="Background" Value="DarkGreen" />
@@ -152,7 +147,7 @@
                     <Border BorderBrush="DarkGreen" CornerRadius="2" BorderThickness="2" Margin="3">
                         <StackPanel>
                             <StackPanel.Style>
-                                <Style TargetType="StackPanel">
+                                <Style TargetType="{x:Type StackPanel}">
                                     <Style.Triggers>
                                         <Trigger Property="StackPanel.IsMouseOver" Value="True">
                                             <Setter Property="Background" Value="DarkGreen" />
