@@ -68,9 +68,11 @@
                 </Rectangle.OpacityMask>
             </Rectangle>
         </Grid>
-        <ListBox x:Name="ListBoxModules" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+        <ListBox x:Name="ListBoxModules" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
                  VerticalAlignment="Stretch" VerticalContentAlignment="Stretch"
-                 HorizontalAlignment="Stretch" Margin="0,0,0,0" ItemContainerStyle="{StaticResource MainWindowListBoxTemplate}" ItemsSource="{Binding ListBoxModules}">
+                 HorizontalAlignment="Stretch" Margin="0,0,0,0" 
+                 ItemContainerStyle="{StaticResource MainWindowListBoxTemplate}" ItemsSource="{Binding ListBoxModules}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                         <Button cal:Message.Attach="[Event Click] = [Action OpenModule($this)]" HorizontalContentAlignment="Left" >

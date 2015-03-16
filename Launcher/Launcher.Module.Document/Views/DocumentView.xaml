@@ -46,7 +46,8 @@
                     <MatrixTransform></MatrixTransform>
                 </Canvas.RenderTransform>-->
             <moonPdfLib:MoonPdfPanel  x:Name="PdfPanel" />
-                    <!--RenderTransform="{StaticResource InitialMatrixTransform}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsManipulationEnabled="true"-->
+            <!-- RenderTransform="{StaticResource InitialMatrixTransform}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsManipulationEnabled="true" -->
+                    
             <!--</Canvas>-->
         </Grid>
     </Grid>
