@@ -7,7 +7,7 @@
              mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="600">
     <Grid Background="{DynamicResource AccentColorBrush}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="133"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -26,6 +26,7 @@
         
         <!-- ListBox C отображением левого меню навигации гОСТ Ост -->
         <ListBox x:Name="CategoryList" Grid.Row="1" Grid.Column="0" ItemContainerStyle="{StaticResource ListBoxItemCategory}" 
+                 Margin="10"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled"
                  cal:Message.Attach="[Event SelectionChanged] = [Action Show]" Background="{DynamicResource AccentColorBrush}">
             <ListBox.ItemTemplate>
