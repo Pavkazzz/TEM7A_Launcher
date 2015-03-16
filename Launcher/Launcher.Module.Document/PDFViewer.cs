@@ -15,7 +15,7 @@ namespace Launcher.Module.Document
         public PDFViewer(string _filename)
         {
             InitializeComponent();
-            this.axAcroPDF1.LoadFile(_fileName);
+            this.axAcroPDF1.LoadFile(_filename);
         }
     }
 }
