@@ -30,11 +30,13 @@ namespace Launcher.Module.Document.Views
         {
             Dispatcher.BeginInvoke(new ThreadStart(delegate
             {
-                this.PdfPanel.OpenFile(message.FileName);
-                this.PdfPanel.ViewType = ViewType.SinglePage;
-                this.PdfPanel.Zoom(2.0);
-                //this.PdfPanel.Touche
-                this.PdfPanel.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
+                var uc = new PDFViewer(message.FileName);
+                this._windowsFormsHost.Child = uc;
+                //this.PdfPanel.OpenFile(message.FileName);
+                //this.PdfPanel.ViewType = ViewType.SinglePage;
+                //this.PdfPanel.Zoom(2.0);
+                ////this.PdfPanel.Touche
+                //this.PdfPanel.PageRowDisplay = PageRowDisplayType.ContinuousPageRows;
             }));
 
         }
