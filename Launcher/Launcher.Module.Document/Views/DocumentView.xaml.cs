@@ -80,20 +80,20 @@ namespace Launcher.Module.Document.Views
         //    e.Handled = true;
         //}
 
-        private void UIElement_OnManipulationStarting(object sender, ManipulationStartingEventArgs e)
-        {
-            e.ManipulationContainer = PdfPanel;
-            e.Mode = ManipulationModes.All;
-            throw new System.NotImplementedException();
-        }
+        //private void UIElement_OnManipulationStarting(object sender, ManipulationStartingEventArgs e)
+        //{
+        //    e.ManipulationContainer = PdfPanel;
+        //    e.Mode = ManipulationModes.All;
+        //    throw new System.NotImplementedException();
+        //}
 
-        private void UIElement_OnManipulationDelta(object sender, ManipulationDeltaEventArgs e)
-        {
-            UIElement element = (UIElement) e.Source;
-            Matrix matrix = ((MatrixTransform) element.RenderTransform).Matrix;
-            ManipulationDelta md = e.DeltaManipulation;
-            throw new System.NotImplementedException();
-        }
+        //private void UIElement_OnManipulationDelta(object sender, ManipulationDeltaEventArgs e)
+        //{
+        //    UIElement element = (UIElement) e.Source;
+        //    Matrix matrix = ((MatrixTransform) element.RenderTransform).Matrix;
+        //    ManipulationDelta md = e.DeltaManipulation;
+        //    throw new System.NotImplementedException();
+        //}
     }
 
 

@@ -9,7 +9,7 @@ namespace Launcher.Module.Document.ViewModels
     public class DocumentViewModel : Screen
     {
         private IEventAggregator _eventAggregator;
-        private MoonPdfPanel _panel;
+       // private MoonPdfPanel _panel;
         private DocFile _message;
         private IWindowManager _windowsManager;
 
@@ -30,15 +30,15 @@ namespace Launcher.Module.Document.ViewModels
 
         }
 
-        public MoonPdfPanel PdfPanel2
-        {
-            get { return _panel; }
-            set
-            {
-                _panel = value;
-                NotifyOfPropertyChange(() => PdfPanel2);
-            }
-        }
+        //public MoonPdfPanel PdfPanel2
+        //{
+        //    get { return _panel; }
+        //    set
+        //    {
+        //        _panel = value;
+        //        NotifyOfPropertyChange(() => PdfPanel2);
+        //    }
+        //}
 
         public void CloseWindow()
         {

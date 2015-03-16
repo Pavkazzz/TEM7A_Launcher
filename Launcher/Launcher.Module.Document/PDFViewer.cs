@@ -12,7 +12,7 @@ namespace Launcher.Module.Document
 {
     public partial class PDFViewer : UserControl
     {
-        public PDFViewer(string _filename)
+        public PDFViewer(string _fileName)
         {
             InitializeComponent();
             this.axAcroPDF1.LoadFile(_fileName);

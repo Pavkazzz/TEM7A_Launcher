@@ -36,8 +36,8 @@
         </StackPanel>
 
         <!--Сюда в старом образе у нас отображались данные -->
-        <Grid x:Name="gridViewerPDF"  Grid.Row="1" Grid.Column="1">
-            <WindowsFormsHost x:Name="_windowsFormsHost" HorizontalAlignment="Stretch" Height="auto" Margin="1" VerticalAlignment="Stretch" Width="auto"/>
+        <!--<Grid x:Name="gridViewerPDF"  >-->
+            <WindowsFormsHost Grid.Row="1" Grid.Column="1" x:Name="_pdfpanel" HorizontalAlignment="Stretch" Height="auto" Margin="1" VerticalAlignment="Stretch" Width="auto" Background="Black"/>
 
             <!--<Grid.RenderTransform>
                <MatrixTransform></MatrixTransform>
@@ -51,6 +51,6 @@
             <!-- RenderTransform="{StaticResource InitialMatrixTransform}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsManipulationEnabled="true" -->
                     
             <!--</Canvas>-->
-        </Grid>
+        <!--</Grid>-->
     </Grid>
 </Window>
