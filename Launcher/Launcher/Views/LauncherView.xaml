@@ -62,7 +62,8 @@
             <TextBlock x:Name="TextBlockAny" Grid.Column="7" Grid.RowSpan="2" TextWrapping="WrapWithOverflow"
                        Foreground="White" FontSize="15" HorizontalAlignment="Right" />
 
-            <Rectangle Fill="Black" Grid.Row="0"  Grid.RowSpan="2" Grid.Column="7" cal:Message.Attach="[Event MouseDown] = [Action Search]"  HorizontalAlignment="Stretch">
+            <Rectangle Fill="Black" Grid.Row="0" Grid.RowSpan="2" Grid.Column="7" Width="50" Margin="10"
+                       cal:Message.Attach="[Event MouseDown] = [Action Search]"  HorizontalAlignment="Right">
                 <Rectangle.OpacityMask>
                     <VisualBrush Visual="{StaticResource appbar_page_search}" Stretch="None" />
                 </Rectangle.OpacityMask>
@@ -71,7 +72,7 @@
         <ListBox x:Name="ListBoxModules" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
                  VerticalAlignment="Stretch" VerticalContentAlignment="Stretch"
-                 HorizontalAlignment="Stretch" Margin="0,0,0,0" 
+                 HorizontalAlignment="Stretch" Margin="0,0,0,0"  Background="{DynamicResource AccentColorBrush}"
                  ItemContainerStyle="{StaticResource MainWindowListBoxTemplate}" ItemsSource="{Binding ListBoxModules}">
             <ListBox.ItemTemplate>
                 <DataTemplate>

@@ -27,10 +27,10 @@
         <!-- ListBox C отображением левого меню навигации гОСТ Ост -->
         <ListBox x:Name="CategoryList" Grid.Row="1" Grid.Column="0" ItemContainerStyle="{StaticResource ListBoxItemCategory}" 
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                 cal:Message.Attach="[Event SelectionChanged] = [Action Show]">
+                 cal:Message.Attach="[Event SelectionChanged] = [Action Show]" Background="{DynamicResource AccentColorBrush}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Name}" TextWrapping="WrapWithOverflow"></TextBlock>
+                    <TextBlock Text="{Binding Name}" TextWrapping="WrapWithOverflow"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

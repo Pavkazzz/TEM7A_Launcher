@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style x:Key="ListBoxItemCategory" TargetType="ListBoxItem">
+        <Setter Property="Margin" Value="0, 10"></Setter>
         <Setter Property="Foreground" Value="White" />
         <Setter Property="FontSize" Value="22" />
         <Setter Property="Width" Value="130" />
@@ -251,6 +252,7 @@
 
     <!-- Основной стиль определения для горизонтального Listbox'а  1 Уровень. -->
     <Style x:Key="MainWindowListBoxTemplate" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Margin" Value="10"></Setter>
         <Setter Property="MinHeight" Value="110"/>
         <Setter Property="Padding" Value="13"/>
         <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
