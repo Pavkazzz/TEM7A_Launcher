@@ -45,6 +45,7 @@ namespace Launcher.Module.Document.ViewModels
             TryClose();
         }
     }
+
     public class FileNamePdfPanel
     {
         public FileNamePdfPanel(string fileName)
