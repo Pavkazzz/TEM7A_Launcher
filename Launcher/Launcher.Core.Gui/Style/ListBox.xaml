@@ -251,9 +251,8 @@
 
     <!-- Основной стиль определения для горизонтального Listbox'а  1 Уровень. -->
     <Style x:Key="MainWindowListBoxTemplate" TargetType="{x:Type ListBoxItem}">
-
-        <Setter Property="Padding" Value="1.3"/>
-        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+        <Setter Property="MinHeight" Value="110"/>
+        <Setter Property="Padding" Value="13"/>
         <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
         <Setter Property="Background" Value="#FF167423"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
@@ -262,19 +261,19 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                    <Grid Margin="1" Width="auto" Height="auto"  Background="#FF167423">
+                    <Grid Margin="1" Background="#FF167423">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="135"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Border BorderBrush="#FF169516" Grid.Column="0" Grid.Row="0" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" 
-                                Height="150" Margin="0" >
+                        <Border BorderBrush="#FF169516" Grid.Column="0" Grid.Row="0" BorderThickness="1" 
+                                Margin="0" >
                             <!--<Label HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="" >-->
                             <ContentPresenter>
                                 <ContentPresenter.Resources>
                                     <Style TargetType="{x:Type TextBlock}">
-                                        <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
-                                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                                        <Setter Property="TextWrapping" Value="Wrap"/>
+                                        <Setter Property="HorizontalAlignment" Value="Left"/>
                                         <Setter Property="VerticalAlignment" Value="Center"/>
                           
                                     </Style>
@@ -284,8 +283,9 @@
                         </Border>
                         <TextBlock Grid.Column="1" Margin="40,25,20,0" FontSize="15" Foreground="White" >
                             <ContentPresenter Content="{Binding Description}" >
-                             <ContentPresenter.Resources>
+                                <ContentPresenter.Resources>
                                     <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="10"></Setter>
                                         <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
                                         <Setter Property="HorizontalAlignment" Value="Center"/>
                                         <Setter Property="VerticalAlignment" Value="Center"/>
