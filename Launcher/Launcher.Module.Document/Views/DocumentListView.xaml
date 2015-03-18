@@ -11,7 +11,7 @@
         <ListBox x:Name="FileNameList" ItemContainerStyle="{StaticResource DocumentListBoxStyle}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Height="60" cal:Message.Attach="[Event MouseDown] = [Action ShowDoc($this)]">
+                    <StackPanel Height="60" cal:Message.Attach="[Event MouseDown] = [Action ShowDoc($this)]" Background="{DynamicResource AccentColorBrush}">
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
                 </DataTemplate>
