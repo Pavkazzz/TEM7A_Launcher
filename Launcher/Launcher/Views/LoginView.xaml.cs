@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Diagnostics;
+using System.Windows.Controls;
 
 namespace Launcher.Views
 {
@@ -10,6 +12,8 @@ namespace Launcher.Views
         public LoginView()
         {
             InitializeComponent();
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.System);
+            Process.Start(path + "\\osk.exe");
         }
     }
 }

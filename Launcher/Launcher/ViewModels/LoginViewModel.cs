@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.Composition;
+﻿using System;
+using System.ComponentModel.Composition;
+using System.Diagnostics;
 using Caliburn.Micro;
 using Launcher.Core;
 using MahApps.Metro.Controls;
@@ -16,6 +18,7 @@ namespace Launcher.ViewModels
         private string _password = string.Empty;
         private string _personalid = string.Empty;
         private bool _remember;
+        
         
 
 
@@ -60,6 +63,7 @@ namespace Launcher.ViewModels
 
         public void Login()
         {
+            
             //TODO Login
             if (_user.Login(PersonalNumber, Password, RememberMe))
             {
