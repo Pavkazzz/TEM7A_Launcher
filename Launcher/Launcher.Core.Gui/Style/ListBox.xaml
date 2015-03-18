@@ -133,14 +133,12 @@
         </Setter>
     </Style>
 
-    <Style x:Key="DocumentListBoxStyle" TargetType="ListBoxItem">
-        <Setter Property="FontSize" Value="22" />
-        <Setter Property="Foreground" Value="Black" />
-        <Setter Property="Background" Value="DarkGreen" />
-        <Setter Property="Height" Value="60" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    <Style x:Key="DocumentListBoxStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Margin" Value="4, 10"/>
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Background" Value="DarkGreen"/>
+        <Setter Property="MinHeight" Value="50"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
@@ -148,10 +146,12 @@
                         <StackPanel>
                             <StackPanel.Style>
                                 <Style TargetType="{x:Type StackPanel}">
+                                    <Setter Property="Background" Value="#58D65A"/>
+
                                     <Style.Triggers>
                                         <Trigger Property="StackPanel.IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="DarkGreen" />
-                                            <Setter Property="TextElement.Foreground" Value="White" />
+                                            <Setter Property="Background" Value="DarkGreen"/>
+                                            <Setter Property="TextElement.Foreground" Value="White"/>
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
@@ -159,7 +159,10 @@
                             <ContentPresenter>
                                 <ContentPresenter.Resources>
                                     <Style TargetType="{x:Type TextBlock}">
-                                        <Setter Property="TextWrapping" Value="Wrap"/>
+                                        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+                                        <Setter Property="Margin" Value="0, 5"></Setter>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
                                     </Style>
                                 </ContentPresenter.Resources>
                             </ContentPresenter>
@@ -168,7 +171,6 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-
     </Style>
 
     <ControlTemplate x:Key="ListBoxModuleTemplate" TargetType="{x:Type ListBoxItem}">
