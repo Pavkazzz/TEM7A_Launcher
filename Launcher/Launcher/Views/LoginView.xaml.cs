@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Net.PeerToPeer.Collaboration;
 using System.Windows.Controls;
+using System.Windows.Automation;
 
 namespace Launcher.Views
 {
@@ -12,6 +14,7 @@ namespace Launcher.Views
         public LoginView()
         {
             InitializeComponent();
+           // System.Windows.Automation.Peers.AutomationEvents.
             string path = Environment.GetFolderPath(Environment.SpecialFolder.System);
             Process.Start(path + "\\osk.exe");
         }
