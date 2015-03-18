@@ -16,6 +16,7 @@ namespace Launcher.ViewModels
         private string _password = string.Empty;
         private string _personalid = string.Empty;
         private bool _remember;
+        
 
 
         #region PropertyForView
