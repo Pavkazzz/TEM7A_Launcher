@@ -138,36 +138,46 @@
         <Setter Property="FontSize" Value="22"/>
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="Background" Value="DarkGreen"/>
-        <Setter Property="MinHeight" Value="50"/>
+        <Setter Property="MinHeight" Value="150"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"></Setter>
+        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                    <Border BorderBrush="DarkGreen" CornerRadius="2" BorderThickness="2" Margin="3">
-                        <StackPanel>
-                            <StackPanel.Style>
-                                <Style TargetType="{x:Type StackPanel}">
-                                    <Setter Property="Background" Value="#58D65A"/>
-
-                                    <Style.Triggers>
-                                        <Trigger Property="StackPanel.IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="DarkGreen"/>
-                                            <Setter Property="TextElement.Foreground" Value="White"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </StackPanel.Style>
-                            <ContentPresenter>
-                                <ContentPresenter.Resources>
-                                    <Style TargetType="{x:Type TextBlock}">
-                                        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
-                                        <Setter Property="Margin" Value="0, 5"></Setter>
-                                    <Setter Property="VerticalAlignment" Value="Center"/>
-                                    <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Border BorderBrush="DarkGreen" CornerRadius="2" BorderThickness="2" Margin="3" Grid.Column="1">
+                            <StackPanel >
+                                <StackPanel.Style>
+                                    <Style TargetType="{x:Type StackPanel}">
+                                        <Setter Property="Background" Value="#58D65A"/>
+                                        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="StackPanel.IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="DarkGreen"/>
+                                                <Setter Property="TextElement.Foreground" Value="White"/>
+                                            </Trigger>
+                                        </Style.Triggers>
                                     </Style>
-                                </ContentPresenter.Resources>
-                            </ContentPresenter>
-                        </StackPanel>
-                    </Border>
+                                </StackPanel.Style>
+                                <ContentPresenter >
+                                    <ContentPresenter.Resources>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Background" Value="Yellow"></Setter>
+                                            <Setter Property="Margin" Value="10"></Setter>
+                                            <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                        </Style>
+                                    </ContentPresenter.Resources>
+                                </ContentPresenter>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -284,6 +294,7 @@
                             <ContentPresenter Content="{Binding Description}" >
                                 <ContentPresenter.Resources>
                                     <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Background" Value="Yellow"></Setter>
                                         <Setter Property="Margin" Value="10"></Setter>
                                         <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
                                         <Setter Property="HorizontalAlignment" Value="Center"/>

@@ -38,7 +38,6 @@ namespace Launcher.ViewModels
             }
 
             ListBoxModules = _model.Modules;
-
         }
 
         public void OpenModule()
