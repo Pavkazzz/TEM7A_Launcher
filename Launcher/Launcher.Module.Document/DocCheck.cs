@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace Launcher.Module.Document
 
             //Chech Search
             //TODO Parallel
-            var dbDocSearch = db.SqlSelect(@"Select * from Search", new List<string>(){"Search.id"});
+            var dbDocSearch = db.SqlSelect(@"Select * from Search", new List<string>(){"id"});
 
             var dbDocument = db.SqlSelect(@"Select * from Document
                                             ", new List<string>() {"id"});
@@ -28,7 +29,7 @@ namespace Launcher.Module.Document
             var dbDocCategory = db.SqlSelect(@"Select Path from Category", new List<string>() {"Path"});
 
             //TODO if
-            if (dbDocSearch.Count > 0)//== dbDocument.Count)
+            if (dbDocSearch.Count == 0)//== dbDocument.Count)
             {
                 foreach (var dbpath in dbDocCategory)
                 {
@@ -39,7 +40,7 @@ namespace Launcher.Module.Document
                         string[] files = Directory.GetFiles(path, "*.pdf", SearchOption.AllDirectories);
                         foreach (var file in files)
                         {
-                            var text = ParsePdfUsingPdfBox(file);
+                            var text = ParsePdfUsingPdfBox(file).ToLower(new CultureInfo("ru-RU"));
                             var fileName = Path.GetFileName(file);
                             var dbIndexOfSearch = db.SqlSelect(string.Format(@"select id, PathName from Document where PathName == '{0}'", fileName), new List<string>(){"id"});
                             if (dbIndexOfSearch.Count > 0)

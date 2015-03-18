@@ -7,7 +7,6 @@
              xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="800">
-
     <Grid x:Name="MainGrid" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
           ScrollViewer.VerticalScrollBarVisibility="Hidden">
         <Grid.RowDefinitions>
@@ -52,26 +51,48 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Label Content="КАЛУГАПУТЬМАШ" Foreground="Black" FontSize="24" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="2"
-                   HorizontalAlignment="Left" VerticalAlignment="Top" FontStyle="Italic" FontWeight="Bold" />
+            <TextBlock Text="Проектно-конструкторское бюро железнодорожной техники" Foreground="Black" FontSize="24" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" FontWeight="Bold" Width="auto" Height="auto" TextWrapping="Wrap" Margin="5,0,0,10" Grid.RowSpan="2" />
+            <!--<Label Content="Проектно конструкторское бюро Железнодорожной техники" Foreground="Black" FontSize="24" Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="0"
+                   HorizontalAlignment="Left" VerticalAlignment="Top" FontStyle="Italic" FontWeight="Bold" Width="690" Height="68"/>-->
             <Label x:Name="DateTimeLabel" HorizontalAlignment="Right" Grid.Column="6" Grid.Row="0" Grid.RowSpan="2"
                    HorizontalContentAlignment="Right" Foreground="Black" FontSize="17" VerticalAlignment="Bottom" />
-            <Label x:Name="FIO" Content="СИНАРА" Grid.Column="5" Grid.ColumnSpan="3" Grid.Row="0"
-                   Foreground="Black" HorizontalContentAlignment="Right" FontSize="24" FontStyle="Italic" FontWeight="Bold" />
+            <!--<Label x:Name="FIO" Content="СИНАРА" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="0"
+                   Foreground="Black" HorizontalContentAlignment="Center" FontSize="24" FontStyle="Italic" FontWeight="Bold" />-->
             <TextBlock x:Name="TextBlockAny" Grid.Column="7" Grid.RowSpan="2" TextWrapping="WrapWithOverflow"
                        Foreground="White" FontSize="15" HorizontalAlignment="Right" />
 
-            <TextBox x:Name="TextBoxSearch" controls:TextboxHelper.Watermark="Поиск" Grid.Row="0" Grid.Column="6"
-                     Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalAlignment="Center" FontSize="17"
-                     cal:Message.Attach="[Event GotFocus] = [Action Search]; [Event TextChanged] = [Action Search(TextBoxSearch.Text)]">
-                <TextBox.Style>
-                    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource SearchMetroTextBox}" />
-                </TextBox.Style>
-            </TextBox>
+            <Rectangle Fill="Black" Grid.Row="0" Grid.RowSpan="2" Grid.Column="7" Width="50" Margin="10"
+                       cal:Message.Attach="[Event MouseDown] = [Action Search]"  HorizontalAlignment="Right">
+                <Rectangle.OpacityMask>
+                    <VisualBrush Visual="{StaticResource appbar_page_search}" Stretch="None" />
+                </Rectangle.OpacityMask>
+            </Rectangle>
         </Grid>
-        <ListBox x:Name="ListBoxModules" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                 HorizontalAlignment="Stretch" Margin="0,0,0,0" ItemContainerStyle="{StaticResource MainWindowListBoxTemplate}">
+        <ListBox x:Name="ListBoxModules" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                 VerticalAlignment="Stretch" VerticalContentAlignment="Stretch"
+                 HorizontalAlignment="Stretch" Margin="0,0,0,0"  Background="{DynamicResource AccentColorBrush}"
+                 ItemContainerStyle="{StaticResource MainWindowListBoxTemplate}" ItemsSource="{Binding ListBoxModules}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                        <Button cal:Message.Attach="[Event Click] = [Action OpenModule($this)]" HorizontalContentAlignment="Left" >
+                            <TextBlock FontSize="15" Text="{Binding Name}" HorizontalAlignment="Left" TextAlignment="Left" TextWrapping="Wrap"  />
+                        </Button>
+                        
+                        <!--<TextBlock Grid.Column="1" Text="{Binding Description}"></TextBlock>-->
+                        <!--<ListBox x:Name="Category">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" >
+                                        <TextBlock Text="{Binding Description}"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>-->
         
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
 
         <!--<ListBox x:Name="CurrentModuleState" Grid.Row="1" Grid.RowSpan="7" Grid.Column="0"

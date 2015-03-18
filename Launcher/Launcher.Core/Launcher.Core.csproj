@@ -54,8 +54,19 @@
     <Reference Include="Caliburn.Micro">
       <HintPath>..\packages\Caliburn.Micro.Core.2.0.1\lib\net45\Caliburn.Micro.dll</HintPath>
     </Reference>
+    <Reference Include="Caliburn.Micro.Platform">
+      <HintPath>..\packages\Caliburn.Micro.2.0.1\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
     <Reference Include="MahApps.Metro">
       <HintPath>..\packages\MahApps.Metro.1.0.1-ALPHA047\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MoonPdfLib, Version=0.3.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\MoonPdfLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MouseKeyboardActivityMonitor, Version=3.0.1.29653, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\MouseKeyboardActivityMonitor.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -77,7 +88,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\Document\OpenDocument.cs" />
     <Compile Include="Db\DataBase.cs" />
+    <Compile Include="HelperClass\DocFile.cs" />
     <Compile Include="IModule.cs" />
     <Compile Include="IModuleName.cs" />
     <Compile Include="ISearch.cs" />
@@ -91,16 +104,17 @@
     <None Include="Resources\Entypo.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Lib\AxInterop.AcroPDFLib.dll" />
     <Content Include="Lib\bcprov-jdk15-1.44.dll" />
     <Content Include="Lib\commons-logging.dll" />
     <Content Include="Lib\fontbox-1.8.7.dll" />
-    <Content Include="Lib\GhostscriptSharp.dll" />
     <Content Include="Lib\IKVM.OpenJDK.Core.dll" />
     <Content Include="Lib\IKVM.OpenJDK.Security.dll" />
     <Content Include="Lib\IKVM.OpenJDK.SwingAWT.dll" />
     <Content Include="Lib\IKVM.OpenJDK.Text.dll" />
     <Content Include="Lib\IKVM.OpenJDK.Util.dll" />
     <Content Include="Lib\IKVM.Runtime.dll" />
+    <Content Include="Lib\Interop.AcroPDFLib.dll" />
     <Content Include="Lib\libmupdf.dll" />
     <Content Include="Lib\MoonPdfLib.dll" />
     <Content Include="Lib\MouseKeyboardActivityMonitor.dll" />
@@ -115,9 +129,7 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Components\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

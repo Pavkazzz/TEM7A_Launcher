@@ -24,5 +24,6 @@ namespace Launcher.Views
         {
             InitializeComponent();
         }
+
     }
 }

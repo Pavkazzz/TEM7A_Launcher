@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using Caliburn.Micro;
 using Launcher.Core;
 using Launcher.Module.Inspection.ViewModels;
 
@@ -9,12 +10,14 @@ namespace Launcher.Module.Inspection
     
     internal class AboutInspection : IModuleName
     {
-        private AboutInspection()
+        public AboutInspection()
         {
-            Name = @"Модуль приемки локоматива";
-            Description = @"Приемка лааллалал";
+            Name = @"Расчёт характеристик электрического тормоза";
+            Description = @"Модуль «РАСЧЕТ ХАРАКТЕРИСТИК ЭЛЕКТРИЧЕСКОГО ТОРМОЗА» предназначен для расчета электромеханических характеристик локомотива с электродвигателями постоянного тока с последовательным возбуждением при электрическом торможении";
             ViewModel = typeof (MainInspectionViewModel);
             DbPath = String.Empty;
+
+            //TODO Category
         }
 
         public string Name { get; set; }

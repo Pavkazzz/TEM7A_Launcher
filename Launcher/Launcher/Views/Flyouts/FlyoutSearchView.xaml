@@ -16,20 +16,60 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <TextBox FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" x:Name="SearchString" Grid.Row="0" Margin="10" controls:TextboxHelper.Watermark="Поиск"
+        <TextBox FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" x:Name="SearchString" Grid.Row="0" Margin="10,0,10,30" controls:TextboxHelper.Watermark="Поиск"
                  FontSize="28"
                  cal:Message.Attach="[Event TextChanged] = [Action Search(SearchString.Text)]">
             <TextBox.Style>
                 <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource SearchMetroTextBox}" />
             </TextBox.Style>
         </TextBox>
-        
+
         <ListBox x:Name="SearchResultList" Grid.Row="1" Margin="10" FontSize="24">
-            <ListBox.ItemTemplate>
+            
+        <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Name}" />
+                    <StackPanel Background="#404040" cal:Message.Attach="[Event MouseDown] = [Action OpenSearch($this)]">
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
+        
+            
         </ListBox>
+        <!--<TreeView FontSize="20" VirtualizingPanel.IsVirtualizing="true" VirtualizingPanel.VirtualizationMode="Recycling" Background="Green" Margin="0,50.3,0,0" Grid.RowSpan="2">
+            
+
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Path=Module}">
+                    <TextBlock Text="{Binding Path=ModuleSearchName}"/>
+                    <HierarchicalDataTemplate.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=ModelName}"></TextBlock>
+                        </DataTemplate>
+                    </HierarchicalDataTemplate.ItemTemplate>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"/>
+                    <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter Property="BorderBrush" Value="LightGreen"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TreeView.ItemContainerStyle>
+            --><!--<TreeView.Resources>
+                <DataTemplate DataType="TreeViewItem">
+                    <Border Width="150" BorderBrush="RoyalBlue" Background="Transparent" BorderThickness="1" CornerRadius="2" Margin="2" Padding="2">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock 
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </TreeView.Resources>--><!--
+            
+        </TreeView>-->
     </Grid>
 </UserControl>
