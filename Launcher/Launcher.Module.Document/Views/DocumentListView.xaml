@@ -6,13 +6,12 @@
              xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    
-    <Grid>
-        <ListBox x:Name="FileNameList" ItemContainerStyle="{StaticResource DocumentListBoxStyle}">
+    <Grid Background="{DynamicResource HighlightBrush}">        
+        <ListBox x:Name="FileNameList" ItemContainerStyle="{StaticResource DocumentListBoxStyle}" HorizontalContentAlignment="Stretch">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Height="60" cal:Message.Attach="[Event MouseDown] = [Action ShowDoc($this)]" Background="{DynamicResource AccentColorBrush}">
-                        <TextBlock Text="{Binding Name}" />
+                    <StackPanel cal:Message.Attach="[Event MouseDown] = [Action ShowDoc($this)]" Background="{DynamicResource AccentColorBrush}">
+                        <TextBlock Text="{Binding Name}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
