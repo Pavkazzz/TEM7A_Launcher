@@ -44,6 +44,7 @@ namespace Launcher.Module.Document.ViewModels
         public MainDocViewModel()
         {
             CategoryList = new BindableCollection<Category>();
+
             if (File.Exists(Path.GetFullPath(new DocAbout().DbPath)))
             {
                 var db = new DataBase(Path.GetFullPath(new DocAbout().DbPath));

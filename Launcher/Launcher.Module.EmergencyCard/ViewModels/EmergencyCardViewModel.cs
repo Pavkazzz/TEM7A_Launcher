@@ -39,10 +39,10 @@ namespace Launcher.Module.EmergencyCard.ViewModels
             _eventAggregator = eventAggregator;
             _windowManager = windowManager;
             var db = new DataBase(Path.GetFullPath(new EmergencyCardAbout().DbPath));
-            var select = db.SqlSelect("Select Name_Card, Conditional_Number, Shipping_Name, ClassificationNumber, PathToFile from EmergencyCard", new List<string>() { "Name_Card", "Conditional_Number", "Shipping_Name", "ClassificationNumber", "PathToFile"});
+            var select = db.SqlSelect("Select Name_Card, Conditional_Number, Shipping_Name, ClassificationNumber, PathToFile from EmergencyCard", new List<string>() { "Name_Card", "Conditional_Number", "Shipping_Name", "ClassificationNumber", "PathToFile" });
             foreach (var row in select)
             {
-               EmergencyCardListBox.Add(new EmergencyCardFileClass(row["Name_Card"], row["Conditional_Number"], row["Shipping_Name"],row["ClassificationNumber"],row["PathToFile"] )); 
+                EmergencyCardListBox.Add(new EmergencyCardFileClass(row["Name_Card"], row["Conditional_Number"], row["Shipping_Name"], row["ClassificationNumber"], row["PathToFile"]));
             }
         }
         /// <summary>
