@@ -45,6 +45,9 @@ namespace Launcher.Module.EmergencyCard.ViewModels
                EmergencyCardListBox.Add(new EmergencyCardFileClass(row["Name_Card"], row["Conditional_Number"], row["Shipping_Name"],row["ClassificationNumber"],row["PathToFile"] )); 
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
 
         public void CloseWindow()
         {
