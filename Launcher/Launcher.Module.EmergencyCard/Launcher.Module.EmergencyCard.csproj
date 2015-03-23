@@ -70,8 +70,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmergencyCardAbout.cs" />
+    <Compile Include="EmergencyCardFileClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\EmergencyCardViewModel.cs" />
     <Compile Include="ViewModels\MainEmergencyCardViewModel.cs" />
+    <Compile Include="Views\EmergencyListView.xaml.cs">
+      <DependentUpon>EmergencyListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainEmergencyCardView.xaml.cs">
       <DependentUpon>MainEmergencyCardView.xaml</DependentUpon>
     </Compile>
@@ -83,6 +88,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\EmergencyListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainEmergencyCardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
