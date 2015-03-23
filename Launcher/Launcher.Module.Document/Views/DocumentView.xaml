@@ -37,8 +37,8 @@
 
         <!--Сюда в старом образе у нас отображались данные -->
         <Grid x:Name="gridViewerPDF"  Grid.Row="1" Grid.Column="1">
-            <WindowsFormsHost x:Name="PdfPanel" HorizontalAlignment="Stretch" Height="auto" Margin="1" VerticalAlignment="Stretch" Width="auto"/>
-
+            <!--<WindowsFormsHost x:Name="PdfPanel" HorizontalAlignment="Stretch" Height="auto" Margin="1" VerticalAlignment="Stretch" Width="auto"/>-->
+            <WebBrowser x:Name="PdfBrowser"></WebBrowser>
             <!--<Grid.RenderTransform>
                <MatrixTransform></MatrixTransform>
            </Grid.RenderTransform>-->
