@@ -69,6 +69,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryCard.cs" />
     <Compile Include="EmergencyCardAbout.cs" />
     <Compile Include="EmergencyCardFileClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,12 +83,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Launcher.Core\Launcher.Core.csproj">
-      <Project>{BD1B8356-08B1-4B0C-B08D-D2504D954BE2}</Project>
-      <Name>Launcher.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Page Include="Views\EmergencyCardListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -99,6 +94,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="EmergencyCard.sqlite" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Launcher.Core\Launcher.Core.csproj">
+      <Project>{bd1b8356-08b1-4b0c-b08d-d2504d954be2}</Project>
+      <Name>Launcher.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
