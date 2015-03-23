@@ -383,7 +383,7 @@
                                     </Style>
                                 </ContentPresenter.Resources>
                             </ContentPresenter>
-                            <!--</Label>-->
+                            <!--</Label>--> <!--ss-->
                         </Border>
                         <!--<TextBlock Grid.Column="1" Margin="40,25,20,0" FontSize="15" Foreground="White" >
                             <ContentPresenter Content="{Binding CategoryName}" >
