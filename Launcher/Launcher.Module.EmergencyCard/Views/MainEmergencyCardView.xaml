@@ -3,14 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" Height="567.045" Width="721.591">
+             xmlns:cal="http://www.caliburnproject.org"
+             mc:Ignorable="d" Height="auto" Width="auto" d:DesignWidth="900" d:DesignHeight="900">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="135"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="CategoryEmergencyLisBox" Grid.Column="0" Background="AntiqueWhite"/>
-        <ListBox x:Name="ItemEmergencyListBox" Grid.Column="1" Background="Coral"></ListBox>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="TopStackPanel" Grid.Column="0" Grid.Row="0"  cal:Message.Attach="[Event MouseDown] = [Action CloseWindow()]" Background="{DynamicResource AccentColorBrush}">
+            <Canvas Width="76" Height="{Binding Height, ElementName=TopStackPanel}" Margin="0,15" Clip="F1 M 0,0L 76,0L 76,76L 0,76L 0,0">
+                <Path Width="25.3333" Height="{Binding Height, ElementName=TopStackPanel}"  Stretch="Fill" Fill="{DynamicResource BlackBrush}"
+              Data="F1 M 35.8724,37.6042L 39.0391,40.7708L 50.5182,51.8542L 40.2266,51.8542L 25.1849,37.6041L 40.2266,23.3542L 50.5182,23.3542L 39.0391,34.4375L 35.8724,37.6042 Z " />
+            </Canvas>
+        </StackPanel>
+        <TextBlock x:Name="NameOfModuleTextBlock"  Grid.Column="1" Grid.Row="0" Background="{DynamicResource AccentColorBrush}" Foreground="White" FontSize="22" Text="Модуль &quot;Аварийные карточки&quot;" />
+        <ListBox x:Name="CategoryEmergencyLisBox" Grid.Column="0" Grid.Row="1" ItemContainerStyle="{StaticResource ListBoxItemCategory}">
+           
+        </ListBox>
+        <!--<ListBox x:Name="ItemEmergencyListBox" Grid.Column="1" Grid.Row="1" Background="Coral"></ListBox>-->
+        <ContentControl x:Name="ActiveItem" Grid.Row="1" Grid.Column="1"></ContentControl>
             
     </Grid>
 </UserControl>
