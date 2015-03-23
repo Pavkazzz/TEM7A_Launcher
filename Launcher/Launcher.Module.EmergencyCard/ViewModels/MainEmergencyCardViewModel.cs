@@ -12,6 +12,10 @@ namespace Launcher.Module.EmergencyCard.ViewModels
     [Export(typeof (IModule))]
     public sealed class MainEmergencyCardViewModel : Conductor<IScreen>.Collection.OneActive, IModule
     {
+        MainEmergencyCardViewModel()
+        {
+            ActivateItem(IoC.Get<EmergencyCardListViewModel>());
+        }
         public void CloseWindow()
         {
             TryClose();

@@ -11,8 +11,8 @@ using Launcher.Core.HelperClass;
 
 namespace Launcher.Module.EmergencyCard.ViewModels
 {
-    [Export(typeof(IModule))]
-    public sealed class EmergencyCardViewModel : Conductor<IScreen>.Collection.OneActive, IModule
+    [Export(typeof(EmergencyCardListViewModel))]
+    public sealed class EmergencyCardListViewModel : Conductor<IScreen>.Collection.OneActive, IModule
     {
         private IEventAggregator _eventAggregator;
         private IWindowManager _windowManager;
@@ -34,7 +34,7 @@ namespace Launcher.Module.EmergencyCard.ViewModels
 
 
         [ImportingConstructor]
-        public EmergencyCardViewModel(IEventAggregator eventAggregator, IWindowManager windowManager)
+        public EmergencyCardListViewModel(IEventAggregator eventAggregator, IWindowManager windowManager)
         {
             _eventAggregator = eventAggregator;
             _windowManager = windowManager;
@@ -45,9 +45,6 @@ namespace Launcher.Module.EmergencyCard.ViewModels
                EmergencyCardListBox.Add(new EmergencyCardFileClass(row["Name_Card"], row["Conditional_Number"], row["Shipping_Name"],row["ClassificationNumber"],row["PathToFile"] )); 
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
 
         public void CloseWindow()
         {
