@@ -17,7 +17,7 @@ namespace Launcher.Module.EmergencyCard
                 @"Модуль «Аварийные карточки» предназначен для ...";
             ViewModel = typeof (MainEmergencyCardViewModel);
             //TODO BD
-            DbPath = "../../../../Launcher.Module.EmergencyCard/...";
+            DbPath = "../../../../Launcher.Module.EmergencyCard/EmergencyCard.sqlite";
         }
 
 
