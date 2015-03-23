@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.IO;
 using Caliburn.Micro;
@@ -54,7 +55,6 @@ namespace Launcher.Module.Document.ViewModels
         {
             //view для документа.
             //_eventAggregator.PublishOnBackgroundThread(IoC.Get<DocumentViewModel>());
-
             new OpenDocument().ShowPdf(doc, new DocAbout().DbPath);
 
         }

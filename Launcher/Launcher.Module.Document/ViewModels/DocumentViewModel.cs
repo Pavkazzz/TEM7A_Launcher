@@ -27,17 +27,6 @@ namespace Launcher.Module.Document.ViewModels
         {
             _eventAggregator.PublishOnBackgroundThread(new FileNamePdfPanel(_message.Path));
             //Сделать так же
-
-        }
-
-        public MoonPdfPanel PdfPanel2
-        {
-            get { return _panel; }
-            set
-            {
-                _panel = value;
-                NotifyOfPropertyChange(() => PdfPanel2);
-            }
         }
 
         public void CloseWindow()

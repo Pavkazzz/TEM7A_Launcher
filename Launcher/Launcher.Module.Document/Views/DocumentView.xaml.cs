@@ -31,7 +31,9 @@ namespace Launcher.Module.Document.Views
             Dispatcher.BeginInvoke(new ThreadStart(delegate
             {
                 var uc = new PDFViewer(message.FileName);
-                this.PdfPanel.Child = uc;
+                //this.PdfPanel.Child = uc;
+                //PdfBrowser.NavigateToString(string.Format(@"<HTML><IFRAME SCROLLING=""YES"" SRC=""{0}""></IFRAME></HTML>", message.FileName));
+                PdfBrowser.Navigate(new System.Uri(message.FileName));
             }));
         }
     }
