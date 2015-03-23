@@ -3,19 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
              xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Background="{DynamicResource HighlightBrush}">
-        <ListBox x:Name="EmergencyCardListBox" ItemContainerStyle="{StaticResource DocumentListBoxStyle}" HorizontalContentAlignment="Stretch">
+        <ListBox x:Name="EmergencyCardListBox">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Width="{Binding (FrameworkElement.ActualWidth), RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}"
+                        ItemWidth="{Binding (ListView.View).ItemWidth, RelativeSource={RelativeSource AncestorType=ListView}}"
+                        MinWidth="{Binding ItemWidth, RelativeSource={RelativeSource Self}}" 
+                        ItemHeight="{Binding (ListView.View).ItemHeight, RelativeSource={RelativeSource AncestorType=ListView}}" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <!--<StackPanel cal:Message.Attach="[Event MouseDown] = [Action ShowDoc($this)]" Background="{DynamicResource AccentColorBrush}">
-                        <TextBlock Text="{Binding Name}"/>
-                    </StackPanel>-->
-                    <TextBlock Text="{Binding Name_Card}"></TextBlock>
+                <DataTemplate >
+                    <controls:Tile TiltFactor="1" Title="{Binding Name_Card}" MinWidth="250" 
+                                   cal:Message.Attach="[Event Click] = [Action OpenDoc($this)]"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
+            <!--<ListBox.ItemTemplate>
+                <DataTemplate>
+                    --><!--<StackPanel cal:Message.Attach="[Event MouseDown] = [Action ShowDoc($this)]" Background="{DynamicResource AccentColorBrush}">
+                        <TextBlock Text="{Binding Name}"/>
+                    </StackPanel>--><!--
+                    <TextBlock Text="{Binding Name_Card}"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>-->
         </ListBox>
             
     </Grid>
