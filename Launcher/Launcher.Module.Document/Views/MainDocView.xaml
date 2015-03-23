@@ -37,16 +37,6 @@
         </ListBox>
 
         <ContentControl x:Name="ActiveItem" Grid.Row="1" Grid.Column="1"></ContentControl>
-
-        <!-- Тут должно быть список из модулей ГОСт или ОСТ Документы в общем говоря.-->
-        <!--<ListBox Background="{DynamicResource AccentColorBrush}" x:Name="CategoryList" ItemContainerStyle="{StaticResource ListBoxItemCategory}" 
-                 cal:Message.Attach="[Event SelectionChanged] = [Action Show]" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Name}" TextWrapping="WrapWithOverflow"></TextBlock>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <ContentControl Grid.Column="1" x:Name="ActiveItem"></ContentControl>-->
+        
     </Grid>
 </UserControl>

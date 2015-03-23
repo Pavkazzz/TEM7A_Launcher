@@ -14,9 +14,7 @@ namespace Launcher.Views
         public LoginView()
         {
             InitializeComponent();
-           // System.Windows.Automation.Peers.AutomationEvents.
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.System);
-            Process.Start(path + "\\osk.exe");
+
         }
     }
 }

@@ -30,7 +30,6 @@ namespace Launcher.ViewModels
             this.Position = Position.Right;
             this.FlyoutWidth = 400;
 
-
             _searches = search.ToList();
 
             //TODO TreeView
@@ -59,8 +58,8 @@ namespace Launcher.ViewModels
 
             //WorkAround Search OpenSearch
             //TODO переделать
-            var doc = new OpenDocument();
-            doc.ShowPdf(new DocFile(o.Name, o.FilePath), "");
+            //var doc = new OpenDocument();
+            //doc.ShowPdf(new DocFile(o.Name, o.FilePath), "");
         }
 
         public string SearchString
