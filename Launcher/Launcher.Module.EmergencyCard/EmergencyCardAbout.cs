@@ -34,4 +34,3 @@ namespace Launcher.Module.EmergencyCard
     }
 }
 
-}
