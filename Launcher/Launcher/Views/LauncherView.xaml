@@ -69,6 +69,7 @@
                 </Rectangle.OpacityMask>
             </Rectangle>
         </Grid>
+        
         <ListBox x:Name="ListBoxModules" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="7"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
                  VerticalAlignment="Stretch" VerticalContentAlignment="Stretch"
