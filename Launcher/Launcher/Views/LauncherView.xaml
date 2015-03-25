@@ -77,21 +77,18 @@
                  ItemContainerStyle="{StaticResource MainWindowListBoxTemplate}" ItemsSource="{Binding ListBoxModules}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                        <Button cal:Message.Attach="[Event Click] = [Action OpenModule($this)]" HorizontalContentAlignment="Left" >
-                            <TextBlock FontSize="15" Text="{Binding Name}" HorizontalAlignment="Left" TextAlignment="Left" TextWrapping="Wrap"  />
-                        </Button>
-                        
-                        <!--<TextBlock Grid.Column="1" Text="{Binding Description}"></TextBlock>-->
-                        <!--<ListBox x:Name="Category">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal" >
-                                        <TextBlock Text="{Binding Description}"></TextBlock>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>-->
-        
+                    <Button cal:Message.Attach="[Event Click] = [Action OpenModule($this)]" HorizontalContentAlignment="Left"  >
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="{Binding Coloring}"></SolidColorBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                        <TextBlock FontSize="15" Text="{Binding Name}" HorizontalAlignment="Left" TextAlignment="Left" TextWrapping="Wrap"  />
+                    </Button>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

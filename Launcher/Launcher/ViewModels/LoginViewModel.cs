@@ -63,7 +63,7 @@ namespace Launcher.ViewModels
 
         public void Login()
         {
-            
+            KeyboardProperty.KeyboardClose();
             //TODO Login
             if (_user.Login(PersonalNumber, Password, RememberMe))
             {

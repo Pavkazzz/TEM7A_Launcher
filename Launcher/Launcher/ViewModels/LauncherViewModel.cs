@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Media;
 using Caliburn.Micro;
 using Launcher.Core;
 using Launcher.Model;
@@ -29,7 +30,7 @@ namespace Launcher.ViewModels
 
             _eventAggregator.Subscribe(this);
 
-            foreach (var moduleName in aboutModule)
+            foreach (var moduleName in aboutModule.OrderBy(s => s.PositionNumber))
             {
                 if (moduleName != null)
                 {
@@ -102,6 +103,7 @@ namespace Launcher.ViewModels
         private IWindowManager _windowManager;
         private MainModel _model;
         private BindableCollection<ModuleItem> _myModules;
+        //private BindableCollection<Color> _color; 
         private ModuleItem _selectedModule;
 
         public BindableCollection<ModuleItem> ListBoxModules
@@ -113,6 +115,16 @@ namespace Launcher.ViewModels
                 NotifyOfPropertyChange(() => ListBoxModules);
             }
         }
+
+        //public BindableCollection<ModuleItem> Colors
+        //{
+        //    get { return _color; }
+        //    set
+        //    {
+        //        _color = value;
+        //        NotifyOfPropertyChange(()=>ListBoxModules);
+        //    }
+        //} 
 
         public ModuleItem SelectedListBoxModules
         {
