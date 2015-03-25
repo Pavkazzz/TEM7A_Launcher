@@ -54,7 +54,7 @@ namespace Launcher.Module.Document
         {
             Name = @"Руководство по эксплуатации";
             Description = @"Модуль «РУКОВОДСТВО ПО ЭКСПЛУАТАЦИИ» предназначен для предоставления в интерактивном виде технического описания конструкций, узлов и деталей сложных технических систем, а также технические характеристики, правила эксплуатации, технического обслуживания, хранения и утилизации сложных технических систем и их компонентов ";
-            ViewModel = typeof (MainDocViewModel);
+            ViewModel = typeof (DevelopedModuleViewModel);
             DbPath = "../../../../Launcher.Module.Document/document.sqlite";
         }
 
@@ -77,7 +77,7 @@ namespace Launcher.Module.Document
         {
             Name = @"Каталог деталей";
             Description = @"Модуль «КАТАЛОГ ДЕТАЛЕЙ» предназначен для предоставления в интерактивном виде справочной и иллюстрационной информации по деталям, сборочным единицам, комплексам и комплектам, входящим в состав сложных технических систем ";
-            ViewModel = typeof(MainDocViewModel);
+            ViewModel = typeof(DevelopedModuleViewModel);
             DbPath = "../../../../Launcher.Module.Document/document.sqlite";
         }
 
@@ -100,7 +100,7 @@ namespace Launcher.Module.Document
         {
             Name = @"Приемка локомотива";
             Description = @"Модуль «ПРИЕМКА ЛОКОМОТИВА» предназначен для проведения приемки и сдачи локомотива, проведения технического обслуживания ТО-1, контроля над последовательностью и выполнением регламентных работ, формирования электронных отчетов по выполнению работ";
-            ViewModel = typeof(MainDocViewModel);
+            ViewModel = typeof(DevelopedModuleViewModel);
             DbPath = "../../../../Launcher.Module.Document/document.sqlite";
         }
 

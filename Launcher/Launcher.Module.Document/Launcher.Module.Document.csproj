@@ -120,6 +120,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs" />
     <Compile Include="DocAbout.cs" />
     <Compile Include="DocCheck.cs" />
     <Compile Include="PDFViewer.cs">
@@ -129,11 +130,15 @@
       <DependentUpon>PDFViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Search.cs" />
+    <Compile Include="ViewModels\DevelopedModuleViewModel.cs" />
     <Compile Include="ViewModels\DocumentListViewModel.cs" />
     <Compile Include="ViewModels\DocumentViewModel.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="ViewModels\MainDocViewModel.cs" />
     <Compile Include="ViewModels\OpenDocument.cs" />
+    <Compile Include="Views\DevelopedModuleView.xaml.cs">
+      <DependentUpon>DevelopedModuleView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DocumentListView.xaml.cs">
       <DependentUpon>DocumentListView.xaml</DependentUpon>
     </Compile>
@@ -153,6 +158,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\DevelopedModuleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DocumentListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
