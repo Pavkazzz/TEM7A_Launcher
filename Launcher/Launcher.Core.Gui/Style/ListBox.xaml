@@ -288,8 +288,7 @@
                         <TextBlock Grid.Column="1" Margin="40,25,20,0" FontSize="15" Foreground="White" >
                             <ContentPresenter Content="{Binding Description}" >
                                 <ContentPresenter.Resources>
-                                    <Style TargetType="{x:Type TextBlock}">
-                                        <Setter Property="Background" Value="Yellow"></Setter>
+                                    <Style TargetType="{x:Type TextBlock}">                 
                                         <Setter Property="Margin" Value="10"></Setter>
                                         <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
                                         <Setter Property="HorizontalAlignment" Value="Center"/>
