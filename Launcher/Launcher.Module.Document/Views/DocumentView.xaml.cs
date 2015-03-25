@@ -1,12 +1,19 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using Caliburn.Micro;
+using System.IO;
+using System.Runtime.Caching;
+using System.Windows.Forms;
+using CefSharp;
+using CefSharp.WinForms;
 using Launcher.Module.Document.ViewModels;
-using MoonPdfLib;
 
 namespace Launcher.Module.Document.Views
 {
@@ -18,6 +25,7 @@ namespace Launcher.Module.Document.Views
     {
         private IEventAggregator _eventAggregator;
 
+        private static readonly bool DebuggingSubProcess = Debugger.IsAttached;
 
         public DocumentView()
         {
@@ -28,13 +36,25 @@ namespace Launcher.Module.Document.Views
 
         public void Handle(FileNamePdfPanel message)
         {
+    
             Dispatcher.BeginInvoke(new ThreadStart(delegate
             {
-                var uc = new PDFViewer(message.FileName);
-                //this.PdfPanel.Child = uc;
-                //PdfBrowser.NavigateToString(string.Format(@"<HTML><IFRAME SCROLLING=""YES"" SRC=""{0}""></IFRAME></HTML>", message.FileName));
-                PdfBrowser.Navigate(new System.Uri(message.FileName));
+                Debug.WriteLine(message.FileName);
+
+                Console.WriteLine(message.FileName);
+                
+
+                var uc = new ChromiumWebBrowser(message.FileName)
+                {
+                    Dock = DockStyle.Fill,
+                };
+                
+                uc.BrowserSettings = new BrowserSettings();
+
+
+                this.PdfBrowser.Child = uc;
             }));
         }
     }
+
 }
