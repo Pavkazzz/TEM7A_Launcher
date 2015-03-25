@@ -107,8 +107,11 @@
     <None Include="Resources\Entypo.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Lib\AxInterop.AcroPDFLib.dll" />
     <Content Include="Lib\bcprov-jdk15-1.44.dll" />
+    <Content Include="Lib\CefSharp.Core.dll" />
+    <Content Include="Lib\CefSharp.dll" />
+    <Content Include="Lib\CefSharp.Example.dll" />
+    <Content Include="Lib\CefSharp.WinForms.dll" />
     <Content Include="Lib\commons-logging.dll" />
     <Content Include="Lib\fontbox-1.8.7.dll" />
     <Content Include="Lib\IKVM.OpenJDK.Core.dll" />
@@ -117,12 +120,7 @@
     <Content Include="Lib\IKVM.OpenJDK.Text.dll" />
     <Content Include="Lib\IKVM.OpenJDK.Util.dll" />
     <Content Include="Lib\IKVM.Runtime.dll" />
-    <Content Include="Lib\Interop.AcroPDFLib.dll" />
-    <Content Include="Lib\libmupdf.dll" />
-    <Content Include="Lib\MoonPdfLib.dll" />
-    <Content Include="Lib\MouseKeyboardActivityMonitor.dll" />
     <Content Include="Lib\pdfbox-1.8.7.dll" />
-    <Content Include="Lib\SQLite.Interop.dll" />
     <Content Include="Resources\Entypo-license.txt" />
     <Resource Include="Resources\WindowsIcons-license.txt" />
   </ItemGroup>
