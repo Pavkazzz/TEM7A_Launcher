@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using Launcher.Core;
 using Launcher.Module.EmergencyCard.ViewModels;
 
@@ -12,7 +13,8 @@ namespace Launcher.Module.EmergencyCard
     {
         public EmergencyCardAbout()
         {
-            PositionNumber = 0;
+           Coloring = Colors.LightGray;
+            PositionNumber = 1;
             Name = @"Аварийные карточки";
             Description =
                 @"Модуль «Аварийные карточки» предназначен для ...";
@@ -20,7 +22,7 @@ namespace Launcher.Module.EmergencyCard
             //TODO BD
             DbPath = "../../../../Launcher.Module.EmergencyCard/EmergencyCard.sqlite";
         }
-
+        public Color Coloring { get; set; }
         public int PositionNumber { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

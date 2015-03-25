@@ -180,7 +180,7 @@
 
     <ControlTemplate x:Key="ListBoxModuleTemplate" TargetType="{x:Type ListBoxItem}">
         <Grid HorizontalAlignment="Left" Height="190" Margin="0,0,-80,0" VerticalAlignment="Top" Width="auto"
-              Background="#FFC5C2C2">
+              Background="{Binding Coloring}">
             <Grid.RowDefinitions>
                 <RowDefinition />
                 <RowDefinition Height="3*" />
@@ -289,7 +289,7 @@
                             <ContentPresenter Content="{Binding Description}" >
                                 <ContentPresenter.Resources>
                                     <Style TargetType="{x:Type TextBlock}">
-                                        <Setter Property="Background" Value="Yellow"></Setter>
+                                        <Setter Property="Background" Value="Transparent"></Setter>
                                         <Setter Property="Margin" Value="10"></Setter>
                                         <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
                                         <Setter Property="HorizontalAlignment" Value="Center"/>

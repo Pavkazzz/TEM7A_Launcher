@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Windows.Media;
 using Caliburn.Micro;
 using Launcher.Core;
 using Launcher.Module.Inspection.ViewModels;
@@ -12,13 +13,17 @@ namespace Launcher.Module.Inspection
     {
         public AboutInspection()
         {
-            Name = @"Расчёт характеристик электрического тормоза";
-            Description = @"Модуль «РАСЧЕТ ХАРАКТЕРИСТИК ЭЛЕКТРИЧЕСКОГО ТОРМОЗА» предназначен для расчета электромеханических характеристик локомотива с электродвигателями постоянного тока с последовательным возбуждением при электрическом торможении";
+            Coloring = Colors.LightGray;
+            PositionNumber = 2;
+            Name = @"Приемка локомотива";
+            Description =
+                @"Модуль «ПРИЕМКА ЛОКОМОТИВА» предназначен для проведения приемки и сдачи локомотива, проведения технического обслуживания ТО-1, контроля над последовательностью и выполнением регламентных работ, формирования электронных отчетов";
             ViewModel = typeof (MainInspectionViewModel);
             DbPath = String.Empty;
 
             //TODO Category
         }
+        public Color Coloring { get; set; }
         public int PositionNumber { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
