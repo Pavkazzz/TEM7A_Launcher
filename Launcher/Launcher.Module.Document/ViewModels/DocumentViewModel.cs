@@ -23,7 +23,7 @@ namespace Launcher.Module.Document.ViewModels
             _message = message;
         }
 
-        public void PdfPanel()
+        public void PdfBrowser()
         {
             _eventAggregator.PublishOnBackgroundThread(new FileNamePdfPanel(_message.Path));
             //Сделать так же

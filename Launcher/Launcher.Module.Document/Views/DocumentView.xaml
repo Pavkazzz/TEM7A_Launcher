@@ -6,6 +6,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:cal="http://www.caliburnproject.org"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:cef="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
              mc:Ignorable="d"      
              x:Class="Launcher.Module.Document.Views.DocumentView"
              ResizeMode="NoResize" WindowStyle="None" WindowState="Maximized"
@@ -29,16 +30,20 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" Grid.Row="0" cal:Message.Attach="[Event MouseDown] = [Action CloseWindow()]" Background="White">
+        <StackPanel Grid.Column="0" Grid.Row="0" cal:Message.Attach="[Event MouseDown] = [Action CloseWindow()]" Background="Red">
             <Canvas>
                 <ContentControl Content="{StaticResource appbar_chevron_left}" Canvas.Top="0" Canvas.Left="0" />
             </Canvas>
         </StackPanel>
-
+        <Label Grid.Column="1" Grid.Row="0" Content="{Binding Address, ElementName=WebBrowser}"></Label>
         <!--Сюда в старом образе у нас отображались данные -->
         <Grid x:Name="gridViewerPDF"  Grid.Row="1" Grid.Column="1">
+            <WindowsFormsHost x:Name="PdfBrowser" HorizontalAlignment="Stretch" Height="auto" Margin="1" VerticalAlignment="Stretch" Width="auto"/>
+            <!--<cef:ChromiumWebBrowser x:Name="PdfBrowser" Grid.Row="0"/>-->
+
+
             <!--<WindowsFormsHost x:Name="PdfPanel" HorizontalAlignment="Stretch" Height="auto" Margin="1" VerticalAlignment="Stretch" Width="auto"/>-->
-            <WebBrowser x:Name="PdfBrowser" Source="C:\2.html"></WebBrowser>
+            <!--<WebBrowser x:Name="PdfBrowser" Source="C:\2.html"></WebBrowser>-->
             <!--<Grid.RenderTransform>
                <MatrixTransform></MatrixTransform>
            </Grid.RenderTransform>-->
