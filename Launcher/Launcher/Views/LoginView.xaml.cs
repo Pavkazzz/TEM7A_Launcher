@@ -14,7 +14,8 @@ namespace Launcher.Views
         public LoginView()
         {
             InitializeComponent();
-
+            KeyboardProperty.KeyboardRun();
+            KeyboardProperty.
         }
     }
 }
