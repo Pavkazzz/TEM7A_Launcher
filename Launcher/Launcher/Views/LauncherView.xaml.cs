@@ -11,6 +11,7 @@ namespace Launcher.Views
         public LauncherView()
         {
             InitializeComponent();
+           
         }
 
     }

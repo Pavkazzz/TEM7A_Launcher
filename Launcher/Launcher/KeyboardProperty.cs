@@ -17,7 +17,7 @@ namespace Launcher
        /// </summary>
        public static void KeyboardClose()
        {
-           Process[] ProcessArray = System.Diagnostics.Process.GetProcessesByName("tabtip.exe");
+           Process[] ProcessArray = System.Diagnostics.Process.GetProcessesByName("TabTip.exe");
            foreach (Process process in ProcessArray)
            {
                process.Kill();
