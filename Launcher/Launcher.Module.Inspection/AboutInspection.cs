@@ -19,7 +19,7 @@ namespace Launcher.Module.Inspection
 
             //TODO Category
         }
-
+        public int PositionNumber { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public Type ViewModel { get; set; }

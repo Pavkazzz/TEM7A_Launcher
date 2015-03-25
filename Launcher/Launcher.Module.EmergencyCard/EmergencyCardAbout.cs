@@ -12,6 +12,7 @@ namespace Launcher.Module.EmergencyCard
     {
         public EmergencyCardAbout()
         {
+            PositionNumber = 0;
             Name = @"Аварийные карточки";
             Description =
                 @"Модуль «Аварийные карточки» предназначен для ...";
@@ -20,7 +21,7 @@ namespace Launcher.Module.EmergencyCard
             DbPath = "../../../../Launcher.Module.EmergencyCard/EmergencyCard.sqlite";
         }
 
-
+        public int PositionNumber { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public Type ViewModel { get; set; }

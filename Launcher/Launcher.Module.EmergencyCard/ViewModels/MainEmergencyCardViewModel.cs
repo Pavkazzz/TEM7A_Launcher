@@ -47,6 +47,7 @@ namespace Launcher.Module.EmergencyCard.ViewModels
 
             ActivateItem(IoC.Get<EmergencyCardListViewModel>());
         }
+
         public void CloseWindow()
         {
             TryClose();

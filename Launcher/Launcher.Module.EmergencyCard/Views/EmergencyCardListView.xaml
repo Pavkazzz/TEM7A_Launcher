@@ -25,9 +25,9 @@
             </ListBox.ItemTemplate>
             <!--<ListBox.ItemTemplate>
                 <DataTemplate>
-                    --><!--<StackPanel cal:Message.Attach="[Event MouseDown] = [Action ShowDoc($this)]" Background="{DynamicResource AccentColorBrush}">
+                    <StackPanel cal:Message.Attach="[Event MouseDown] = [Action ShowDoc($this)]" Background="{DynamicResource AccentColorBrush}">
                         <TextBlock Text="{Binding Name}"/>
-                    </StackPanel>--><!--
+                    </StackPanel>
                     <TextBlock Text="{Binding Name_Card}"></TextBlock>
                 </DataTemplate>
             </ListBox.ItemTemplate>-->
