@@ -11,7 +11,7 @@ namespace Launcher
         public static void KeyboardRun() 
         {
             KeyboardClose();
-            Process[] chromes = Process.GetProcessesByName("TabTip");
+            Process[] chromes = Process.GetProcessesByName("tabtip");
             if (chromes.Length == 0)
             {
                 Process.Start(@"C:\\Program Files\\Common Files\\microsoft shared\\ink\\tabtip.exe");
@@ -24,7 +24,7 @@ namespace Launcher
         /// </summary>
         public static void KeyboardClose()
         {
-            Process[] processArray = Process.GetProcessesByName(@"TabTip");
+            Process[] processArray = Process.GetProcessesByName(@"tabtip");
             foreach (Process process in processArray)
             {
                 process.Kill();

@@ -63,7 +63,6 @@ namespace Launcher.ViewModels
 
         public void Login()
         {
-            KeyboardProperty.KeyboardClose();
             //TODO Login
             if (_user.Login(PersonalNumber, Password, RememberMe))
             {
@@ -75,6 +74,8 @@ namespace Launcher.ViewModels
                 
                 MessageBox.Show("Неверный Логин/Пароль. \nПроверьте правильность вводимых данных","Ошибка Авторизации");
             }
+
+            KeyboardProperty.KeyboardClose();
             //else
             //{
             //    _eventAggregator.PublishOnBackgroundThread(IoC.Get<RegistrationViewModel>());

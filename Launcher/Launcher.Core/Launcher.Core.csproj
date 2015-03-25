@@ -94,6 +94,7 @@
     <Compile Include="Components\Document\OpenDocument.cs" />
     <Compile Include="Db\DataBase.cs" />
     <Compile Include="HelperClass\DocFile.cs" />
+    <Compile Include="HelperClass\KeyboardProperty.cs" />
     <Compile Include="IModule.cs" />
     <Compile Include="IModuleName.cs" />
     <Compile Include="ISearch.cs" />
