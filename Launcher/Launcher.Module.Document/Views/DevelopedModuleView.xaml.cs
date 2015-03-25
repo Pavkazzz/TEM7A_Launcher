@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,16 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Launcher.Module.EmergencyCard.Views
+namespace Launcher.Module.Document.Views
 {
     /// <summary>
-    /// Interaction logic for MainEmergencyCardView.xaml
+    /// Interaction logic for DevelopedModuleView.xaml
     /// </summary>
-    /// 
-    [Export(typeof (MainEmergencyCardView))]
-    public partial class MainEmergencyCardView : UserControl
+    public partial class DevelopedModuleView : UserControl
     {
-        public MainEmergencyCardView()
+        public DevelopedModuleView()
         {
             InitializeComponent();
         }

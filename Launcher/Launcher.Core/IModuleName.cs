@@ -10,6 +10,7 @@ namespace Launcher.Core
     {
         string Name { get; set; }
         string Description { get; set; }
+        int PositionNumber { get; set; }
         Type ViewModel { get; set; }
         string DbPath { get; set; }
         List<About> Category { get; set; } 

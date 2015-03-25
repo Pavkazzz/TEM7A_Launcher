@@ -21,7 +21,13 @@
             </Canvas>
         </StackPanel>
         <TextBlock x:Name="NameOfModuleTextBlock"  Grid.Column="1" Grid.Row="0" Background="{DynamicResource AccentColorBrush}" Foreground="White" FontSize="22" Text="Модуль &quot;Аварийные карточки&quot;" />
-        <ListBox x:Name="CategoryEmergencyLisBox" Grid.Column="0" Grid.Row="1" ItemContainerStyle="{StaticResource ListBoxItemCategory}">
+        <ListBox x:Name="CategoryEmergencyListBox" Grid.Column="0" Grid.Row="1" Margin="1" ItemContainerStyle="{StaticResource LolTemplateStyle}"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="{DynamicResource HighlightBrush}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding CategoryName}" TextWrapping="WrapWithOverflow" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
            
         </ListBox>
         <!--<ListBox x:Name="ItemEmergencyListBox" Grid.Column="1" Grid.Row="1" Background="Coral"></ListBox>-->
