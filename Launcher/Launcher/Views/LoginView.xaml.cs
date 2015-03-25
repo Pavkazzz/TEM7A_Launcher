@@ -15,7 +15,6 @@ namespace Launcher.Views
         {
             InitializeComponent();
             KeyboardProperty.KeyboardRun();
-            KeyboardProperty.
         }
     }
 }

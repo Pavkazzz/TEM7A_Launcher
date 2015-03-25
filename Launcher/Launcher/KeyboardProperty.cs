@@ -15,9 +15,13 @@ namespace Launcher
        /// <summary>
        /// Завершение процесса вызова клавиатуры.
        /// </summary>
-       public static void KeyboardClose()  
+       public static void KeyboardClose()
        {
-         // Process. 
+           Process[] ProcessArray = System.Diagnostics.Process.GetProcessesByName("tabtip.exe");
+           foreach (Process process in ProcessArray)
+           {
+               process.Kill();
+           }
        }
     }
 }
