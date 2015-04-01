@@ -7,10 +7,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using Caliburn.Micro;
 using System.IO;
 using System.Runtime.Caching;
 using System.Windows.Forms;
+using Caliburn.Micro;
 using CefSharp;
 using CefSharp.WinForms;
 using Launcher.Module.Document.ViewModels;
@@ -24,8 +24,6 @@ namespace Launcher.Module.Document.Views
     public partial class DocumentView : Window, IHandle<FileNamePdfPanel>
     {
         private IEventAggregator _eventAggregator;
-
-        private static readonly bool DebuggingSubProcess = Debugger.IsAttached;
 
         public DocumentView()
         {

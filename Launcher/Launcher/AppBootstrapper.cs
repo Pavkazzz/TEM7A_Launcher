@@ -8,7 +8,6 @@ using System.Linq;
 using System.Reflection;
 using System.Windows;
 using Caliburn.Micro;
-using CefSharp.WinForms;
 using Launcher.Controls;
 using Launcher.Core;
 using Launcher.Model;
@@ -23,8 +22,6 @@ namespace Launcher
         public AppBootstrapper()
         {
             Initialize();
-            
-
         }
 
         //Для теста
@@ -32,7 +29,7 @@ namespace Launcher
         {
             
             _modulesPath = path;
-            PlatformProvider.Current = new XamlPlatformProvider();
+            //PlatformProvider.Current = new XamlPlatformProvider();
             base.StartDesignTime();
             
         }

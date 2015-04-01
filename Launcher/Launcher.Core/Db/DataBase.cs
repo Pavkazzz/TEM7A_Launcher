@@ -9,10 +9,8 @@ namespace Launcher.Core
 {
     public class DataBase
     {
-        private SQLiteConnection _sqLiteConnectionDatabase;
-
         private readonly string _connectionPath;
-
+        private SQLiteConnection _sqLiteConnectionDatabase;
         //private SQLiteDataAdapter _sqLiteDataAdapter;
 
 
@@ -52,7 +50,7 @@ namespace Launcher.Core
                     foreach (var column in columnName)
                     {
                         temp.Add(column, record[column].ToString());
-                    }   
+                    }
                     result.Add(temp);
                 }
             }
@@ -82,7 +80,6 @@ namespace Launcher.Core
             {
                 return false;
             }
-
-        } 
+        }
     }
 }
