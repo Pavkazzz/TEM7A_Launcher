@@ -4,6 +4,8 @@ using System.IO;
 using System.Windows.Forms;
 using Caliburn.Micro;
 using Launcher.Core;
+using Launcher.Core.Components;
+using Launcher.Core.HelperClass;
 
 namespace Launcher.Module.Document.ViewModels
 {
@@ -11,6 +13,7 @@ namespace Launcher.Module.Document.ViewModels
     public sealed class MainDocViewModel : Conductor<IScreen>.Collection.OneActive, IModule
     {
         private IEventAggregator _eventAggregator;
+        private IWindowManager _windowManager;
 
         #region PropertyForView
         private BindableCollection<Category> _category = new BindableCollection<Category>();
@@ -38,9 +41,10 @@ namespace Launcher.Module.Document.ViewModels
         #endregion
 
         [ImportingConstructor]
-        public MainDocViewModel(IEventAggregator eventAggregator)
+        public MainDocViewModel()
         {
             CategoryList = new BindableCollection<Category>();
+
             if (File.Exists(Path.GetFullPath(new DocAbout().DbPath)))
             {
                 var db = new DataBase(Path.GetFullPath(new DocAbout().DbPath));
@@ -51,10 +55,16 @@ namespace Launcher.Module.Document.ViewModels
                 }
             }
 
-            _eventAggregator = eventAggregator;
+            _eventAggregator = IoC.Get<IEventAggregator>();
 
             ActivateItem(IoC.Get<HistoryViewModel>());
         }
+
+        public void CloseWindow()
+        {
+            TryClose();
+        }
+
 
         public void Show()
         {
@@ -63,18 +73,5 @@ namespace Launcher.Module.Document.ViewModels
         }
     }
 
-    public class Category
-    {
-        public Category()
-        {
-
-        }
-
-        public Category(string name)
-        {
-            Name = name;
-        }
-
-        public string Name { get; private set; }
+    
     }
-}

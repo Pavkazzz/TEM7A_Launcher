@@ -1,4 +1,10 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Diagnostics;
+using System.Net.PeerToPeer.Collaboration;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Automation;
+using System.Windows.Input;
 
 namespace Launcher.Views
 {
@@ -10,6 +16,14 @@ namespace Launcher.Views
         public LoginView()
         {
             InitializeComponent();
+            
         }
+
+
+        private void Password_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            //KeyboardProperty.KeyboardRun();
+        }
+
     }
 }

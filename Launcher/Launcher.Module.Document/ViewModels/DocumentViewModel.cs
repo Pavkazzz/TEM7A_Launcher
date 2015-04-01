@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using Caliburn.Micro;
-using Launcher.Module.Document.Views;
-using MoonPdfLib;
+using CefSharp;
+using CefSharp.WinForms;
+using Launcher.Core.HelperClass;
 
 namespace Launcher.Module.Document.ViewModels
 {
@@ -17,7 +11,6 @@ namespace Launcher.Module.Document.ViewModels
     public class DocumentViewModel : Screen
     {
         private IEventAggregator _eventAggregator;
-        private MoonPdfPanel _panel;
         private DocFile _message;
         private IWindowManager _windowsManager;
 
@@ -30,28 +23,47 @@ namespace Launcher.Module.Document.ViewModels
             _eventAggregator.Subscribe(this);
             _message = message;
 
-        }
-
-        public void PdfPanel()
-        {
-            _eventAggregator.PublishOnBackgroundThread(new FileNamePdfPanel(_message.Path));
-        }
-
-        public MoonPdfPanel PdfPanel2
-        {
-            get { return _panel; }
-            set
+            if (!Cef.IsInitialized)
             {
-                _panel = value;
-                NotifyOfPropertyChange(() => PdfPanel2);
+                var settings = new CefSettings();
+                settings.BrowserSubprocessPath = @"CefSharp.BrowserSubprocess.exe";
+                //settings.UserAgent = "CefSharp Browser" + Cef.CefSharpVersion; // Example User Agent
+                //settings.CefCommandLineArgs.Add("renderer-process-limit", "1");
+                //settings.CefCommandLineArgs.Add("renderer-startup-dialog", "renderer-startup-dialog");
+                settings.CefCommandLineArgs.Add("disable-gpu", "1");
+                settings.CefCommandLineArgs.Add("disable-gpu-vsync", "1");
+                //settings.CefCommandLineArgs.Add("enable-media-stream", "1"); //Enable WebRTC
+                //settings.CefCommandLineArgs.Add("no-proxy-server", "1"); //Don't use a proxy server, always make direct connections. Overrides any other proxy server flags that are passed.
+
+                //Disables the DirectWrite font rendering system on windows.
+                //Possibly useful when experiencing blury fonts.
+                settings.CefCommandLineArgs.Add("disable-direct-write", "1");
+
+                settings.LogSeverity = LogSeverity.Disable;
+
+                if (!Cef.Initialize(settings))
+                {
+                    throw new Exception("Unable to Initialize Cef");
+                }
             }
+            
+        }
+
+        public void PdfBrowser()
+        {
+
+            _eventAggregator.PublishOnBackgroundThread(new FileNamePdfPanel(_message.Path));
+            
+            //Сделать так же
         }
 
         public void CloseWindow()
         {
+            Cef.Shutdown();
             TryClose();
         }
     }
+
     public class FileNamePdfPanel
     {
         public FileNamePdfPanel(string fileName)

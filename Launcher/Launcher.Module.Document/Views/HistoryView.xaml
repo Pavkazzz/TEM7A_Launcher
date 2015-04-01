@@ -7,18 +7,9 @@
              xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid Background="{DynamicResource AccentColorBrush}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <ListBox x:Name="HistoryWrapPanels" Grid.ColumnSpan="3" Grid.RowSpan="3">
+    <Grid Background="White">
+
+        <ListBox x:Name="HistoryWrapPanels" Margin="20, 0, 0, 0">
 
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -30,8 +21,8 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate >
-                    <controls:Tile TiltFactor="1" Title="{Binding Name}" MinWidth="250" cal:Message.Attach="[Event Click] = [Action OpenDoc($this)]">
-                    </controls:Tile>
+                    <controls:Tile TiltFactor="1" Title="{Binding Name}" MinWidth="250" 
+                                   cal:Message.Attach="[Event Click] = [Action OpenDoc($this)]"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

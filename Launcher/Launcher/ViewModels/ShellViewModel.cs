@@ -9,7 +9,7 @@ using Launcher.Core;
 namespace Launcher.ViewModels
 {
     [Export(typeof(IShell))]
-    public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<string>, IHandle<FlyoutBaseViewModel>
+    public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<string>, IHandle<FlyoutBaseViewModel>, IHandle<IModule>
     {
         private readonly IEventAggregator _eventAggregator;
         private readonly IWindowManager _windowManager;
@@ -31,6 +31,7 @@ namespace Launcher.ViewModels
 
         private void CheckModules()
         {
+            //TODO Для всех
             foreach (var check in IoC.GetAll<IModuleName>().Where(desc => desc.Description == @"Супер модуль"))
             {
                 check.PrimaryCheck();
@@ -104,6 +105,11 @@ namespace Launcher.ViewModels
             }
             var flyout = Flyouts[0];
             flyout.IsOpen = !flyout.IsOpen;
+        }
+
+        public void Handle(IModule message)
+        {
+            ActivateItem((IScreen) message);
         }
     }
 }

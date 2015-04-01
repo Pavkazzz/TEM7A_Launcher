@@ -9,6 +9,11 @@ namespace Launcher.Module.Inspection
 {
     class Search : ISearch
     {
+        public string ModuleName
+        {
+            get { return new AboutInspection().Name; }
+        }
+
         public List<string> DoSearch(string name)
         {
             var result = new List<string>();

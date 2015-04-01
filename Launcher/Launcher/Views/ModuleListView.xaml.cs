@@ -10,6 +10,7 @@ namespace Launcher.Views
         public ModuleListView()
         {
             InitializeComponent();
+            
         }
     }
 }
