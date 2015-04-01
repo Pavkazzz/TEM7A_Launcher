@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Composition;
 using System.Windows.Media;
-using Caliburn.Micro;
 using Launcher.Core;
 using Launcher.Module.Document.ViewModels;
 
@@ -57,7 +55,7 @@ namespace Launcher.Module.Document
 
         public About1()
         {
-            Coloring = (Color)Colors.White;
+            Coloring = Colors.White;
             PositionNumber = 3;
             Name = @"Руководство по эксплуатации";
             Description = @"Модуль «РУКОВОДСТВО ПО ЭКСПЛУАТАЦИИ» предназначен для предоставления в интерактивном виде технического описания конструкций, узлов и деталей сложных технических систем, а также технические характеристики, правила эксплуатации, технического обслуживания, хранения и утилизации сложных технических систем и их компонентов ";
@@ -82,7 +80,7 @@ namespace Launcher.Module.Document
 
         public About2()
         {
-            Coloring = (Color)Colors.White;
+            Coloring = Colors.White;
             PositionNumber = 4;
             Name = @"Каталог деталей";
             Description = @"Модуль «КАТАЛОГ ДЕТАЛЕЙ» предназначен для предоставления в интерактивном виде справочной и иллюстрационной информации по деталям, сборочным единицам, комплексам и комплектам, входящим в состав сложных технических систем ";
@@ -107,7 +105,7 @@ namespace Launcher.Module.Document
 
         public About3()
         {
-            Coloring = (Color)Colors.White;
+            Coloring = Colors.White;
             PositionNumber = 5;
             Name = @"Расчёт характеристик электрического тормоза";
             Description = @"Модуль «РАСЧЕТ ХАРАКТЕРИСТИК ЭЛЕКТРИЧЕСКОГО ТОРМОЗА» предназначен для расчета электромеханических характеристик локомотива с электродвигателями постоянного тока с последовательным возбуждением при электрическом торможении";
@@ -134,7 +132,7 @@ namespace Launcher.Module.Document
 
         public About4()
         {
-            Coloring = (Color)Colors.White;
+            Coloring = Colors.White;
             PositionNumber = 6;
             Name = @"Тяговые расчёты";
             Description = @"Модуль «ТЯГОВЫЕ РАСЧЕТЫ» предназначен для выполнения тяговых расчетов в соответствии с «Правилами тяговых расчетов для поездной работы» и представление результатов расчетов в графическом и табличном видах";
@@ -158,7 +156,7 @@ namespace Launcher.Module.Document
 
         public About5()
         {
-            Coloring = (Color)Colors.White;
+            Coloring = Colors.White;
             PositionNumber = 7;
             Name = @"Заказ комплектующих";
             Description = @"Модуль «ЗАКАЗ  КОМПЛЕКТУЮЩИХ» предназначен для выбора и формирования заказа на запасные части сложных технических систем, а также формирования интерактивных электронных отчетов по выполненным заказам";
@@ -182,7 +180,7 @@ namespace Launcher.Module.Document
 
         public About6()
         {
-            Coloring = (Color)Colors.White;
+            Coloring = Colors.White;
             PositionNumber = 8;
             Name = @"Мониторинг показателей";
             Description = @"Модуль «МОНИТОРИНГ ПОКАЗАТЕЛЕЙ» предназначен для ввода и обработки статистической информации, расчета технико-экономических и эксплуатационных показателей сложных технических систем ";
@@ -206,7 +204,7 @@ namespace Launcher.Module.Document
 
         public About8()
         {
-            Coloring = (Color)Colors.White;
+            Coloring = Colors.White;
             PositionNumber = 9;
             Name = @"Расчет стоимости жизненного цикла ";
             Description = @"Модуль «РАСЧЕТ СТОИМОСТИ ЖИЗНЕННОГО ЦИКЛА» предназначен для расчёта затрат единовременного (инвестиции) и текущего характера (эксплуатационные расходы) за срок службы (срок полезного использования) сложных технических систем";
@@ -230,7 +228,7 @@ namespace Launcher.Module.Document
 
         public About9()
         {
-            Coloring = (Color)Colors.White;
+            Coloring = Colors.White;
             PositionNumber = 10;
             Name = @"Устранение неисправностей";
             Description = @"Модуль «УСТРАНЕНИЕ НЕИСПРАВНОСТЕЙ» обеспечивает в интерактивном виде графическое изображение возможных неисправностей локомотива и порядок действий локомотивной бригады для устранения причин, вызвавших аварию";
@@ -254,7 +252,7 @@ namespace Launcher.Module.Document
 
         public About10()
         {
-            Coloring = (Color)Colors.White;
+            Coloring = Colors.White;
             PositionNumber = 11;
             Name = @"Система диагностики";
             Description = @"Модуль «СИСТЕМА ДИАГНОСТИКИ» содержит описание диагностических сообщений системы управления и порядок действия персонала при выдаче соответствующих диагностических сообщений";
@@ -448,7 +446,7 @@ namespace Launcher.Module.Document
 
         public About18()
         {
-            Coloring = (Color)Colors.White;
+            Coloring = Colors.White;
             PositionNumber = 19;
             Name = @"Расписание движения поездов";
             Description = @"Модуль «РАСПИСАНИЕ ДВИЖЕНИЯ ПОЕЗДОВ» содержит полную информацию о графике движения поезда и помогает машинисту определять режимы движения поезда ";

@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Caliburn.Micro;
 using Launcher.Core;
-using Launcher.Core.Components;
-using Launcher.Core.Components.Document;
-using Launcher.Core.HelperClass;
-using Launcher.Model;
 using MahApps.Metro.Controls;
 
 namespace Launcher.ViewModels
@@ -26,9 +18,9 @@ namespace Launcher.ViewModels
         [ImportingConstructor]
         public FlyoutSearchViewModel([ImportMany(typeof(ISearch))] IEnumerable<ISearch> search)
         {
-            this.Header = "Поиск";
-            this.Position = Position.Right;
-            this.FlyoutWidth = 400;
+            Header = "Поиск";
+            Position = Position.Right;
+            FlyoutWidth = 400;
 
             _searches = search.ToList();
 

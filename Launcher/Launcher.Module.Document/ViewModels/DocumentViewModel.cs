@@ -2,7 +2,6 @@
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
 using CefSharp;
-using CefSharp.WinForms;
 using Launcher.Core.HelperClass;
 
 namespace Launcher.Module.Document.ViewModels

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.IO;
 using Caliburn.Micro;
 using Launcher.Core;
-using Launcher.Core.Components;
-using Launcher.Core.Components.Document;
 using Launcher.Core.HelperClass;
-using Launcher.ViewModels;
 
 namespace Launcher.Module.Document.ViewModels
 {
@@ -65,7 +61,7 @@ namespace Launcher.Module.Document.ViewModels
             var db = new DataBase(Path.GetFullPath(new DocAbout().DbPath));
             var category = db.SqlSelect(string.Format(@"Select Category.Path, Document.PathName, Document.Name from  Document
                                                         left outer join Category on Category.id == Document.category Where Category.Name = ""{0}""",
-                                                        message.Name), new List<string>() { "Name", "PathName", "Path" });
+                                                        message.Name), new List<string> { "Name", "PathName", "Path" });
             foreach (var singlecategory in category)
             {
                 FileNameList.Add(new DocFile(singlecategory["Name"], Path.GetFullPath(Path.Combine(@"..\..\..\..\File", singlecategory["Path"], singlecategory["PathName"]))));

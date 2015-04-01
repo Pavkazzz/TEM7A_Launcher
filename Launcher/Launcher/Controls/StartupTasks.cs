@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using Caliburn.Micro;
 using Launcher.Services;
@@ -54,7 +51,7 @@ namespace Launcher.Controls
         [Export(typeof(StartupTask))]
         public void ApplyViewLocatorOverride()
         {
-            var viewLocator = this.serviceLocator.GetInstance<IViewLocator>();
+            var viewLocator = serviceLocator.GetInstance<IViewLocator>();
             Caliburn.Micro.ViewLocator.GetOrCreateViewType = viewLocator.GetOrCreateViewType;
         }
     }

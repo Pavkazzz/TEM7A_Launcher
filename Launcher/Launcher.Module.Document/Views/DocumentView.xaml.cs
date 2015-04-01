@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.IO;
-using System.Runtime.Caching;
 using System.Windows.Forms;
 using Caliburn.Micro;
 using CefSharp;
@@ -44,7 +37,7 @@ namespace Launcher.Module.Document.Views
 
                 var uc = new ChromiumWebBrowser(message.FileName)
                 {
-                    Dock = DockStyle.Fill,
+                    Dock = DockStyle.Fill
                 };
                 
                 uc.BrowserSettings = new BrowserSettings();

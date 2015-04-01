@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using Caliburn.Micro;
+using Launcher.Core;
 using Launcher.Core.HelperClass;
 
 namespace Launcher.Module.Document.ViewModels
@@ -14,9 +15,9 @@ namespace Launcher.Module.Document.ViewModels
             //view для документа.
             if (doc != null)
             {
-                var db = new Launcher.Core.DataBase(Path.GetFullPath(DatabasePath));
+                var db = new DataBase(Path.GetFullPath(DatabasePath));
 
-                var index = db.SqlSelect("Select id from History order by id desc", new List<string>() { "id" });
+                var index = db.SqlSelect("Select id from History order by id desc", new List<string> { "id" });
 
                 if (index.Count > 0)
                 {

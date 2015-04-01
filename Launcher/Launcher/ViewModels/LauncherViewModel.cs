@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Dynamic;
 using System.Linq;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Media;
 using Caliburn.Micro;
 using CefSharp;
 using Launcher.Core;
@@ -54,7 +49,7 @@ namespace Launcher.ViewModels
 
         public void OpenModule(ModuleItem o)
         {
-            var time = System.DateTime.Now;
+            var time = DateTime.Now;
             //if (o != null)
             //{
                 
@@ -65,7 +60,7 @@ namespace Launcher.ViewModels
                     _eventAggregator.PublishOnBackgroundThread(name);
                 }
 
-            Console.WriteLine(System.DateTime.Now - time);
+            Console.WriteLine(DateTime.Now - time);
             //}
             //else
             //{
@@ -76,7 +71,7 @@ namespace Launcher.ViewModels
         public void OpenFlyout()
         {
 
-            var flyout = this._flyouts[0];
+            var flyout = _flyouts[0];
             flyout.IsOpen = !flyout.IsOpen;
         }
 
@@ -88,7 +83,7 @@ namespace Launcher.ViewModels
         {
             get
             {
-                return this._flyouts;
+                return _flyouts;
             }
         }
 
@@ -168,8 +163,8 @@ namespace Launcher.ViewModels
         protected override void OnInitialize()
         {
             base.OnInitialize();
-            this.DisplayName = "Caliburn.Metro.Demo";
-            this._flyouts.Add(IoC.Get<FlyoutSearchViewModel>());
+            DisplayName = "Caliburn.Metro.Demo";
+            _flyouts.Add(IoC.Get<FlyoutSearchViewModel>());
         }
 
         public void TryClose()

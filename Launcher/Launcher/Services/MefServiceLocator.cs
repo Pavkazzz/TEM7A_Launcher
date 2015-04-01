@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Launcher.Services
 {
@@ -21,7 +17,7 @@ namespace Launcher.Services
 
         public T GetInstance<T>() where T : class
         {
-            var instance = this.compositionContainer.GetExportedValue<T>();
+            var instance = compositionContainer.GetExportedValue<T>();
             if (instance != null)
             {
                 return instance;

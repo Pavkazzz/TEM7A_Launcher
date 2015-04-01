@@ -30,7 +30,7 @@ namespace Launcher
             
             _modulesPath = path;
             //PlatformProvider.Current = new XamlPlatformProvider();
-            base.StartDesignTime();
+            StartDesignTime();
             
         }
 

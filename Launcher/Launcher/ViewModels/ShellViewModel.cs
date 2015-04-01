@@ -1,8 +1,5 @@
-using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Dynamic;
 using System.Linq;
-using System.Windows;
 using Caliburn.Micro;
 using Launcher.Core;
 
@@ -87,7 +84,7 @@ namespace Launcher.ViewModels
         {
             get
             {
-                return this.flyouts;
+                return flyouts;
             }
         }
 
@@ -101,7 +98,7 @@ namespace Launcher.ViewModels
         {
             if (flyouts.Count(x => x.Header == message.Header) == 0)
             {
-                this.flyouts.Insert(0, message);
+                flyouts.Insert(0, message);
             }
             var flyout = Flyouts[0];
             flyout.IsOpen = !flyout.IsOpen;
