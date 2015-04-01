@@ -59,7 +59,7 @@ namespace Launcher.Module.Document.ViewModels
 
         public void CloseWindow()
         {
-            Cef.Shutdown();
+            //Cef.Shutdown();
             TryClose();
         }
     }

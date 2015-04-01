@@ -8,13 +8,14 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using Caliburn.Micro;
+using CefSharp;
 using Launcher.Core;
 using Launcher.Model;
 
 namespace Launcher.ViewModels
 {
     [Export(typeof(LauncherViewModel))]
-    public class LauncherViewModel : Screen
+    public class LauncherViewModel : Screen, IClose
     {
         private IEventAggregator _eventAggregator;
 
@@ -170,7 +171,10 @@ namespace Launcher.ViewModels
             this.DisplayName = "Caliburn.Metro.Demo";
             this._flyouts.Add(IoC.Get<FlyoutSearchViewModel>());
         }
+
+        public void TryClose()
+        {
+            Cef.Shutdown();
         }
-
-
+    }
 }

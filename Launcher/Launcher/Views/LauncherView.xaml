@@ -80,7 +80,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Button cal:Message.Attach="[Event Click] = [Action OpenModule($this)]"
-                            HorizontalContentAlignment="Left">
+                            HorizontalContentAlignment="Center">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background">
