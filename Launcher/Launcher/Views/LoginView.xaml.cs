@@ -22,7 +22,7 @@ namespace Launcher.Views
 
         private void Password_SelectionChanged(object sender, RoutedEventArgs e)
         {
-            KeyboardProperty.KeyboardRun();
+            //KeyboardProperty.KeyboardRun();
         }
 
     }

@@ -53,14 +53,18 @@ namespace Launcher.ViewModels
 
         public void OpenModule(ModuleItem o)
         {
+            var time = System.DateTime.Now;
             //if (o != null)
             //{
+                
                 foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == o.ViewModel))
                 {
                     //TODO Dialog window
                     //::SEM
                     _eventAggregator.PublishOnBackgroundThread(name);
                 }
+
+            Console.WriteLine(System.DateTime.Now - time);
             //}
             //else
             //{
