@@ -13,7 +13,7 @@ namespace Launcher.Module.Document.ViewModels
         private IEventAggregator _eventAggregator;
         private DocFile _message;
         private IWindowManager _windowsManager;
-        //hoho
+        //hohogfr
         [ImportingConstructor]
         public DocumentViewModel(DocFile message)
         {
