@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.IO;
-using System.Windows.Forms;
 using Caliburn.Micro;
+using CefSharp;
 using Launcher.Core;
-using Launcher.Core.Components;
-using Launcher.Core.HelperClass;
 
 namespace Launcher.Module.Document.ViewModels
 {
@@ -48,7 +46,7 @@ namespace Launcher.Module.Document.ViewModels
             if (File.Exists(Path.GetFullPath(new DocAbout().DbPath)))
             {
                 var db = new DataBase(Path.GetFullPath(new DocAbout().DbPath));
-                var category = db.SqlSelect("SELECT Name FROM Category", new List<string>() { "Name" });
+                var category = db.SqlSelect("SELECT Name FROM Category", new List<string> { "Name" });
                 foreach (var singlecategory in category)
                 {
                     CategoryList.Add(new Category(singlecategory["Name"]));
@@ -62,7 +60,9 @@ namespace Launcher.Module.Document.ViewModels
 
         public void CloseWindow()
         {
-            TryClose();
+            TryClose();           
+            Cef.Shutdown();
+        
         }
 
 

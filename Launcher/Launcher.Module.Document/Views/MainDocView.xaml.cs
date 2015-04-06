@@ -1,7 +1,5 @@
 ﻿using System.ComponentModel.Composition;
-using System.Windows;
 using System.Windows.Controls;
-using Caliburn.Micro;
 
 namespace Launcher.Module.Document.Views
 {

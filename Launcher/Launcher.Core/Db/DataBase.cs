@@ -9,10 +9,8 @@ namespace Launcher.Core
 {
     public class DataBase
     {
-        private SQLiteConnection _sqLiteConnectionDatabase;
-
         private readonly string _connectionPath;
-
+        private SQLiteConnection _sqLiteConnectionDatabase;
         //private SQLiteDataAdapter _sqLiteDataAdapter;
 
 
@@ -28,7 +26,13 @@ namespace Launcher.Core
 
         private void OpenConnectionSqlite(string path)
         {
-            _sqLiteConnectionDatabase = new SQLiteConnection(string.Format(@"Data Source={0}", path));
+            //_sqLiteConnectionDatabase = new SQLiteConnection(string.Format(@"Data Source={0}", path));
+            //_sqLiteConnectionDatabase.Open();
+            SQLiteConnectionStringBuilder connBuilder = new SQLiteConnectionStringBuilder();
+            connBuilder.DataSource = path;
+            connBuilder.JournalMode = SQLiteJournalModeEnum.Memory;
+
+            _sqLiteConnectionDatabase = new SQLiteConnection(connBuilder.ToString());
             _sqLiteConnectionDatabase.Open();
         }
 
@@ -52,7 +56,7 @@ namespace Launcher.Core
                     foreach (var column in columnName)
                     {
                         temp.Add(column, record[column].ToString());
-                    }   
+                    }
                     result.Add(temp);
                 }
             }
@@ -82,7 +86,6 @@ namespace Launcher.Core
             {
                 return false;
             }
-
-        } 
+        }
     }
 }

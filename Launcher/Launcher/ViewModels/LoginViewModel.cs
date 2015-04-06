@@ -1,11 +1,6 @@
-﻿using System;
-using System.ComponentModel.Composition;
-using System.Diagnostics;
+﻿using System.ComponentModel.Composition;
 using Caliburn.Micro;
 using Launcher.Core;
-using MahApps.Metro.Controls;
-using Xceed.Wpf.DataGrid.Converters;
-using MahApps.Metro.Controls.Dialogs;
 using Xceed.Wpf.Toolkit;
 
 namespace Launcher.ViewModels
@@ -75,7 +70,7 @@ namespace Launcher.ViewModels
                 MessageBox.Show("Неверный Логин/Пароль. \nПроверьте правильность вводимых данных","Ошибка Авторизации");
             }
 
-            KeyboardProperty.KeyboardClose();
+            //KeyboardProperty.KeyboardClose();
             //else
             //{
             //    _eventAggregator.PublishOnBackgroundThread(IoC.Get<RegistrationViewModel>());

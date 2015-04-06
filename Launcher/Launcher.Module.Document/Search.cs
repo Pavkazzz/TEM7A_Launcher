@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Launcher.Core;
-using Launcher.ViewModels;
 
 namespace Launcher.Module.Document
 {
@@ -34,7 +29,7 @@ namespace Launcher.Module.Document
                                                                 on Document.id == Search.Document_id
                                                                 where SearchText like '%{0}%'
                                                             ", name),
-                    new List<string>() { "Name" });
+                    new List<string> { "Name" });
 
                 foreach (var searchResult in DbSelect)
                 {

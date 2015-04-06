@@ -1,11 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.IO;
-using System.Windows;
 using Caliburn.Micro;
 using Launcher.Core;
-using Launcher.Core.Components;
-using Launcher.Core.Components.Document;
 using Launcher.Core.HelperClass;
 
 namespace Launcher.Module.Document.ViewModels
@@ -49,7 +46,7 @@ namespace Launcher.Module.Document.ViewModels
             _eventAggregator = eventAggregator;
             _windowManager = windowManager;
             var db = new DataBase(Path.GetFullPath(new DocAbout().DbPath));
-            var select = db.SqlSelect("Select id, DocumentName, DocumentIndex, Path from History order by documentIndex", new List<string>() { "id", "DocumentName", "DocumentIndex", "Path" });
+            var select = db.SqlSelect("Select id, DocumentName, DocumentIndex, Path from History order by documentIndex", new List<string> { "id", "DocumentName", "DocumentIndex", "Path" });
             foreach (var row in select)
             {
                 HistoryWrapPanels.Add(new DocFile(row["DocumentName"], row["Path"]));

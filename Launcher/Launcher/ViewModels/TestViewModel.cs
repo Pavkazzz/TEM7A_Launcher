@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Caliburn.Micro;
+﻿using Caliburn.Micro;
 
 namespace Launcher.ViewModels
 {
@@ -17,22 +11,22 @@ namespace Launcher.ViewModels
         {
             get
             {
-                return this.flyouts;
+                return flyouts;
             }
         }
 
 
         public void ToggleFlyout(int index)
         {
-            var flyout = this.flyouts[index];
+            var flyout = flyouts[index];
             flyout.IsOpen = !flyout.IsOpen;
         }
 
         protected override void OnInitialize()
         {
             base.OnInitialize();
-            this.DisplayName = "Caliburn.Metro.Demo";
-            this.flyouts.Add(IoC.Get<FlyoutSearchViewModel>());
+            DisplayName = "Caliburn.Metro.Demo";
+            flyouts.Add(IoC.Get<FlyoutSearchViewModel>());
         }
     }
 }

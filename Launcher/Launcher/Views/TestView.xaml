@@ -1,9 +1,9 @@
 ﻿<controls:MetroWindow x:Class="Launcher.Views.TestView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
-        xmlns:cal="http://www.caliburnproject.org"
-        Title="Testing" Height="300" Width="300">
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:cal="http://www.caliburnproject.org"
+                      Title="Testing" Height="300" Width="300">
     <controls:MetroWindow.Flyouts>
         <controls:FlyoutsControl x:Name="Flyouts">
             <controls:FlyoutsControl.ItemContainerStyle>

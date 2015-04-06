@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Windows.Media;
-using Caliburn.Micro;
 
 namespace Launcher.Core
 {
-    [InheritedExport(typeof(IModuleName))]
+    [InheritedExport(typeof (IModuleName))]
     public interface IModuleName
     {
         Color Coloring { get; set; }
@@ -15,14 +14,12 @@ namespace Launcher.Core
         int PositionNumber { get; set; }
         Type ViewModel { get; set; }
         string DbPath { get; set; }
-        List<About> Category { get; set; } 
+        List<About> Category { get; set; }
         bool PrimaryCheck();
     }
 
     public class About
     {
-        public string AboutName { get; set; }
-
         public About()
         {
             AboutName = String.Empty;
@@ -32,5 +29,7 @@ namespace Launcher.Core
         {
             AboutName = aboutName;
         }
+
+        public string AboutName { get; set; }
     }
 }

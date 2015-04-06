@@ -1,6 +1,4 @@
 ﻿using Caliburn.Micro;
-using Launcher.Core;
-using Launcher.ViewModels;
 
 namespace Launcher.Model
 {

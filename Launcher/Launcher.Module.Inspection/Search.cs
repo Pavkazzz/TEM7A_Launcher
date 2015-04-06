@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Launcher.Core;
 
 namespace Launcher.Module.Inspection
 {
-    class Search : ISearch
+    internal class Search : ISearch
     {
         public string ModuleName
         {
