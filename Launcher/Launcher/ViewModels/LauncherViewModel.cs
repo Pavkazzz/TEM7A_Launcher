@@ -19,7 +19,7 @@ namespace Launcher.ViewModels
         private IEventAggregator _eventAggregator;
 
         /// <summary>
-        /// ss
+        /// ssss
         /// </summary>
  
         private readonly IEnumerable<ISearch> _search;

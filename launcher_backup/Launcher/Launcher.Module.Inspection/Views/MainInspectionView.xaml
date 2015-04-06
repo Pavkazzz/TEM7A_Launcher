@@ -1,0 +1,313 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:micro="http://www.caliburnproject.org"
+             x:Class="Launcher.Module.Inspection.Views.MainInspectionView"
+             mc:Ignorable="d" 
+             d:DesignHeight="1400" d:DesignWidth="1600">
+    <UserControl.Resources>
+        <Style x:Key="SquareButtonRound" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="Height" Value="120"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="11" BorderThickness="2" >
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Border x:Name="FirstBorder" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" BorderBrush="Green" BorderThickness="3" HorizontalAlignment="Stretch" Margin="1" VerticalAlignment="Stretch" CornerRadius="11">
+
+                                    <Border x:Name="SecondBorder" BorderBrush="Yellow" BorderThickness="3" Margin="1" CornerRadius="3" Background="DarkGreen">
+                                        <Border.Style>
+                                            <Style TargetType="{x:Type Border}">
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="DarkGoldenrod"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                        <Grid>
+                                            <Grid.Style>
+                                                <Style TargetType="{x:Type Grid}">
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="Background" Value="DarkGoldenrod"/>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Grid.Style>
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </Border>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ListBoxWithoutIsolation" TargetType="ListBox">
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+            <!--<Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#000000" />
+                -->
+            <!-- Background of selected item when focussed -->
+            <!--
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#000000" />
+                -->
+            <!-- Background of selected item when not focussed -->
+            <!--
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#000000" />
+            </Style.Resources>-->
+        </Style>
+        <Style x:Key="ListBoxHorizontalWitoutIsolation" TargetType="ListBox">
+            <Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#000000" />
+                <!-- Background of selected item when focussed -->
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#000000" />
+                <!-- Background of selected item when not focussed -->
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#000000" />
+            </Style.Resources>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <StackPanel Orientation="Horizontal" Background="DarkGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                  RecognizesAccessKey="True"
+                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+        <Style x:Key="ListBoxItemWithoutIsolation" TargetType="ListBoxItem">
+            <Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#000000" />
+                <!-- Background of selected item when focussed -->
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#000000" />
+                <!-- Background of selected item when not focussed -->
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#000000" />
+            </Style.Resources>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Border BorderThickness="{TemplateBinding BorderThickness}"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    SnapsToDevicePixels="true">
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                  RecognizesAccessKey="True"
+                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="Red"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="Transparent"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="ListBoxMainInspectionModule" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Background="LightGray" Style="{StaticResource ListBoxWithoutIsolation}" ItemContainerStyle="{StaticResource ListBoxItemWithoutIsolation}">
+            <!--<ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Style.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#000000" />
+                        --><!-- Background of selected item when focussed --><!--
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#000000" />
+                        --><!-- Background of selected item when not focussed --><!--
+                        <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#000000" />
+                    </Style.Resources>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                <Border BorderThickness="{TemplateBinding BorderThickness}"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    SnapsToDevicePixels="true">
+                                    <ContentPresenter Margin="{TemplateBinding Padding}"
+                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                  RecognizesAccessKey="True"
+                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                </Border>
+
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsEnabled" Value="false">
+                                        <Setter Property="Foreground" Value="#ADADAD"/>
+                                    </Trigger>
+                                    --><!--<Trigger Property="IsMouseOver" Value="true">
+                                        <Setter Property="Background" Value="#B00000"/>
+                                    </Trigger>--><!--
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>-->
+            <Button Style="{StaticResource SquareButtonRound}" Content="Этап 1"/>
+            <Button Style="{StaticResource SquareButtonRound}" Content="Этап 2"/>
+            <Button Style="{StaticResource SquareButtonRound}" Content="Этап 3"/>
+        </ListBox>
+        <Label HorizontalAlignment="Right" VerticalAlignment="Top" Content="Таймер обратного отчёта" Grid.Row="0" Grid.Column="3" FontSize="22"/>
+        <TabControl x:Name="TabControlInspectionModule" Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" Grid.ColumnSpan="3" Background="LightGray">
+            <TabItem Header="Машинист">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="0.8*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox Style="{StaticResource ListBoxWithoutIsolation}" ItemContainerStyle="{StaticResource ListBoxItemWithoutIsolation}" Grid.Row="8" Background="LightGray" Grid.Column="0" Grid.ColumnSpan="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Top">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" Background="Transparent" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+
+
+                        <Button Style="{StaticResource SquareButtonRound}" Content="Без замечаний" Width="170" Height="100"/>
+                        <Button Style="{StaticResource SquareButtonRound}" x:Name="Notice" Content="Замечания"  Width="170" Height="100"/>
+                        <Button Style="{StaticResource SquareButtonRound}" Content="Комментарий" Width="170" Height="100"/>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ListBox>
+                    <ListBox Style="{StaticResource ListBoxWithoutIsolation}" ItemContainerStyle="{StaticResource ListBoxItemWithoutIsolation}" Background="Transparent"  Grid.Column="4" Grid.Row="1" Grid.RowSpan="6" HorizontalAlignment="Right" >
+                        <Button Style="{StaticResource SquareButtonRound}" Content="Фото"/>
+                        <Button Style="{StaticResource SquareButtonRound}" Content="Чертежи"/>
+                        <Button Style="{StaticResource SquareButtonRound}" Content="Документы"/>
+                    </ListBox>
+                    <ContentControl x:Name="NoticeContentControl" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="5" />
+                </Grid>
+
+            </TabItem>
+
+            <TabItem Header="Помощник Машиниста">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="130"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ListView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5" Background="DarkGray" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" Background="DarkGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListBoxItem Content="Фото" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Content="Чертежи" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Content="Документы" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Background="#26A65B" Content="Без замечаний" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Background="#FFDAE402" Content="Замечания" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Content="Комментарий" FontSize="30" Foreground="White"/>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Ремонтники">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="130"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ListView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5" Background="DarkGray" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" Background="DarkGray"  />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListBoxItem Content="Фото" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Content="Чертежи" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Content="Документы" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Background="#26A65B" Content="Без замечаний" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Background="#FFDAE402" Content="Замечания" FontSize="30" Foreground="White"/>
+                        <ListBoxItem Content="Комментарий" FontSize="30" Foreground="White"/>
+                    </ListView>
+                </Grid>
+            </TabItem>
+
+
+        </TabControl>
+    </Grid>
+</UserControl>
