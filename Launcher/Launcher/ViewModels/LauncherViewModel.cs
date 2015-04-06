@@ -18,7 +18,10 @@ namespace Launcher.ViewModels
     {
         private IEventAggregator _eventAggregator;
 
-         
+        /// <summary>
+        /// ss
+        /// </summary>
+ 
         private readonly IEnumerable<ISearch> _search;
 
         [ImportingConstructor]
