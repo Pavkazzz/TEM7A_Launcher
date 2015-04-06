@@ -10,7 +10,7 @@ using Launcher.Model;
 namespace Launcher.ViewModels
 {
     [Export(typeof(LauncherViewModel))]
-    public class LauncherViewModel : Screen, IClose
+    public class LauncherViewModel : Screen
     {
         private IEventAggregator _eventAggregator;
 
@@ -57,6 +57,7 @@ namespace Launcher.ViewModels
                 {
                     //TODO Dialog window
                     //::SEM
+                    //_eventAggregator.PublishOnBackgroundThread(o.ViewModel.FullName);
                     _eventAggregator.PublishOnBackgroundThread(name);
                 }
 
@@ -167,9 +168,6 @@ namespace Launcher.ViewModels
             _flyouts.Add(IoC.Get<FlyoutSearchViewModel>());
         }
 
-        public void TryClose()
-        {
-            Cef.Shutdown();
-        }
+
     }
 }

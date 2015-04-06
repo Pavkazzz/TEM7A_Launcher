@@ -2,6 +2,7 @@
 using System.ComponentModel.Composition;
 using System.IO;
 using Caliburn.Micro;
+using CefSharp;
 using Launcher.Core;
 
 namespace Launcher.Module.Document.ViewModels
@@ -59,7 +60,9 @@ namespace Launcher.Module.Document.ViewModels
 
         public void CloseWindow()
         {
-            TryClose();
+            TryClose();           
+            Cef.Shutdown();
+        
         }
 
 

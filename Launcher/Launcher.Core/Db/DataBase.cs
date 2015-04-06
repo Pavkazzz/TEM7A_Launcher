@@ -26,7 +26,13 @@ namespace Launcher.Core
 
         private void OpenConnectionSqlite(string path)
         {
-            _sqLiteConnectionDatabase = new SQLiteConnection(string.Format(@"Data Source={0}", path));
+            //_sqLiteConnectionDatabase = new SQLiteConnection(string.Format(@"Data Source={0}", path));
+            //_sqLiteConnectionDatabase.Open();
+            SQLiteConnectionStringBuilder connBuilder = new SQLiteConnectionStringBuilder();
+            connBuilder.DataSource = path;
+            connBuilder.JournalMode = SQLiteJournalModeEnum.Memory;
+
+            _sqLiteConnectionDatabase = new SQLiteConnection(connBuilder.ToString());
             _sqLiteConnectionDatabase.Open();
         }
 
