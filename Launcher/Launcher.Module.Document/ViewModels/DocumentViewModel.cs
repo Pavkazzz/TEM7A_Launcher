@@ -82,14 +82,14 @@ namespace Launcher.Module.Document.ViewModels
             TryClose();
         }
     }
+}
 
-    public class FileNamePdfPanel
+public class FileNamePdfPanel
+{
+    public FileNamePdfPanel(string fileName)
     {
-        public FileNamePdfPanel(string fileName)
-        {
-            FileName = fileName;
-        }
-
-        public string FileName { get; private set; }
+        FileName = fileName;
     }
+
+    public string FileName { get; private set; }
 }

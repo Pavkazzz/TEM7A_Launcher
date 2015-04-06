@@ -1,4 +1,5 @@
 using System.ComponentModel.Composition;
+using System.Diagnostics;
 using System.Linq;
 using Caliburn.Micro;
 using Launcher.Core;
@@ -33,6 +34,11 @@ namespace Launcher.ViewModels
             {
                 check.PrimaryCheck();
             }
+        }
+
+        public void OnClose()
+        {
+            Process.GetCurrentProcess().Kill();
         }
 
 
