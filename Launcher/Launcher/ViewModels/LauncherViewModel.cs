@@ -21,7 +21,7 @@ namespace Launcher.ViewModels
         private readonly IEnumerable<ISearch> _search;
 
         [ImportingConstructor]
-        public LauncherViewModel(IEventAggregator eventAggregator, IWindowManager windowManager, [ImportMany(typeof(IModuleName))] IEnumerable<Lazy<IModuleName>> aboutModule, MainModel model)
+        public LauncherViewModel(IEventAggregator eventAggregator, IWindowManager windowManager, [ImportMany(typeof(IModuleName))] IEnumerable<IModuleName> aboutModule, MainModel model)
         {
             _eventAggregator = eventAggregator;
             _windowManager = windowManager;
@@ -29,11 +29,11 @@ namespace Launcher.ViewModels
 
             _eventAggregator.Subscribe(this);
 
-            foreach (var moduleName in aboutModule.OrderBy(s => s.Value.PositionNumber))
+            foreach (var moduleName in aboutModule.OrderBy(s => s.PositionNumber))
             {
                 if (moduleName != null)
                 {
-                    _model.Modules.Add(new ModuleItem((IModuleName) moduleName));
+                    model.Modules.Add(new ModuleItem(moduleName));
                 }   
             }
 

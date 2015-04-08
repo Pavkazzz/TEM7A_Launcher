@@ -2,6 +2,11 @@
 {
     public class DocFile
     {
+        public DocFile()
+        {
+            Name = string.Empty;
+            Path = string.Empty;
+        }
         public DocFile(string name)
         {
             Name = name;

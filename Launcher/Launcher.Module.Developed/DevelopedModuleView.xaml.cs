@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Launcher.Module.Document.Views
+namespace Launcher.Module.Developed
 {
     /// <summary>
     /// Interaction logic for DevelopedModuleView.xaml
