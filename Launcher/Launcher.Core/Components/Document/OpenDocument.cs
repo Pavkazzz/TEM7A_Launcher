@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Xps.Packaging;
 using Caliburn.Micro;
 using CefSharp;
 using Launcher.Core.HelperClass;
+using Microsoft.Office.Interop.Word;
 
 namespace Launcher.Core.Components.Document
 {
@@ -15,11 +18,14 @@ namespace Launcher.Core.Components.Document
         public void ShowPdf(DocFile doc, string DatabasePath)
         {
             //view для документа.
-            if (doc != null)
+            if (doc == null) return;
+            var ext = Path.GetExtension(doc.Path);
+
+            if (ext == "pdf")
             {
                 var db = new DataBase(Path.GetFullPath(DatabasePath));
 
-                var index = db.SqlSelect("Select id from History order by id desc", new List<string> {"id"});
+                var index = db.SqlSelect("Select id from History order by id desc", new List<string> { "id" });
 
                 if (index.Count > 0)
                 {
@@ -35,9 +41,6 @@ namespace Launcher.Core.Components.Document
                             "INSERT INTO \"main\".\"History\" (\"DocumentName\",\"DocumentIndex\",\"Path\") VALUES ('{0}','{1}','{2}')",
                             doc.Name, '1', doc.Path));
                 }
-                //_windowManager = IoC.Get<IWindowManager>();
-                //TODO в CORE запихнуть
-                //return new DocumentView();
 
                 if (!Cef.IsInitialized)
                 {
@@ -66,7 +69,56 @@ namespace Launcher.Core.Components.Document
                     }
                 }
 
-                new DocumentView(new FileNamePdfPanel(doc.Path)).ShowDialog();
+                new DocumentView(new FileNameDoc(doc.Path)).ShowDialog(); 
+            }
+
+            if (ext == "doc" || ext == "docx")
+            {
+                var detalViewer = new DocumentViewer();
+
+                string convertedXpsDoc = string.Concat(Path.GetTempPath(), "\\", Guid.NewGuid().ToString(), ".xps");
+                XpsDocument xpsDocument = ConvertWordToXps(doc.Path, convertedXpsDoc);
+                if (xpsDocument == null)
+                {
+                    File.Delete(convertedXpsDoc);
+                    return ;
+                }
+
+                detalViewer.Document = xpsDocument.GetFixedDocumentSequence();
+                File.Delete(convertedXpsDoc);
+            }
+        }
+
+        private static XpsDocument ConvertWordToXps(string wordFilename, string xpsFilename)
+        {
+            var wordApp = new Microsoft.Office.Interop.Word.Application();
+            try
+            {
+                wordApp.Documents.Open(wordFilename);
+
+                // To Invisible the word document
+                wordApp.Application.Visible = false;
+
+                // Minimize the opened word document
+                wordApp.WindowState = WdWindowState.wdWindowStateMinimize;
+
+                var doc = wordApp.ActiveDocument;
+
+                //TODO много одинаковых
+                doc.SaveAs(xpsFilename, WdSaveFormat.wdFormatXPS);
+
+                XpsDocument xpsDocument = new XpsDocument(xpsFilename, FileAccess.Read);
+                return xpsDocument;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occurs, The error message is  " + ex.ToString());
+                return null;
+            }
+            finally
+            {
+                //  wordApp.Documents.Close();
+                ((_Application)wordApp).Quit(WdSaveOptions.wdDoNotSaveChanges);
             }
         }
     }

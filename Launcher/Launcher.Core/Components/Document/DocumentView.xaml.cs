@@ -14,7 +14,7 @@ namespace Launcher.Core.Components.Document
     /// Interaction logic for DocumentView.xaml
     /// </summary>
     /// 
-    public partial class DocumentView : Window//, IHandle<FileNamePdfPanel>
+    public partial class DocumentView : Window//, IHandle<FileName>
     {
         private IEventAggregator _eventAggregator;
 
@@ -25,7 +25,7 @@ namespace Launcher.Core.Components.Document
             _eventAggregator.Subscribe(this);
         }
 
-        public DocumentView(FileNamePdfPanel message)
+        public DocumentView(FileNameDoc message)
         {
             InitializeComponent();
             _eventAggregator = IoC.Get<IEventAggregator>();

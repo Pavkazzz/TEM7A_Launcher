@@ -1,9 +1,9 @@
 namespace Launcher.Core.Components.Document
 {
     //TODO использовать DocFile
-    public class FileNamePdfPanel
+    public class FileNameDoc
     {
-        public FileNamePdfPanel(string fileName)
+        public FileNameDoc(string fileName)
         {
             FileName = fileName;
         }

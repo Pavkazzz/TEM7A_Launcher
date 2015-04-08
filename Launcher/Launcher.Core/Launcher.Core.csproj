@@ -63,6 +63,11 @@
     <Reference Include="MahApps.Metro">
       <HintPath>..\packages\MahApps.Metro.1.0.1-ALPHA047\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Lib\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
     <Reference Include="MoonPdfLib, Version=0.3.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\MoonPdfLib.dll</HintPath>
@@ -73,6 +78,7 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -93,7 +99,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\Document\FileNamePdfPanel.cs" />
+    <Compile Include="Components\Document\FIleName.cs" />
     <Compile Include="Components\Document\DocumentView.xaml.cs">
       <DependentUpon>DocumentView.xaml</DependentUpon>
     </Compile>
@@ -115,10 +121,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Lib\bcprov-jdk15-1.44.dll" />
-    <Content Include="Lib\CefSharp.Core.dll" />
-    <Content Include="Lib\CefSharp.dll" />
-    <Content Include="Lib\CefSharp.Example.dll" />
-    <Content Include="Lib\CefSharp.WinForms.dll" />
     <Content Include="Lib\commons-logging.dll" />
     <Content Include="Lib\fontbox-1.8.7.dll" />
     <Content Include="Lib\IKVM.OpenJDK.Core.dll" />
