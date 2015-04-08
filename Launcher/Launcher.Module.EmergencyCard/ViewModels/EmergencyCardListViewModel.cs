@@ -54,7 +54,7 @@ namespace Launcher.Module.EmergencyCard.ViewModels
             var path = e.PathToFile;
             if (e.PathToFile != null)
             {
-                new OpenDocument().ShowPdf(new DocFile(name, path), new EmergencyCardAbout().DbPath);
+                new OpenDocument().DialogDocument(new DocFile(name, path), new EmergencyCardAbout().DbPath);
             }
         }
         #region EmergencyListView

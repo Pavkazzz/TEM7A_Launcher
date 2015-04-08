@@ -17,11 +17,16 @@ namespace Launcher.Core.Components.Document
 
         public void DialogDocument(DocFile doc, string databasePath)
         {
+            Console.WriteLine(doc.Path, doc.Name, databasePath);
             //view для документа.
-            if (doc == null) return;
+            if (doc == null)
+            {
+                Console.WriteLine("doc == null");
+                return;
+            }
             var ext = Path.GetExtension(doc.Path);
-
-            if (ext == "pdf")
+            Console.WriteLine(ext);
+            if (ext == ".pdf")
             {
                 var db = new DataBase(Path.GetFullPath(databasePath));
 
@@ -72,7 +77,7 @@ namespace Launcher.Core.Components.Document
                 window.ShowDialog(); 
             }
 
-            if (ext == "doc" || ext == "docx")
+            if (ext == ".doc" || ext == ".docx")
             {
                 var detalViewer = new DocumentViewer();
 
@@ -88,9 +93,9 @@ namespace Launcher.Core.Components.Document
                 File.Delete(convertedXpsDoc);
             }
 
-            if (ext == "xps")
+            if (ext == ".xps")
             {
-                
+                //TODO XPS
             }
         }
 
