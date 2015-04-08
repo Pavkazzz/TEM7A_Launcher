@@ -9,6 +9,7 @@
 *.exe
 *.db
 *.sqlite
+*.ps1
 
 # Build results
 [Dd]ebug/
