@@ -14,7 +14,7 @@ namespace Launcher.Module.EmergencyCard
             PositionNumber = 1;
             Name = @"Аварийные карточки";
             Description =
-                @"Модуль «Аварийные карточки» предназначен для ...";
+                @"Модуль «Аварийные карточки» предоставляет в интерактивном виде графическое изображение возможных неисправностей локомотива и порядок действий локомотивной бригады для устранения причин,вызвавших аварию.";
             ViewModel = typeof (MainEmergencyCardViewModel);
             //TODO BD
             DbPath = "../../../../Launcher.Module.EmergencyCard/EmergencyCard.sqlite";
