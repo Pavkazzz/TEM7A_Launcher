@@ -30,11 +30,22 @@
         <ListBox x:Name="CategoryEmergencyListBox" Grid.Column="0" Grid.Row="1" Margin="1"
                  ItemContainerStyle="{StaticResource LolTemplateStyle}"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                 ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="{DynamicResource HighlightBrush}">
+                 ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="{DynamicResource HighlightBrush}" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding CategoryName}" TextWrapping="WrapWithOverflow"
-                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="WhiteSmoke"></SolidColorBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                            
+                        </Button.Style>
+                        <TextBlock Text="{Binding CategoryName}" TextWrapping="WrapWithOverflow" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></TextBlock>
+                        </Button>
                 </DataTemplate>
             </ListBox.ItemTemplate>
 

@@ -3,6 +3,8 @@ using System.ComponentModel.Composition;
 using System.IO;
 using Caliburn.Micro;
 using Launcher.Core;
+using Launcher.Core.Components.Document;
+using Launcher.Core.HelperClass;
 
 namespace Launcher.Module.EmergencyCard.ViewModels
 {
@@ -17,6 +19,7 @@ namespace Launcher.Module.EmergencyCard.ViewModels
         {
             _eventAggregator = eventAggregator;
             _windowManager = windowManager;
+            //Тут надо сдлеать,чтобы выводилось изначальное приветствие
             var db = new DataBase(Path.GetFullPath(new EmergencyCardAbout().DbPath));
             var select =
                 db.SqlSelect(
@@ -35,12 +38,25 @@ namespace Launcher.Module.EmergencyCard.ViewModels
                     row["Shipping_Name"], row["ClassificationNumber"], row["PathToFile"]));
             }
         }
+        
 
         public void CloseWindow()
         {
             TryClose();
         }
-
+        /// <summary>
+        /// Отображение pdf в дальнейшем надо переделать,чтобы всё работало.
+        /// </summary>
+        /// <param name="e"></param>
+        public void OpenDoc(EmergencyCardFileClass e)
+        {
+            var name = e.Name_Card;
+            var path = e.PathToFile;
+            if (e.PathToFile != null)
+            {
+                new OpenDocument().ShowPdf(new DocFile(name, path), new EmergencyCardAbout().DbPath);
+            }
+        }
         #region EmergencyListView
 
         private BindableCollection<EmergencyCardFileClass> _EmergencyCardListBox =
