@@ -1,4 +1,5 @@
 using System.ComponentModel.Composition;
+using System.Diagnostics;
 using System.Linq;
 using Caliburn.Micro;
 using Launcher.Core;
@@ -35,6 +36,11 @@ namespace Launcher.ViewModels
             }
         }
 
+        public void OnClose()
+        {
+            Process.GetCurrentProcess().Kill();
+        }
+
 
         //TODO переделать на typeof вместо string
         //public void Handle(string message)
@@ -47,16 +53,6 @@ namespace Launcher.ViewModels
         //}
 
 
-        public void Handle(LauncherViewModel message)
-        {
-
-            ActivateItem(IoC.Get<LauncherViewModel>());
-        }
-
-        public void Handle(RegistrationViewModel message)
-        {
-            ActivateItem(IoC.Get<RegistrationViewModel>());
-        }
 
         public void Handle(string message)
         {
