@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.IO;
 using System.Windows;
@@ -52,11 +53,17 @@ namespace Launcher.Module.Document.ViewModels
         public void ShowDoc(DocFile doc)
         {
             //view для документа.
-            //_eventAggregator.PublishOnBackgroundThread(IoC.Get<DocumentViewModel>());
-            string path = new DocAbout().DbPath;
-            //Screen pdf = opendoc.ShowPdf(doc, path);
-            //_windowManager.ShowDialog();
-            new OpenDocument().ShowPdf(doc, path);
+            if (doc != null)
+            {
+                Console.WriteLine(doc.Path);
+                Console.WriteLine("qwewqeqweqweqwqwe");
+                //_eventAggregator.PublishOnBackgroundThread(IoC.Get<DocumentViewModel>());
+                string path = new DocAbout().DbPath;
+                //Screen pdf = opendoc.ShowPdf(doc, path);
+                //_windowManager.ShowDialog();
+                var open = new OpenDocument();
+                open.DialogDocument(doc, path);
+            }
         }
 
         public void Handle(Category message)

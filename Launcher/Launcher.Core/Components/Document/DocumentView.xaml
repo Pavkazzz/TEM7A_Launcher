@@ -33,7 +33,7 @@
         </StackPanel>
         <Label Grid.Column="1" Grid.Row="0" Content="{Binding Address, ElementName=WebBrowser}" />
         <!--Сюда в старом образе у нас отображались данные -->
-        <Grid x:Name="gridViewerPDF" Grid.Row="1" Grid.Column="1">
+        <Grid x:Name="GridViewer" Grid.Row="1" Grid.Column="1">
             <WindowsFormsHost x:Name="PdfBrowser" HorizontalAlignment="Stretch" Height="auto" Margin="1"
                               VerticalAlignment="Stretch" Width="auto" />
             <!--<cef:ChromiumWebBrowser x:Name="PdfBrowser" Grid.Row="0"/>-->

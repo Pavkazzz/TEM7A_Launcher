@@ -15,15 +15,16 @@ namespace Launcher.Core.Components.Document
     {
         private IWindowManager _windowManager;
 
-        public void ShowPdf(DocFile doc, string DatabasePath)
+        public void DialogDocument(DocFile doc, string databasePath)
         {
+            Console.WriteLine(doc.Path, doc.Name, databasePath);
             //view для документа.
-            if (doc == null) return;
-            var ext = Path.GetExtension(doc.Path);
 
-            if (ext == "pdf")
+            var ext = Path.GetExtension(doc.Path);
+            Console.WriteLine(ext);
+            if (ext == ".pdf")
             {
-                var db = new DataBase(Path.GetFullPath(DatabasePath));
+                var db = new DataBase(Path.GetFullPath(databasePath));
 
                 var index = db.SqlSelect("Select id from History order by id desc", new List<string> { "id" });
 
@@ -68,28 +69,32 @@ namespace Launcher.Core.Components.Document
                         throw new Exception("Unable to Initialize Cef");
                     }
                 }
-
-                new DocumentView(new FileNameDoc(doc.Path)).ShowDialog(); 
+                var window = new DocumentView().ShowPdf(new FileNameDoc(doc.Path));
+                window.ShowDialog(); 
             }
 
-            if (ext == "doc" || ext == "docx")
+            if (ext == ".doc" || ext == ".docx")
             {
-                var detalViewer = new DocumentViewer();
+             
+                string convertedXpsDoc = Path.ChangeExtension(ext, "xps");
+                string xpsDocument = ConvertWordToXps(doc.Path, convertedXpsDoc);
+                var window = new DocumentView().ShowXps(new FileNameDoc(xpsDocument));
+                window.ShowDialog();
 
-                string convertedXpsDoc = string.Concat(Path.GetTempPath(), "\\", Guid.NewGuid().ToString(), ".xps");
-                XpsDocument xpsDocument = ConvertWordToXps(doc.Path, convertedXpsDoc);
-                if (xpsDocument == null)
-                {
-                    File.Delete(convertedXpsDoc);
-                    return ;
-                }
+                //detalViewer.Document = xpsDocument.GetFixedDocumentSequence();
+                
+            }
 
-                detalViewer.Document = xpsDocument.GetFixedDocumentSequence();
-                File.Delete(convertedXpsDoc);
+            if (ext == ".xps")
+            {
+
+
+                var window = new DocumentView().ShowXps(new FileNameDoc(doc.Path));
+                window.ShowDialog();
             }
         }
 
-        private static XpsDocument ConvertWordToXps(string wordFilename, string xpsFilename)
+        private static string ConvertWordToXps(string wordFilename, string xpsFilename)
         {
             var wordApp = new Microsoft.Office.Interop.Word.Application();
             try
@@ -107,8 +112,7 @@ namespace Launcher.Core.Components.Document
                 //TODO много одинаковых
                 doc.SaveAs(xpsFilename, WdSaveFormat.wdFormatXPS);
 
-                XpsDocument xpsDocument = new XpsDocument(xpsFilename, FileAccess.Read);
-                return xpsDocument;
+                return xpsFilename;
             }
             catch (Exception ex)
             {
