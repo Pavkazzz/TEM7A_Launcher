@@ -14,11 +14,14 @@ namespace Launcher.ViewModels
     {
         private IEventAggregator _eventAggregator;
 
-         
+        /// <summary>
+        /// ssssasdasd
+        /// </summary>
+ 
         private readonly IEnumerable<ISearch> _search;
 
         [ImportingConstructor]
-        public LauncherViewModel(IEventAggregator eventAggregator, IWindowManager windowManager, [ImportMany(typeof(IModuleName))] IEnumerable<IModuleName> aboutModule, MainModel model)
+        public LauncherViewModel(IEventAggregator eventAggregator, IWindowManager windowManager, [ImportMany(typeof(IModuleName))] IEnumerable<Lazy<IModuleName>> aboutModule, MainModel model)
         {
             _eventAggregator = eventAggregator;
             _windowManager = windowManager;
@@ -26,11 +29,11 @@ namespace Launcher.ViewModels
 
             _eventAggregator.Subscribe(this);
 
-            foreach (var moduleName in aboutModule.OrderBy(s => s.PositionNumber))
+            foreach (var moduleName in aboutModule.OrderBy(s => s.Value.PositionNumber))
             {
                 if (moduleName != null)
                 {
-                    model.Modules.Add(new ModuleItem(moduleName));
+                    _model.Modules.Add(new ModuleItem((IModuleName) moduleName));
                 }   
             }
 

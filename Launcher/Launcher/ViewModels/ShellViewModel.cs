@@ -53,16 +53,6 @@ namespace Launcher.ViewModels
         //}
 
 
-        public void Handle(LauncherViewModel message)
-        {
-
-            ActivateItem(IoC.Get<LauncherViewModel>());
-        }
-
-        public void Handle(RegistrationViewModel message)
-        {
-            ActivateItem(IoC.Get<RegistrationViewModel>());
-        }
 
         public void Handle(string message)
         {
