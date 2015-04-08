@@ -19,11 +19,7 @@ namespace Launcher.Core.Components.Document
         {
             Console.WriteLine(doc.Path, doc.Name, databasePath);
             //view для документа.
-            if (doc == null)
-            {
-                Console.WriteLine("doc == null");
-                return;
-            }
+
             var ext = Path.GetExtension(doc.Path);
             Console.WriteLine(ext);
             if (ext == ".pdf")
@@ -79,27 +75,26 @@ namespace Launcher.Core.Components.Document
 
             if (ext == ".doc" || ext == ".docx")
             {
-                var detalViewer = new DocumentViewer();
+             
+                string convertedXpsDoc = Path.ChangeExtension(ext, "xps");
+                string xpsDocument = ConvertWordToXps(doc.Path, convertedXpsDoc);
+                var window = new DocumentView().ShowXps(new FileNameDoc(xpsDocument));
+                window.ShowDialog();
 
-                string convertedXpsDoc = string.Concat(Path.GetTempPath(), "\\", Guid.NewGuid().ToString(), ".xps");
-                XpsDocument xpsDocument = ConvertWordToXps(doc.Path, convertedXpsDoc);
-                if (xpsDocument == null)
-                {
-                    File.Delete(convertedXpsDoc);
-                    return ;
-                }
-
-                detalViewer.Document = xpsDocument.GetFixedDocumentSequence();
-                File.Delete(convertedXpsDoc);
+                //detalViewer.Document = xpsDocument.GetFixedDocumentSequence();
+                
             }
 
             if (ext == ".xps")
             {
-                //TODO XPS
+
+
+                var window = new DocumentView().ShowXps(new FileNameDoc(doc.Path));
+                window.ShowDialog();
             }
         }
 
-        private static XpsDocument ConvertWordToXps(string wordFilename, string xpsFilename)
+        private static string ConvertWordToXps(string wordFilename, string xpsFilename)
         {
             var wordApp = new Microsoft.Office.Interop.Word.Application();
             try
@@ -117,8 +112,7 @@ namespace Launcher.Core.Components.Document
                 //TODO много одинаковых
                 doc.SaveAs(xpsFilename, WdSaveFormat.wdFormatXPS);
 
-                XpsDocument xpsDocument = new XpsDocument(xpsFilename, FileAccess.Read);
-                return xpsDocument;
+                return xpsFilename;
             }
             catch (Exception ex)
             {

@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Threading;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Forms.Integration;
+using System.Windows.Xps.Packaging;
 using Caliburn.Micro;
 using CefSharp;
 using CefSharp.WinForms;
@@ -47,6 +50,20 @@ namespace Launcher.Core.Components.Document
 
             return this;
         }
+
+        public Window ShowXps(FileNameDoc message)
+        {
+            Console.WriteLine(message.FileName);
+
+            XpsDocument xpsDoc = new XpsDocument(message.FileName, FileAccess.Read);
+
+            var detalViewer = new DocumentViewer();
+            detalViewer.Document = xpsDoc.GetFixedDocumentSequence();
+            GridViewer.Children.Add(detalViewer);
+
+            return this;
+        }
+
 
         private void Close(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
