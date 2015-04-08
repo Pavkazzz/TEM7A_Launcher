@@ -15,7 +15,7 @@ namespace Launcher.Core.Components.Document
     {
         private IWindowManager _windowManager;
 
-        public void ShowPdf(DocFile doc, string DatabasePath)
+        public void DialogDocument(DocFile doc, string databasePath)
         {
             //view для документа.
             if (doc == null) return;
@@ -23,7 +23,7 @@ namespace Launcher.Core.Components.Document
 
             if (ext == "pdf")
             {
-                var db = new DataBase(Path.GetFullPath(DatabasePath));
+                var db = new DataBase(Path.GetFullPath(databasePath));
 
                 var index = db.SqlSelect("Select id from History order by id desc", new List<string> { "id" });
 
@@ -68,8 +68,8 @@ namespace Launcher.Core.Components.Document
                         throw new Exception("Unable to Initialize Cef");
                     }
                 }
-
-                new DocumentView(new FileNameDoc(doc.Path)).ShowDialog(); 
+                var window = new DocumentView().ShowPdf(new FileNameDoc(doc.Path));
+                window.ShowDialog(); 
             }
 
             if (ext == "doc" || ext == "docx")
@@ -86,6 +86,11 @@ namespace Launcher.Core.Components.Document
 
                 detalViewer.Document = xpsDocument.GetFixedDocumentSequence();
                 File.Delete(convertedXpsDoc);
+            }
+
+            if (ext == "xps")
+            {
+                
             }
         }
 

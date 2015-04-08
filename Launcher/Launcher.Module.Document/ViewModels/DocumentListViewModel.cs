@@ -56,7 +56,7 @@ namespace Launcher.Module.Document.ViewModels
             string path = new DocAbout().DbPath;
             //Screen pdf = opendoc.ShowPdf(doc, path);
             //_windowManager.ShowDialog();
-            new OpenDocument().ShowPdf(doc, path);
+            new OpenDocument().DialogDocument(doc, path);
         }
 
         public void Handle(Category message)
