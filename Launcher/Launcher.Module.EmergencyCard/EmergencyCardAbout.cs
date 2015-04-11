@@ -6,7 +6,7 @@ using Launcher.Module.EmergencyCard.ViewModels;
 
 namespace Launcher.Module.EmergencyCard
 {
-    internal class EmergencyCardAbout : IModuleName
+    public class EmergencyCardAbout : IModuleName
     {
         public EmergencyCardAbout()
         {

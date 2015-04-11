@@ -30,7 +30,9 @@
         <ListBox x:Name="CategoryEmergencyListBox" Grid.Column="0" Grid.Row="1" Margin="1"
                  ItemContainerStyle="{StaticResource LolTemplateStyle}"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                 ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="{DynamicResource HighlightBrush}" >
+                 cal:Message.Attach="[Event SelectionChanged] = [Action Show]"
+                 ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+                 Background="{DynamicResource HighlightBrush}" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">

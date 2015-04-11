@@ -75,14 +75,22 @@ namespace Launcher.Core.Components.Document
 
             if (ext == ".doc" || ext == ".docx")
             {
-             
-                string convertedXpsDoc = Path.ChangeExtension(ext, "xps");
-                string xpsDocument = ConvertWordToXps(doc.Path, convertedXpsDoc);
+                string xpsDocument = string.Empty;
+                Console.WriteLine(ext);
+                string convertedXpsDoc = Path.ChangeExtension(doc.Path, ".xps");
+                Console.WriteLine(convertedXpsDoc);
+                if (!File.Exists(convertedXpsDoc))
+                {
+
+                    xpsDocument = ConvertWordToXps(doc.Path, convertedXpsDoc);
+                }
+                else
+                {
+                    xpsDocument = convertedXpsDoc;
+                }
+                
                 var window = new DocumentView().ShowXps(new FileNameDoc(xpsDocument));
                 window.ShowDialog();
-
-                //detalViewer.Document = xpsDocument.GetFixedDocumentSequence();
-                
             }
 
             if (ext == ".xps")

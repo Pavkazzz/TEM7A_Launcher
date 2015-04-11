@@ -9,21 +9,35 @@ namespace Launcher.Module.EmergencyCard.ViewModels
     [Export(typeof (IModule))]
     public sealed class MainEmergencyCardViewModel : Conductor<IScreen>.Collection.OneActive, IModule
     {
-        private MainEmergencyCardViewModel()
+
+        private EventAggregator _eventAggregator;
+
+        [ImportingConstructor]
+        private MainEmergencyCardViewModel(EventAggregator eventAggregator)
         {
+
+            _eventAggregator = eventAggregator;
+
             CategoryEmergencyListBox = new BindableCollection<CategoryCard>();
             if (File.Exists(Path.GetFullPath(new EmergencyCardAbout().DbPath)))
             {
                 var db = new DataBase(Path.GetFullPath(new EmergencyCardAbout().DbPath));
-                var category = db.SqlSelect("Select NameGroup from GroupOfEmergencyCard",
-                    new List<string> {"NameGroup"});
+                var category = db.SqlSelect("Select Name from Category",
+                    new List<string> {"Name"});
                 foreach (var singlecategory in category)
                 {
-                    CategoryEmergencyListBox.Add(new CategoryCard(singlecategory["NameGroup"]));
+                    CategoryEmergencyListBox.Add(new CategoryCard(singlecategory["Name"]));
                 }
             }
 
             ActivateItem(IoC.Get<EmergencyCardListViewModel>());
+        }
+
+
+        public void Show()
+        {
+            ActivateItem(IoC.Get<EmergencyCardListViewModel>());
+            _eventAggregator.PublishOnBackgroundThread(SelectedCategoryEmergencyListBox);
         }
 
         public void CloseWindow()
@@ -34,6 +48,8 @@ namespace Launcher.Module.EmergencyCard.ViewModels
         #region PropertyForView
 
         private BindableCollection<CategoryCard> _categoryCard = new BindableCollection<CategoryCard>();
+        private CategoryCard _selectedCategory;
+
 
         public BindableCollection<CategoryCard> CategoryEmergencyListBox
         {
@@ -44,6 +60,16 @@ namespace Launcher.Module.EmergencyCard.ViewModels
                 NotifyOfPropertyChange(() => CategoryEmergencyListBox);
             }
         }
+
+        public CategoryCard SelectedCategoryEmergencyListBox
+        {
+            get { return _selectedCategory; }
+            set
+            {
+                _selectedCategory = value;
+                NotifyOfPropertyChange(() => SelectedCategoryEmergencyListBox);
+            }
+        } 
 
         #endregion
     }
