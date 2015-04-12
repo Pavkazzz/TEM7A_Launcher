@@ -10,10 +10,10 @@ namespace Launcher.Module.EmergencyCard.ViewModels
     public sealed class MainEmergencyCardViewModel : Conductor<IScreen>.Collection.OneActive, IModule
     {
 
-        private EventAggregator _eventAggregator;
+        private IEventAggregator _eventAggregator;
 
         [ImportingConstructor]
-        private MainEmergencyCardViewModel(EventAggregator eventAggregator)
+        private MainEmergencyCardViewModel(IEventAggregator eventAggregator)
         {
 
             _eventAggregator = eventAggregator;

@@ -84,7 +84,7 @@ namespace Launcher.Module.EmergencyCard.ViewModels
             //        row["Shipping_Name"], row["ClassificationNumber"], Path.GetFullPath(Path.Combine(@"..\..\..\..\File", row["PathToFile"]))));
             //}
             //TODO add category to EmergencyCard table.
-            var category = db.SqlSelect(string.Format(@"Select Category.Path, Document.PathName, Document.Name from  Document
+            var category = db.SqlSelect(string.Format(@"Select Category.Path, Document.PathName, Document.Name from Document
                                                         left outer join Category on Category.id == Document.category Where Category.Name = ""{0}""",
                                                         message.CategoryName), new List<string> { "Name", "PathName", "Path" });
             foreach (var singlecategory in category)

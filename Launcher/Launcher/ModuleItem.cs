@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Media;
 using Launcher.Core;
 
-namespace Launcher.Model
+namespace Launcher
 {
     //TODO inheritance from IModuleName
     public class ModuleItem
@@ -12,14 +15,12 @@ namespace Launcher.Model
         public string Name { get; set; }
         public string Description { get; set; }
         public Type ViewModel { get; set; }
-        public List<About> Category { get; set; } 
 
-        public ModuleItem(string name, string description, Type viewModel, List<About> category, Color color)
+        public ModuleItem(string name, string description, Type viewModel, Color color)
         {
             Name = name;
             Description = description;
             ViewModel = viewModel;
-            Category = category;
             Coloring = color;
 
         }
@@ -29,7 +30,6 @@ namespace Launcher.Model
             Name = module.Name;
             Description = module.Description;
             ViewModel = module.ViewModel;
-            Category = module.Category;
             Coloring = module.Coloring;
 
         }

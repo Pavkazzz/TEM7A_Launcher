@@ -8,7 +8,6 @@ namespace Launcher.Module.Document
 {
     internal class DocAbout : IModuleName
     {
-        private List<About> _category = new List<About>();
         
         public DocAbout()
         {
@@ -19,9 +18,6 @@ namespace Launcher.Module.Document
             ViewModel = typeof (MainDocViewModel);
             DbPath = "../../../../Launcher.Module.Document/document.sqlite";
 
-            Category.Add(new About("qwe"));
-            Category.Add(new About("asd"));
-            Category.Add(new About("zcx"));
         }
         public Color Coloring { get; set; }
         public int PositionNumber { get; set; }
@@ -30,15 +26,6 @@ namespace Launcher.Module.Document
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
 
-        public List<About> Category
-        {
-            get { return _category; }
-            set
-            {
-                _category = value;
-                
-            }
-        }
 
 
         public bool PrimaryCheck()

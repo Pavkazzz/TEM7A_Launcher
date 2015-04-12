@@ -28,7 +28,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -53,7 +52,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -78,7 +76,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -105,7 +102,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -129,7 +125,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -153,7 +148,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -177,7 +171,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -201,7 +194,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -226,7 +218,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -250,7 +241,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -275,7 +265,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -299,7 +288,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -323,7 +311,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -347,7 +334,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -371,7 +357,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -395,7 +380,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -419,7 +403,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();
@@ -443,7 +426,6 @@ namespace Launcher.Module.Developed
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
         public bool PrimaryCheck()
         {
             throw new NotImplementedException();

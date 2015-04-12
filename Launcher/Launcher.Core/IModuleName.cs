@@ -14,22 +14,6 @@ namespace Launcher.Core
         int PositionNumber { get; set; }
         Type ViewModel { get; set; }
         string DbPath { get; set; }
-        List<About> Category { get; set; }
         bool PrimaryCheck();
-    }
-
-    public class About
-    {
-        public About()
-        {
-            AboutName = String.Empty;
-        }
-
-        public About(string aboutName)
-        {
-            AboutName = aboutName;
-        }
-
-        public string AboutName { get; set; }
     }
 }

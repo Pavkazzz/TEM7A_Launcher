@@ -16,7 +16,6 @@ namespace Launcher.Module.EmergencyCard
             Description =
                 @"Модуль «Аварийные карточки» предоставляет в интерактивном виде графическое изображение возможных неисправностей локомотива и порядок действий локомотивной бригады для устранения причин,вызвавших аварию.";
             ViewModel = typeof (MainEmergencyCardViewModel);
-            //TODO BD
             DbPath = "../../../../Launcher.Module.EmergencyCard/EmergencyCard.sqlite";
         }
 
@@ -26,7 +25,6 @@ namespace Launcher.Module.EmergencyCard
         public string Description { get; set; }
         public Type ViewModel { get; set; }
         public string DbPath { get; set; }
-        public List<About> Category { get; set; }
 
         public bool PrimaryCheck()
         {

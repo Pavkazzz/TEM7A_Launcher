@@ -8,9 +8,9 @@ using System.Linq;
 using System.Reflection;
 using System.Windows;
 using Caliburn.Micro;
+using CefSharp.WinForms;
 using Launcher.Controls;
 using Launcher.Core;
-using Launcher.Model;
 
 namespace Launcher
 {
@@ -44,8 +44,8 @@ namespace Launcher
 
             batch.AddExportedValue<IWindowManager>(new WindowManager());
             batch.AddExportedValue<IEventAggregator>(new EventAggregator());
-            batch.AddExportedValue(new MainModel());
             batch.AddExportedValue(new User());
+            batch.AddExportedValue(new ChromiumWebBrowser("about:config"));
 
 
 

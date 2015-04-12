@@ -23,15 +23,13 @@ namespace Launcher.Module.Document
             }
             else
             {
-
-                var DbSelect = db.SqlSelect(string.Format(@"    Select Name from Search 
-                                                                Left join Document
-                                                                on Document.id == Search.Document_id
-                                                                where SearchText like '%{0}%'
-                                                            ", name),
+                var dbSelect = db.SqlSelect(string.Format(@"Select Name from Search 
+                                                            Left join Document
+                                                            on Document.id == Search.Document_id
+                                                            where SearchText like '%{0}%' ", name),
                     new List<string> { "Name" });
 
-                foreach (var searchResult in DbSelect)
+                foreach (var searchResult in dbSelect)
                 {
                     result.Add(searchResult["Name"]);
                 }
