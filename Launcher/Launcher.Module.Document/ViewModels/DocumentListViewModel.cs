@@ -56,7 +56,6 @@ namespace Launcher.Module.Document.ViewModels
             if (doc != null)
             {
                 Console.WriteLine(doc.Path);
-                Console.WriteLine("qwewqeqweqweqwqwe");
                 //_eventAggregator.PublishOnBackgroundThread(IoC.Get<DocumentViewModel>());
                 string path = new DocAbout().DbPath;
                 //Screen pdf = opendoc.ShowPdf(doc, path);

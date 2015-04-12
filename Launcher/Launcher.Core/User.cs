@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Annotations;
 
 namespace Launcher.Core
 {
@@ -33,15 +34,15 @@ namespace Launcher.Core
         public string Email { get;  set; }
         public bool Remember { get; set; }
 
-        public bool Login(String login, String pass, bool remember)
+        public bool Login(String personalNumber, String pass, bool remember)
         {
-            if (login != null && pass != null && login != string.Empty && pass != string.Empty && remember != null)
+            if (personalNumber != null && pass != null && personalNumber != string.Empty && pass != string.Empty && remember != null)
             {
                 Remember = remember;
                 var db = new DataBase();
                 var hashPass = Security.GetSHA512(pass);
                 var select = db.SqlSelect(
-                    string.Format("Select Name, Lastname from Accounts where PersonalNumber = '{0}' and Password = '{1}'", login,
+                    string.Format("Select Name, Lastname from Accounts where PersonalNumber = '{0}' and Password = '{1}'", personalNumber,
                         hashPass), new List<string> { "Name", "Lastname" });
 
                 var result = select.Count > 0;
@@ -52,25 +53,15 @@ namespace Launcher.Core
 
         public void Registration(IUser user)
         {
-            var db = new DataBase();
-            
-            var hashPass = Security.GetSHA512(user.Password);
-            db.SqlInsert(string.Format("Insert Into Accounts Values ('{0}', '{1}', '{2}', '{3}', '{4}')", user.PersonalNumber, hashPass, user.Name, user.Lastname, user.Patronymic));
+            if (user.Password != string.Empty && user.PersonalNumber != string.Empty)
+            {
+                var db = new DataBase();
+
+                var hashPass = Security.GetSHA512(user.Password);
+                db.SqlInsert(string.Format("Insert Into Accounts Values ('{0}', '{1}', '{2}', '{3}', '{4}')", user.PersonalNumber, hashPass, user.Name, user.Lastname, user.Patronymic));
+            }
+           
         }
     }
 
-    public interface IUser
-    {
-        string PersonalNumber { get; set; }
-        string Password { get; set; }
-        string Name { get; set; }
-        string Lastname { get; set; }
-        string Patronymic { get; set; }
-        string Email { get; set; }
-        bool Remember { get; set; }
-
-        bool Login(string login, string pass, bool remember);
-
-        void Registration(IUser user);
-    }
 }

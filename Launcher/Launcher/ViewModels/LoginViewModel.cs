@@ -63,7 +63,6 @@ namespace Launcher.ViewModels
             {
                 _eventAggregator.PublishOnBackgroundThread("LauncherViewModel");
             }
-            //TODO регистрация если нет такого
             else
             {
                 
