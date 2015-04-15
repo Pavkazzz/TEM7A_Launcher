@@ -98,6 +98,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MahApps.Metro.1.0.0.0\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=3.2.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Modules\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="pdfbox-1.8.7">
       <HintPath>..\Launcher.Core\Lib\pdfbox-1.8.7.dll</HintPath>
     </Reference>

@@ -76,6 +76,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\MouseKeyboardActivityMonitor.dll</HintPath>
     </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\Modules\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="ReachFramework" />

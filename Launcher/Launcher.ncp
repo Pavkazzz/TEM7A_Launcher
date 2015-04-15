@@ -22,7 +22,7 @@
       <Entity type="Class">
         <Name>Module</Name>
         <Access>Public</Access>
-        <Location left="511" top="397" />
+        <Location left="774" top="397" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -30,14 +30,14 @@
       <Entity type="Interface">
         <Name>IModule</Name>
         <Access>Public</Access>
-        <Location left="363" top="107" />
+        <Location left="626" top="107" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
       </Entity>
       <Entity type="Interface">
         <Name>ISearch</Name>
         <Access>Public</Access>
-        <Location left="597" top="107" />
+        <Location left="860" top="107" />
         <Size width="210" height="95" />
         <Collapsed>False</Collapsed>
         <Member type="Method">List&lt;string&gt; DoSearch(string Text)</Member>
@@ -45,7 +45,7 @@
       <Entity type="Class">
         <Name>Database</Name>
         <Access>Public</Access>
-        <Location left="1186" top="48" />
+        <Location left="91" top="340" />
         <Size width="232" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">string _sqlQuery</Member>
@@ -58,7 +58,7 @@
       <Entity type="Class">
         <Name>Launcher</Name>
         <Access>Public</Access>
-        <Location left="1444" top="48" />
+        <Location left="349" top="340" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">bool isUpdated</Member>
@@ -73,14 +73,14 @@
         <Size width="178" height="75" />
       </Entity>
       <Entity type="Comment">
-        <Text>Главная оболочка  программы</Text>
-        <Location left="597" top="10" />
+        <Text>Поиск по модулю</Text>
+        <Location left="860" top="10" />
         <Size width="210" height="75" />
       </Entity>
       <Entity type="Interface">
         <Name>IModuleName</Name>
         <Access>Public</Access>
-        <Location left="857" top="107" />
+        <Location left="1120" top="107" />
         <Size width="205" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Property">Color Coloring { get; set; }</Member>
@@ -93,7 +93,7 @@
       </Entity>
       <Entity type="Comment">
         <Text>Описание модуля.</Text>
-        <Location left="857" top="10" />
+        <Location left="1120" top="10" />
         <Size width="205" height="75" />
       </Entity>
     </Entities>
@@ -112,7 +112,7 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
-          <X>579</X>
+          <X>842</X>
           <Y>372</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
@@ -122,12 +122,24 @@
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>701</X>
-          <Y>370</Y>
+          <X>908</X>
+          <Y>326</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>605</X>
+          <X>868</X>
           <Y>368</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="9" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>917</X>
+          <Y>372</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>

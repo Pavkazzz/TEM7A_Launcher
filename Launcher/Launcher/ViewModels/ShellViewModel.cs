@@ -3,6 +3,8 @@ using System.Diagnostics;
 using System.Linq;
 using Caliburn.Micro;
 using Launcher.Core;
+using NLog;
+using LogManager = NLog.LogManager;
 
 namespace Launcher.ViewModels
 {
@@ -11,6 +13,7 @@ namespace Launcher.ViewModels
     {
         private readonly IEventAggregator _eventAggregator;
         private readonly IWindowManager _windowManager;
+        private static Logger _logger = LogManager.GetCurrentClassLogger();
 
         [ImportingConstructor]
         public ShellViewModel(IEventAggregator eventAggregator, IWindowManager windowManager)
@@ -102,7 +105,11 @@ namespace Launcher.ViewModels
 
         public void Handle(IModule message)
         {
+            var time = Stopwatch.StartNew();
+
             ActivateItem((IScreen) message);
+
+            _logger.Trace(time.Elapsed);
         }
     }
 }

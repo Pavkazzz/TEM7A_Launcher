@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Diagnostics;
 using System.IO;
 using Caliburn.Micro;
 using CefSharp;
 using Launcher.Core;
+using NLog;
+using LogManager = NLog.LogManager;
 
 namespace Launcher.Module.Document.ViewModels
 {
@@ -12,6 +15,7 @@ namespace Launcher.Module.Document.ViewModels
     {
         private IEventAggregator _eventAggregator;
         private IWindowManager _windowManager;
+        private static Logger logger = LogManager.GetCurrentClassLogger();
 
         #region PropertyForView
         private BindableCollection<Category> _category = new BindableCollection<Category>();
@@ -41,6 +45,7 @@ namespace Launcher.Module.Document.ViewModels
         [ImportingConstructor]
         public MainDocViewModel()
         {
+            var time = Stopwatch.StartNew();
             CategoryList = new BindableCollection<Category>();
 
             if (File.Exists(Path.GetFullPath(new DocAbout().DbPath)))
@@ -56,6 +61,8 @@ namespace Launcher.Module.Document.ViewModels
             _eventAggregator = IoC.Get<IEventAggregator>();
 
             ActivateItem(IoC.Get<HistoryViewModel>());
+
+            logger.Trace(time.ElapsedMilliseconds);
         }
 
         public void CloseWindow()

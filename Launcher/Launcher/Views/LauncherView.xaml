@@ -79,7 +79,7 @@
                  ItemContainerStyle="{StaticResource MainWindowListBoxTemplate}" ItemsSource="{Binding ListBoxModules}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Button cal:Message.Attach="[Event Click] = [Action OpenModule($this)]"
+                    <Button cal:Message.Attach="[Event Click] = [Action OpenModule($this)]; [Event MouseDown] = [Action OpenModule($this)]"
                             HorizontalContentAlignment="Center">
                         <Button.Style>
                             <Style TargetType="Button">

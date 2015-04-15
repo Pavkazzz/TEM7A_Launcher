@@ -11,6 +11,8 @@ using Caliburn.Micro;
 using CefSharp;
 using CefSharp.WinForms;
 using Launcher.Core.HelperClass;
+using NLog;
+using LogManager = NLog.LogManager;
 
 namespace Launcher.Core.Components.Document
 {
@@ -18,15 +20,18 @@ namespace Launcher.Core.Components.Document
     /// Interaction logic for DocumentView.xaml
     /// </summary>
     /// 
-    public partial class DocumentView : Window//, IHandle<FileName>
+    public partial class DocumentView : Window
     {
+        private static Logger _logger = LogManager.GetCurrentClassLogger();
         private IEventAggregator _eventAggregator;
 
         public DocumentView()
         {
+            var time = Stopwatch.StartNew();
             InitializeComponent();
             _eventAggregator = IoC.Get<IEventAggregator>();
             _eventAggregator.Subscribe(this);
+            _logger.Trace(time.Elapsed);
         }
 
         public Window ShowPdf(FileNameDoc message)
@@ -55,6 +60,7 @@ namespace Launcher.Core.Components.Document
         {
             Console.WriteLine(message.FileName);
 
+            
             XpsDocument xpsDoc = new XpsDocument(message.FileName, FileAccess.Read);
 
             var detalViewer = new DocumentViewer();

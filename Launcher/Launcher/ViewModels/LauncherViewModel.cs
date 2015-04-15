@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Diagnostics;
 using System.Linq;
 using Caliburn.Micro;
 using CefSharp;
 using Launcher.Core;
+using NLog;
+using LogManager = NLog.LogManager;
 
 namespace Launcher.ViewModels
 {
@@ -16,9 +19,12 @@ namespace Launcher.ViewModels
         /// <summary>
         /// ssssasdasd
         /// </summary>
- 
-        private readonly IEnumerable<ISearch> _search;
 
+        private readonly IEnumerable<ISearch> _search; 
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+        private IEnumerable<IModule> Modules;
+            
+            
         [ImportingConstructor]
         public LauncherViewModel(IEventAggregator eventAggregator, IWindowManager windowManager, [ImportMany(typeof(IModuleName))] IEnumerable<IModuleName> aboutModule)
         {
@@ -36,18 +42,20 @@ namespace Launcher.ViewModels
                 }   
             }
 
+            Modules = IoC.GetAll<IModule>();
         }
 
         public void OpenModule(ModuleItem o)
         {
-            var time = DateTime.Now;
+            logger.Trace(o.Name);
+            var time = Stopwatch.StartNew();
               
-            foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == o.ViewModel))
+            foreach (var name in Modules.Where(name => name.GetType() == o.ViewModel))
             {
                 _eventAggregator.PublishOnBackgroundThread(name);
             }
 
-            Console.WriteLine(DateTime.Now - time);
+            logger.Trace(time.Elapsed);
 
         }
 

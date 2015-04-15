@@ -11,6 +11,8 @@ using Caliburn.Micro;
 using CefSharp.WinForms;
 using Launcher.Controls;
 using Launcher.Core;
+using NLog;
+using LogManager = NLog.LogManager;
 
 namespace Launcher
 {
@@ -18,6 +20,8 @@ namespace Launcher
     {
         private CompositionContainer _container;
         private readonly string _modulesPath = Path.GetFullPath(@"../../../../Modules");
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+        
 
         public AppBootstrapper()
         {
@@ -36,6 +40,7 @@ namespace Launcher
 
         protected override void Configure()
         {
+            logger.Trace("Configure");
             var catalog = new AggregateCatalog(AssemblySource.Instance.Select(x => new AssemblyCatalog(x)));
 
             _container = new CompositionContainer(catalog);
@@ -46,6 +51,8 @@ namespace Launcher
             batch.AddExportedValue<IEventAggregator>(new EventAggregator());
             batch.AddExportedValue(new User());
             batch.AddExportedValue(new ChromiumWebBrowser("about:config"));
+           
+            
 
 
 

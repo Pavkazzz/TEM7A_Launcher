@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,19 +9,25 @@ using Caliburn.Micro;
 using CefSharp;
 using Launcher.Core.HelperClass;
 using Microsoft.Office.Interop.Word;
+using NLog;
+using LogManager = NLog.LogManager;
 
 namespace Launcher.Core.Components.Document
 {
     public class OpenDocument
     {
         private IWindowManager _windowManager;
-
+        private static Logger _logger = LogManager.GetCurrentClassLogger();
+        
         public void DialogDocument(DocFile doc, string databasePath)
         {
-            Console.WriteLine(doc.Path, doc.Name, databasePath);
-            //view для документа.
+            var time = Stopwatch.StartNew();
+            _logger.Trace(string.Format("{0}, {1}, {2}", doc.Path, doc.Name, databasePath));
 
             var ext = Path.GetExtension(doc.Path);
+
+            _logger.Trace(ext);
+
             Console.WriteLine(ext);
             if (ext == ".pdf")
             {
@@ -70,6 +77,9 @@ namespace Launcher.Core.Components.Document
                     }
                 }
                 var window = new DocumentView().ShowPdf(new FileNameDoc(doc.Path));
+                
+                _logger.Trace(time.Elapsed);
+
                 window.ShowDialog(); 
             }
 

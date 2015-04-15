@@ -52,7 +52,7 @@ namespace Launcher.Module.Document.ViewModels
 
         public void ShowDoc(DocFile doc)
         {
-            //view для документа.
+            //view для документа
             if (doc != null)
             {
                 Console.WriteLine(doc.Path);
