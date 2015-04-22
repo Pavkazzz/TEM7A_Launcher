@@ -69,7 +69,7 @@ namespace Launcher.Module.Document.ViewModels
         {
             FileNameList.Clear();
             var db = new DataBase(Path.GetFullPath(new DocAbout().DbPath));
-            var category = db.SqlSelect(string.Format(@"Select Category.Path, Document.PathName, Document.Name from  Document
+            var category = db.SqlSelect(string.Format(@"Select Category.Path, Document.PathName, Document.Name from Document
                                                         left outer join Category on Category.id == Document.category Where Category.Name = ""{0}""",
                                                         message.Name), new List<string> { "Name", "PathName", "Path" });
             foreach (var singlecategory in category)

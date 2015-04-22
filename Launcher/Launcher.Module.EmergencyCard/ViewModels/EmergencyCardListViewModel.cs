@@ -19,6 +19,7 @@ namespace Launcher.Module.EmergencyCard.ViewModels
         public EmergencyCardListViewModel(IEventAggregator eventAggregator, IWindowManager windowManager)
         {
             _eventAggregator = eventAggregator;
+            _eventAggregator.Subscribe(this);
             _windowManager = windowManager;
             //Тут надо сдeлать,чтобы выводилось изначальное приветствие
 
@@ -67,29 +68,16 @@ namespace Launcher.Module.EmergencyCard.ViewModels
         {
             EmergencyCardListBox.Clear();
             var db = new DataBase(Path.GetFullPath(new EmergencyCardAbout().DbPath));
-            var select =
-                db.SqlSelect(
-                    "Select Name_Card, Conditional_Number, Shipping_Name, ClassificationNumber, PathToFile from EmergencyCard",
-                    new List<string>
-                    {
-                        "Name_Card",
-                        "Conditional_Number",
-                        "Shipping_Name",
-                        "ClassificationNumber",
-                        "PathToFile"
-                    });
-            //foreach (var row in select)
-            //{
-            //    EmergencyCardListBox.Add(new EmergencyCardFileClass(row["Name_Card"], row["Conditional_Number"],
-            //        row["Shipping_Name"], row["ClassificationNumber"], Path.GetFullPath(Path.Combine(@"..\..\..\..\File", row["PathToFile"]))));
-            //}
+
             //TODO add category to EmergencyCard table.
-            var category = db.SqlSelect(string.Format(@"Select Category.Path, Document.PathName, Document.Name from Document
-                                                        left outer join Category on Category.id == Document.category Where Category.Name = ""{0}""",
-                                                        message.CategoryName), new List<string> { "Name", "PathName", "Path" });
+
+            var category = db.SqlSelect(string.Format(@"Select Category.Path, EmergencyCard.PathToFile, EmergencyCard.Name from EmergencyCard 
+                                                        left outer join Category on Category.rowid == EmergencyCard.category 
+                                                        Where Category.Name = ""{0}""",
+                                                        message.CategoryName), new List<string> { "Name", "PathToFile", "Path" });
             foreach (var singlecategory in category)
             {
-                //EmergencyCardListBox.Add(new DocFile(singlecategory["Name"], Path.GetFullPath(Path.Combine(@"..\..\..\..\File", singlecategory["Path"], singlecategory["PathName"]))));
+                EmergencyCardListBox.Add(new EmergencyCardFileClass(singlecategory["Name"], Path.GetFullPath(Path.Combine(@"..\..\..\..\File", singlecategory["Path"], singlecategory["PathToFile"]))));
             }
         }
     }

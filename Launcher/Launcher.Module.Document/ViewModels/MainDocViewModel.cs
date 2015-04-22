@@ -45,33 +45,36 @@ namespace Launcher.Module.Document.ViewModels
         [ImportingConstructor]
         public MainDocViewModel()
         {
+
+            _eventAggregator = IoC.Get<IEventAggregator>();
+
+            GetCategory();
+
+            ActivateItem(IoC.Get<HistoryViewModel>());
+        }
+
+        private void GetCategory()
+        {
             var time = Stopwatch.StartNew();
             CategoryList = new BindableCollection<Category>();
 
             if (File.Exists(Path.GetFullPath(new DocAbout().DbPath)))
             {
                 var db = new DataBase(Path.GetFullPath(new DocAbout().DbPath));
-                var category = db.SqlSelect("SELECT Name FROM Category", new List<string> { "Name" });
+                var category = db.SqlSelect("SELECT Name FROM Category", new List<string> {"Name"});
                 foreach (var singlecategory in category)
                 {
                     CategoryList.Add(new Category(singlecategory["Name"]));
                 }
             }
 
-            _eventAggregator = IoC.Get<IEventAggregator>();
-
-            ActivateItem(IoC.Get<HistoryViewModel>());
-
             logger.Trace(time.ElapsedMilliseconds);
         }
 
         public void CloseWindow()
         {
-            TryClose();           
-            Cef.Shutdown();
-        
+            TryClose();                   
         }
-
 
         public void Show()
         {
@@ -79,6 +82,4 @@ namespace Launcher.Module.Document.ViewModels
             _eventAggregator.PublishOnBackgroundThread(SelectedCategoryList);
         }
     }
-
-    
-    }
+}

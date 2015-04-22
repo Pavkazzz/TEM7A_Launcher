@@ -12,6 +12,12 @@
             PathToFile = pathToFile;
         }
 
+        public EmergencyCardFileClass(string nameCard, string pathToFile)
+        {
+            NameCard = nameCard;
+            PathToFile = pathToFile;
+        }
+
         public string NameCard { get; set; }
         public string Conditionalnumber { get; set; }
         public string ShippingName { get; set; }

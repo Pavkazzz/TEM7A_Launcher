@@ -30,7 +30,7 @@
       <Entity type="Interface">
         <Name>IModule</Name>
         <Access>Public</Access>
-        <Location left="626" top="107" />
+        <Location left="632" top="21" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
       </Entity>
@@ -45,7 +45,7 @@
       <Entity type="Class">
         <Name>Database</Name>
         <Access>Public</Access>
-        <Location left="91" top="340" />
+        <Location left="111" top="334" />
         <Size width="232" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">string _sqlQuery</Member>
@@ -58,7 +58,7 @@
       <Entity type="Class">
         <Name>Launcher</Name>
         <Access>Public</Access>
-        <Location left="349" top="340" />
+        <Location left="369" top="21" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">bool isUpdated</Member>
@@ -99,6 +99,8 @@
     </Entities>
     <Relationships>
       <Relationship type="Association" first="1" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -109,6 +111,8 @@
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="3" second="2">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
@@ -119,6 +123,8 @@
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="4" second="2">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -133,8 +139,6 @@
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="9" second="2">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">

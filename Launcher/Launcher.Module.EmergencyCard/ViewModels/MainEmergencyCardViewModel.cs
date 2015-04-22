@@ -18,6 +18,13 @@ namespace Launcher.Module.EmergencyCard.ViewModels
 
             _eventAggregator = eventAggregator;
 
+            GetCategory();
+
+            ActivateItem(IoC.Get<EmergencyCardListViewModel>());
+        }
+
+        private void GetCategory()
+        {
             CategoryEmergencyListBox = new BindableCollection<CategoryCard>();
             if (File.Exists(Path.GetFullPath(new EmergencyCardAbout().DbPath)))
             {
@@ -29,8 +36,6 @@ namespace Launcher.Module.EmergencyCard.ViewModels
                     CategoryEmergencyListBox.Add(new CategoryCard(singlecategory["Name"]));
                 }
             }
-
-            ActivateItem(IoC.Get<EmergencyCardListViewModel>());
         }
 
 
