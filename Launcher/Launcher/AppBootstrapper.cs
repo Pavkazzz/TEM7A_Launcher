@@ -23,8 +23,6 @@ namespace Launcher
         public AppBootstrapper()
         {
             Initialize();
-            
-
         }
 
         //Для теста
