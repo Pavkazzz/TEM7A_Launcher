@@ -43,6 +43,8 @@ namespace Launcher.Module.EmergencyCard.ViewModels
             {
                 Console.WriteLine(name);
                 Console.WriteLine(path);
+                var open = new OpenDocument();
+                open.DialogDocument(new DocFile(name, path), new EmergencyCardAbout().DbPath);
                 //new OpenDocument().DialogDocument(new DocFile(name, path), new EmergencyCardAbout().DbPath);
                 //new OpenDocument().DialogDocument(new DocFile(name, @"C:\Users\Pavka_000\Source\Repos\Launcher\Launcher\File\EmergencyCard\EmergencyCard101_149\АВАРИЙНАЯ КАРТОЧКА N 101.docx"), new EmergencyCardAbout().DbPath); 
             }

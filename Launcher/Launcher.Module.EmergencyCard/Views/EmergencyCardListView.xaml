@@ -20,7 +20,7 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <controls:Tile TiltFactor="1" Title="{Binding Name_Card}" MinWidth="250" 
+                    <controls:Tile TiltFactor="1" Title="{Binding NameCard}" MinWidth="250" 
                                    cal:Message.Attach="[Event Click] = [Action OpenDoc($this)]" />
                 </DataTemplate>
             </ListBox.ItemTemplate>

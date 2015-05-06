@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.Composition;
 using System.Diagnostics;
 using System.Linq;
@@ -33,9 +34,16 @@ namespace Launcher.ViewModels
         private void CheckModules()
         {
             //TODO Для всех
-            foreach (var check in IoC.GetAll<IModuleName>().Where(desc => desc.Description == @"Супер модуль"))
+            foreach (var check in IoC.GetAll<IModuleName>())
             {
-                check.PrimaryCheck();
+                try
+                {
+                    check.PrimaryCheck();
+                }
+                catch (NotImplementedException e)
+                {
+                    
+                }
             }
         }
 

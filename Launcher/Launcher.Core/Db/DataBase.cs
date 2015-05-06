@@ -4,6 +4,7 @@ using System.Data.Common;
 using System.Data.SQLite;
 using System.Diagnostics;
 using System.IO;
+using NLog;
 
 namespace Launcher.Core
 {
@@ -12,7 +13,7 @@ namespace Launcher.Core
         private readonly string _connectionPath;
         private SQLiteConnection _sqLiteConnectionDatabase;
         //private SQLiteDataAdapter _sqLiteDataAdapter;
-
+        private static Logger logger = LogManager.GetCurrentClassLogger();
 
         public DataBase()
         {
@@ -22,6 +23,8 @@ namespace Launcher.Core
         public DataBase(string path)
         {
             _connectionPath = path;
+
+            logger.Trace(Path.GetFullPath(_connectionPath));
         }
 
         private void OpenConnectionSqlite(string path)
@@ -44,6 +47,7 @@ namespace Launcher.Core
         //TODO path
         public List<Dictionary<string, string>> SqlSelect(string sqlQuery, List<string> columnName)
         {
+            logger.Trace(sqlQuery);
             OpenConnectionSqlite(_connectionPath);
             var result = new List<Dictionary<string, string>>();
             var sqlSelect = new SQLiteCommand(sqlQuery, _sqLiteConnectionDatabase);

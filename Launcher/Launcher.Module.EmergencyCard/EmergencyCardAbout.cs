@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Media;
 using Launcher.Core;
 using Launcher.Module.EmergencyCard.ViewModels;
@@ -28,7 +29,45 @@ namespace Launcher.Module.EmergencyCard
 
         public bool PrimaryCheck()
         {
-            throw new NotImplementedException();
+            DoCheck();
+
+            return true;
+        }
+
+        private void DoCheck()
+        {
+
+            var db = new DataBase(new EmergencyCardAbout().DbPath);
+            var docs = db.SqlSelect(@"Select * from EmergencyCard", new List<string>(){"PathToFile"});
+
+            DirectoryInfo di = new DirectoryInfo(Path.GetFullPath(@"..\..\..\..\File\EmergencyCard"));
+
+            DirectoryInfo[] categoryInfo = di.GetDirectories();
+
+            foreach (var fileInfo in categoryInfo)
+            {
+                var files = fileInfo.GetFiles("*.pdf");
+                //TODO PARSER файлов
+                foreach (var file in files)
+                {
+                    var fileInDb = db.SqlSelect(string.Format(@"Select rowid from EmergencyCard where PathToFile like '%{0}%'", file.Name), new List<string> () { "rowid" });
+                    if (fileInDb.Count == 0)
+                    {
+                        var rowidList = db.SqlSelect(string.Format(@"Select rowid from Category where Category.Path like ""%{0}""", file.Directory.Name),
+                            new List<string>() { "rowid" });
+
+                        var category = rowidList[0]["rowid"];
+
+                        db.SqlInsert(string.Format(@"Insert Into EmergencyCard (Name, PathToFile, category) Values ('{0}', '{1}', '{2}')",
+                            file.Name.Split(new string[] { "N " }, StringSplitOptions.None)[1].Split('.')[0], file.Name, category));
+                    }
+
+
+
+                }
+
+            }
+
         }
     }
 }
