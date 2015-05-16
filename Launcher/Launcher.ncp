@@ -7,7 +7,7 @@
       <Entity type="Class">
         <Name>Shell</Name>
         <Access>Public</Access>
-        <Location left="111" top="200" />
+        <Location left="111" top="214" />
         <Size width="178" height="77" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -15,14 +15,14 @@
       <Entity type="Interface">
         <Name>IShell</Name>
         <Access>Public</Access>
-        <Location left="111" top="107" />
+        <Location left="111" top="121" />
         <Size width="178" height="61" />
         <Collapsed>False</Collapsed>
       </Entity>
       <Entity type="Class">
         <Name>Module</Name>
         <Access>Public</Access>
-        <Location left="774" top="397" />
+        <Location left="774" top="411" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -30,14 +30,14 @@
       <Entity type="Interface">
         <Name>IModule</Name>
         <Access>Public</Access>
-        <Location left="632" top="21" />
+        <Location left="632" top="24" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
       </Entity>
       <Entity type="Interface">
         <Name>ISearch</Name>
         <Access>Public</Access>
-        <Location left="860" top="107" />
+        <Location left="860" top="121" />
         <Size width="210" height="95" />
         <Collapsed>False</Collapsed>
         <Member type="Method">List&lt;string&gt; DoSearch(string Text)</Member>
@@ -45,7 +45,7 @@
       <Entity type="Class">
         <Name>Database</Name>
         <Access>Public</Access>
-        <Location left="111" top="334" />
+        <Location left="111" top="348" />
         <Size width="232" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">string _sqlQuery</Member>
@@ -58,7 +58,7 @@
       <Entity type="Class">
         <Name>Launcher</Name>
         <Access>Public</Access>
-        <Location left="369" top="21" />
+        <Location left="369" top="35" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">bool isUpdated</Member>
@@ -69,18 +69,18 @@
       </Entity>
       <Entity type="Comment">
         <Text>Главная оболочка  программы</Text>
-        <Location left="111" top="10" />
+        <Location left="111" top="24" />
         <Size width="178" height="75" />
       </Entity>
       <Entity type="Comment">
         <Text>Поиск по модулю</Text>
-        <Location left="860" top="10" />
+        <Location left="860" top="24" />
         <Size width="210" height="75" />
       </Entity>
       <Entity type="Interface">
         <Name>IModuleName</Name>
         <Access>Public</Access>
-        <Location left="1120" top="107" />
+        <Location left="1120" top="121" />
         <Size width="205" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Property">Color Coloring { get; set; }</Member>
@@ -93,57 +93,53 @@
       </Entity>
       <Entity type="Comment">
         <Text>Описание модуля.</Text>
-        <Location left="1120" top="10" />
+        <Location left="1120" top="24" />
         <Size width="205" height="75" />
       </Entity>
     </Entities>
     <Relationships>
       <Relationship type="Association" first="1" second="0">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>200</X>
-          <Y>193</Y>
+          <Y>207</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="3" second="2">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
-          <X>842</X>
-          <Y>372</Y>
+          <X>799</X>
+          <Y>386</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="4" second="2">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>908</X>
-          <Y>326</Y>
+          <X>968</X>
+          <Y>243</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>868</X>
-          <Y>368</Y>
+          <X>857</X>
+          <Y>382</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="9" second="2">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
           <X>917</X>
-          <Y>372</Y>
+          <Y>386</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>

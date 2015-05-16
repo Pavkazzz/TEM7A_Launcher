@@ -61,13 +61,8 @@ namespace Launcher.Module.EmergencyCard
                         db.SqlInsert(string.Format(@"Insert Into EmergencyCard (Name, PathToFile, category) Values ('{0}', '{1}', '{2}')",
                             file.Name.Split(new string[] { "N " }, StringSplitOptions.None)[1].Split('.')[0], file.Name, category));
                     }
-
-
-
                 }
-
             }
-
         }
     }
 }

@@ -5,7 +5,7 @@ using Launcher.Core;
 namespace Launcher.Module.Document.ViewModels
 {
     [Export(typeof(IModule))]
-   public class DevelopedModuleViewModel: Conductor<IScreen>.Collection.OneActive, IModule
+    public class DevelopedModuleViewModel: Conductor<IScreen>.Collection.OneActive, IModule
     {
         private IEventAggregator _eventAggregator;
         private IWindowManager _windowManager;

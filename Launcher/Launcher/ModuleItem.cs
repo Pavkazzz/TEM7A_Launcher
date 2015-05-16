@@ -36,6 +36,7 @@ namespace Launcher
 
         public ModuleItem()
         {
+
         }
 
         public ModuleItem(string name)
