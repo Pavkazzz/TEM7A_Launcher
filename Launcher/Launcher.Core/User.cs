@@ -6,6 +6,16 @@ namespace Launcher.Core
 {
     public class User : IUser
     {
+
+        public string PersonalNumber { get; set; }
+        public string Password { get; set; }
+        public string Name { get; set; }
+        public string Lastname { get; set; }
+        public string Patronymic { get; set; }
+        public string Email { get; set; }
+        public bool Remember { get; set; }
+
+
         public User(string login, string password, string name, string lastname, string email, string patronymic)
         {
             PersonalNumber = login;
@@ -26,13 +36,6 @@ namespace Launcher.Core
             Email = string.Empty;
             Remember = false;
         }
-        public string PersonalNumber { get; set; }
-        public string Password { get;  set; }
-        public string Name { get;  set; }
-        public string Lastname { get;  set; }
-        public string Patronymic { get;  set; }
-        public string Email { get;  set; }
-        public bool Remember { get; set; }
 
         public bool Login(String personalNumber, String pass, bool remember)
         {

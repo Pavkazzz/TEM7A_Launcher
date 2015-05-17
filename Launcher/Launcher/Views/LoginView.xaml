@@ -47,11 +47,11 @@
                         FontSize="20" />
                 <Separator Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Bottom" />
                 <TextBox x:Name="PersonalNumber" Margin="0,10" Grid.Row="3" Grid.Column="1"
-                         controls:TextboxHelper.Watermark="Табельный номер" VerticalContentAlignment="Center"
+                         controls:TextBoxHelper.Watermark="Табельный номер" VerticalContentAlignment="Center"
                          GotFocus="Password_SelectionChanged" />
                 <!--TODO PasswordBox -->
                 <TextBox x:Name="Password" Margin="0,10" Grid.Row="4" Grid.Column="1"
-                         controls:TextboxHelper.Watermark="Пароль" VerticalContentAlignment="Center"
+                         controls:TextBoxHelper.Watermark="Пароль" VerticalContentAlignment="Center"
                          GotFocus="Password_SelectionChanged" />
                 <CheckBox x:Name="RememberMe" Grid.Row="5" Grid.Column="1" Content="Запомнить?"
                           VerticalContentAlignment="Center" FontSize="20" Foreground="#66CC66"

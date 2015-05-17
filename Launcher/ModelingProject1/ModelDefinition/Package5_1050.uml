@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="a7e3f9ac-7fc5-4f51-a8fe-e3cb460c19fa"
+  name="Controls"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="3a3379e8-be0c-468e-b0ef-25f601929107"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMahApps.Metro.Controls"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="e5d2f5ab-3fa8-49db-bc95-7a1b23b0c4df"
+        name="MetroWindow"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="eb031a64-ec70-4771-b105-ebd5289bbb16"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FModules%2FMahApps.Metro.dll Namespace%3DMahApps.Metro.Controls Type%3DMetroWindow"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="6a86cae1-f66f-42ca-8b10-447799c8fdf0"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f52ee626-d0f8-4932-9cbf-292a09d5feb2">
+                <propertyInstance
+                  Id="0d14ef90-b79a-4726-b099-8e6f8a8176bc"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7b8c1375-b553-43a5-947d-78d238c68ce5">
+                <propertyInstance
+                  Id="2ba22764-b1ac-4bbb-b5ee-9a12fe1c1db2"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5d1ef858-9059-4949-b8ad-097d2c494cd7">
+                <propertyInstance
+                  Id="e9ffb344-5d8a-4343-bbfe-2ba4b7b8c990"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="704308e2-df4c-4da8-b977-20588118b864">
+                <propertyInstance
+                  Id="7ab11e4a-ac20-4373-9357-7ccc9225b2d5"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="31fce42e-01f8-4909-8bf2-7d4080f45a31">
+                <propertyInstance
+                  Id="efe8be5a-fa3d-46d9-b4f2-17196bc8d9ad"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="5d252aea-cbcb-4926-8855-1bd2dbf4d0d7"
+        name="Position"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="f19794fc-96b6-4a20-8c77-1275c4fd8686"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FModules%2FMahApps.Metro.dll Namespace%3DMahApps.Metro.Controls Type%3DPosition"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="37ef67c2-932d-48b3-9dea-87c6ee220bc5"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bb7125fb-6428-4ef2-8b46-9a454351ef72">
+                <propertyInstance
+                  Id="4e4cc7c8-5c99-4d23-95a9-a5fde292dad6"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="54b0cc2d-42d4-46ce-b80e-f262730cf926">
+                <propertyInstance
+                  Id="1f7c039b-e054-4ba4-ab06-4855e0ebccc2"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f16d4519-fc63-408c-bbd9-d7acce84d869">
+                <propertyInstance
+                  Id="c33c6261-0642-4f96-81e9-eadd3aaf093a"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

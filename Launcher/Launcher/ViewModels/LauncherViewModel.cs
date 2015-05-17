@@ -17,12 +17,12 @@ namespace Launcher.ViewModels
         private IEventAggregator _eventAggregator;
 
         /// <summary>
-        /// ssssasdasd
+        /// Главная ViewModel
         /// </summary>
 
         private readonly IEnumerable<ISearch> _search; 
         private static Logger logger = LogManager.GetCurrentClassLogger();
-        private IEnumerable<IModule> Modules;
+        private IEnumerable<IModule> _modules;
             
             
         [ImportingConstructor]
@@ -42,7 +42,7 @@ namespace Launcher.ViewModels
                 }   
             }
 
-            Modules = IoC.GetAll<IModule>();
+            _modules = IoC.GetAll<IModule>();
         }
 
         public void OpenModule(ModuleItem o)
@@ -50,7 +50,7 @@ namespace Launcher.ViewModels
             logger.Trace(o.Name);
             var time = Stopwatch.StartNew();
               
-            foreach (var name in Modules.Where(name => name.GetType() == o.ViewModel))
+            foreach (var name in _modules.Where(name => name.GetType() == o.ViewModel))
             {
                 _eventAggregator.PublishOnBackgroundThread(name);
             }
@@ -139,7 +139,6 @@ namespace Launcher.ViewModels
         protected override void OnInitialize()
         {
             base.OnInitialize();
-            DisplayName = "Caliburn.Metro.Demo";
             _flyouts.Add(IoC.Get<FlyoutSearchViewModel>());
         }
 

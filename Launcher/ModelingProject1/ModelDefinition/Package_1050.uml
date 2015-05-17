@@ -1,0 +1,2930 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="23fd38d3-fbff-4b1c-aab0-b154a1a58c2d"
+  name="Views"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="b0f42d59-8985-492d-9f78-bcd015f8dcb3"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DLauncher.Views"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="aacbc3d4-575d-46f6-8740-3011cfb82b83"
+        name="RegistrationView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="6725bd43-c94f-4857-89ab-d7c406da217e"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DRegistrationView"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1332ebd1-9a47-43f4-b718-7260d3285654"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5855e054-cb5f-40c0-b4db-6d8c4466a35a">
+                <propertyInstance
+                  Id="0cf0812b-2f06-4434-892b-931e092dc0eb"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ca5be59d-c0ab-4393-9a99-a0c93fa990ab">
+                <propertyInstance
+                  Id="97231639-af10-4098-ac54-6e7d3cfae170"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c27e8927-2ed4-4832-93cd-1fcb73ddc780">
+                <propertyInstance
+                  Id="4f56a0cd-3b39-437a-b06f-f79103a41a6c"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="227dc1bd-152c-49f3-9076-50e5905e1a00">
+                <propertyInstance
+                  Id="b017e6e8-66f8-42f7-bf0b-3f06b73150db"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bb5f3387-1786-4cac-8411-51123cf48b73">
+                <propertyInstance
+                  Id="cd099209-b59c-49e8-b573-38bed0a9c03c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="3e4835e3-6263-4a5c-aa18-2cbe9d0a02b3">
+            <interfaceMoniker
+              Id="edadf663-44a3-46ff-9b42-a28a0cecaeb5"
+              LastKnownName="IComponentConnector"
+              LastKnownLocation="Package2_1050.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="91eaa9df-3e71-4bd9-86a8-72bcec1d6745"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d0225542-67cb-4259-a03a-c8f6f9f2a795"
+              LastKnownName="UserControl"
+              LastKnownLocation="Package1_1050.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="36107cc6-956e-4de0-8b0d-fccb4100efc9"
+            name="PersonalNumber"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="c342a7e2-15f6-44d2-9868-69cf9de2e23e"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DRegistrationView Member%3DPersonalNumber"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ea91a315-7374-49e5-a3d0-69f7395b494b"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="765e43c4-7256-4bd3-9277-2610e2976bde">
+                    <propertyInstance
+                      Id="13eadc6b-f3ab-4462-a2f9-26055f0a92c2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="73d79650-e541-4dd8-bdf6-0d412977effd">
+                    <propertyInstance
+                      Id="8085f7de-819b-4097-b045-c55bbefecb7a"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4be8a064-bdd8-4697-8f2b-d6ebff2c08ed">
+                    <propertyInstance
+                      Id="5b64cecd-f57b-4053-bc08-ee25473ca475"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dd4bd1b5-11b1-4038-9228-cd7d4602dd45">
+                    <propertyInstance
+                      Id="04b25a75-508c-4d9d-802f-298db0581fe6"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a16606c4-ac26-44eb-b4b8-579fada88a95">
+                    <propertyInstance
+                      Id="a0574ccf-a32b-4910-b8a8-4258787533c6"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="fbc299b6-2474-4a78-9b95-6ba1a6b2e93c"
+                LastKnownName="TextBox"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="5cc3814b-15e9-41c1-ba58-8292743dda47"
+            name="Name"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="932efe4e-5777-442c-9ee1-e0268f931014"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DRegistrationView Member%3DName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6f9c077a-def8-471b-bac0-d4c82d5e7d99"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="56fccca1-ce43-424d-b819-5b740034080b">
+                    <propertyInstance
+                      Id="e85edf40-d063-41b5-938d-3403d4117a3a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ac34d2f-44fe-4b05-8340-8b38f42a67d4">
+                    <propertyInstance
+                      Id="d56b0ec0-6778-4666-954a-c6da7a42145c"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6568e764-e591-47dd-8298-1b2f0d3f03bd">
+                    <propertyInstance
+                      Id="3719a96d-2029-4c68-817c-cbb28a585de4"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dfdc8cc8-ebeb-4d8e-b20f-99cba128687f">
+                    <propertyInstance
+                      Id="3e0b98fc-a095-476d-af0b-47d25b24069a"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ba0eae8f-ec7a-478c-9805-5f37a008a7d1">
+                    <propertyInstance
+                      Id="69769f81-0e56-47fd-8981-9ed8c6760371"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="fbc299b6-2474-4a78-9b95-6ba1a6b2e93c"
+                LastKnownName="TextBox"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8c44db54-f26f-4275-8f64-7b1b5020954f"
+            name="LastName"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="01bddf2b-18e3-4708-9a77-73c860b734e8"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DRegistrationView Member%3DLastName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c834543f-fff6-44ca-b9e0-91e49f8c9afc"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="107824b6-8913-4fdf-8c3c-c4ee7a5947d1">
+                    <propertyInstance
+                      Id="bac2fe7c-2db6-43b4-a583-255c37110f6f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="30d5f482-d0d7-4b5e-981a-97e2e7e8d637">
+                    <propertyInstance
+                      Id="5d85ebac-33eb-4a44-96ea-868529dbdeaa"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="009e4fa6-b439-43be-95d1-c5ce140ef48c">
+                    <propertyInstance
+                      Id="8a095f53-20d0-4321-97c1-07603454798c"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5bcb1eb7-8014-4c90-9a23-ef5207db9430">
+                    <propertyInstance
+                      Id="e51ecb78-a4da-4e78-9ad4-7568697c5a10"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a5a4f7e5-6cfb-4fc6-9393-8d0bb6a69722">
+                    <propertyInstance
+                      Id="c8ccdefc-6ab4-4ad9-9476-91dbb42b908a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="fbc299b6-2474-4a78-9b95-6ba1a6b2e93c"
+                LastKnownName="TextBox"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1ab5269d-53b0-4106-88bf-e8314a71b697"
+            name="Patronymic"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="e48ff67a-a45d-46e4-9da1-c14671e570fa"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DRegistrationView Member%3DPatronymic"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="63778329-86e8-4ff1-ac8a-af0a5fa64ec3"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d0cdcc38-377a-41d1-b631-50478c00b11d">
+                    <propertyInstance
+                      Id="df1f2038-29db-449d-a3a8-25d457519c41"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bf70e380-7109-4297-9d2a-3ae5375a3c9f">
+                    <propertyInstance
+                      Id="509283c9-c7fe-4e62-8190-848a63df13f3"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="139322e1-2034-4098-ae41-10742604c585">
+                    <propertyInstance
+                      Id="df08de5c-cdd2-4218-919d-0113fa34c728"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="be0337bd-6ec1-4691-91ae-b23a10e5517c">
+                    <propertyInstance
+                      Id="213e7b27-1a59-4e72-bd94-3f3b4f0d74c4"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="60da5fcf-1682-4f0e-95f4-5d116e192598">
+                    <propertyInstance
+                      Id="33385fd1-9800-413d-be3f-6d13f62eb937"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="fbc299b6-2474-4a78-9b95-6ba1a6b2e93c"
+                LastKnownName="TextBox"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="79c7b4d5-a13b-400e-b43c-dda42bf31c8e"
+            name="Password"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="f3109614-092f-4f0e-8ebf-c9bc7ca8f338"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DRegistrationView Member%3DPassword"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="695fc0cc-35a8-418b-994e-9d97812fd942"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9d4c445c-82a0-4b49-89cc-94933b30a775">
+                    <propertyInstance
+                      Id="ca7940bf-68be-45e1-937d-f31abe543630"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="174b22b4-2945-497a-9bdf-8bcf058a2a6f">
+                    <propertyInstance
+                      Id="ad915a69-46cf-497e-9e83-09ef32821e65"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="79caeab8-510b-413b-a3f0-e7a6d115cc55">
+                    <propertyInstance
+                      Id="00750c0b-691c-4447-b4f8-5691c85626cd"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0fcb92ad-76a9-4860-b6cd-3ed56c3f4426">
+                    <propertyInstance
+                      Id="3f682db8-48ef-443b-9e38-080a207bb4c2"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e3f72265-659a-4ab3-8a8b-3dc3199436f4">
+                    <propertyInstance
+                      Id="67f50378-db35-44e2-94d1-da3b8da3f528"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="fbc299b6-2474-4a78-9b95-6ba1a6b2e93c"
+                LastKnownName="TextBox"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="88be2c35-5100-4e3b-89b7-77e20efa3f3d"
+            name="PasswordRepeat"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="aa791628-1579-4110-8c4e-682a92213778"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DRegistrationView Member%3DPasswordRepeat"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="606e2cd3-709f-4425-8ea8-c4b8b38da7e8"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a6a08909-9462-4853-96ef-8c71c0a8cb18">
+                    <propertyInstance
+                      Id="3b66f2dc-46da-41fd-a91f-421a52752bde"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cfa95b07-a52d-4293-86fc-d4654c60c22c">
+                    <propertyInstance
+                      Id="cff87a8b-4b4d-4217-a1e1-b26eb6ce33b5"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="810f6dfc-b097-48c0-9809-8e29eef77c9e">
+                    <propertyInstance
+                      Id="631fae43-0382-4874-89a2-a2156951b087"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d0b5ec5b-8d00-4233-a24b-0a89a3e6c6d1">
+                    <propertyInstance
+                      Id="c1bad13b-b9e9-4506-8d56-901bfadf8021"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="949622b4-d88d-452f-98dc-821014950c78">
+                    <propertyInstance
+                      Id="11221165-7c76-4547-b00c-5deb38c4e506"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="fbc299b6-2474-4a78-9b95-6ba1a6b2e93c"
+                LastKnownName="TextBox"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1fc1fd75-cfe4-49ef-b22a-3cd6e8f0a12c"
+            name="Register"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="f74eb170-8db5-4572-9620-d92a5d98e1d0"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DRegistrationView Member%3DRegister"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1b73cf09-ec34-4431-a559-8277ec7002dd"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f2e07716-839c-4a2e-b866-48444535d1ee">
+                    <propertyInstance
+                      Id="5cef0bf5-22c9-4edc-ba62-f6830d3ead5d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="81783042-5c22-4d97-aed5-1fb97c36e6be">
+                    <propertyInstance
+                      Id="11b39120-e5cc-48da-9d76-79e1eaea0d4e"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="39277e7a-c531-4e40-a90c-efe08cd7bd60">
+                    <propertyInstance
+                      Id="c3441239-904d-4859-b82e-e0db225afece"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="27879f79-b9bf-4bcd-a53c-29753cd58aed">
+                    <propertyInstance
+                      Id="c06367cf-b52b-4008-a48f-4bbec735899e"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ea7c2d3-c5db-40ac-b38a-1d66d228a1a9">
+                    <propertyInstance
+                      Id="d5cd704f-167a-4667-a1f2-fc67cef6f92a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="6f37f78f-e59f-41e9-9585-356ad980a757"
+                LastKnownName="Button"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a1d1c507-b740-4287-aa3e-bd70f3b274cf"
+            name="_contentLoaded"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="13f4f7f7-8231-4cfb-a0d0-0168fac5b3b9"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DRegistrationView Member%3D_contentLoaded"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="451f90ed-86a3-47d0-8321-e21450e716bb"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8046ec8e-5b55-415a-8468-51ae970082bf">
+                    <propertyInstance
+                      Id="78df0e49-f26b-4c69-bebe-15f541eecfcb"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="41ebf452-1a4e-4480-a072-6bffdf2535b8">
+                    <propertyInstance
+                      Id="5080de14-8625-4c82-936d-2e45fca8dc73"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e8fc93b6-ba3c-4d83-968d-84d1b3019eb7">
+                    <propertyInstance
+                      Id="2285fd71-61c9-454f-94dd-878fe9430b9e"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5456c7d9-91ff-4b96-9947-d4bef4490113">
+                    <propertyInstance
+                      Id="3c8a6b2a-1cbd-443a-bb7f-3935f9c89afa"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="37b768b8-a81c-47d1-83bb-ee67a0b64c69">
+                    <propertyInstance
+                      Id="b2a6672a-ca33-4f77-8484-b2aac922f2f8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="0c7e1f35-4bc6-441c-aaa9-69733fb3ce88"
+            name="InitializeComponent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ad172aa4-e93d-43a8-b115-6bd29e5050da"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DRegistrationView Member%3DInitializeComponent"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f2a8db37-4fe2-4923-9a65-cece54dab014"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="be31df28-304e-4fa5-aee8-2de66abd9c0b">
+                    <propertyInstance
+                      Id="20ea13d2-b869-42da-93b8-c762e3367e82"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9fe4dc04-d0b6-44ce-b36c-782ad018d175">
+                    <propertyInstance
+                      Id="afdece57-9e1d-40d7-b07b-3d41dec2f956"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="81538e85-91c4-46d8-b3f1-d4a33fec6be3">
+                    <propertyInstance
+                      Id="0cd3a7b0-21af-4956-900f-b4e46eb4ee8e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="03e1cd49-de2e-49ef-8801-df79d614305d">
+                    <propertyInstance
+                      Id="ef422229-8b71-4d0e-a318-98da2b284dc7"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="afff182f-2952-456d-8e84-7f6d904c283d">
+                    <propertyInstance
+                      Id="9d8e4b8a-9496-48fc-995d-eac5e8332f81"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1ee1233e-731c-4129-9965-fbadf3c2294f">
+                    <propertyInstance
+                      Id="3ca2d9bc-fcda-42a5-affc-83d7a624e2f1"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="87ade34d-b20e-4b24-a872-6d0effa2a15c"
+            name="System‎.Windows‎.Markup‎.IComponentConnector‎.Connect"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="7740cae0-6a59-4eab-a2a6-6cdd9a9f12e3"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DRegistrationView Member%3D(Name%3DSystem.Windows.Markup.IComponentConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="55388836-3071-427d-b935-0ec495aab374"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="53e364f6-5958-46e7-bcaa-6bf0cfd23306">
+                    <propertyInstance
+                      Id="7ba2f761-1b58-40c0-9836-a801e3610d99"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="28c9698c-9d1e-45b9-aa1c-d93dee36e9ca">
+                    <propertyInstance
+                      Id="60e4c7e2-59fb-4c8a-b7ea-7d3f8e76534f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="39c1c361-41b7-4011-845c-9c207ae0e83b">
+                    <propertyInstance
+                      Id="144c9e36-0d43-4f52-bd21-bc43aa0ada2b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e91d63d5-6eaa-4741-a4f4-354ad3a89f90">
+                    <propertyInstance
+                      Id="cc509fc5-4378-4d39-9353-1d2cfa0d925a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b53449c0-a000-4016-adc4-144c8c6a6267">
+                    <propertyInstance
+                      Id="a589461a-dc90-4b55-89d1-69d7cde15393"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ffff852a-7a78-41dc-88d2-4cae6edd2531">
+                    <propertyInstance
+                      Id="2e46efe8-c5d5-4e07-8890-06df0f063182"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f0ef8108-be6b-46c8-bf8c-657eed596ffa"
+                  name="connectionId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="3f668ab7-67c8-490c-9ff1-0aa3a048edb0"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DRegistrationView Member%3D(Name%3DSystem.Windows.Markup.IComponentConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3DconnectionId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1f19274a-7629-4377-8544-87371e236161"
+                  name="target"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="352ed140-315a-47ef-bc29-f0af437ee29f"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DRegistrationView Member%3D(Name%3DSystem.Windows.Markup.IComponentConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3Dtarget"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="3a75811f-a7f7-473a-a481-3a84fbb05627"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package1_1048.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2a786db1-0330-437a-9a3e-43f913ffdab5"
+            name="RegistrationView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="044a0ed6-685b-4ca5-922c-20fe560cbe0e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DRegistrationView Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d47cc66c-0721-458c-b291-dc20ab5e2ffd"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1b8aba5d-c717-4e37-8a73-b45506620145">
+                    <propertyInstance
+                      Id="512ca59b-a2f7-447f-9829-14ce1057472b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cbdc2069-81d1-4ec9-95b5-3e9bba193ad0">
+                    <propertyInstance
+                      Id="9da48e65-b0f2-42c6-a4d0-0e3a1dffc231"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="45d9cbd8-9015-4526-9b87-1f2bde7485bc">
+                    <propertyInstance
+                      Id="12278676-0079-44cb-a8ea-278a816ef5c1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="937499ea-81f8-49c3-af6b-fa52235491bd">
+                    <propertyInstance
+                      Id="a87a2189-8b99-49ff-8906-3e7272de117d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0fb296cf-f75e-485e-ae83-af29607772f1">
+                    <propertyInstance
+                      Id="ac5a5dc0-e13e-4ff6-89c7-9646620b2f99"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="096cbd5b-9463-45a5-a045-083bc7d04baf">
+                    <propertyInstance
+                      Id="acd073b8-4efc-4657-9bf7-61d700d1a34a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="25341e51-5fb9-4956-bcc9-337080cc6564"
+        name="LauncherView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="19434973-1378-43a1-998c-05727e28c45b"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLauncherView"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="13da9638-d35d-42ce-8b78-facb4e92dd89"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6285f205-5217-4810-93d0-430fc1a6eda9">
+                <propertyInstance
+                  Id="5db31f64-b795-4645-bf31-2c3449001027"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="20bb71ec-42cc-4a8b-9cb3-5db2a4ffe16b">
+                <propertyInstance
+                  Id="286af623-fa2a-4e58-94ca-03409f29b1c4"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f16cd608-c7b7-4b3c-a218-2163207b64c7">
+                <propertyInstance
+                  Id="7101bbcc-81b3-40b7-ad41-e4a7e60dfd0e"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c6c39c0a-db01-4861-ad3a-4c8e16105016">
+                <propertyInstance
+                  Id="501b5ed9-02cc-4656-a0f3-bb7d06092512"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6de64e8b-760e-41ca-95ee-990c3d692401">
+                <propertyInstance
+                  Id="3294f3dc-820e-4118-8eb8-ee96703890bf"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="14319c98-a341-44c6-8be7-e2d00f559f87">
+            <interfaceMoniker
+              Id="edadf663-44a3-46ff-9b42-a28a0cecaeb5"
+              LastKnownName="IComponentConnector"
+              LastKnownLocation="Package2_1050.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="fa5d4a01-6efd-4ff6-a787-ce972bc5946c"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d0225542-67cb-4259-a03a-c8f6f9f2a795"
+              LastKnownName="UserControl"
+              LastKnownLocation="Package1_1050.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="f3b3357a-4551-4366-ab2c-0e2ac11fcb0d"
+            name="MainGrid"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="49bfaa12-ab88-41c6-8063-a84383150507"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLauncherView Member%3DMainGrid"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="27890a4c-b851-4206-903f-216b2658a4c6"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6bc763ff-c1e9-48b3-9be9-fc0345448cc0">
+                    <propertyInstance
+                      Id="4cc6917f-53e8-4a47-8ba0-45e84ba32869"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b0b026e-adc1-4fa3-aba8-811bb960b6eb">
+                    <propertyInstance
+                      Id="d082dd05-8855-4693-af4f-3f67de9ad5c7"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="614f2f0e-99ee-4a4c-befd-bb189dc9fcd3">
+                    <propertyInstance
+                      Id="530098ea-afaf-41fb-b839-53d9fe927261"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e4c9b0a5-2eba-4506-a7ac-a3d81ee54ee7">
+                    <propertyInstance
+                      Id="08a87c34-dc95-4058-b4ff-49b32f66054f"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="96f57066-1dbc-4dc7-89fd-96dd7311683b">
+                    <propertyInstance
+                      Id="dbf9628f-f03b-4ae5-bb3c-f7099c01b81f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="8f8200d3-7c09-443e-870a-718fefcf3e6a"
+                LastKnownName="Grid"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ddf88c2f-8676-4496-af74-5a5f8dbc6183"
+            name="grid"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="b8b6a5ec-7ebe-42aa-bae7-eead50e125c1"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLauncherView Member%3Dgrid"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="424b3d87-b230-4d0b-b007-297c20d1d82a"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="607c9161-8f56-4550-addb-48c39c86c1e4">
+                    <propertyInstance
+                      Id="1b8c93dc-2f4b-418a-9b19-5a569f693aec"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="639345b1-4824-449f-821f-da23407d2bd9">
+                    <propertyInstance
+                      Id="c5ab36d0-a1d3-4cd9-a0e5-79a852da2c26"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="53ba7ced-44b6-46db-9dff-084b10cc169c">
+                    <propertyInstance
+                      Id="187cc54c-dee0-49c4-bd29-66f157dc87c5"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e61eae44-c061-42cc-b9cb-b7f044fc0226">
+                    <propertyInstance
+                      Id="740afdb4-166b-41bb-b241-bd1dd31537e5"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bbcef744-e1c4-44fa-a041-0a17ce356ff0">
+                    <propertyInstance
+                      Id="36f8efe5-0a00-454a-bc33-52f02b9b8578"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="8f8200d3-7c09-443e-870a-718fefcf3e6a"
+                LastKnownName="Grid"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="56aef8e3-bb5c-4112-9c24-d17783b1da35"
+            name="DateTimeLabel"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="1835c4f1-040d-4525-ba66-bf99a5f29731"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLauncherView Member%3DDateTimeLabel"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f9229f7a-18db-4236-8606-b901bd43b674"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0660bad0-174f-4d94-abb7-afb7355d5943">
+                    <propertyInstance
+                      Id="2c953c76-719c-4e2b-8193-4fa65cdb83ae"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eaa0772d-040e-4b3c-af6f-dbe748e175a5">
+                    <propertyInstance
+                      Id="cb17301d-551a-45c9-9c11-68daaab45d9d"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f445c1e9-3edc-4890-b025-cc1e94ad201b">
+                    <propertyInstance
+                      Id="b3d1a0d7-3ed7-4779-b249-e6cfda105116"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="91278917-c858-46fd-b451-eb872366598d">
+                    <propertyInstance
+                      Id="600b4331-0370-4c38-ac79-8e4e71d84fd1"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dfdb0525-866b-4da8-a394-ba8e4f3dadf7">
+                    <propertyInstance
+                      Id="30cd4e33-0dca-4900-b755-06456ac60fb9"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="2b5498cd-4b8b-41be-a6c6-4f8ad1e9382c"
+                LastKnownName="Label"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="273d7c86-de12-4a57-bcf9-8d1dbc63bad1"
+            name="TextBlockAny"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="ba422eaf-140a-4159-959a-2188e6d8ed8a"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLauncherView Member%3DTextBlockAny"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="63be63c1-6c88-47a6-b820-d3b933e549fb"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="258e5ad5-f1bd-480d-81a2-01ebb36ace58">
+                    <propertyInstance
+                      Id="07b70813-18d4-4f8f-bb90-32862b7a7db0"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a5b4483-15c8-4095-9022-6f659d05fd4f">
+                    <propertyInstance
+                      Id="0023820c-0466-4a01-b93e-0c1b5f5ec63c"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8c29ad52-7faf-4d60-a5d0-dc082ca82726">
+                    <propertyInstance
+                      Id="c8560a74-b510-46f7-b61d-fea1a7232ef8"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2957499f-8a23-48cb-b8dc-6444496e913e">
+                    <propertyInstance
+                      Id="b99e7858-2c7b-4163-b89f-a07f03802068"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bc66d46f-4c99-43f6-b73f-79124bc3ae99">
+                    <propertyInstance
+                      Id="90c5f001-b5b0-4108-aed1-f3bba649bc6a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="5f038df1-c141-4d72-b432-9a38d067281d"
+                LastKnownName="TextBlock"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a7ebaf69-d902-4306-8f03-35bcafdca7ac"
+            name="ListBoxModules"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="3db609ad-bbfa-4fcb-ac1f-1758b820f470"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLauncherView Member%3DListBoxModules"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="75582b84-9b01-4066-b718-30bd6c9796cf"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d8caddc6-cbd1-4c5a-a067-bdab9e5e2809">
+                    <propertyInstance
+                      Id="3d39d28a-1c20-4bde-a8df-a566efcf7ddc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b1cdf114-4e2f-42e8-a604-5588202168d5">
+                    <propertyInstance
+                      Id="15e52f41-f012-4c0b-897b-07b06574c390"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4554e22d-c8cb-4fca-ba22-d26ebda2bf49">
+                    <propertyInstance
+                      Id="68372f9a-5776-4a2b-8804-cdcea2e8acc5"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3058d7ac-be0d-4ccd-a23f-a61570814aa0">
+                    <propertyInstance
+                      Id="5e534572-be60-4cb0-8a3a-e4727536db17"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0fc73a66-e65d-4f44-95c5-9c0f7e9fa7ef">
+                    <propertyInstance
+                      Id="81831001-edcd-4ab9-b5a9-9a70494d7c59"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="d98f769f-d5fe-4fc7-8ecc-075ed96b27ac"
+                LastKnownName="ListBox"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c9698a2e-dcd9-463f-bfb7-697fc18691ab"
+            name="_contentLoaded"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="037f6179-d18c-42b3-9ec2-2d57a0160a96"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLauncherView Member%3D_contentLoaded"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="93096ff6-af48-47b0-b377-aef261eb5aa2"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9b8e1fcf-b594-4731-ac74-2fe29918db20">
+                    <propertyInstance
+                      Id="9e877fe5-b6f0-4742-ab8e-5fec64bf58be"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e8618e1-4f3e-44c3-9f3d-7106e2f9df3e">
+                    <propertyInstance
+                      Id="dde9ffa3-8bf8-4f4b-864c-846e0be7648d"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="48847949-a708-4fbd-8778-802a6eb091bb">
+                    <propertyInstance
+                      Id="2645d800-e444-4074-bbb5-ea7ff8cb2203"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="34b0630e-636e-4f65-b0fa-071f6e508a49">
+                    <propertyInstance
+                      Id="07f0f500-ecb4-422e-ab02-20022b718654"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="64cd30c5-a1a7-4e74-9768-ee5f48820892">
+                    <propertyInstance
+                      Id="0ce95499-fca9-4a76-a7c5-ce1ad1822d39"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="459c3c62-4898-4098-ba68-ea89ebe89be2"
+            name="InitializeComponent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b27e9c36-49b7-4de9-b13a-81c2578de8f1"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLauncherView Member%3DInitializeComponent"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5b8de9d1-00fd-4e15-b665-829ae97cc257"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="357c517d-cac0-482b-a1a0-22037c8d5494">
+                    <propertyInstance
+                      Id="4020a3fb-c0da-41d5-b683-3ed240fa6fca"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="359202b8-ceda-4633-9533-d2e2f7d3fe5a">
+                    <propertyInstance
+                      Id="757e1591-2ac2-4efd-9f3c-a8da3290ce43"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="30907992-7f19-4149-8bf2-d2ad477c4452">
+                    <propertyInstance
+                      Id="44eda4d0-6ca3-459e-9e64-fa34aaccafd4"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e7d30cce-54b4-40df-81ca-175f6745ae6a">
+                    <propertyInstance
+                      Id="c8f37c56-7090-4336-a8f8-aca26069775c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1b793b9a-b304-40f4-bbae-f6dc00b986d8">
+                    <propertyInstance
+                      Id="8e44239d-d6ff-40ef-81fa-751f909f5f4b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a55e0712-713d-4d3f-9b0f-9c2a1e85e2af">
+                    <propertyInstance
+                      Id="61e4e341-3510-414c-b086-57a62aa70410"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="a056a64b-c151-4e43-b71b-0ed85906c226"
+            name="System‎.Windows‎.Markup‎.IComponentConnector‎.Connect"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="4e30ac42-c6fc-4d09-857f-79802345dba9"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLauncherView Member%3D(Name%3DSystem.Windows.Markup.IComponentConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="21f07b6b-33ee-4e74-afef-06862b4cdb25"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="20f35768-3957-4694-9b0e-d88f8ea3ab76">
+                    <propertyInstance
+                      Id="72f941ff-9d76-49f8-a4b6-8b619baa8763"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="845e0033-f928-4b10-bbd8-f1f254c5c4dd">
+                    <propertyInstance
+                      Id="9bac823d-8ed6-43a4-a373-43ac0d06dc05"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2b2c5b67-837e-4968-b297-6a444f28b2ba">
+                    <propertyInstance
+                      Id="787569f2-cf85-48f0-abb1-04e90689e165"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b3524bdf-b41a-475b-9de7-d678a3bfa890">
+                    <propertyInstance
+                      Id="900bf830-ca6b-4387-9c20-ea25754cf8f8"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ce1b7fb5-6213-4fb1-9126-f49c7aadfc9b">
+                    <propertyInstance
+                      Id="55777420-270a-4a12-b2d0-665958c255e8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b87c103-5e73-45b2-bd18-4a440ecfc91e">
+                    <propertyInstance
+                      Id="0f4325be-7543-450c-9a57-9c424d96f523"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="872156df-4927-4c9f-bc28-008e3ac0e1a2"
+                  name="connectionId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="3c5c391f-a0cb-425f-b1bb-537d4f8c3f0d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLauncherView Member%3D(Name%3DSystem.Windows.Markup.IComponentConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3DconnectionId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5b465853-6edb-480f-a30c-b639575e0755"
+                  name="target"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="9c6cd0ca-a914-47cf-930d-6f97fb35ead5"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLauncherView Member%3D(Name%3DSystem.Windows.Markup.IComponentConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3Dtarget"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="3a75811f-a7f7-473a-a481-3a84fbb05627"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package1_1048.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a87acd3f-9217-4237-8cf2-f018804f7846"
+            name="LauncherView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="6ef391bc-ed03-464d-a9e5-9aa9fb107543"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLauncherView Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7effafe3-a2ee-4806-af84-49cf12931a85"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f39513a1-67db-4f32-b21b-f3f42421a15e">
+                    <propertyInstance
+                      Id="62b1d5ae-1fb9-4eae-85cc-397e0cb67493"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9fac9dd4-6520-4504-a785-83ce8f521947">
+                    <propertyInstance
+                      Id="916cdad9-a326-4902-9914-c9c9cae889d9"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6d28ed39-918f-44cb-97f8-b8858ca0ff1f">
+                    <propertyInstance
+                      Id="6034d94a-01d0-413e-826e-88d386bf5d4d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cef8b9da-c1a1-4df6-b555-ff3a951eafdc">
+                    <propertyInstance
+                      Id="7e9849f1-b9d8-428d-ae33-ca53b3f81541"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="91475210-6107-49ea-a1c6-fe96963ca515">
+                    <propertyInstance
+                      Id="e6284f2d-0f9d-4b8e-adf1-3648365ea617"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="41be72fb-b509-4eca-8573-6eff9ff0ccf0">
+                    <propertyInstance
+                      Id="7bfb9b34-ca3a-40fa-a139-9c9810fc7808"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c8bb67f7-8182-47aa-b449-f435d08590f3"
+        name="ShellView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d8a0860b-521c-4c64-8c0d-e0824c1e43d4"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DShellView"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="38040c3f-8105-4242-a7ce-b1fe9f155b92"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8df8543f-cc7e-4ce3-b11d-a5b7e6568a5e">
+                <propertyInstance
+                  Id="006409a1-ef4a-4502-98bd-15c98e744f0a"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="60e0d179-fefe-4aec-882a-27d88295f4b5">
+                <propertyInstance
+                  Id="7339e133-e9e3-4fb5-ab10-3355ff6600df"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="af17a42c-7c9a-464a-b382-0a772e1aace4">
+                <propertyInstance
+                  Id="56701b7a-d50c-492c-9454-0585dc129286"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cc18efa0-0a0d-495e-a576-b4eae4247020">
+                <propertyInstance
+                  Id="29c46978-d3b7-4e78-abdf-93355c014706"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7fefd7cd-3a34-429a-a0a9-77bbf5a1b3c6">
+                <propertyInstance
+                  Id="e461275c-0692-49f6-a1b4-39b421bc81dd"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="1673b5ef-4259-4fb4-ba7a-f2e03a566be2">
+            <interfaceMoniker
+              Id="edadf663-44a3-46ff-9b42-a28a0cecaeb5"
+              LastKnownName="IComponentConnector"
+              LastKnownLocation="Package2_1050.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="731ea013-0b5e-41b7-a1d0-0b71137b25ff"
+            isSubstitutable="false">
+            <classMoniker
+              Id="e5d2f5ab-3fa8-49db-bc95-7a1b23b0c4df"
+              LastKnownName="MetroWindow"
+              LastKnownLocation="Package5_1050.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="5b34b474-761c-454c-859f-68cc42816d8f"
+            name="Flyouts"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="2803fc0b-6457-4377-80d1-853d1d2d58e0"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DShellView Member%3DFlyouts"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="984f079b-e78a-478a-8237-f989722ded42"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4b299c98-71a7-4cfa-bcaa-d1b9fee2ba26">
+                    <propertyInstance
+                      Id="2e00162a-a190-44cc-9b0b-dca7eca2b869"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa21e18e-35a0-476d-9f95-865f0f1724ab">
+                    <propertyInstance
+                      Id="6d3c680f-e674-4809-9d03-bfafa4efc403"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="36748ab5-eea5-4298-9331-f2a835e415f3">
+                    <propertyInstance
+                      Id="9c301fb1-2c2c-4446-a2d0-4e39a04b98f0"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="470ab9f9-3d43-4c08-be5a-1de4c359e664">
+                    <propertyInstance
+                      Id="6e0697cc-8e7b-45a4-b91f-160ade5df579"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a43b427c-aa1d-4836-91b2-234e82c9310a">
+                    <propertyInstance
+                      Id="f8678ce9-80ba-465d-8330-e44ca9904110"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="54e32c5e-049b-4b49-8cc5-7eeba73b9517"
+                LastKnownName="FlyoutsControl"
+                LastKnownLocation="Package_1048.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="12308164-1425-408d-8dca-fdef43402ee5"
+            name="ActiveItem"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="ea4d203d-2d87-4baf-b049-b912d04e5ef1"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DShellView Member%3DActiveItem"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="00128704-f112-4c78-9bde-90ab66ed0188"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="61e46480-c02a-4cfd-86b8-4d8ba8777ab3">
+                    <propertyInstance
+                      Id="70b2ea89-9c66-4a81-aca9-c473aca690d3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6b4e1bf1-f3d2-48fc-ba3c-2b94742ce49f">
+                    <propertyInstance
+                      Id="0de3e3ba-89ba-4b6d-a139-dbaafe15ef9d"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5fa9d4f4-4a5c-4ac7-af99-71674ea4806f">
+                    <propertyInstance
+                      Id="80337d3e-1d3d-48e4-ac25-ae1c3ee4f298"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2ec086ea-bfb1-45c5-9b95-db5445b0bc44">
+                    <propertyInstance
+                      Id="12f18be1-6520-4265-a9ef-08faf5ccf327"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="014c1a25-4170-4dd5-a107-a8c55675cb3b">
+                    <propertyInstance
+                      Id="67ad498c-1815-41c9-a076-9d3d75ee9fb4"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="df7e0993-a193-4109-8990-a99f85f8a633"
+                LastKnownName="ContentControl"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="68cd849c-4aa5-4aef-8a7b-03a7e6644492"
+            name="_contentLoaded"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="32925883-8d86-4233-88db-44eb5d4798f4"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DShellView Member%3D_contentLoaded"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="db3c5981-70cc-4133-adbe-11d73841c395"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b1b88d4a-afa3-48a7-b148-a74b5f64c73f">
+                    <propertyInstance
+                      Id="ee0e3f02-ddeb-43ba-bbb2-62202bb35973"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="205f0140-77d3-428f-8652-ede3a9a65820">
+                    <propertyInstance
+                      Id="bfd29d49-bd57-443b-9751-0b8b97da4922"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="738d8d53-378e-473b-9b1b-87be90d5e87c">
+                    <propertyInstance
+                      Id="57a72b89-f1bd-40ef-a87e-1add5d81c243"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c8e92af5-aa12-4e23-9913-0918150d994d">
+                    <propertyInstance
+                      Id="7586ee74-84c2-4126-84f3-d7895d07ef67"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="05ee485f-1464-461c-aa99-399d35863459">
+                    <propertyInstance
+                      Id="26d0ae6d-2a58-4292-a461-8cee5944b2b9"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="5bde9533-c6e0-4c1b-8572-c92fa9399270"
+            name="InitializeComponent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="26f5280b-64a0-48ae-9df4-585eeaca1d34"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DShellView Member%3DInitializeComponent"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ac50044a-2dbc-4b36-b73e-7dca1434c64c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d426788d-4b69-4642-878b-d326cb1a7b43">
+                    <propertyInstance
+                      Id="0c78b078-804a-425e-9b1f-e393ad2e3056"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="80bdffe9-9947-4020-b21c-ee5e78631391">
+                    <propertyInstance
+                      Id="b7a34376-8baf-425e-8345-9b1e1f0d3c31"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="074257a3-d3b1-4900-9812-574926021d8a">
+                    <propertyInstance
+                      Id="418fc1a9-4331-49cc-9fd3-709d42d2cedd"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fbced1b8-96ac-412a-a267-c3d05189f3fa">
+                    <propertyInstance
+                      Id="f082469f-915a-47cf-a07f-b4bb5c23e334"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1adfcd32-cc37-45a5-bcf7-baffcd3cc8c5">
+                    <propertyInstance
+                      Id="00bb276d-fa8c-46af-bde1-1fceb2c0f938"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e68e38f4-f042-44fb-afea-fef30941e45f">
+                    <propertyInstance
+                      Id="bbd0b894-0c02-46c8-a9c1-63c0f51dd8ef"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="8136b9f5-5f6d-4e23-a81b-52954fd08cfe"
+            name="System‎.Windows‎.Markup‎.IComponentConnector‎.Connect"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b3ee776f-5529-47a4-a4c4-1beb1ea06e77"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DShellView Member%3D(Name%3DSystem.Windows.Markup.IComponentConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="79c3040d-4033-455e-b691-243272672006"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="72fb5baf-4872-4bf4-83b8-c51d7309a7ba">
+                    <propertyInstance
+                      Id="f0291fef-a4e0-4073-84c9-b9354aa80bfd"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="564a8f4e-882d-47b8-b3f2-0d6cd1aa2351">
+                    <propertyInstance
+                      Id="0a09f954-23b6-4aae-8518-82199741709a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5c1c7352-31c8-492a-ba36-d1a4f9279224">
+                    <propertyInstance
+                      Id="5f567421-68bd-4585-94a9-b396faa4397e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0b0142d4-7077-41fa-91ff-54f842ceeeb2">
+                    <propertyInstance
+                      Id="a1b9be8d-e5ad-4ab3-abe2-d921bb61f504"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="436240af-fa7c-4851-9cd0-d8178603bb39">
+                    <propertyInstance
+                      Id="cca5af96-7a86-42f1-a350-fa5bc16660c5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="28edef74-a44a-4c03-b104-4fa1955b0a28">
+                    <propertyInstance
+                      Id="ae1ebe01-587f-445f-8a76-9727b251ba45"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="801741b3-d57b-44c3-83e3-617e12622c9e"
+                  name="connectionId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="d4f2a612-586c-4d5b-958a-9c5a2039f27f"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DShellView Member%3D(Name%3DSystem.Windows.Markup.IComponentConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3DconnectionId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="05a8442b-e3cf-49b6-afa7-0f7437f2319a"
+                  name="target"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="43fcce45-23bc-415c-b293-489b6ac76187"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DShellView Member%3D(Name%3DSystem.Windows.Markup.IComponentConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3Dtarget"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="3a75811f-a7f7-473a-a481-3a84fbb05627"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package1_1048.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="c43af97c-f923-4059-9efe-db5079187ed3"
+            name="ShellView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="7e8f2e26-cac3-4a88-8ad6-9d1c0b4818c8"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DShellView Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1a7eab2b-222a-4f2a-a68c-0b6c26abb7b9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="069f78bf-cf6e-4c39-b498-eaf776c0cfa7">
+                    <propertyInstance
+                      Id="a200e97b-6b64-4e50-8cbe-f16a037aafad"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3824190b-fd44-4f99-b8e8-df759f1da832">
+                    <propertyInstance
+                      Id="1ddcb9e9-de25-4ace-8f14-be35c9a7512d"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="687e73be-afe7-4fce-b3de-4cc1b9b35e04">
+                    <propertyInstance
+                      Id="3794b333-af18-44cc-b3c9-584263e4c69b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d954d7c4-4d26-4cb8-8096-bf5388416566">
+                    <propertyInstance
+                      Id="4f4b087f-4166-462e-a490-af3ac6ed7bdd"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="82ddc5c3-811d-4534-9452-7bac9724e9be">
+                    <propertyInstance
+                      Id="2dd932bb-d26d-4533-9ab0-900a0327b8ae"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="db7a4272-e56b-404d-9066-94947ff2251a">
+                    <propertyInstance
+                      Id="e5baed76-4e25-423e-ab3e-3cea0e4e6f01"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="aabc74c5-8766-4395-8932-1f641b9c70fe"
+        name="LoginView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="7c991100-b295-4dee-9dec-20102043080b"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLoginView"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="6046f923-7cd3-4b21-937d-848a32885e15"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="72ac0179-7ce8-4ee1-9526-79e5590d9252">
+                <propertyInstance
+                  Id="b6b11eb4-907a-47b5-97ce-9c9989335260"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c27a3800-38ec-4bc3-8f32-7b5c283f27f0">
+                <propertyInstance
+                  Id="956e6170-af64-4737-a893-c7b7f5484701"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4c276864-d420-47e9-b091-164af15ae63c">
+                <propertyInstance
+                  Id="30d25fb2-c3d9-4c77-94ca-e9ee13c69c1f"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a127935a-c989-4444-84c2-eff15ed5314e">
+                <propertyInstance
+                  Id="4e76b01a-31af-43df-8bec-8c59d37614af"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9930add0-1d88-4291-a315-ec64b5fdf334">
+                <propertyInstance
+                  Id="a2de2d8d-9398-4bd3-835d-38e354345836"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="dedd3942-f13d-4a4e-b100-40b88caf7937">
+            <interfaceMoniker
+              Id="edadf663-44a3-46ff-9b42-a28a0cecaeb5"
+              LastKnownName="IComponentConnector"
+              LastKnownLocation="Package2_1050.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="4a9ccebe-b0a5-4a6e-8d37-f71e78d9c62f"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d0225542-67cb-4259-a03a-c8f6f9f2a795"
+              LastKnownName="UserControl"
+              LastKnownLocation="Package1_1050.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="0775ea5e-52e2-4eff-bf96-fe25b17a765c"
+            name="Register"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="9a1c4ee6-b02b-4241-bf18-1ee58657fd3e"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLoginView Member%3DRegister"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="40828643-7b6a-40eb-8916-b56c178f5238"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="30b555eb-4cec-4888-b1cc-a22dc4da758a">
+                    <propertyInstance
+                      Id="66ad1cd7-a498-47be-8d0e-1eda11637972"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f3c0f2ff-5129-4756-9d78-71c746b92136">
+                    <propertyInstance
+                      Id="369d1865-3643-4e6b-a9ad-46617d432b88"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eb605186-a2f5-4aaa-99e6-7a29335e6aa0">
+                    <propertyInstance
+                      Id="406a5a4f-431d-4ba7-82fb-74633126aa10"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c200f1a2-acc1-4bec-a199-c6a78b6330d4">
+                    <propertyInstance
+                      Id="d04a2cb2-59f5-4119-9894-37ba9daec649"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b1ca8519-fb39-4e6c-be2f-464366cabda4">
+                    <propertyInstance
+                      Id="5737e312-0598-4ae9-88aa-eb7ab629f321"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="6f37f78f-e59f-41e9-9585-356ad980a757"
+                LastKnownName="Button"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c1cdc766-4196-48ca-b937-c490f7688991"
+            name="PersonalNumber"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="b333b9f2-aa07-46ef-abb3-2364923820fe"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLoginView Member%3DPersonalNumber"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="41c1a59c-1cb2-4b1f-8a24-301be7d3aa71"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="540a08d0-05b8-4b19-8201-b500d744dc87">
+                    <propertyInstance
+                      Id="10e20a0c-726a-4bfb-9bca-df0a3551fe72"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c9d7b318-269a-4d66-a601-18018ff12b66">
+                    <propertyInstance
+                      Id="cf8d2b41-56c9-44aa-a640-52a7b2e5898d"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="78a29d15-74d1-44ac-8360-02ad824adc75">
+                    <propertyInstance
+                      Id="25b7c79f-fb6b-422b-9f02-795dd580f94b"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9d55edd4-6737-4826-9c46-4de5eeb72f20">
+                    <propertyInstance
+                      Id="4c4984ae-86ee-4531-a157-32624d55201a"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c920261f-6ab2-4c3d-9353-e3e9d9d55cab">
+                    <propertyInstance
+                      Id="34ae0263-11d4-40f1-879e-c0115b17ad76"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="fbc299b6-2474-4a78-9b95-6ba1a6b2e93c"
+                LastKnownName="TextBox"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="2c1a9fe7-dcf4-44fd-b084-d4ad6d0638a3"
+            name="Password"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="719b15d8-32bd-4ba1-8b06-d6532f6f6700"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLoginView Member%3DPassword"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="769e7372-38d0-447b-8db8-83754c858134"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="38256414-5973-4b9e-b078-7c3286840b6b">
+                    <propertyInstance
+                      Id="063595c8-1788-4511-8834-f80cb0b326d0"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ef4236f4-b664-42be-be00-7ae645123cad">
+                    <propertyInstance
+                      Id="646a35fe-9756-4896-bf4c-1307ee4e1366"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="db73d358-f6c5-4ec0-990a-6614726454d1">
+                    <propertyInstance
+                      Id="2943f614-32f6-4c48-9f9f-158e74a7897a"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="184736c5-b3f9-4ca8-904b-4c02219a1a5b">
+                    <propertyInstance
+                      Id="d447b62a-6530-47da-831f-dfb35e68ed5b"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c638e659-b819-4b2a-8bc8-276b5d0c01ca">
+                    <propertyInstance
+                      Id="a9c061df-d64c-4ccf-aa0d-9d7d988f1547"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="fbc299b6-2474-4a78-9b95-6ba1a6b2e93c"
+                LastKnownName="TextBox"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b1a73866-6ba1-42b4-b773-deda1771534a"
+            name="RememberMe"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="719b6f8c-a0fa-4516-be1d-4d69ffd7b3c6"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLoginView Member%3DRememberMe"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b6914ec3-8592-4621-84f5-63faceda449b"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ba98e1ca-1312-40e6-91d5-95e1c185957a">
+                    <propertyInstance
+                      Id="89251723-e815-4e53-8b18-3adb65e103dc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="90bde922-99c9-4ace-ac85-3b18f584d623">
+                    <propertyInstance
+                      Id="26bd4e4d-cc31-4bb1-b822-f44461121ec0"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7a87d15c-77b4-4c6f-a746-7f39fb1231b6">
+                    <propertyInstance
+                      Id="2f9942f5-b10c-476b-a80d-1bef934cef04"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e1192813-0ceb-4468-8ad2-e08127554c93">
+                    <propertyInstance
+                      Id="bdccf0a3-0fad-43cd-8a01-441224fda88b"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f693069a-dece-4ea5-a11c-8fa6d4587db4">
+                    <propertyInstance
+                      Id="7a1dd200-8954-4453-9a14-20457ed5c71a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="c75c03fe-74a9-4274-90c8-58fe1516dcf8"
+                LastKnownName="CheckBox"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="823b0d81-9167-4fb6-ae3f-5a11bcd4c119"
+            name="Login"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="6ce95cd3-57ed-4b98-9727-37f7023a9a5e"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLoginView Member%3DLogin"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f2e3cd08-1680-4c9a-903c-d182c54e78da"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a9f0aa5-a72b-49f7-9674-128cefa860fc">
+                    <propertyInstance
+                      Id="7156c260-90ae-4d7e-bcfa-44cf9d9d4b0a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4b340273-bdba-41c0-b2a4-b6bd2fa12ad8">
+                    <propertyInstance
+                      Id="b12e1705-a5d2-4c63-87fe-93d7e868604e"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4e143e70-dcb6-4aa8-911b-43c346cc53e8">
+                    <propertyInstance
+                      Id="c29b1922-96f8-4332-8767-076ea3421c27"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="615a5e7f-2a65-485e-afb9-f3b08c693f7d">
+                    <propertyInstance
+                      Id="fc470fe8-0286-48f0-bb04-016c2c2a585f"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="950bec8c-b7ee-4189-86e5-f5a8ae3daebe">
+                    <propertyInstance
+                      Id="cd1a6337-cb7c-453d-92b7-f1eeafddd42b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="6f37f78f-e59f-41e9-9585-356ad980a757"
+                LastKnownName="Button"
+                LastKnownLocation="Package1_1050.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4846a768-e5ab-4573-82db-41f8a253cbe3"
+            name="_contentLoaded"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="714a930d-ae3b-4ecc-88b7-0cd8eedc1dd6"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLoginView Member%3D_contentLoaded"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="60e058b8-a03b-4022-8df2-b220b027304f"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c6cbd173-9eac-4351-82e5-b008811da5be">
+                    <propertyInstance
+                      Id="c714e063-8911-4d65-9563-5b5efc519b04"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="65c2e187-8795-440c-b311-0e9da239d974">
+                    <propertyInstance
+                      Id="361bab3a-7cac-48a5-a3ab-54eb95132c6a"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="46d77110-a32b-4430-8fd9-5324e1b76965">
+                    <propertyInstance
+                      Id="850d4202-47fb-4aeb-a61e-25494a82a8c1"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3e167a5e-77ca-4c08-9a08-31274aa1da50">
+                    <propertyInstance
+                      Id="8f34ad33-57b4-4aa4-ba0f-d41a11492894"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8772e827-3edc-4ed2-aaf1-af4325037e09">
+                    <propertyInstance
+                      Id="e0c78109-6211-487a-8de0-85209a033ae8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="dc9e18cc-c37a-4a66-8156-ebdfaa9902b9"
+            name="InitializeComponent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="586af128-be80-49ae-a8bf-dd73b798a9be"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLoginView Member%3DInitializeComponent"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5793c265-9b9b-4c96-bbea-e86fa47bdaf2"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f35adb1f-ca29-4f15-b8f8-a8ff64529c09">
+                    <propertyInstance
+                      Id="82dd2a38-93b9-468b-9bba-b91036bd514c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f3464a23-6b18-43ec-a0b7-02f6fce276a1">
+                    <propertyInstance
+                      Id="6d373153-9b2c-4d02-87eb-cb1b179096c8"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d1f124c8-8a67-492a-9ee5-e0f06e52d8b8">
+                    <propertyInstance
+                      Id="8920dffd-f9b9-41fc-982f-2bcdebef2c8f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4d40d50f-cd23-44ad-bc28-1a460b7cf21d">
+                    <propertyInstance
+                      Id="55153ad2-a9c7-44a3-a58c-97f4a5889ec7"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a3698daf-4118-4b7e-96ce-636735ce57ac">
+                    <propertyInstance
+                      Id="bde1472c-7009-413b-9e11-3d2f8e0e94c0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="860883e2-a5fa-4755-bea3-c3fab368ee00">
+                    <propertyInstance
+                      Id="93b90276-2738-4e62-90c7-783cfb7b5f8f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="edaaea7b-94b0-41b0-bc93-21808d37d7a2"
+            name="System‎.Windows‎.Markup‎.IComponentConnector‎.Connect"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="306ffe3a-d18e-4199-9fcb-f855554ae8d8"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLoginView Member%3D(Name%3DSystem.Windows.Markup.IComponentConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="adad114c-8c1b-4da7-a2eb-63837b5c05c5"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cfd1c0e7-070a-4db4-8a8f-72e291243724">
+                    <propertyInstance
+                      Id="d846339e-74bf-4e6b-a3cc-5f2778a565c3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2b1bba9f-f09a-460d-9f95-36c8768eb040">
+                    <propertyInstance
+                      Id="3464c6d1-0913-4157-95bd-6eb2babef7fc"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d32ccacf-f3e0-414e-803e-f3bce780b37f">
+                    <propertyInstance
+                      Id="9ab8d812-a241-44fc-b548-5b8d7b8cfeb2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4b08b149-cf94-4c8b-8f8d-ba0e118ffb7d">
+                    <propertyInstance
+                      Id="f60e1d7b-3bd4-45bf-ac49-6d6b8694ed8f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ac63264e-f36d-44d1-9b57-582046ac1888">
+                    <propertyInstance
+                      Id="5333eed1-c4a2-43ff-8b87-d34567ad0539"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="508ae38c-2f84-452e-9829-b2dab752e935">
+                    <propertyInstance
+                      Id="39c680cc-7c42-4a32-83af-7bbf3e7e2452"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="38c102be-e1d6-4878-b2ae-3896f7c2f94e"
+                  name="connectionId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="f7dbfc2c-839d-4b16-a12c-dfa7bb3f3b3d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLoginView Member%3D(Name%3DSystem.Windows.Markup.IComponentConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3DconnectionId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="78fe3be6-dd84-40bb-bd5c-461fe7ba35d3"
+                  name="target"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="ac00b6a3-a6a2-4fea-b6f2-2e87ff4222e3"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLoginView Member%3D(Name%3DSystem.Windows.Markup.IComponentConnector.Connect OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3Dtarget"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="3a75811f-a7f7-473a-a481-3a84fbb05627"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package1_1048.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f27abb87-0c13-4a75-98d7-f67b56b33cc1"
+            name="LoginView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="13cafd1f-9fe7-42f8-b7f0-3e28c0886ed5"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLoginView Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b5318332-7d91-40dd-8821-4f931b117773"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="43669816-6f1e-4041-a283-dc571e4b0d1d">
+                    <propertyInstance
+                      Id="cdb49a53-8f64-406d-b21a-14dfd6aa4c4b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="34418825-4966-4f9f-a591-b0c4346bef4d">
+                    <propertyInstance
+                      Id="8bae6307-18f0-4648-8ea0-3eb712d517a4"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="528849cd-67f1-4386-af3c-903294cfed77">
+                    <propertyInstance
+                      Id="6de265e0-21a5-4497-9a88-c854a8bb8475"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e1ac85d9-65bf-44f6-8262-9ea79eec214d">
+                    <propertyInstance
+                      Id="f266028a-261d-418b-ae46-3422289302a7"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="81fca9b9-985d-4630-8b88-e109fe70f1d2">
+                    <propertyInstance
+                      Id="e3fdca58-4fa7-40e3-9f56-35d527c2f24a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da648570-60f3-4971-af52-b67401fdd77e">
+                    <propertyInstance
+                      Id="7d82e993-f14f-4330-bd5b-226e2473ad58"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="4a614945-5e53-4a9b-9d9d-333e05ff4705"
+            name="Password_SelectionChanged"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="8f4844e5-d34e-4491-ab36-bf4f9a97e19f"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLoginView Member%3D(Name%3DPassword_SelectionChanged OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FPresentationCore.dll&quot; Namespace%3DSystem.Windows Type%3DRoutedEventArgs)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="27d815d1-9ed4-48c5-8fe5-76469112e1a1"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c8c6a894-fca6-4787-93f5-59d02d6547b1">
+                    <propertyInstance
+                      Id="274a5485-3849-4077-9bb7-1867a048ffb0"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f8db6a41-6d47-41f7-ba73-d49d8965fd5d">
+                    <propertyInstance
+                      Id="1faa6e9b-325a-4e6f-a8c7-67b377f60463"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="09c43bda-dfbc-4e9a-831f-7165bdcfb1fb">
+                    <propertyInstance
+                      Id="8582d251-ab29-416a-941c-9ee96fc82b0b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3963cf05-7cd3-40a0-98ac-2c8008c864a8">
+                    <propertyInstance
+                      Id="2d186579-5389-4133-9733-2391d108ec8e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="729b33d8-13d8-4c49-818f-bab11aaf7951">
+                    <propertyInstance
+                      Id="5b34de25-86dc-4951-b272-be3bd4c7ceb3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5532b0d7-d637-4ce8-bbac-4db75e50ea5b">
+                    <propertyInstance
+                      Id="823ff0c1-4625-446a-98a9-46e111728283"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="155e9146-48a6-42f3-87c7-e2c1bd387b8b"
+                  name="sender"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="3ed3af93-2eb0-4c65-b8ff-9928acfc6a89"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLoginView Member%3D(Name%3DPassword_SelectionChanged OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FPresentationCore.dll&quot; Namespace%3DSystem.Windows Type%3DRoutedEventArgs)]) ParameterIdentifier%3Dsender"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="3a75811f-a7f7-473a-a481-3a84fbb05627"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package1_1048.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c2a92ad7-c5a0-4c29-89bc-6d3ecb0a2570"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="462cf5e1-cd28-4c5c-aa9f-a36c91cf1590"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher%2Fbin%2Fx86%2FRelease%2FLauncher.exe Namespace%3DLauncher.Views Type%3DLoginView Member%3D(Name%3DPassword_SelectionChanged OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FPresentationCore.dll&quot; Namespace%3DSystem.Windows Type%3DRoutedEventArgs)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="6f652416-b752-446e-ba24-c15437d10885"
+                      LastKnownName="RoutedEventArgs"
+                      LastKnownLocation="Package5_1048.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

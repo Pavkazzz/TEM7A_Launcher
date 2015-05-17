@@ -33,7 +33,6 @@ namespace Launcher.ViewModels
 
         private void CheckModules()
         {
-            //TODO Для всех
             foreach (var check in IoC.GetAll<IModuleName>())
             {
                 try

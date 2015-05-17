@@ -7,9 +7,6 @@
              xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <!--<UserControl.Resources>
-        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
-    </UserControl.Resources>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="75" />
@@ -17,7 +14,7 @@
         </Grid.RowDefinitions>
 
         <TextBox FocusManager.FocusedElement="{Binding RelativeSource={RelativeSource Self}}" x:Name="SearchString"
-                 Grid.Row="0" Margin="10,0,10,30" controls:TextboxHelper.Watermark="Поиск"
+                 Grid.Row="0" Margin="10,0,10,30" controls:TextBoxHelper.Watermark="Поиск"
                  FontSize="28"
                  cal:Message.Attach="[Event TextChanged] = [Action Search(SearchString.Text)]">
             <TextBox.Style>

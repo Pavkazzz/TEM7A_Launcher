@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.Composition;
+using System.Windows.Forms;
 using Caliburn.Micro;
 using Launcher.Core;
-using Xceed.Wpf.Toolkit;
+using Screen = Caliburn.Micro.Screen;
 
 namespace Launcher.ViewModels
 {
