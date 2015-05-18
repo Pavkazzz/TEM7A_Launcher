@@ -10,4 +10,24 @@
       handle="viewcode://./CodeSchema_Namespace?Namespace%3DLauncher.Module"
       tag="ViewCode" />
   </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="b5b18d6c-944b-4679-bc0a-3ed6a3f6c158"
+        LastKnownName="Developed"
+        LastKnownLocation="Package_0006.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="f8f5361e-6437-4939-9b3b-69f84d1fd00b"
+        LastKnownName="Document"
+        LastKnownLocation="Package1_0006.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d584a269-0410-4ada-8d6f-135772a6f4c0"
+        LastKnownName="EmergencyCard"
+        LastKnownLocation="Package_0015.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
 </package>

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using Launcher.Core;
-using Launcher.Module.Document.ViewModels;
 
 namespace Launcher.Module.Developed
 {

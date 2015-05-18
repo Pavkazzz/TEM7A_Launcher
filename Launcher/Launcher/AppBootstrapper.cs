@@ -31,11 +31,10 @@ namespace Launcher
         //Для теста
         public AppBootstrapper(string path)
         {
-            
+         
             _modulesPath = path;
             //PlatformProvider.Current = new XamlPlatformProvider();
             StartDesignTime();
-            
         }
 
         protected override void Configure()
@@ -52,10 +51,6 @@ namespace Launcher
             batch.AddExportedValue(new User());
             batch.AddExportedValue(new ChromiumWebBrowser("about:config"));
            
-            
-
-
-
             batch.AddExportedValue(_container);
 
             _container.Compose(batch);

@@ -2,7 +2,7 @@
 using Caliburn.Micro;
 using Launcher.Core;
 
-namespace Launcher.Module.Document.ViewModels
+namespace Launcher.Module.Developed
 {
     [Export(typeof(IModule))]
     public class DevelopedModuleViewModel: Conductor<IScreen>.Collection.OneActive, IModule

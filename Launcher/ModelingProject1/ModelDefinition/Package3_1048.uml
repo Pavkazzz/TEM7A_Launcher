@@ -310,7 +310,6 @@
       <class
         Id="e3836dac-9f0e-477e-8051-1f01be4ee8b8"
         name="List"
-        visibility="Private"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">

@@ -1,0 +1,1938 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="d584a269-0410-4ada-8d6f-135772a6f4c0"
+  name="EmergencyCard"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="33b445d9-1c27-4881-a4c7-cedccafca8bc"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DLauncher.Module.EmergencyCard"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="3ca0dc03-00ec-4425-8f59-bfb3b601bde4"
+        name="CategoryCard"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="041cef39-5ef3-47ce-8289-ec631cccae8b"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DCategoryCard"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="40280975-8043-49ba-ab70-279b6aa2349d"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ce07895f-ba69-43b4-811d-f16363450add">
+                <propertyInstance
+                  Id="194492eb-6678-418c-8117-1a581d531d01"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="080c1877-2499-423d-a647-3bab88669424">
+                <propertyInstance
+                  Id="64661ab1-17ac-4ef7-858b-b50856431cb8"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8600ffab-7e33-44ec-ad90-53ec9de9d02e">
+                <propertyInstance
+                  Id="c6cccb96-1257-4058-8160-a75ed8cbf52c"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b4bf37a7-3df8-4ea6-b8db-f98ad93ecd89">
+                <propertyInstance
+                  Id="9921bbfe-c791-42d6-aebd-831fa95805fd"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c1a04491-0e83-40f0-8415-e4973400994f">
+                <propertyInstance
+                  Id="4e797c9f-fcd9-4c84-8373-56d89128669c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="c8b1c459-ba64-4434-a10d-56a0339a3419"
+            name="CategoryName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="db15ce0a-7f46-4f23-8a50-b19b41cd5a39"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DCategoryCard Member%3DCategoryName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7f36892d-31fa-4a23-a95c-16598d171f9b"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="552268de-21df-4cd7-877a-a5d48d4f9b95">
+                    <propertyInstance
+                      Id="caf40aff-5c8b-4a0d-9b7f-7135dc46250d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cca2230d-093b-49b3-903e-035575ed2b85">
+                    <propertyInstance
+                      Id="32e07cda-0c12-48a0-a6e1-135a1226bc33"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e88ffdcb-cdd9-4c23-b14f-fb7721ac1b1c">
+                    <propertyInstance
+                      Id="89c83248-69ab-4222-ae6e-c63b2ba2aa1f"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="70189d5d-77c4-4fdc-97e7-e713d36f0e94">
+                    <propertyInstance
+                      Id="d49af14c-0173-4fc4-a3a2-8fa4a398b7c1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3411add2-4a1a-4bb8-865b-3f2004398c95">
+                    <propertyInstance
+                      Id="eb71bdc2-682a-4ce2-a442-ec7718bb4837"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="48cea721-ad0d-4a92-bf11-8a037d8b6187">
+                    <propertyInstance
+                      Id="a691a5f9-f5f0-49d1-87ea-f7c0fb641383"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0698fff1-dbe5-47e8-b19d-316aa8569dbf">
+                    <propertyInstance
+                      Id="e8012609-6bfc-49a9-a85a-3a5e88585851"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="11f47c62-7dc6-40a3-a6af-032d33d125eb"
+            name="CategoryCard"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ee78e0d1-5c67-4055-86c3-9335e3943440"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DCategoryCard Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="cb177fcd-8dd4-4792-bf19-eb6013a7c82c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e4ecd8b9-d458-4b1c-b249-9f2e146dfbc6">
+                    <propertyInstance
+                      Id="f9096be7-6b18-46be-a4f9-6868e88e5330"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fb841673-f9ce-4920-a690-eb748c63f5ac">
+                    <propertyInstance
+                      Id="b2c6a2dc-f125-48dc-8d13-ade82c1fcd38"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0a64557b-385e-4214-be2f-81804dfdd76f">
+                    <propertyInstance
+                      Id="fd690b98-011f-438e-a72d-9daf410614c7"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d3a36707-19c0-44ac-951a-603edab97fa8">
+                    <propertyInstance
+                      Id="29871670-a887-449b-b497-e488e03c6701"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b4ca1050-4cdc-494c-945b-0ef6bc714d9f">
+                    <propertyInstance
+                      Id="8daa16f9-beae-4950-ad1c-1f9fa81f0af8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2153210b-fa59-4ac0-a98e-8763787668e9">
+                    <propertyInstance
+                      Id="7963766d-180e-417a-9ed6-0c5c12589ed1"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="39bad8d5-3f2d-40a2-8c37-1a2386662346"
+            name="CategoryCard"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="bfb56bf0-e7f2-4a95-98ef-fc3d2cf9a9be"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DCategoryCard Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ba6701c4-9334-464d-8479-c15b0190409c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9b9df336-9f34-4911-ba88-01bb427f5461">
+                    <propertyInstance
+                      Id="21a2ebaf-c0bc-4cd7-8a7c-6d10331c867f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6adb01ed-a40b-4800-842d-e0311016447b">
+                    <propertyInstance
+                      Id="f884a201-08c6-4764-8328-7eb6449ffea8"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="055bed16-7304-4ccb-941d-7e3684b1ee19">
+                    <propertyInstance
+                      Id="9f44939d-6d32-4657-8ba4-09ded71372fe"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d8041e46-4289-4cb1-9520-c584e744c616">
+                    <propertyInstance
+                      Id="31d68d3f-e5af-4a2a-8efd-2e8e1910bf7d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5253fc79-668d-416a-ae7a-632777abb01a">
+                    <propertyInstance
+                      Id="69c42388-49d7-4551-b0e5-37d3751d5713"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bf0ba03c-fa63-460b-82e2-e4de3342bd0e">
+                    <propertyInstance
+                      Id="45ee4acc-ddfd-4451-a10d-71e288de4e5a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bd404544-5156-4b56-8206-a9be00b7470b"
+                  name="Category_name"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="513551f1-178b-440f-91cb-f860b705335b"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DCategoryCard Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DCategory_name"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="df10d302-bfdd-4031-9d72-4ffb87c3cf3d"
+        name="EmergencyCardAbout"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="e00929ec-19f4-474f-8117-19035856e30b"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardAbout"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="20c4238e-51e7-4164-b15f-a3673fe2c1e0"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ffc10459-396b-4492-9025-ad982a96992c">
+                <propertyInstance
+                  Id="72af2899-c119-4ac7-a0c6-bcfd3bb8a68e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="61983be5-64d1-4bc8-a050-434f66e37c45">
+                <propertyInstance
+                  Id="bb0dccdf-ffe7-4b73-8d4a-81e1a463abab"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5477dd46-454d-4fd4-bed9-3444493e69b3">
+                <propertyInstance
+                  Id="fb2aa215-83fd-40d9-8923-140a6ad6b429"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e365ad44-4f69-4cc3-b096-343f33d868ff">
+                <propertyInstance
+                  Id="9b0ad737-e122-432a-b672-d36c7f853b1f"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="47a1b0cc-ee25-45b5-8d25-4154820e9503">
+                <propertyInstance
+                  Id="ceb10509-69dd-4bf1-bed9-51f3a6e05b57"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="3c27410c-ae79-4a9f-9b66-b9c207b4340a">
+            <interfaceMoniker
+              Id="05fdc547-49f8-4e87-92c5-95afd35dde50"
+              LastKnownName="IModuleName"
+              LastKnownLocation="Package13_1048.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="4f0d45f4-98d9-4a0a-9278-da77be61562c"
+            isDerived="false"
+            sourceEndRoleName="EmergencyCardAbout"
+            targetEndRoleName="Coloring"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="e29a6066-03b4-4c8a-a54a-4fc3943992bc"
+              LastKnownName="Color"
+              LastKnownLocation="Package12_1048.uml" />
+            <description>Property Coloring references type Color.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b1a49bfa-7dde-4f64-8f3e-96f973ed23c6"
+                  name="EmergencyCardAbout"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a93470b7-9e78-49b2-a5f9-d3252505dd0e"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="9530d7ec-329e-4a0e-b141-6e86868d3fab"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0d937f7a-07ec-4f4b-806c-93b60590ad27"
+                  name="Coloring"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e76d4b1b-ea60-48bb-b3e0-067ac39c7c93"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="44a00754-acc7-4e14-a5db-03c1dfb43782"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="641610ba-4d11-464f-add7-66abde2b218d"
+            isDerived="false"
+            sourceEndRoleName="EmergencyCardAbout"
+            targetEndRoleName="ViewModel"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="904726d0-4f6d-402f-9d9f-b38a21962c46"
+              LastKnownName="Type"
+              LastKnownLocation="Package1_1048.uml" />
+            <description>Property ViewModel references type Type.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0e5f769f-ceeb-4c35-b24f-5eff95aa00df"
+                  name="EmergencyCardAbout"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="6d3f310f-1049-4c1d-9191-4ebd76ca43b6"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="ef6f8546-1ae1-4105-9a0e-4c2e4c2a12e1"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="87e2a5f1-1362-49eb-846b-d1c9445ab77b"
+                  name="ViewModel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="f4fdc962-51f2-4abf-a759-ae34183cc74e"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="95963a9d-d78d-4067-8578-2f218df82047"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="0b8c1a29-27c1-48f0-869a-9e83894d7fa1"
+            name="Coloring"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="ef4bca29-53aa-4f9d-a687-abbb56f2ba19"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardAbout Member%3DColoring"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f2f782d6-7ede-45d9-8137-94c1daad16aa"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="24271fa8-9165-46f7-bcb1-3aa8820db4e3">
+                    <propertyInstance
+                      Id="edc0f767-bfe1-44ee-891d-268c72525a1b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="24e96208-ccab-4edf-9663-6791b21ffc0f">
+                    <propertyInstance
+                      Id="84465ab7-da9a-4e76-ab6e-0783baf2a9f6"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0d6a7d3e-59e5-451b-81e0-3f4e4d9a32f2">
+                    <propertyInstance
+                      Id="3147658e-6870-4d9f-96f1-bad07a1583ed"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fed446c5-e86b-4373-888c-22a82bb95472">
+                    <propertyInstance
+                      Id="a56a9638-3258-497d-8342-94fc1f639d66"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ea35619d-fcdc-48d0-9892-2adf79c6713c">
+                    <propertyInstance
+                      Id="a766c00d-9bea-4105-b456-67ec9fdcec9f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a4268e5a-9060-4e9e-a3f4-8c58759437bd">
+                    <propertyInstance
+                      Id="35018bdd-6c96-4500-986c-a6eed9fab356"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="69f79067-fa90-42ff-b183-516c279c9cf5">
+                    <propertyInstance
+                      Id="1487aec6-9cd5-4722-bb1f-812d90653b06"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="e29a6066-03b4-4c8a-a54a-4fc3943992bc"
+                LastKnownName="Color"
+                LastKnownLocation="Package12_1048.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="027b9a0a-a8dc-4ee2-bbd4-b066daa19840"
+            name="PositionNumber"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="9fa5c2c5-b698-45a1-a8fd-d95524f90bc9"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardAbout Member%3DPositionNumber"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8496107b-5e4d-4914-b54b-e31f00ff2ed5"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2cdc5be9-7656-40b7-8d44-bb7c28542daf">
+                    <propertyInstance
+                      Id="30db1911-9200-4e7e-87c6-cb6a650fb902"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="29e18a7f-309d-4261-80e9-667eec0dd2db">
+                    <propertyInstance
+                      Id="d9cfb9b3-f6f0-47a5-84ac-a54262bebde3"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ec3ca934-8c8a-4c08-a1d8-e228a9a2e7bb">
+                    <propertyInstance
+                      Id="a44e5205-3655-4c26-b941-1bd48aec9c7f"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="48879163-ed99-4f29-9ed2-96dae380199a">
+                    <propertyInstance
+                      Id="f3475fff-1c68-44a8-8b27-387887635689"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a9764a4-58f2-44c1-b629-c54aa5375a12">
+                    <propertyInstance
+                      Id="e131e465-11ce-4b26-a5d8-173b67604269"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da1fd6bb-1f94-4f71-93a8-7bf3708d02de">
+                    <propertyInstance
+                      Id="6693af6c-526a-43ee-b53c-4308cefd36dd"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8fd1ab7d-e947-488e-8649-c254c5317876">
+                    <propertyInstance
+                      Id="4dcbb46f-e7fe-458e-b570-a989cd68d02b"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a9b9744d-e788-46da-b626-62fa45d7dc1f"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="ee5ff444-6b66-4f21-b6ae-d395e958c2c0"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardAbout Member%3DName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="562477eb-5eb8-4775-89e1-e452bda60df5"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6ff9d053-378c-4d57-8f92-5f4aed70dc4e">
+                    <propertyInstance
+                      Id="b25fae9a-4c79-45a3-94d6-981bc9731877"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4e61b1fe-a2e1-41f4-acdc-0b5100fd9b1e">
+                    <propertyInstance
+                      Id="ad4981fe-248c-42f8-9c0b-6c6fa83a38cb"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="95522c16-dcec-472a-b587-600b8e8739c4">
+                    <propertyInstance
+                      Id="3cbfee9a-07fc-4cd3-a867-a35d87643f4a"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bca8bafb-94e8-4e64-850a-7040b5cac228">
+                    <propertyInstance
+                      Id="938e3fc4-190d-4d24-a1ae-0b6f522cfe76"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="007a98e7-a17f-43f7-8b54-de147b9d8677">
+                    <propertyInstance
+                      Id="4a076c21-f614-492d-ac88-aba7d4bc0f41"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="046d6be1-88d5-4925-a1c6-e061cee5eb36">
+                    <propertyInstance
+                      Id="32e440ef-543e-4f31-998d-3b00f91e0ef7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6650c33c-fbcf-48e0-a11e-7e595d5540fa">
+                    <propertyInstance
+                      Id="f221e995-db26-463a-b8e0-bd9953279398"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="2b846273-caca-4387-bf46-796726e88ab6"
+            name="Description"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d760a0fb-f6b5-4a1a-9722-d254c1197c56"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardAbout Member%3DDescription"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a33559e5-e683-408e-9920-607443b42f91"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dda2422a-52b0-4a99-bbd3-4aa5c3caed00">
+                    <propertyInstance
+                      Id="cbed51a2-1811-45a8-97f0-5ee84662da41"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="db002a8f-5c24-4f03-aeee-54bfeba99295">
+                    <propertyInstance
+                      Id="aed421f8-29e8-443f-af5b-6e271e63722f"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="98fb2c90-6cdc-455c-97fa-4e8d16c257c6">
+                    <propertyInstance
+                      Id="1d6c4799-47f2-4324-b6b3-0e9f16fbb5d8"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="465b628c-5cf4-464d-8d13-7b667cbe9e1c">
+                    <propertyInstance
+                      Id="75b02bfd-9925-4723-a302-16a1f39d1e48"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e3939624-f1ff-477c-bbc8-06ebc3bc4581">
+                    <propertyInstance
+                      Id="71064817-44d1-48c4-9444-de20083169d4"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0acf116c-43bc-48b2-9b6a-39b9c6a9c1c5">
+                    <propertyInstance
+                      Id="fee66181-4b8f-469d-85db-ed2cf10e82ec"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a9ec9c9-1006-4f38-a2a5-47c8209daa54">
+                    <propertyInstance
+                      Id="e0b05f1e-c50c-4d8d-9a3a-dedaa9d8746b"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4991781f-aa2a-4fa8-84f1-557db06be419"
+            name="ViewModel"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d1f6d026-65ce-4eff-b258-c661dc087aee"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardAbout Member%3DViewModel"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f9c74b58-7b6d-488a-90ad-dbe85bd243cd"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3b334368-5723-4f3b-a8da-4fc57a3617ce">
+                    <propertyInstance
+                      Id="aee15443-a2a0-42aa-83d3-2af123d176f9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b4fed625-e0a0-4432-863c-b8e37c44ee45">
+                    <propertyInstance
+                      Id="585b5598-443a-40f8-9bb8-b1ea0b584cbc"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2bf9aea9-d842-463a-9801-18d28f3291d8">
+                    <propertyInstance
+                      Id="23122870-6898-4161-b1ed-ec3922ef7298"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="264e4a1a-c49c-4547-834d-b11ff8e3fc43">
+                    <propertyInstance
+                      Id="2b0844e9-980b-4972-a43c-c6ff3575f9b8"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae0ec22e-621f-4715-addb-39a1387e39e4">
+                    <propertyInstance
+                      Id="9853bb04-05f1-480d-8e34-244acabfe6d1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3fabb3ac-1e27-49e7-8d45-66bb7e9d6fa9">
+                    <propertyInstance
+                      Id="e31ad643-0190-4be7-8779-6500c09aff17"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4ea29705-f657-462a-9575-7e4a499f17f1">
+                    <propertyInstance
+                      Id="81931ee4-6ac6-4cfa-a3ee-ae079c25b517"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="904726d0-4f6d-402f-9d9f-b38a21962c46"
+                LastKnownName="Type"
+                LastKnownLocation="Package1_1048.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="79a9ff3f-b066-43b3-9217-a20eba3af703"
+            name="DbPath"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="100875fc-3c46-476f-98ba-1dae451f89c2"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardAbout Member%3DDbPath"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f9f5c046-c3c0-4f57-bd8f-8adb4bb77192"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3be53496-3e24-44c9-bbf5-f22c71cd1384">
+                    <propertyInstance
+                      Id="0b815f04-49f5-4c03-89d6-c41530e37514"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2e8cac8c-b560-4168-bab9-29941eb58858">
+                    <propertyInstance
+                      Id="20e50559-3dfb-49e6-857d-063e95091086"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e7aedcfd-cea2-4e23-a4b7-546cf810140c">
+                    <propertyInstance
+                      Id="e10cae64-0de3-4b76-8fe0-db7d83779626"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="714f35fa-202e-44ba-b6e8-b2c233ff92e2">
+                    <propertyInstance
+                      Id="dc51c28d-cdaf-4d8a-b2c5-27c3a6f1239e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b2b2c2a9-cc69-4eb8-8ab7-41dd8d282414">
+                    <propertyInstance
+                      Id="34115210-9268-4343-bdbe-d683c3145cd5"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6405aef1-c96c-469e-870f-ad0f13f64b7b">
+                    <propertyInstance
+                      Id="07504073-d2de-4bf2-9cbf-ae59e724c591"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="40acd6bf-bfbc-444f-a76d-e089b6507403">
+                    <propertyInstance
+                      Id="7f19a7c7-d0df-4fd6-8d2b-df58a8b087b5"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="58560bfd-a5af-4146-b47e-afacf448f640"
+            name="EmergencyCardAbout"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b549d1c3-94ff-40da-b593-ea085015a9a7"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardAbout Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="12f32e27-5d7a-428e-a32e-78525949246d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="688b7572-ba8d-43ae-819c-e800b1d4513f">
+                    <propertyInstance
+                      Id="50998302-159f-4a11-b67f-32026f0acc2a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a34fb109-ae7a-4046-b0b5-42804a19d24d">
+                    <propertyInstance
+                      Id="62ae4857-76fc-480a-ac51-4a74d86ce27e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa27df7e-3e05-464c-bdb6-b6c646de25ab">
+                    <propertyInstance
+                      Id="f848843a-becd-4801-8033-989bafb39c34"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3c08d44d-e8c5-42df-a239-8b4f4b0a0f41">
+                    <propertyInstance
+                      Id="76d06692-55ff-4340-b7ae-ff04f07ce43f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4c217ef0-cf4e-47ba-8c8e-5066297e36e5">
+                    <propertyInstance
+                      Id="311d8d30-883e-4a72-9d45-94703c800379"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a3155829-8777-4c4d-ad72-70eec64fa58d">
+                    <propertyInstance
+                      Id="d8bb1c81-6577-44a9-a7bc-f680092203a4"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="8d7e6f3a-21ec-44a1-b45a-59a60299455a"
+            name="PrimaryCheck"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="87af7efc-ff15-4f98-91d5-75a4f86a9c0d"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardAbout Member%3DPrimaryCheck"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="abdc8611-1e81-4c1a-9d6c-c6a7aee7f559"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="500f36da-9069-4353-b0cf-e6ff9a473bfd">
+                    <propertyInstance
+                      Id="1581f3d2-9eac-48bd-a34d-d0621c488a1d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="82383f00-3d21-4a13-bda2-a49b31b6e4f9">
+                    <propertyInstance
+                      Id="9fc559c4-a33a-411a-bb95-35c71b88c1e4"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="75e3a2a0-93f9-4dba-86ff-31d4b181721b">
+                    <propertyInstance
+                      Id="da53765a-2e33-4b41-93d2-06f177e81dc0"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="07764575-d454-41bd-b060-b67e0ffd3377">
+                    <propertyInstance
+                      Id="d6cd0427-ce66-4e6e-9ffe-e6616ae12c84"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a66292dd-25ca-4402-9f36-5f9aeaf2cbc3">
+                    <propertyInstance
+                      Id="74e3a939-2f81-4106-8e4d-a4964ab6a8ae"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2c60f231-94e0-4d4f-9fa2-4ee376036cdc">
+                    <propertyInstance
+                      Id="79cd105c-1c23-439e-b71f-58c83402a65a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="056188e5-2cf9-443d-9159-6aa29b198af1"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ac99bfff-6de2-4f37-8fc8-e9778b0a8556"
+            name="DoCheck"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="88ea0bc7-31d3-4f93-b7fc-132d29599140"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardAbout Member%3DDoCheck"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3e6bd683-4846-49ec-8d55-c656dcba033f"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d5d5160a-cccc-4e48-a7c2-d2ce26c6dc31">
+                    <propertyInstance
+                      Id="67ef329c-1374-4a7a-81cd-9dd46a616cf6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="47ad3ed5-5ad5-4209-b91c-fc6d28ae553f">
+                    <propertyInstance
+                      Id="236f04cc-c943-4144-88d6-fc3b9e89ef98"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1534f5c7-1261-46bc-aff5-7961d7ef7d0e">
+                    <propertyInstance
+                      Id="264adf30-be3b-4cd0-8d38-2973c2125bf5"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f45a3f49-ed80-4c61-9315-128aee79e346">
+                    <propertyInstance
+                      Id="2d9ae6d8-5c9c-45c8-9dc9-33531d71e940"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d573fdeb-fedc-4b78-a67a-c5033853e36e">
+                    <propertyInstance
+                      Id="2c887816-e142-4cd0-94e0-b51d9e5027f5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="51e66a1a-b0bc-413b-8671-425b5890e23e">
+                    <propertyInstance
+                      Id="6f1c4454-ff20-48c0-96df-23925d874f97"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="07734cfb-8ec7-4da6-96dc-59ccbbaf893b"
+        name="EmergencyCardFileClass"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="cd963750-e76b-4f06-91ab-107ae35ce21e"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardFileClass"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="8a1d2365-9bd6-415e-a2f0-228ae034623a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="25da378b-c10c-4a35-aeae-663d33831935">
+                <propertyInstance
+                  Id="947aeda8-d0ca-4b12-abfc-d6ea141487bc"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fe9847c3-ed3f-43d1-920e-0b4cff924f7f">
+                <propertyInstance
+                  Id="00641e6f-6560-413f-a113-ab69b6680ef0"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d5151e50-7e2a-44de-8521-2b3fc18e8572">
+                <propertyInstance
+                  Id="16ec54a0-7b5e-498b-b6d1-fecd7dd0a58b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b5a79681-1ce9-4e89-8c3e-6f8b80fe175d">
+                <propertyInstance
+                  Id="2b1529db-4697-4516-9a2f-3c35a9dd97ee"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ab521e2d-e88d-4681-9d37-7569701cc403">
+                <propertyInstance
+                  Id="c119e4ae-6764-47e1-bc1b-9d3b7486c560"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="1fade829-5a6c-4784-a1f4-ecae8482923d"
+            name="NameCard"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="388fb076-d282-456d-bd22-5bb60c67ab39"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardFileClass Member%3DNameCard"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8cb2c817-318f-4df1-a862-7ac834874071"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fd2828b4-e413-4158-b605-3a3a0f233f77">
+                    <propertyInstance
+                      Id="94b9c660-2d2f-4b36-8f82-2ef26f7c3757"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="67901659-a727-4ac2-895c-dd78c54567f1">
+                    <propertyInstance
+                      Id="63f75c1d-3b48-4d66-b156-8147dbf9468b"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6c61ba74-b1b3-4c28-86be-0060717c1329">
+                    <propertyInstance
+                      Id="f6602047-45c3-4aec-bfb6-27dbf2639140"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="29178236-183e-4d33-a769-9ece69d02d3f">
+                    <propertyInstance
+                      Id="48f50691-57e9-4948-b308-a92b2d5e0694"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="711b8a8b-751f-4347-a7d4-821f48a60231">
+                    <propertyInstance
+                      Id="1c005c0d-b591-472e-ac41-2ed397deed36"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ce585259-7994-4cea-aab0-f0eebccdb342">
+                    <propertyInstance
+                      Id="19ab2323-5799-4eed-9350-69d41c01aa98"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1ddb921a-7dab-4a25-88c8-4ef81e56cb19">
+                    <propertyInstance
+                      Id="6102369c-5828-46d3-b7b5-87e72baf05a9"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3040fac4-0ce2-45fe-92e4-79391f283be9"
+            name="Conditionalnumber"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="bea50d64-47bb-445d-b2e7-87ce291508f8"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardFileClass Member%3DConditionalnumber"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="39c97c26-ad7e-4297-b851-bfff9073dbd3"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3f1dff0f-03f9-4cdf-964a-2df164447ef8">
+                    <propertyInstance
+                      Id="b5e8a477-0898-454a-a49a-fa609c9c40d3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="413b68b3-45ef-4df2-a9d5-fa3b0656b783">
+                    <propertyInstance
+                      Id="96219bc7-bcdc-4dab-b2e8-208298a48aea"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0ead0e37-6107-48f1-a8f7-bfadea68b100">
+                    <propertyInstance
+                      Id="d0fbff18-eab8-462b-99c6-94006b03a838"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f050286-b744-4389-a59c-63c5819bb51f">
+                    <propertyInstance
+                      Id="2e314a59-a5b5-425f-93cc-0fb2884cbcb4"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9107c27b-37fb-40ec-bfae-48945bf62c6f">
+                    <propertyInstance
+                      Id="70869a61-8107-4936-9390-1cccb361914a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d2708b74-4eb2-4a70-a30b-fe56cb2f1a94">
+                    <propertyInstance
+                      Id="4c93eb00-55cc-4a30-b6fd-253546bffa36"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="967ae87f-2e20-43cf-aa47-9ad6602f9573">
+                    <propertyInstance
+                      Id="06d986e4-33c7-4710-8ac3-5b20d7476d81"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1a943f39-bac3-498f-813b-71f7a2ca7ad3"
+            name="ShippingName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="36174810-073d-4b7d-949f-1d901000c21f"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardFileClass Member%3DShippingName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a1d8db79-8cbf-4ab4-8804-1f34ca1e63cb"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4f49485d-9403-41b0-b66a-e1069ca8a2ef">
+                    <propertyInstance
+                      Id="9e11f166-3d16-4a0c-a9cb-06a2642894ca"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="60df8f30-7081-4d6d-917d-393c4c7a5a32">
+                    <propertyInstance
+                      Id="3a09bafc-9e89-41f3-bc1a-be960e58d9ba"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="31af3fd1-7cd6-4b1d-9c80-f5861412086c">
+                    <propertyInstance
+                      Id="27058a00-3990-4d56-92bc-cf3988812794"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="14b6e00a-9eec-4eb5-b2c0-b7371ce42b26">
+                    <propertyInstance
+                      Id="bfcf0201-f643-437f-a59c-2c8e0623f92a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6f87c11d-99e3-4697-a7b9-db6fbc6514ff">
+                    <propertyInstance
+                      Id="d6f876dc-cb61-497d-9b38-04e493a8512d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eee14ee8-81cc-4667-bb5d-450afc1455f2">
+                    <propertyInstance
+                      Id="8c155b9f-1178-42a5-905e-74a6030070f3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c9b7144e-81c1-4e37-8d80-bdae6cc18f4d">
+                    <propertyInstance
+                      Id="c50bea38-539b-4dac-8f86-6c44f144141f"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="6147249a-bd38-477b-8ea2-737c6efbf2c9"
+            name="ClassificationNumber"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="14a867cc-1b10-4c72-b71e-d5b9a76efffd"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardFileClass Member%3DClassificationNumber"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="171dc04f-7273-44ee-b097-86a39eace461"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="18e6ee85-5ba1-4290-a862-98cfd5b47134">
+                    <propertyInstance
+                      Id="84a5bd1c-4f67-4a5b-874e-8cd8734ed98c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b8d923e9-740c-43c8-901e-ddb2f42dcc1b">
+                    <propertyInstance
+                      Id="bc0ee672-d08e-4ead-850c-b3655dfc7d2c"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8daf64f2-eef5-4658-a1dc-6fa4c4ded8e2">
+                    <propertyInstance
+                      Id="a177eaef-45fe-4f24-8e37-3b2886ed1faa"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e6d49f97-1b08-40e8-a472-74e272404e98">
+                    <propertyInstance
+                      Id="2b7049a9-d3b5-4ff7-850d-6f2f0dfb6639"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1cc3a9f4-e43c-4adb-9d85-b7119a84634f">
+                    <propertyInstance
+                      Id="fd3df3ff-9536-4920-9637-745f8166a31d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="96861920-f458-4869-9c93-e0c5e218d2dd">
+                    <propertyInstance
+                      Id="c67e53e4-77ba-4682-b247-b6289cb06f6a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="16ee261b-2453-48de-8945-d02c5c2e12ed">
+                    <propertyInstance
+                      Id="cb9dea17-b172-4859-b35e-970cb8564fb1"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1a4eb0de-fa92-4d33-b253-2b28c602d101"
+            name="PathToFile"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="bb998347-01f6-464d-86be-acb6ef0ed74a"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardFileClass Member%3DPathToFile"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="467d78f2-9b3a-4021-a22d-2565ad4647ac"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a1907d15-35be-49ab-a274-6f204055f541">
+                    <propertyInstance
+                      Id="4f49c502-c01d-4932-a71b-f302e2c4a730"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3439e45e-cda3-4288-9411-60547e0eba41">
+                    <propertyInstance
+                      Id="cb1699b3-d2e7-4538-b2fb-b92f0f0d6030"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ba308392-5f4a-48ae-9168-af9e34ba8277">
+                    <propertyInstance
+                      Id="77c9ada8-06b7-4a1f-8b76-181f2162a932"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fde0869d-bc82-490b-aaea-e8eebff06a88">
+                    <propertyInstance
+                      Id="1a900f83-f23f-4380-9eb4-6fca557a10e1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="476da29a-a2ac-4640-8e6c-b00f70baa23a">
+                    <propertyInstance
+                      Id="6d96b5e9-df19-4e6e-b61b-9c43d76417e2"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="af360224-b7a0-48e7-bfbd-e557c5117a5d">
+                    <propertyInstance
+                      Id="142db87a-f6b5-4112-be8c-c0c63b146631"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bcdd2810-4481-4f46-b1d4-89ff0477e1ea">
+                    <propertyInstance
+                      Id="8bedfca7-998c-45de-9c04-b00d41c6e51b"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="da1b1f2a-8052-4ed4-b746-e33b25b4041f"
+            name="EmergencyCardFileClass"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="8fd6bd74-6910-44bb-a7be-94a84798204c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardFileClass Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2cb30d76-d6c2-4662-b459-a016d6fa1850"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="855b4f47-ec6d-44ab-980e-0251222aaee6">
+                    <propertyInstance
+                      Id="eb130423-8fba-44f2-91aa-de937a980c71"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bf4bfc07-d06f-4141-931c-5ad05075f064">
+                    <propertyInstance
+                      Id="00723378-a0f3-45ea-816f-6f1d2bee3d6a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="336e5f36-396b-4ecc-a075-2610e5792364">
+                    <propertyInstance
+                      Id="444551a7-eba7-4c5a-b070-2f88839bcd8f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="233066c1-e4f0-49ec-b49f-e83251c34290">
+                    <propertyInstance
+                      Id="8804460a-b689-4e28-a337-e06eedbb9e0e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="188bafbd-038b-4f92-99ee-0bbbca9624fb">
+                    <propertyInstance
+                      Id="bd19bda3-c30f-498d-b8d8-7ba1eba556fb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da91e09e-a393-434c-86f6-292dd9cff48a">
+                    <propertyInstance
+                      Id="605f7c7c-249a-49d0-b1ca-4c386d19e095"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b52039f4-ce79-4756-abef-80b08d26e60a"
+                  name="nameCard"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="17ea318a-2d3d-4090-8fe5-ed250ad67dd1"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardFileClass Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DnameCard"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f1bc7192-4f2e-4cd2-8505-7a7c5201e807"
+                  name="conditionalNumber"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="a037a58c-27f6-4e02-a8e2-e4fc521e23cb"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardFileClass Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DconditionalNumber"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="795dd1a7-ad02-4adf-aadd-ccd33416d28e"
+                  name="shippingName"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="a9432235-9744-4155-b43f-385667a87bc6"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardFileClass Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DshippingName"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0b726e33-f5a8-4bbb-87bf-c925c34c9d95"
+                  name="classificationNumber"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="b41ded80-6d9b-4725-a006-712ecd288d92"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardFileClass Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DclassificationNumber"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="016c1c37-b221-4597-8650-655ab4f498dd"
+                  name="pathToFile"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="b3c9553a-5ca0-4f28-b17a-d54fcd35b15f"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardFileClass Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DpathToFile"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7d2f0294-02cc-411d-8488-1ed20a0cb6a3"
+            name="EmergencyCardFileClass"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f3e2640d-d968-4a21-aa9b-f0ecf7dcd9e8"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardFileClass Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b37ec54f-bb65-4a49-b0ad-273b16351f3b"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="17b0e919-2784-4b6c-ab3b-d92029eb049e">
+                    <propertyInstance
+                      Id="4fdae538-f32c-4189-87c7-da0fb944bcbe"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4738a5a8-d729-499e-9d7b-6666a6b8ecd2">
+                    <propertyInstance
+                      Id="1a3b4a99-a28f-4bb0-9a42-6b45bcdb26bb"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c4e671d8-6ffe-4b5e-b6e3-2b5f1b90e69a">
+                    <propertyInstance
+                      Id="f0abeb5f-55f4-4ef7-9143-263760be23c1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5f2f6d30-8d93-4525-9bfc-9a4aefc577e3">
+                    <propertyInstance
+                      Id="df20f8b3-a63e-466c-81a4-26f8f130df1e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d9c0a250-95e1-434f-ad12-4817b360795e">
+                    <propertyInstance
+                      Id="c32964d6-9310-4274-bfad-fdc037de9857"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4b3d6010-d4e5-4f68-b9c2-a7508eeae647">
+                    <propertyInstance
+                      Id="1d03e44c-aee0-4e0f-aa25-dab57387a632"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d22e7ab8-94a6-467e-8ed2-0432ba38ab55"
+                  name="nameCard"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="30866a73-d25f-43c8-8e9f-7824f27d9b51"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardFileClass Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DnameCard"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a8a44da4-64d2-485e-af3a-35ed768f8c41"
+                  name="pathToFile"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="71d79714-d8f7-487e-9fc3-8c4bc08b0f99"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FPavka_000%2FSource%2FRepos%2FLauncher%2FLauncher%2FLauncher.Module.EmergencyCard%2Fbin%2Fx86%2FRelease%2FLauncher.Module.EmergencyCard.dll Namespace%3DLauncher.Module.EmergencyCard Type%3DEmergencyCardFileClass Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DpathToFile"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="c3b27bf8-6642-47ff-89be-23a5620d617d"
+        LastKnownName="ViewModels"
+        LastKnownLocation="Package1_0015.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
