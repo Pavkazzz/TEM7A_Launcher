@@ -11,6 +11,7 @@ using Launcher.Core.HelperClass;
 using Microsoft.Office.Interop.Word;
 using NLog;
 using LogManager = NLog.LogManager;
+using Window = System.Windows.Window;
 
 namespace Launcher.Core.Components.Document
 {
@@ -18,7 +19,8 @@ namespace Launcher.Core.Components.Document
     {
         private IWindowManager _windowManager;
         private static Logger _logger = LogManager.GetCurrentClassLogger();
-        
+        private Window _window;
+
         public void DialogDocument(DocFile doc, string databasePath)
         {
             var time = Stopwatch.StartNew();
@@ -29,26 +31,31 @@ namespace Launcher.Core.Components.Document
             _logger.Trace(ext);
 
             Console.WriteLine(ext);
+            
             if (ext == ".pdf")
             {
-                var db = new DataBase(Path.GetFullPath(databasePath));
-
-                var index = db.SqlSelect("Select id from History order by id desc", new List<string> { "id" });
-
-                if (index.Count > 0)
+                if (databasePath != "")
                 {
-                    db.SqlInsert(
-                        string.Format(
-                            "INSERT INTO \"main\".\"History\" (\"DocumentName\",\"DocumentIndex\",\"Path\") VALUES ('{0}','{1}','{2}')",
-                            doc.Name, index[0]["id"], doc.Path));
+                    var db = new DataBase(Path.GetFullPath(databasePath));
+
+                    var index = db.SqlSelect("Select id from History order by id desc", new List<string> { "id" });
+
+                    if (index.Count > 0)
+                    {
+                        db.SqlInsert(
+                            string.Format(
+                                "INSERT INTO \"main\".\"History\" (\"DocumentName\",\"DocumentIndex\",\"Path\") VALUES ('{0}','{1}','{2}')",
+                                doc.Name, index[0]["id"], doc.Path));
+                    }
+                    else
+                    {
+                        db.SqlInsert(
+                            string.Format(
+                                "INSERT INTO \"main\".\"History\" (\"DocumentName\",\"DocumentIndex\",\"Path\") VALUES ('{0}','{1}','{2}')",
+                                doc.Name, '1', doc.Path));
+                    }
                 }
-                else
-                {
-                    db.SqlInsert(
-                        string.Format(
-                            "INSERT INTO \"main\".\"History\" (\"DocumentName\",\"DocumentIndex\",\"Path\") VALUES ('{0}','{1}','{2}')",
-                            doc.Name, '1', doc.Path));
-                }
+                
 
                 if (!Cef.IsInitialized)
                 {
@@ -76,11 +83,10 @@ namespace Launcher.Core.Components.Document
                         throw new Exception("Unable to Initialize Cef");
                     }
                 }
-                var window = new DocumentView().ShowPdf(new FileNameDoc(doc.Path));
+                 _window = new DocumentView().ShowPdf(new FileNameDoc(doc.Path));
                 
                 _logger.Trace(time.Elapsed);
 
-                window.ShowDialog(); 
             }
 
             if (ext == ".doc" || ext == ".docx")
@@ -99,17 +105,16 @@ namespace Launcher.Core.Components.Document
                     xpsDocument = convertedXpsDoc;
                 }
                 
-                var window = new DocumentView().ShowXps(new FileNameDoc(xpsDocument));
-                window.ShowDialog();
+                _window = new DocumentView().ShowXps(new FileNameDoc(xpsDocument));
+
             }
 
             if (ext == ".xps")
             {
-
-
-                var window = new DocumentView().ShowXps(new FileNameDoc(doc.Path));
-                window.ShowDialog();
+                _window = new DocumentView().ShowXps(new FileNameDoc(doc.Path));
             }
+
+            _window.ShowDialog(); 
         }
 
         private static string ConvertWordToXps(string wordFilename, string xpsFilename)

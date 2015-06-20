@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Launcher.Core;
+using Launcher.Core.HelperClass;
 
 namespace Launcher.Module.Inspection
 {
@@ -10,10 +11,10 @@ namespace Launcher.Module.Inspection
             get { return new AboutInspection().Name; }
         }
 
-        public List<string> DoSearch(string name)
+        public List<DocFile> DoSearch(string name)
         {
-            var result = new List<string>();
-            result.Add("Поиск по модулю приемка локоматива: " + name);
+            var result = new List<DocFile>();
+            result.Add(new DocFile("Поиск по модулю приемка локоматива: " + name));
             return result;
         }
     }

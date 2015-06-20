@@ -23,13 +23,14 @@ namespace Launcher.ViewModels
         private readonly IEnumerable<ISearch> _search; 
         private static Logger logger = LogManager.GetCurrentClassLogger();
         private IEnumerable<IModule> _modules;
-            
+        private BindableCollection<ModuleItem> _myModules = new BindableCollection<ModuleItem>();
+        private ModuleItem _selectedModule = new ModuleItem();
+
             
         [ImportingConstructor]
-        public LauncherViewModel(IEventAggregator eventAggregator, IWindowManager windowManager, [ImportMany(typeof(IModuleName))] IEnumerable<IModuleName> aboutModule)
+        public LauncherViewModel(IEventAggregator eventAggregator, [ImportMany(typeof(IModuleName))] IEnumerable<IModuleName> aboutModule)
         {
             _eventAggregator = eventAggregator;
-            _windowManager = windowManager;
 
 
             _eventAggregator.Subscribe(this);
@@ -91,9 +92,6 @@ namespace Launcher.ViewModels
         #endregion
 
         #region Property
-        private IWindowManager _windowManager;
-        private BindableCollection<ModuleItem> _myModules = new BindableCollection<ModuleItem>();
-        private ModuleItem _selectedModule = new ModuleItem();
 
         public BindableCollection<ModuleItem> ListBoxModules
         {

@@ -30,7 +30,7 @@
             </Canvas>
         </StackPanel>
 
-        <!-- ListBox C отображением левого меню навигации гОСТ Ост -->
+        <!-- ListBox C отображением левого меню навигации гост ост -->
         <ListBox x:Name="CategoryList" Grid.Row="1" Grid.Column="0"
                  ItemContainerStyle="{StaticResource ListBoxItemCategory}"
                  Margin="10"

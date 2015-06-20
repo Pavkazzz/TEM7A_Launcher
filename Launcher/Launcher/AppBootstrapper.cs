@@ -28,7 +28,7 @@ namespace Launcher
             Initialize();
         }
 
-        //Для теста
+        
         public AppBootstrapper(string path)
         {
          

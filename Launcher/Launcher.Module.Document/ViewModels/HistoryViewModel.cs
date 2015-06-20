@@ -2,6 +2,7 @@
 using System.ComponentModel.Composition;
 using System.Diagnostics;
 using System.IO;
+using System.Windows;
 using Caliburn.Micro;
 using Launcher.Core;
 using Launcher.Core.Components.Document;
@@ -65,7 +66,8 @@ namespace Launcher.Module.Document.ViewModels
         {
             var name = e.Name;
             var path = e.Path;
-            new OpenDocument().DialogDocument(e, new DocAbout().DbPath);
+            var open = new OpenDocument();
+            open.DialogDocument(e, new DocAbout().DbPath);
         }
     }
 }

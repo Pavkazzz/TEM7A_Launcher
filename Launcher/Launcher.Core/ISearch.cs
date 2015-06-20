@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using Launcher.Core.HelperClass;
 
 namespace Launcher.Core
 {
@@ -7,6 +8,6 @@ namespace Launcher.Core
     public interface ISearch
     {
         string ModuleName { get; }
-        List<string> DoSearch(string name);
+        List<DocFile> DoSearch(string name);
     }
 }

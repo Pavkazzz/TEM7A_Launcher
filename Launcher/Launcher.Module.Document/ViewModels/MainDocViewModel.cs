@@ -3,7 +3,6 @@ using System.ComponentModel.Composition;
 using System.Diagnostics;
 using System.IO;
 using Caliburn.Micro;
-using CefSharp;
 using Launcher.Core;
 using NLog;
 using LogManager = NLog.LogManager;

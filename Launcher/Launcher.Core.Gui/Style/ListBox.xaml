@@ -383,7 +383,6 @@
                         </Grid.ColumnDefinitions>
                         <Border BorderBrush="Black" Grid.Column="0" Grid.Row="0" BorderThickness="1"
                                 Margin="0">
-                            <!--<Label HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="" >-->
                             <ContentPresenter>
                                 <ContentPresenter.Resources>
                                     <Style TargetType="{x:Type TextBlock}">
@@ -394,21 +393,8 @@
                                     </Style>
                                 </ContentPresenter.Resources>
                             </ContentPresenter>
-                            <!--</Label>--> <!--ss-->
                         </Border>
-                        <!--<TextBlock Grid.Column="1" Margin="40,25,20,0" FontSize="15" Foreground="White" >
-                            <ContentPresenter Content="{Binding CategoryName}" >
-                                <ContentPresenter.Resources>
-                                    <Style TargetType="{x:Type TextBlock}">
-                                        <Setter Property="Background" Value="Yellow"></Setter>
-                                        <Setter Property="Margin" Value="10"></Setter>
-                                        <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
-                                        <Setter Property="HorizontalAlignment" Value="Center"/>
-                                        <Setter Property="VerticalAlignment" Value="Center"/>
-                                    </Style>
-                                </ContentPresenter.Resources>    
-                            </ContentPresenter>
-                        </TextBlock>-->
+
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

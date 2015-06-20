@@ -62,6 +62,8 @@ namespace Launcher.Module.Document.ViewModels
                 //_windowManager.ShowDialog();
                 var open = new OpenDocument();
                 open.DialogDocument(doc, path);
+
+
             }
         }
 
@@ -74,9 +76,10 @@ namespace Launcher.Module.Document.ViewModels
                                                         message.Name), new List<string> { "Name", "PathName", "Path" });
             foreach (var singlecategory in category)
             {
-                FileNameList.Add(new DocFile(singlecategory["Name"], Path.GetFullPath(Path.Combine(@"..\..\..\..\File", singlecategory["Path"], singlecategory["PathName"]))));
+                FileNameList.Add(new DocFile(singlecategory["Name"], FilePath.GetFilePath(singlecategory["Path"], singlecategory["PathName"])));
             }
         }
+
     }
 
 }

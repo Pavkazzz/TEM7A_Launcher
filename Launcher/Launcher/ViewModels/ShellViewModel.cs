@@ -13,14 +13,12 @@ namespace Launcher.ViewModels
     public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<string>, IHandle<FlyoutBaseViewModel>, IHandle<IModule>
     {
         private readonly IEventAggregator _eventAggregator;
-        private readonly IWindowManager _windowManager;
         private static Logger _logger = LogManager.GetCurrentClassLogger();
 
         [ImportingConstructor]
-        public ShellViewModel(IEventAggregator eventAggregator, IWindowManager windowManager)
+        public ShellViewModel(IEventAggregator eventAggregator)
         {
             _eventAggregator = eventAggregator;
-            _windowManager = windowManager;
 
             _eventAggregator.Subscribe(this);
 
@@ -41,7 +39,7 @@ namespace Launcher.ViewModels
                 }
                 catch (NotImplementedException e)
                 {
-                    
+                    _logger.Warn(e.ToString);
                 }
             }
         }
@@ -50,17 +48,6 @@ namespace Launcher.ViewModels
         {
             Process.GetCurrentProcess().Kill();
         }
-
-
-        //TODO переделать на typeof вместо string
-        //public void Handle(string message)
-        //{
-        //    //var model = IoC.Get<Model>();
-        //    //if (model.Auth)
-        //    //{
-        //    //    ActivateItem(IoC.Get<AppViewModel>());
-        //    //}
-        //}
 
 
 
