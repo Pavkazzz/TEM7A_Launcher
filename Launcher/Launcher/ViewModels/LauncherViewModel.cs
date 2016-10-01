@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Dynamic;
+using System.Diagnostics;
 using System.Linq;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Media;
 using Caliburn.Micro;
+using CefSharp;
 using Launcher.Core;
-using Launcher.Model;
+using NLog;
+using LogManager = NLog.LogManager;
 
 namespace Launcher.ViewModels
 {
@@ -18,15 +16,22 @@ namespace Launcher.ViewModels
     {
         private IEventAggregator _eventAggregator;
 
-         
-        private readonly IEnumerable<ISearch> _search;
+        /// <summary>
+        /// Главная ViewModel
+        /// </summary>
 
+        private readonly IEnumerable<ISearch> _search; 
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+        private IEnumerable<IModule> _modules;
+        private BindableCollection<ModuleItem> _myModules = new BindableCollection<ModuleItem>();
+        private ModuleItem _selectedModule = new ModuleItem();
+
+            
         [ImportingConstructor]
-        public LauncherViewModel(IEventAggregator eventAggregator, IWindowManager windowManager, [ImportMany(typeof(IModuleName))] IEnumerable<IModuleName> aboutModule, MainModel model)
+        public LauncherViewModel(IEventAggregator eventAggregator, [ImportMany(typeof(IModuleName))] IEnumerable<IModuleName> aboutModule)
         {
             _eventAggregator = eventAggregator;
-            _windowManager = windowManager;
-            _model = model;
+
 
             _eventAggregator.Subscribe(this);
 
@@ -34,48 +39,31 @@ namespace Launcher.ViewModels
             {
                 if (moduleName != null)
                 {
-                    model.Modules.Add(new ModuleItem(moduleName));
+                    ListBoxModules.Add(new ModuleItem(moduleName));
                 }   
             }
 
-            ListBoxModules = _model.Modules;
-        }
-
-        public void OpenModule()
-        {
-            //foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == (o as ModuleItem).ViewModel))
-            //{
-            //    _eventAggregator.PublishOnBackgroundThread(name);
-            //}
-            var qwe = "qweqweqwe";
-            //MessageBox.Show("AXAXAX");
+            _modules = IoC.GetAll<IModule>();
         }
 
         public void OpenModule(ModuleItem o)
         {
-            var time = System.DateTime.Now;
-            //if (o != null)
-            //{
-                
-                foreach (var name in IoC.GetAll<IModule>().Where(name => name.GetType() == o.ViewModel))
-                {
-                    //TODO Dialog window
-                    //::SEM
-                    _eventAggregator.PublishOnBackgroundThread(name);
-                }
+            logger.Trace(o.Name);
+            var time = Stopwatch.StartNew();
+              
+            foreach (var name in _modules.Where(name => name.GetType() == o.ViewModel))
+            {
+                _eventAggregator.PublishOnBackgroundThread(name);
+            }
 
-            Console.WriteLine(System.DateTime.Now - time);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Модуль не пришёл");
-            //}
+            logger.Trace(time.Elapsed);
+
         }
 
         public void OpenFlyout()
         {
 
-            var flyout = this._flyouts[0];
+            var flyout = _flyouts[0];
             flyout.IsOpen = !flyout.IsOpen;
         }
 
@@ -87,7 +75,7 @@ namespace Launcher.ViewModels
         {
             get
             {
-                return this._flyouts;
+                return _flyouts;
             }
         }
 
@@ -104,11 +92,6 @@ namespace Launcher.ViewModels
         #endregion
 
         #region Property
-        private IWindowManager _windowManager;
-        private MainModel _model;
-        private BindableCollection<ModuleItem> _myModules;
-        //private BindableCollection<Color> _color; 
-        private ModuleItem _selectedModule;
 
         public BindableCollection<ModuleItem> ListBoxModules
         {
@@ -120,16 +103,6 @@ namespace Launcher.ViewModels
             }
         }
 
-        //public BindableCollection<ModuleItem> Colors
-        //{
-        //    get { return _color; }
-        //    set
-        //    {
-        //        _color = value;
-        //        NotifyOfPropertyChange(()=>ListBoxModules);
-        //    }
-        //} 
-
         public ModuleItem SelectedListBoxModules
         {
             get { return _selectedModule; }
@@ -140,9 +113,6 @@ namespace Launcher.ViewModels
             }
         }
 
-        
-
-        
         #endregion
 
         #region Handle
@@ -167,10 +137,9 @@ namespace Launcher.ViewModels
         protected override void OnInitialize()
         {
             base.OnInitialize();
-            this.DisplayName = "Caliburn.Metro.Demo";
-            this._flyouts.Add(IoC.Get<FlyoutSearchViewModel>());
-        }
+            _flyouts.Add(IoC.Get<FlyoutSearchViewModel>());
         }
 
 
+    }
 }

@@ -55,30 +55,35 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Caliburn.Micro">
-      <HintPath>..\packages\Caliburn.Micro.Core.2.0.1\lib\net45\Caliburn.Micro.dll</HintPath>
+      <HintPath>..\packages\Caliburn.Micro.Core.2.0.2\lib\net45\Caliburn.Micro.dll</HintPath>
     </Reference>
     <Reference Include="Caliburn.Micro.Platform">
-      <HintPath>..\packages\Caliburn.Micro.2.0.1\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+      <HintPath>..\packages\Caliburn.Micro.2.0.2\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="MahApps.Metro">
-      <HintPath>..\packages\MahApps.Metro.1.0.1-ALPHA047\lib\net45\MahApps.Metro.dll</HintPath>
-    </Reference>
-    <Reference Include="MoonPdfLib, Version=0.3.0.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\MoonPdfLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Lib\Microsoft.Office.Interop.Word.dll</HintPath>
     </Reference>
     <Reference Include="MouseKeyboardActivityMonitor, Version=3.0.1.29653, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\MouseKeyboardActivityMonitor.dll</HintPath>
     </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\Modules\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite">
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.94.0\lib\net45\System.Data.SQLite.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.0.1-ALPHA047\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -89,30 +94,42 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\Document\FIleName.cs" />
+    <Compile Include="Components\Document\DocumentView.xaml.cs">
+      <DependentUpon>DocumentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\Document\OpenDocument.cs" />
     <Compile Include="Db\DataBase.cs" />
     <Compile Include="HelperClass\DocFile.cs" />
+    <Compile Include="HelperClass\FilePath.cs" />
     <Compile Include="HelperClass\KeyboardProperty.cs" />
     <Compile Include="IModule.cs" />
     <Compile Include="IModuleName.cs" />
     <Compile Include="ISearch.cs" />
+    <Compile Include="IUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Security.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Db\db.db" />
     <None Include="packages.config" />
-    <None Include="Resources\Entypo.ttf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Lib\bcprov-jdk15-1.44.dll" />
-    <Content Include="Lib\CefSharp.Core.dll" />
-    <Content Include="Lib\CefSharp.dll" />
-    <Content Include="Lib\CefSharp.Example.dll" />
-    <Content Include="Lib\CefSharp.WinForms.dll" />
     <Content Include="Lib\commons-logging.dll" />
     <Content Include="Lib\fontbox-1.8.7.dll" />
     <Content Include="Lib\IKVM.OpenJDK.Core.dll" />
@@ -122,11 +139,9 @@
     <Content Include="Lib\IKVM.OpenJDK.Util.dll" />
     <Content Include="Lib\IKVM.Runtime.dll" />
     <Content Include="Lib\pdfbox-1.8.7.dll" />
-    <Content Include="Resources\Entypo-license.txt" />
-    <Resource Include="Resources\WindowsIcons-license.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Resources\Icons.xaml">
+    <Page Include="Components\Document\DocumentView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

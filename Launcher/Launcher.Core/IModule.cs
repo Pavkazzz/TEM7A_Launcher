@@ -4,5 +4,6 @@ namespace Launcher.Core
 {
     public interface IModule : IHaveDisplayName
     {
+
     }
 }

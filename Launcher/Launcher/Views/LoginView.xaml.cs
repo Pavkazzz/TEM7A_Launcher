@@ -1,10 +1,5 @@
-﻿using System;
-using System.Diagnostics;
-using System.Net.PeerToPeer.Collaboration;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Automation;
-using System.Windows.Input;
 
 namespace Launcher.Views
 {

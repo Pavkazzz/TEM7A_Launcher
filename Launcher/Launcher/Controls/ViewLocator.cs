@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using Caliburn.Micro;
@@ -39,7 +36,7 @@ namespace Launcher.Controls
             var frameworkElement = newInstance as FrameworkElement;
             if (frameworkElement != null)
             {
-                frameworkElement.Resources.MergedDictionaries.Add(this.themeManager.GetThemeResources());
+                frameworkElement.Resources.MergedDictionaries.Add(themeManager.GetThemeResources());
             }
 
             Caliburn.Micro.ViewLocator.InitializeComponent(newInstance);

@@ -1,10 +1,11 @@
-using System.Collections.Generic;
+using System;
 using System.ComponentModel.Composition;
-using System.Dynamic;
+using System.Diagnostics;
 using System.Linq;
-using System.Windows;
 using Caliburn.Micro;
 using Launcher.Core;
+using NLog;
+using LogManager = NLog.LogManager;
 
 namespace Launcher.ViewModels
 {
@@ -12,13 +13,12 @@ namespace Launcher.ViewModels
     public class ShellViewModel : Conductor<IScreen>.Collection.OneActive, IShell, IHandle<string>, IHandle<FlyoutBaseViewModel>, IHandle<IModule>
     {
         private readonly IEventAggregator _eventAggregator;
-        private readonly IWindowManager _windowManager;
+        private static Logger _logger = LogManager.GetCurrentClassLogger();
 
         [ImportingConstructor]
-        public ShellViewModel(IEventAggregator eventAggregator, IWindowManager windowManager)
+        public ShellViewModel(IEventAggregator eventAggregator)
         {
             _eventAggregator = eventAggregator;
-            _windowManager = windowManager;
 
             _eventAggregator.Subscribe(this);
 
@@ -31,35 +31,25 @@ namespace Launcher.ViewModels
 
         private void CheckModules()
         {
-            //TODO Для всех
-            foreach (var check in IoC.GetAll<IModuleName>().Where(desc => desc.Description == @"Супер модуль"))
+            foreach (var check in IoC.GetAll<IModuleName>())
             {
-                check.PrimaryCheck();
+                try
+                {
+                    check.PrimaryCheck();
+                }
+                catch (NotImplementedException e)
+                {
+                    _logger.Warn(e.ToString);
+                }
             }
         }
 
-
-        //TODO переделать на typeof вместо string
-        //public void Handle(string message)
-        //{
-        //    //var model = IoC.Get<Model>();
-        //    //if (model.Auth)
-        //    //{
-        //    //    ActivateItem(IoC.Get<AppViewModel>());
-        //    //}
-        //}
-
-
-        public void Handle(LauncherViewModel message)
+        public void OnClose()
         {
-
-            ActivateItem(IoC.Get<LauncherViewModel>());
+            Process.GetCurrentProcess().Kill();
         }
 
-        public void Handle(RegistrationViewModel message)
-        {
-            ActivateItem(IoC.Get<RegistrationViewModel>());
-        }
+
 
         public void Handle(string message)
         {
@@ -87,7 +77,7 @@ namespace Launcher.ViewModels
         {
             get
             {
-                return this.flyouts;
+                return flyouts;
             }
         }
 
@@ -101,7 +91,7 @@ namespace Launcher.ViewModels
         {
             if (flyouts.Count(x => x.Header == message.Header) == 0)
             {
-                this.flyouts.Insert(0, message);
+                flyouts.Insert(0, message);
             }
             var flyout = Flyouts[0];
             flyout.IsOpen = !flyout.IsOpen;
@@ -109,7 +99,11 @@ namespace Launcher.ViewModels
 
         public void Handle(IModule message)
         {
+            var time = Stopwatch.StartNew();
+
             ActivateItem((IScreen) message);
+
+            _logger.Trace(time.Elapsed);
         }
     }
 }

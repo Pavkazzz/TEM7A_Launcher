@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Security.Cryptography.X509Certificates;
+using Launcher.Core.HelperClass;
 
 namespace Launcher.Core
 {
-    [InheritedExport(typeof(ISearch))]
+    [InheritedExport(typeof (ISearch))]
     public interface ISearch
     {
         string ModuleName { get; }
-        List<string> DoSearch(string name);
+        List<DocFile> DoSearch(string name);
     }
 }

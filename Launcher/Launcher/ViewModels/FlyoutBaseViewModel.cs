@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Caliburn.Micro;
+﻿using Caliburn.Micro;
 using MahApps.Metro.Controls;
 
 namespace Launcher.ViewModels
@@ -22,18 +17,18 @@ namespace Launcher.ViewModels
         {
             get
             {
-                return this._flyoutWidth;
+                return _flyoutWidth;
             }
 
             set
             {
-                if (value == this._flyoutWidth)
+                if (value == _flyoutWidth)
                 {
                     return;
                 }
 
-                this._flyoutWidth = value;
-                this.NotifyOfPropertyChange(() => this.FlyoutWidth);
+                _flyoutWidth = value;
+                NotifyOfPropertyChange(() => FlyoutWidth);
             }
         }
 
@@ -41,18 +36,18 @@ namespace Launcher.ViewModels
         {
             get
             {
-                return this.header;
+                return header;
             }
 
             set
             {
-                if (value == this.header)
+                if (value == header)
                 {
                     return;
                 }
 
-                this.header = value;
-                this.NotifyOfPropertyChange(() => this.Header);
+                header = value;
+                NotifyOfPropertyChange(() => Header);
             }
         }
 
@@ -60,18 +55,18 @@ namespace Launcher.ViewModels
         {
             get
             {
-                return this.isOpen;
+                return isOpen;
             }
 
             set
             {
-                if (value.Equals(this.isOpen))
+                if (value.Equals(isOpen))
                 {
                     return;
                 }
 
-                this.isOpen = value;
-                this.NotifyOfPropertyChange(() => this.IsOpen);
+                isOpen = value;
+                NotifyOfPropertyChange(() => IsOpen);
             }
         }
 
@@ -79,18 +74,18 @@ namespace Launcher.ViewModels
         {
             get
             {
-                return this.position;
+                return position;
             }
 
             set
             {
-                if (value == this.position)
+                if (value == position)
                 {
                     return;
                 }
 
-                this.position = value;
-                this.NotifyOfPropertyChange(() => this.Position);
+                position = value;
+                NotifyOfPropertyChange(() => Position);
             }
         }
     }

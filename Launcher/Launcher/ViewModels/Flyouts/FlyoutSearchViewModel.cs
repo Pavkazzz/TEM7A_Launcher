@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 using Caliburn.Micro;
 using Launcher.Core;
-using Launcher.Core.Components;
 using Launcher.Core.Components.Document;
 using Launcher.Core.HelperClass;
-using Launcher.Model;
 using MahApps.Metro.Controls;
 
 namespace Launcher.ViewModels
@@ -21,15 +17,17 @@ namespace Launcher.ViewModels
         private string _searchString;
         private BindableCollection<SearchName> _searchResult = new BindableCollection<SearchName>();
         private List<ISearch> _searches;
+        private IWindowManager _windowManager;
         private BindableCollection<ModuleSearchName> _module = new BindableCollection<ModuleSearchName>();
 
         [ImportingConstructor]
-        public FlyoutSearchViewModel([ImportMany(typeof(ISearch))] IEnumerable<ISearch> search)
+        public FlyoutSearchViewModel(IWindowManager windowManager, [ImportMany(typeof(ISearch))] IEnumerable<ISearch> search)
         {
-            this.Header = "Поиск";
-            this.Position = Position.Right;
-            this.FlyoutWidth = 400;
+            Header = "Поиск";
+            Position = Position.Right;
+            FlyoutWidth = 400;
 
+            _windowManager = windowManager;
             _searches = search.ToList();
 
             //TODO TreeView
@@ -40,7 +38,7 @@ namespace Launcher.ViewModels
 
             foreach (var searchResult in _searches.SelectMany(singleSearch => singleSearch.DoSearch("")))
             {
-                SearchResultList.Add(new SearchName(searchResult, ""));
+                SearchResultList.Add(new SearchName(searchResult.Name, searchResult.Path));
             }
         }
 
@@ -49,17 +47,20 @@ namespace Launcher.ViewModels
             SearchResultList.Clear();
             foreach (var searchResult in _searches.SelectMany(singleSearch => singleSearch.DoSearch(searchstring)))
             {
-                SearchResultList.Add(new SearchName(searchResult, ""));
+                SearchResultList.Add(new SearchName(searchResult.Name, searchResult.Path));
             }
         }
 
         public void OpenSearch(SearchName o)
         {
+            if (o.Name == "" || o.FilePath == "") return;
+            
+            Console.WriteLine(o.FilePath);
 
-            //WorkAround Search OpenSearch
-            //TODO переделать
-            //var doc = new OpenDocument();
-            //doc.ShowPdf(new DocFile(o.Name, o.FilePath), "");
+            var open = new OpenDocument();
+
+            open.DialogDocument(new DocFile(o.Name, o.FilePath),"");
+            
         }
 
         public string SearchString

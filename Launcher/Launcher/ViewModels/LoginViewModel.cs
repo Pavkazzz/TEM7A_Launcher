@@ -1,12 +1,8 @@
-﻿using System;
-using System.ComponentModel.Composition;
-using System.Diagnostics;
+﻿using System.ComponentModel.Composition;
+using System.Windows.Forms;
 using Caliburn.Micro;
 using Launcher.Core;
-using MahApps.Metro.Controls;
-using Xceed.Wpf.DataGrid.Converters;
-using MahApps.Metro.Controls.Dialogs;
-using Xceed.Wpf.Toolkit;
+using Screen = Caliburn.Micro.Screen;
 
 namespace Launcher.ViewModels
 {
@@ -68,14 +64,13 @@ namespace Launcher.ViewModels
             {
                 _eventAggregator.PublishOnBackgroundThread("LauncherViewModel");
             }
-            //TODO регистрация если нет такого
             else
             {
                 
                 MessageBox.Show("Неверный Логин/Пароль. \nПроверьте правильность вводимых данных","Ошибка Авторизации");
             }
 
-            KeyboardProperty.KeyboardClose();
+            //KeyboardProperty.KeyboardClose();
             //else
             //{
             //    _eventAggregator.PublishOnBackgroundThread(IoC.Get<RegistrationViewModel>());

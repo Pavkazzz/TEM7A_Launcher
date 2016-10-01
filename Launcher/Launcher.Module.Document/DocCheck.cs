@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Launcher.Core;
 using org.apache.pdfbox.pdmodel;
 using org.apache.pdfbox.util;
@@ -21,12 +18,12 @@ namespace Launcher.Module.Document
 
             //Chech Search
             //TODO Parallel
-            var dbDocSearch = db.SqlSelect(@"Select * from Search", new List<string>(){"id"});
+            var dbDocSearch = db.SqlSelect(@"Select * from Search", new List<string> {"id"});
 
             var dbDocument = db.SqlSelect(@"Select * from Document
-                                            ", new List<string>() {"id"});
+                                            ", new List<string> {"id"});
 
-            var dbDocCategory = db.SqlSelect(@"Select Path from Category", new List<string>() {"Path"});
+            var dbDocCategory = db.SqlSelect(@"Select Path from Category", new List<string> {"Path"});
 
             //TODO if
             if (dbDocSearch.Count == 0)//== dbDocument.Count)
@@ -42,7 +39,7 @@ namespace Launcher.Module.Document
                         {
                             var text = ParsePdfUsingPdfBox(file).ToLower(new CultureInfo("ru-RU"));
                             var fileName = Path.GetFileName(file);
-                            var dbIndexOfSearch = db.SqlSelect(string.Format(@"select id, PathName from Document where PathName == '{0}'", fileName), new List<string>(){"id"});
+                            var dbIndexOfSearch = db.SqlSelect(string.Format(@"select id, PathName from Document where PathName == '{0}'", fileName), new List<string> {"id"});
                             if (dbIndexOfSearch.Count > 0)
                             {
                                 var index = dbIndexOfSearch[0]["id"];
@@ -64,7 +61,7 @@ namespace Launcher.Module.Document
                 doc = PDDocument.load(file);
                 PDFTextStripper stripper = new PDFTextStripper();
                 var text = stripper.getText(doc);
-                return text.Replace(System.Environment.NewLine, "");
+                return text.Replace(Environment.NewLine, "");
             }
             catch (Exception e)
             {

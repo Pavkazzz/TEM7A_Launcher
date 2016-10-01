@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.IO;
 using Launcher.Core;
-using Launcher.ViewModels;
+using Launcher.Core.HelperClass;
 
 namespace Launcher.Module.Document
 {
@@ -15,10 +12,10 @@ namespace Launcher.Module.Document
             get { return new DocAbout().Name; }
         }
 
-        public List<string> DoSearch(string name)
+        public List<DocFile> DoSearch(string name)
         {
             name = name.ToLower();
-            var result = new List<string>();
+            var result = new List<DocFile>();
             var db = new DataBase(new DocAbout().DbPath);
 
             //TODO Search Hisory
@@ -28,17 +25,15 @@ namespace Launcher.Module.Document
             }
             else
             {
+                var dbSelect = db.SqlSelect(string.Format(@"Select Document.Name,Category.Path, Document.PathName from Search 
+                                                            Left join Document on Document.id == Search.Document_id
+                                                            Left join Category on Category.id == Document.Category
+                                                            where SearchText like '%{0}%' ", name),
+                    new List<string> { "Name", "Path", "PathName" });
 
-                var DbSelect = db.SqlSelect(string.Format(@"    Select Name from Search 
-                                                                Left join Document
-                                                                on Document.id == Search.Document_id
-                                                                where SearchText like '%{0}%'
-                                                            ", name),
-                    new List<string>() { "Name" });
-
-                foreach (var searchResult in DbSelect)
+                foreach (var searchResult in dbSelect)
                 {
-                    result.Add(searchResult["Name"]);
+                    result.Add(new DocFile(searchResult["Name"], FilePath.GetFilePath(searchResult["Path"], searchResult["PathName"])));
                 }
             }
 

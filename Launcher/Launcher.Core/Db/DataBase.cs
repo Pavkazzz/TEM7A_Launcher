@@ -4,17 +4,16 @@ using System.Data.Common;
 using System.Data.SQLite;
 using System.Diagnostics;
 using System.IO;
+using NLog;
 
 namespace Launcher.Core
 {
     public class DataBase
     {
-        private SQLiteConnection _sqLiteConnectionDatabase;
-
         private readonly string _connectionPath;
-
+        private SQLiteConnection _sqLiteConnectionDatabase;
         //private SQLiteDataAdapter _sqLiteDataAdapter;
-
+        private static Logger logger = LogManager.GetCurrentClassLogger();
 
         public DataBase()
         {
@@ -24,11 +23,19 @@ namespace Launcher.Core
         public DataBase(string path)
         {
             _connectionPath = path;
+
+            logger.Trace(Path.GetFullPath(_connectionPath));
         }
 
         private void OpenConnectionSqlite(string path)
         {
-            _sqLiteConnectionDatabase = new SQLiteConnection(string.Format(@"Data Source={0}", path));
+            //_sqLiteConnectionDatabase = new SQLiteConnection(string.Format(@"Data Source={0}", path));
+            //_sqLiteConnectionDatabase.Open();
+            SQLiteConnectionStringBuilder connBuilder = new SQLiteConnectionStringBuilder();
+            connBuilder.DataSource = path;
+            connBuilder.JournalMode = SQLiteJournalModeEnum.Memory;
+
+            _sqLiteConnectionDatabase = new SQLiteConnection(connBuilder.ToString());
             _sqLiteConnectionDatabase.Open();
         }
 
@@ -40,6 +47,7 @@ namespace Launcher.Core
         //TODO path
         public List<Dictionary<string, string>> SqlSelect(string sqlQuery, List<string> columnName)
         {
+            logger.Trace(sqlQuery);
             OpenConnectionSqlite(_connectionPath);
             var result = new List<Dictionary<string, string>>();
             var sqlSelect = new SQLiteCommand(sqlQuery, _sqLiteConnectionDatabase);
@@ -52,7 +60,7 @@ namespace Launcher.Core
                     foreach (var column in columnName)
                     {
                         temp.Add(column, record[column].ToString());
-                    }   
+                    }
                     result.Add(temp);
                 }
             }
@@ -82,7 +90,23 @@ namespace Launcher.Core
             {
                 return false;
             }
+        }
 
-        } 
+        public bool SqlDelete(string sqlQuery)
+        {
+            try
+            {
+                OpenConnectionSqlite(_connectionPath);
+                var sqlSelect = new SQLiteCommand(sqlQuery, _sqLiteConnectionDatabase);
+                var sqlReader = sqlSelect.ExecuteReader();
+                sqlReader.Close();
+                CloseConnectionSqlite();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

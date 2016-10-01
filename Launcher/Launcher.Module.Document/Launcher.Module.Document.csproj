@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\cef.sdk.3.2272.2035\build\cef.sdk.props" Condition="Exists('..\packages\cef.sdk.3.2272.2035\build\cef.sdk.props')" />
+  <Import Project="..\packages\CefSharp.WinForms.39.0.0-pre03\build\CefSharp.WinForms.props" Condition="Exists('..\packages\CefSharp.WinForms.39.0.0-pre03\build\CefSharp.WinForms.props')" />
+  <Import Project="..\packages\CefSharp.Common.39.0.0-pre03\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.39.0.0-pre03\build\CefSharp.Common.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -14,7 +15,7 @@
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <NuGetPackageImportStamp>afd4006e</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>c0c6b606</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,22 +53,21 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Caliburn.Micro">
-      <HintPath>..\packages\Caliburn.Micro.Core.2.0.1\lib\net45\Caliburn.Micro.dll</HintPath>
-    </Reference>
-    <Reference Include="Caliburn.Micro.Platform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+    <Reference Include="Caliburn.Micro, Version=2.0.2.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Caliburn.Micro.2.0.1\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+      <HintPath>..\packages\Caliburn.Micro.Core.2.0.2\lib\net45\Caliburn.Micro.dll</HintPath>
     </Reference>
-    <Reference Include="CefSharp">
+    <Reference Include="Caliburn.Micro.Platform, Version=2.0.2.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Caliburn.Micro.2.0.2\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp, Version=39.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Launcher.Core\Lib\CefSharp.dll</HintPath>
     </Reference>
     <Reference Include="CefSharp.Core, Version=39.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Launcher.Core\Lib\CefSharp.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="CefSharp.Example">
-      <HintPath>..\Launcher.Core\Lib\CefSharp.Example.dll</HintPath>
     </Reference>
     <Reference Include="CefSharp.WinForms, Version=39.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -98,6 +98,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MahApps.Metro.1.0.0.0\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=3.2.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Modules\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="pdfbox-1.8.7">
       <HintPath>..\Launcher.Core\Lib\pdfbox-1.8.7.dll</HintPath>
     </Reference>
@@ -109,8 +113,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Windows.Interactivity">
       <HintPath>..\packages\MahApps.Metro.1.0.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -127,20 +132,11 @@
     <Compile Include="DocAbout.cs" />
     <Compile Include="DocCheck.cs" />
     <Compile Include="Search.cs" />
-    <Compile Include="ViewModels\DevelopedModuleViewModel.cs" />
     <Compile Include="ViewModels\DocumentListViewModel.cs" />
-    <Compile Include="ViewModels\DocumentViewModel.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="ViewModels\MainDocViewModel.cs" />
-    <Compile Include="ViewModels\OpenDocument.cs" />
-    <Compile Include="Views\DevelopedModuleView.xaml.cs">
-      <DependentUpon>DevelopedModuleView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\DocumentListView.xaml.cs">
       <DependentUpon>DocumentListView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DocumentView.xaml.cs">
-      <DependentUpon>DocumentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HistoryView.xaml.cs">
       <DependentUpon>HistoryView.xaml</DependentUpon>
@@ -151,21 +147,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="document.sqlite" />
     <None Include="packages.config" />
+    <None Include="Resources\Entypo.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\DevelopedModuleView.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\DocumentListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\DocumentView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\HistoryView.xaml">
       <SubType>Designer</SubType>
@@ -185,13 +179,14 @@
       <Project>{bd1b8356-08b1-4b0c-b08d-d2504d954be2}</Project>
       <Name>Launcher.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Launcher\Launcher.csproj">
-      <Project>{A4907F7B-534B-427E-8600-0E045705B161}</Project>
-      <Name>Launcher</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="imageButtonExitDocument.png" />
+    <Content Include="Resources\Entypo-license.txt" />
+    <Content Include="Resources\WindowsIcons-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
@@ -204,16 +199,19 @@
       <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Включите восстановление пакетов NuGet, чтобы загрузить их. Дополнительные сведения см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-    <Error Condition="!Exists('..\packages\cef.redist.x86.3.2272.2035\build\cef.redist.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.3.2272.2035\build\cef.redist.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\cef.redist.x64.3.2272.2035\build\cef.redist.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.3.2272.2035\build\cef.redist.x64.targets'))" />
-    <Error Condition="!Exists('..\packages\cef.sdk.3.2272.2035\build\cef.sdk.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.sdk.3.2272.2035\build\cef.sdk.props'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x86.3.2171.1979\build\cef.redist.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.3.2171.1979\build\cef.redist.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x64.3.2171.1979\build\cef.redist.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.3.2171.1979\build\cef.redist.x64.targets'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.39.0.0-pre03\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.39.0.0-pre03\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.39.0.0-pre03\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.39.0.0-pre03\build\CefSharp.Common.targets'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.WinForms.39.0.0-pre03\build\CefSharp.WinForms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.WinForms.39.0.0-pre03\build\CefSharp.WinForms.props'))" />
   </Target>
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
   </PropertyGroup>
-  <Import Project="..\packages\cef.redist.x86.3.2272.2035\build\cef.redist.x86.targets" Condition="Exists('..\packages\cef.redist.x86.3.2272.2035\build\cef.redist.x86.targets')" />
-  <Import Project="..\packages\cef.redist.x64.3.2272.2035\build\cef.redist.x64.targets" Condition="Exists('..\packages\cef.redist.x64.3.2272.2035\build\cef.redist.x64.targets')" />
+  <Import Project="..\packages\cef.redist.x86.3.2171.1979\build\cef.redist.x86.targets" Condition="Exists('..\packages\cef.redist.x86.3.2171.1979\build\cef.redist.x86.targets')" />
+  <Import Project="..\packages\cef.redist.x64.3.2171.1979\build\cef.redist.x64.targets" Condition="Exists('..\packages\cef.redist.x64.3.2171.1979\build\cef.redist.x64.targets')" />
+  <Import Project="..\packages\CefSharp.Common.39.0.0-pre03\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.39.0.0-pre03\build\CefSharp.Common.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

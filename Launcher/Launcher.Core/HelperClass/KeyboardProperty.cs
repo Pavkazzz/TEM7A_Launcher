@@ -1,22 +1,28 @@
 ﻿using System.Diagnostics;
 
-namespace Launcher
+namespace Launcher.Core.HelperClass
 {
     public static class KeyboardProperty
     {
+        private static bool _isRunning = false;
+
         /// <summary>
         /// Запуск метода вызова клавиатуры.
         ///  </summary>
-        
-        public static void KeyboardRun() 
+
+        public static void KeyboardRun()
         {
-            KeyboardClose();
-            Process[] chromes = Process.GetProcessesByName("tabtip");
-            if (chromes.Length == 0)
+            if (!_isRunning)
             {
-                Process.Start(@"C:\\Program Files\\Common Files\\microsoft shared\\ink\\tabtip.exe");
+                Process[] chromes = Process.GetProcessesByName("TabTip");
+                if (chromes.Length == 0)
+                {
+                    Process.Start(@"C:\\Program Files\\Common Files\\microsoft shared\\ink\\tabtip.exe");
+                }
             }
-            
+
+            _isRunning = true;
+
         }
 
         /// <summary>
@@ -24,11 +30,16 @@ namespace Launcher
         /// </summary>
         public static void KeyboardClose()
         {
-            Process[] processArray = Process.GetProcessesByName(@"tabtip");
-            foreach (Process process in processArray)
+            if (_isRunning)
             {
-                process.Kill();
+                Process[] processArray = Process.GetProcessesByName(@"TabTip");
+                foreach (Process process in processArray)
+                {
+                    process.Kill();
+                }
             }
+            _isRunning = false;
+
         }
     }
 }

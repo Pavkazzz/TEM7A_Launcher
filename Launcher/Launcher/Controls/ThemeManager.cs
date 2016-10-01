@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.Composition;
 using System.Windows;
 
 namespace Launcher.Controls
@@ -16,7 +11,7 @@ namespace Launcher.Controls
         public ThemeManager()
         {
             //TODO
-            this.themeResources = new ResourceDictionary();
+            themeResources = new ResourceDictionary();
             //{
             //    Source =
             //        new Uri("pack://application:,,,/Launcher/Resources/Theme1.xaml")
@@ -25,7 +20,7 @@ namespace Launcher.Controls
 
         public ResourceDictionary GetThemeResources()
         {
-            return this.themeResources;
+            return themeResources;
         }
     }
 }

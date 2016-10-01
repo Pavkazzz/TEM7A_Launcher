@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Launcher.Core;
+using Launcher.Core.HelperClass;
 
 namespace Launcher.Module.Inspection
 {
-    class Search : ISearch
+    internal class Search : ISearch
     {
         public string ModuleName
         {
             get { return new AboutInspection().Name; }
         }
 
-        public List<string> DoSearch(string name)
+        public List<DocFile> DoSearch(string name)
         {
-            var result = new List<string>();
-            result.Add("Поиск по модулю приемка локоматива: " + name);
+            var result = new List<DocFile>();
+            result.Add(new DocFile("Поиск по модулю приемка локоматива: " + name));
             return result;
         }
     }

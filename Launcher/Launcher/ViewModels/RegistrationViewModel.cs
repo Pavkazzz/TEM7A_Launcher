@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.Composition;
 using Caliburn.Micro;
 using Launcher.Core;
 
@@ -20,6 +14,7 @@ namespace Launcher.ViewModels
         private string _password = string.Empty;
         private string _name = string.Empty;
         private string _lastname = string.Empty;
+        private string _patronymic = string.Empty;
 
         public string Name {
             get { return _name; }
@@ -71,7 +66,7 @@ namespace Launcher.ViewModels
 
         private User _user;
         private IEventAggregator _eventAggregator;
-        private string _patronymic;
+
 
         [ImportingConstructor]
         public RegistrationViewModel(IEventAggregator eventAggregator, User user)

@@ -25,4 +25,4 @@ namespace Launcher.Core
             return hex;
         }
     }
-}
+}               

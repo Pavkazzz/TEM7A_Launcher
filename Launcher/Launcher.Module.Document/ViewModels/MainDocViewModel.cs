@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Diagnostics;
 using System.IO;
-using System.Windows.Forms;
 using Caliburn.Micro;
 using Launcher.Core;
-using Launcher.Core.Components;
-using Launcher.Core.HelperClass;
+using NLog;
+using LogManager = NLog.LogManager;
 
 namespace Launcher.Module.Document.ViewModels
 {
@@ -14,6 +14,7 @@ namespace Launcher.Module.Document.ViewModels
     {
         private IEventAggregator _eventAggregator;
         private IWindowManager _windowManager;
+        private static Logger logger = LogManager.GetCurrentClassLogger();
 
         #region PropertyForView
         private BindableCollection<Category> _category = new BindableCollection<Category>();
@@ -43,28 +44,36 @@ namespace Launcher.Module.Document.ViewModels
         [ImportingConstructor]
         public MainDocViewModel()
         {
+
+            _eventAggregator = IoC.Get<IEventAggregator>();
+
+            GetCategory();
+
+            ActivateItem(IoC.Get<HistoryViewModel>());
+        }
+
+        private void GetCategory()
+        {
+            var time = Stopwatch.StartNew();
             CategoryList = new BindableCollection<Category>();
 
             if (File.Exists(Path.GetFullPath(new DocAbout().DbPath)))
             {
                 var db = new DataBase(Path.GetFullPath(new DocAbout().DbPath));
-                var category = db.SqlSelect("SELECT Name FROM Category", new List<string>() { "Name" });
+                var category = db.SqlSelect("SELECT Name FROM Category", new List<string> {"Name"});
                 foreach (var singlecategory in category)
                 {
                     CategoryList.Add(new Category(singlecategory["Name"]));
                 }
             }
 
-            _eventAggregator = IoC.Get<IEventAggregator>();
-
-            ActivateItem(IoC.Get<HistoryViewModel>());
+            logger.Trace(time.ElapsedMilliseconds);
         }
 
         public void CloseWindow()
         {
-            TryClose();
+            TryClose();                   
         }
-
 
         public void Show()
         {
@@ -72,6 +81,4 @@ namespace Launcher.Module.Document.ViewModels
             _eventAggregator.PublishOnBackgroundThread(SelectedCategoryList);
         }
     }
-
-    
-    }
+}

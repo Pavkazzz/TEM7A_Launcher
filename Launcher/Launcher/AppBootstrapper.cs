@@ -11,7 +11,8 @@ using Caliburn.Micro;
 using CefSharp.WinForms;
 using Launcher.Controls;
 using Launcher.Core;
-using Launcher.Model;
+using NLog;
+using LogManager = NLog.LogManager;
 
 namespace Launcher
 {
@@ -19,24 +20,26 @@ namespace Launcher
     {
         private CompositionContainer _container;
         private readonly string _modulesPath = Path.GetFullPath(@"../../../../Modules");
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+        
 
         public AppBootstrapper()
         {
             Initialize();
         }
 
-        //Для теста
+        
         public AppBootstrapper(string path)
         {
-            
+         
             _modulesPath = path;
-            PlatformProvider.Current = new XamlPlatformProvider();
-            base.StartDesignTime();
-            
+            //PlatformProvider.Current = new XamlPlatformProvider();
+            StartDesignTime();
         }
 
         protected override void Configure()
         {
+            logger.Trace("Configure");
             var catalog = new AggregateCatalog(AssemblySource.Instance.Select(x => new AssemblyCatalog(x)));
 
             _container = new CompositionContainer(catalog);
@@ -45,11 +48,9 @@ namespace Launcher
 
             batch.AddExportedValue<IWindowManager>(new WindowManager());
             batch.AddExportedValue<IEventAggregator>(new EventAggregator());
-            batch.AddExportedValue(new MainModel());
             batch.AddExportedValue(new User());
-
-
-
+            batch.AddExportedValue(new ChromiumWebBrowser("about:config"));
+           
             batch.AddExportedValue(_container);
 
             _container.Compose(batch);

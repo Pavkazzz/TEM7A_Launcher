@@ -45,6 +45,7 @@
     <SolidColorBrush x:Key="IdealForegroundColorBrush" Color="{StaticResource IdealForegroundColor}"
                      options:Freeze="True" />
 
-    <ImageBrush ImageSource="pack://application:,,,/Launcher.Core.Gui;component/Design/BackgroundImage.png" x:Key="Background" Stretch="UniformToFill"/>
-    
+    <ImageBrush ImageSource="pack://application:,,,/Launcher.Core.Gui;component/Design/BackgroundImage.png"
+                x:Key="Background" Stretch="UniformToFill" />
+
 </ResourceDictionary>
